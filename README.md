@@ -1,3 +1,7 @@
+
+![alt text](Demeter's Wings.png)
+
+
 # Demeter's Wings
 
 AgAir next gen agriculture aircraft for competition in the BlueSkies NASA 2025
