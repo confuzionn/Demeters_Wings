@@ -17,8 +17,8 @@ import matplotlib.pyplot as plt
 # Step 1: Establish Requirements
 
 # Design Mission Profile
-des_rad = 25#nmi = nmi/h (design radius)
-ferry_range = 600#nmi = nmi/h
+des_rad = 25#nmi (design radius)
+ferry_range = 600#nmi
 des_area = 400#acres (20x20)
 reserves = 30#min (additional fuel)
 cargo = 2000#lb (liquid or solid materials)
@@ -105,23 +105,19 @@ def turn(V_apply=MSS, #ft/s velocity during aerial application
 
 # Step 3: List Assumptions
 # Assumptions
-    # warmup, taxi, and take-off are 1500ft in total
-    # landing is 1000ft in total
-    # climb = decent is 500ft
-    # loiter only adds to endurance and not range
     # application area is a square
+    # turning radius taken at max stall speed
+    # aerial application uses same fuel as cruise
+    # cargo weight is lost during application
 
-warmup_taxi_takeoff = (runway+500)*ft2nmi #nmi
-landing = runway*ft2nmi #nmi
-climb = 500*ft2nmi #nmi
-decent = climb #nmi
-
-def range(mission_profile #ferry or standard
+def cruise_range(mission_profile #ferry or standard
           ):
     if mission_profile == "ferry":
-        range = ferry_range #nmi range is given for ferry mission profile
+        range =  ferry_range 
     else: # range must be calculated for standard mission profile
         turn_d,turn_rad = turn()
         des_length = (des_area*acre2nmisqr)**(1/2) #design area length in nmi
         num_of_turns = int(des_length/turn_rad) #number of turns needed to cover area
-        range = num_of_turns*(turn_d + des_length) #total distance flown
+        range = num_of_turns*(turn_d + des_length) #total distance flown in nmi
+
+    return range #returns the total range flown during cruise in nmi
