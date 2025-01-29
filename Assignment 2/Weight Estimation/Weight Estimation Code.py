@@ -5,6 +5,7 @@
 import numpy as np
 import pandas as pd
 import matplotlib.pyplot as plt
+import math
 
 #-------------------------------------------------------------------------------------------------------------------------#
 # Weight Estimation Steps
@@ -13,7 +14,7 @@ import matplotlib.pyplot as plt
     # Step 3: List Assumptions
     # Step 4: Compute Payload Weight (Human + Cargo)
 
-
+#-------------------------------------------------------------------------------------------------------------------------#
 # Step 1: Establish Requirements
 
 # Design Mission Profile
@@ -37,49 +38,44 @@ ft2nmi = 1/6076.12 #nmi
 acre2nmisqr = 1/847.5 #nmi^2
 knots2fps = ((1/ft2nmi)/(60*60)) #ft/s
 
+#-------------------------------------------------------------------------------------------------------------------------#
 #Step 2: Obtain Historical/Market Data
 
 # Constants from Daniel P. Raymer. Aircraft Design: A Conceptual Approach. AIAA, 4th edition, 2006.
-def prop_cbhp(type, #fixed pitch (fp), variable pitch (vp), turboprop (tp)
-                condition #cruise or loiter
+def prop_cbhp(type=['fp','vp','tp'], #fixed pitch (fp), variable pitch (vp), turboprop (tp)
+                condition=['cruise','loiter'] #cruise or loiter
                 ):
+    
+    print(type,condition,'loading...')
     #cruise
-    if condition == "cruise" or "Cruise":
-        if type == "fp":
+    if condition == 'cruise':
+        if type == 'fp':
             cbhp = 0.4# Piston Prop (fixed pitch)
             np = 0.8# efficiency
-            print('Fixed Pitch (Piston)')
 
-        if type == "vp":
+        if type == 'vp':
             cbhp = 0.4# Piston Prop (variable pitch)
             np = 0.8# efficiency
-            print('Variable Pitch (Piston)')
 
-        if type == "tp":
+        if type == 'tp':
             cbhp = 0.4# Turbo Prop (fixed pitch)
             np = 0.8# efficiency
-            print('Turboprop')
 
-        print('Cruise Condition')
 
     #loiter
-    if condition == "loiter" or "Loiter":
-        if type == "fp":
+    if condition == 'loiter':
+        if type == 'fp':
             cbhp = 0.5# Piston Prop (fixed pitch)
             np = 0.7# efficiency
-            print('Fixed Pitch (Piston)')
 
-        if type == "vp":
+        if type == 'vp':
             cbhp = 0.5# Piston Prop (variable pitch)
             np = 0.8# efficiency
             print('Variable Pitch (Piston)')
 
-        if type == "tp":
+        if type == 'tp':
             cbhp = 0.6# Turbo Prop (fixed pitch)
             np = 0.8# efficiency
-            print('Turboprop')
-
-        print('Loiter Condition')
 
     print('C_bhp =',cbhp)
     print('\u03b7_p =',np)
@@ -90,6 +86,7 @@ def prop_SFC(cbhp, #propeller specific fuel consumption
              np, #efficiency
              V=(V_MO + MSS)/2 #ft/s velocity of aircraft
              ):
+    
     C = cbhp*V/(550*np)
     print('C =',C)
     return C #returns C specific fuel consumption for props nased on C_bhp and prop efficiency
@@ -98,30 +95,32 @@ def ag_LD_estimates(b, #ft span
           S_wet, #wetted area
           fixed_lg=True #Whether its fixed landing gear or retractable
           ):
-
-    AR_wet = b**2/S_wet #wetted aspect ratio
+    
+    print('Span',b,'ft')
+    print('Wetted Area',S_wet,'ft^2')
+    AR_wet = (b**2)/S_wet #wetted aspect ratio
     print('Wetted AR =',AR_wet)
 
-    # Curve fit equations from Daniel P. Raymer. Aircraft Design: A Conceptual Approach. AIAA, 4th edition, 2006.
+    # Curve fit equations extrapolated using data from Daniel P. Raymer. Aircraft Design: A Conceptual Approach. AIAA, 4th edition, 2006.
     if fixed_lg == True:
-        LD_max = -0.767*(AR_wet)**2 + 6.43*(AR_wet) + 2.88 #curve fit estimate
+        LD_max = 8.59*(AR_wet)**0.56 #curve fit estimate
         print('Fixed Landing Gear')
+
     elif fixed_lg != True:
-        LD_max = -0.903*(AR_wet)**2 + 7.55*(AR_wet) + 4.20 #curve fit estimate
+        LD_max = 10.9*(AR_wet)**0.526 #curve fit estimate
         print('Retractable Landing Gear')
 
     # Standard LD equation from Joaquim R. R. A. Martins. The Metabook of Aircraft Design. Feb 2023
     LD = 0.943*LD_max 
     print('L/D =',LD)
-    print('L/D_max =',LD_max)
     return LD_max,LD #returns standard L/D and L/D max
 
-def turn(V=(V_MO + MSS)/2, #knts velocity during aerial application is assumed to be average speed (max+min)/2
+def turn(V=MSS, #knts velocity during aerial application is assumed to be average speed (max+min)/2
                 g=32.17,#ft/s^2 gravity
                 beta=45#deg bank angle
                 ):
     V_apply = V*knots2fps #knots --> ft/s conversion
-    turning_radius = V_apply^2/(g*np.tan(np.rad2deg(beta))) #ft
+    turning_radius = (V_apply**2)/(g*np.tan(np.deg2rad(beta))) #ft
     turning_radius_nmi = turning_radius*ft2nmi #ft --> nmi conversion
     turn = np.pi*turning_radius #distance flown for a turn in ft (semi-circle)
     turn_nmi = turn*ft2nmi #ft --> nmi conversion
@@ -131,6 +130,7 @@ def turn(V=(V_MO + MSS)/2, #knts velocity during aerial application is assumed t
 
     return turn_nmi,turning_radius_nmi #returns turning parameters
 
+#-------------------------------------------------------------------------------------------------------------------------#
 # Step 3: List Assumptions
 # Assumptions
     # application area is a square
@@ -138,78 +138,158 @@ def turn(V=(V_MO + MSS)/2, #knts velocity during aerial application is assumed t
     # aerial application uses same fuel as cruise
     # assume cargo weight is constant (does not lose weight during flight)
 
-def cruise_range(mission_profile #ferry or standard
+def cruise_range(mission_profile=['ferry','standard'] #ferry or standard
           ):
-    if mission_profile == "ferry" or "Ferry":
+
+    if mission_profile == 'ferry':
         range =  ferry_range 
         print('Ferry Range =',range,'nmi')
-    elif mission_profile == 'cruise' or 'Cruise': # range must be calculated for standard mission profile
+
+    elif mission_profile == 'standard': # range must be calculated for standard mission profile
         turn_d,turn_rad = turn() #nmi
         des_length = (des_area*acre2nmisqr)**(1/2) #design area length in nmi
         num_of_turns = int(des_length/turn_rad) #number of turns needed to cover area
         range = num_of_turns*(turn_d + des_length) + des_rad*2 #total distance flown in nmi
         print('Standard Range =',range,'nmi')
     else:
-        return print('Error, please use Cruise or Ferry')
+        return print('Error')
 
     return range #returns the total range flown during cruise in nmi
 
+#-------------------------------------------------------------------------------------------------------------------------#
 # Step 4: Compute Payload Weight (humans + cargo)
 
 payload = cargo + passenger #lbs
 
+#-------------------------------------------------------------------------------------------------------------------------#
 # Step 5: Estimate Fuel Fractions for Cruise & Loiter
 
-def cruise_ff(mission_profile, #ferry or standard
-                         propeller_type, #fp, vp, or tp (fixed/variable pitch, or turboprop)
-                         b, #span
-                         S_wet, #wetted area
+def cruise_ff(mission_profile=['ferry','standard'], #ferry or standard
+                         propeller_type=['fp','vp','tp'], #fp, vp, or tp (fixed/variable pitch, or turboprop)
+                         b=any, #span
+                         S_wet=any, #wetted area
                          V=(MSS+V_MO)/2 #knots, cruise speed, default is (Vmin+Vmax)/2
                          ):
     R = cruise_range(mission_profile)
     LD_max, LD = ag_LD_estimates(b,S_wet)
-    c_bhp,np = prop_cbhp(propeller_type, condition='cruise')
+    c_bhp,np = prop_cbhp(type=propeller_type, condition='cruise')
     c = prop_SFC(c_bhp,np,V)
 
-    cruise_fuel_fraction = np.exp(-R*c/(np*LD))
+    cruise_fuel_fraction = math.exp(-(R*c/(np*LD)))
     print('Cruise Fuel Fraction =',cruise_fuel_fraction)
 
     return cruise_fuel_fraction
     
-def loiter_ff(mission_profile, #ferry or standard
-                         propeller_type, #fp, vp, or tp (fixed/variable pitch, or turboprop)
-                         b, #span
-                         S_wet, #wetted area
-                         V=(MSS+V_MO)/2, #knots, cruise speed, default is (Vmin+Vmax)/2
+def loiter_ff(mission_profile=['ferry','standard'], #ferry or standard
+                         propeller_type=['fp','vp','tp'], #fp, vp, or tp (fixed/variable pitch, or turboprop)
+                         b=any, #span
+                         S_wet=any, #wetted area
+                         V=(MSS + V_MO/2)/2, #knots or nmi/h, cruise speed, default is (Vmin+Vmax/2)/2
                          E=30#m loiter time
                          ):
     R = cruise_range(mission_profile)
     LD_max, LD = ag_LD_estimates(b,S_wet)
-    c_bhp,np = prop_cbhp(propeller_type, condition='cruise')
+    c_bhp,np = prop_cbhp(type=propeller_type, condition='loiter')
     c = prop_SFC(c_bhp,np,V)
     E = E/60 #convert to hours
 
-    loiter_fuel_fraction = np.exp(-E*V*c/(np*LD))
+    loiter_fuel_fraction = math.exp(-(E*V*c/(np*LD)))
     print('Loiter Fuel Fraction =',loiter_fuel_fraction)
 
     return loiter_fuel_fraction
 
+#-------------------------------------------------------------------------------------------------------------------------#
+# Step 6: Estimate final fuel fraction
 # Constants from Daniel P. Raymer. Aircraft Design: A Conceptual Approach. AIAA, 4th edition, 2006.
-def segment_ff(segment, #the segment for the fuel fraction assumption (takeoff, climb, descent, landing)
+def segment_ff(segment=['takeoff','climb','descent','landing'], #the segment for the fuel fraction assumption (takeoff, climb, descent, landing)
                ):
-    if segment == 'takeoff' or 'Takeoff' or 'Take Off' or 'take off':
+    if segment == 'takeoff':
         ff = 0.970
-    elif segment == 'climb' or 'Climb':
+    elif segment == 'climb':
         ff = 0.985
-    elif segment == 'descent' or 'Descent':
+    elif segment == 'descent':
         ff = 0.990
-    elif segment == 'landing' or 'Landing':
+    elif segment == 'landing':
         ff = 0.995
     else:
-        return print('Segment must be takeoff, climb, descent, or landing')
+        return print('Error')
     
     return ff
 
-# the complete fuel fraction of the mission profile
-def complete_ff(mission_profile # ferry or standard
+# the complete fuel fraction (fff) of the mission profile
+def complete_ff(mission_profile=['ferry','standard'], #ferry or standard
+                propeller_type=['fp','vp','tp'], #fp, vp, or tp (fixed/variable pitch, or turboprop)
+                b=any, #span
+                S_wet=any, #wetted area
+                V=(MSS+V_MO)/2, #knots, cruise speed, default is (Vmin+Vmax)/2
+                E=30#m loiter time
                 ):
+    
+    if mission_profile == 'ferry': #based on mission profile
+        fuel_fract = segment_ff('takeoff') * segment_ff('climb') * \
+        cruise_ff(mission_profile=mission_profile, propeller_type=propeller_type,b=b, S_wet=S_wet, V=V) * \
+        loiter_ff(mission_profile=mission_profile, propeller_type=propeller_type,b=b, S_wet=S_wet, V=V, E=E) * \
+        segment_ff('descent') * segment_ff('landing')
+        
+    elif mission_profile == 'standard': #based on mission profile
+        fuel_fract = segment_ff('takeoff') * 2*segment_ff('climb') * \
+        cruise_ff(mission_profile, propeller_type,b, S_wet, V) * \
+        loiter_ff(mission_profile, propeller_type,b, S_wet, V, E) * \
+        2*segment_ff('descent') * segment_ff('landing')
+
+    fff = (1-fuel_fract)*trapped_fuel_factor #calculate for trapped fuel
+
+    print('Total Fuel Fraction Wf/W0 =',fff)
+    return fff
+
+#-------------------------------------------------------------------------------------------------------------------------#
+# Step 7: Iterative Weight Estimation
+
+def weight_estimation(mission_profile=['ferry','standard'], #ferry or standard
+                propeller_type=['fp','vp','tp'], #fp, vp, or tp (fixed/variable pitch, or turboprop)
+                b=any, #span
+                S_wet=any, #wetted area
+                V=(MSS+V_MO)/2, #knots, cruise speed, default is (Vmin+Vmax)/2
+                E=30, #m loiter time
+                A = 0.74, # From Raymer Table 3.1
+                C = -0.03, # From Raymer Table 3.1
+                W0 = 1e4 #lbs, initial empty weight
+                ):
+    
+    W0_history = []   # list of all W0 guesses for plot
+    res = 1e-6        # relative convergence tolerance
+    error = 2*res     # any value greater than the tolerance
+    fff = complete_ff(mission_profile,propeller_type,b,S_wet,V,E)
+
+    while error > res:
+        W0_history.append(W0) 
+        empty_weight_fraction = A*W0**C #empty weight ratio, lbs/lbs
+        W0_new = (payload) / (1 - fff - empty_weight_fraction)
+        error = abs(W0_new - W0) / abs(W0_new) #find resolution
+        W0 = W0_new #lbs
+        # print('Error =',error)
+        
+    W0_history = np.array(W0_history)  # convert list to array
+    We = empty_weight_fraction*W0
+
+    print('Gross Weight =',W0,'lbs')
+    print('Empty Weight =',We,'lbs')
+
+
+    # Plot Convergence
+    plt.figure(figsize=(8,4))
+    plt.title('Weight Estimate Convergence (W0={}lbs, We={}lbs)'.format(round(W0),round(We)))
+    plt.xlabel('Iteration')
+    plt.ylabel('W0 (lbs)')
+    plt.plot(W0_history, label='W0', linestyle='-', linewidth=2, marker=None, markersize=8)
+    plt.grid(True)
+    plt.legend(loc='best')
+    plt.show()
+
+#-------------------------------------------------------------------------------------------------------------------------#
+# Running the code
+weight_estimation('standard', #ferry or standard
+                'fp', #fp, vp, or tp (fixed/variable pitch, or turboprop)
+                412/12, #span, ft
+                344/144 #wetted area, ft^2
+                )
