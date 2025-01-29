@@ -124,6 +124,7 @@ def turn(V=MSS, #knts velocity during aerial application is assumed to be averag
     turning_radius_nmi = turning_radius*ft2nmi #ft --> nmi conversion
     turn = np.pi*turning_radius #distance flown for a turn in ft (semi-circle)
     turn_nmi = turn*ft2nmi #ft --> nmi conversion
+    print('Turning Velocity =',V_apply,'knots')
     print('Bank Angle =',beta,'\u00b0')
     print('Turning Radius =',turning_radius,'ft')
     print('Turning Distance =',turn,'ft')
