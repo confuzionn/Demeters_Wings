@@ -106,7 +106,7 @@ def ag_LD_estimates(b, #ft span
         LD_max = 8.59*(AR_wet)**0.56 #curve fit estimate
         print('Fixed Landing Gear')
 
-    elif fixed_lg != True:
+    elif fixed_lg == False:
         LD_max = 10.9*(AR_wet)**0.526 #curve fit estimate
         print('Retractable Landing Gear')
 
@@ -168,10 +168,11 @@ def cruise_ff(mission_profile=['ferry','standard'], #ferry or standard
                          propeller_type=['fp','vp','tp'], #fp, vp, or tp (fixed/variable pitch, or turboprop)
                          b=any, #span
                          S_wet=any, #wetted area
-                         V=(MSS+V_MO)/2 #knots, cruise speed, default is (Vmin+Vmax)/2
+                         V=(MSS+V_MO)/2, #knots, cruise speed, default is (Vmin+Vmax)/2
+                         flg=True #fixed landing gear 
                          ):
     R = cruise_range(mission_profile)
-    LD_max, LD = ag_LD_estimates(b,S_wet)
+    LD_max, LD = ag_LD_estimates(b=b,S_wet=S_wet,fixed_lg=flg)
     c_bhp,np = prop_cbhp(type=propeller_type, condition='cruise')
     c = prop_SFC(c_bhp,np,V)
 
@@ -185,10 +186,11 @@ def loiter_ff(mission_profile=['ferry','standard'], #ferry or standard
                          b=any, #span
                          S_wet=any, #wetted area
                          V=(MSS + V_MO/2)/2, #knots or nmi/h, cruise speed, default is (Vmin+Vmax/2)/2
-                         E=30#m loiter time
+                         E=30,#m loiter time
+                         flg=True #fixed landing gear 
                          ):
     R = cruise_range(mission_profile)
-    LD_max, LD = ag_LD_estimates(b,S_wet)
+    LD_max, LD = ag_LD_estimates(b=b,S_wet=S_wet,fixed_lg=flg)
     c_bhp,np = prop_cbhp(type=propeller_type, condition='loiter')
     c = prop_SFC(c_bhp,np,V)
     E = E/60 #convert to hours
@@ -222,19 +224,20 @@ def complete_ff(mission_profile=['ferry','standard'], #ferry or standard
                 b=any, #span
                 S_wet=any, #wetted area
                 V=(MSS+V_MO)/2, #knots, cruise speed, default is (Vmin+Vmax)/2
-                E=30#m loiter time
+                E=30,#m loiter time
+                flg=True #fixed landing gear
                 ):
     
     if mission_profile == 'ferry': #based on mission profile
         fuel_fract = segment_ff('takeoff') * segment_ff('climb') * \
-        cruise_ff(mission_profile=mission_profile, propeller_type=propeller_type,b=b, S_wet=S_wet, V=V) * \
-        loiter_ff(mission_profile=mission_profile, propeller_type=propeller_type,b=b, S_wet=S_wet, V=V, E=E) * \
+        cruise_ff(mission_profile=mission_profile, propeller_type=propeller_type,b=b, S_wet=S_wet, V=V,flg=flg) * \
+        loiter_ff(mission_profile=mission_profile, propeller_type=propeller_type,b=b, S_wet=S_wet, V=V, E=E,flg=flg) * \
         segment_ff('descent') * segment_ff('landing')
         
     elif mission_profile == 'standard': #based on mission profile
         fuel_fract = segment_ff('takeoff') * 2*segment_ff('climb') * \
-        cruise_ff(mission_profile, propeller_type,b, S_wet, V) * \
-        loiter_ff(mission_profile, propeller_type,b, S_wet, V, E) * \
+        cruise_ff(mission_profile=mission_profile, propeller_type=propeller_type,b=b, S_wet=S_wet, V=V,flg=flg) * \
+        loiter_ff(mission_profile=mission_profile, propeller_type=propeller_type,b=b, S_wet=S_wet, V=V, E=E,flg=flg) * \
         2*segment_ff('descent') * segment_ff('landing')
 
     fff = (1-fuel_fract)*trapped_fuel_factor #calculate for trapped fuel
@@ -253,17 +256,26 @@ def weight_estimation(mission_profile=['ferry','standard'], #ferry or standard
                 E=30, #m loiter time
                 A = 0.74, # From Raymer Table 3.1
                 C = -0.03, # From Raymer Table 3.1
-                W0 = 1e4 #lbs, initial empty weight
+                W0 = 1e4, #lbs, initial empty weight
+                flg=True,
+                composite=False
                 ):
     
     W0_history = []   # list of all W0 guesses for plot
     res = 1e-6        # relative convergence tolerance
     error = 2*res     # any value greater than the tolerance
-    fff = complete_ff(mission_profile,propeller_type,b,S_wet,V,E)
+    fff = complete_ff(mission_profile=mission_profile, propeller_type=propeller_type,b=b, S_wet=S_wet, V=V, E=E,flg=flg)
+
+    if composite == True:
+        composite_factor = composite_factor
+    elif composite == False:
+        composite_factor = 1
+    else:
+        print('Error')
 
     while error > res:
         W0_history.append(W0) 
-        empty_weight_fraction = A*W0**C #empty weight ratio, lbs/lbs
+        empty_weight_fraction = A*W0**C*composite_factor #empty weight ratio, lbs/lbs
         W0_new = (payload) / (1 - fff - empty_weight_fraction)
         error = abs(W0_new - W0) / abs(W0_new) #find resolution
         W0 = W0_new #lbs
@@ -288,8 +300,10 @@ def weight_estimation(mission_profile=['ferry','standard'], #ferry or standard
 
 #-------------------------------------------------------------------------------------------------------------------------#
 # Running the code
-weight_estimation('standard', #ferry or standard
+weight_estimation('standard', #ferry or standard mission profile
                 'fp', #fp, vp, or tp (fixed/variable pitch, or turboprop)
-                412/12, #span, ft
-                344/144 #wetted area, ft^2
+                465/12, #span, ft
+                30606/144, #wetted area, ft^2
+                flg=True, #Landing Gear: True (fixed) or False (retractable)
+                composite=False #Whether composites is used or not
                 )
