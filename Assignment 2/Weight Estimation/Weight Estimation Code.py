@@ -268,15 +268,15 @@ def weight_estimation(mission_profile=['ferry','standard'], #ferry or standard
     fff = complete_ff(mission_profile=mission_profile, propeller_type=propeller_type,b=b, S_wet=S_wet, V=V, E=E,flg=flg)
 
     if composite == True:
-        composite_factor = composite_factor
+        composite = composite_factor
     elif composite == False:
-        composite_factor = 1
+        composite = 1
     else:
         print('Error')
 
     while error > res:
         W0_history.append(W0) 
-        empty_weight_fraction = A*W0**C*composite_factor #empty weight ratio, lbs/lbs
+        empty_weight_fraction = A*W0**C*composite #empty weight ratio, lbs/lbs
         W0_new = (payload) / (1 - fff - empty_weight_fraction)
         error = abs(W0_new - W0) / abs(W0_new) #find resolution
         W0 = W0_new #lbs
@@ -303,8 +303,8 @@ def weight_estimation(mission_profile=['ferry','standard'], #ferry or standard
 # Running the code
 weight_estimation('standard', #ferry or standard mission profile
                 'fp', #fp, vp, or tp (fixed/variable pitch, or turboprop)
-                465/12, #span, ft
-                30606/144, #wetted area, ft^2
+                80, #span, ft
+                750, #wetted area, ft^2
                 flg=True, #Landing Gear: True (fixed) or False (retractable)
-                composite=False #Whether composites is used or not
+                composite=True #Whether composites is used or not
                 )
