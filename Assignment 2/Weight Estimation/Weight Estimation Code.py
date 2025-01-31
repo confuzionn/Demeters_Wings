@@ -438,7 +438,7 @@ def weight_estimation(mission_profile=['ferry','standard'], #ferry or standard
 # Running the code
 weight_estimation('ferry', #ferry or standard mission profile
                 'vp', #fp, vp, or tp (fixed/variable pitch, or turboprop)
-                90, #span, ft
+                75, #span, ft
                 550, #wetted area, ft^2
                 flg=True, #Landing Gear: True (fixed) or False (retractable)
                 composite=True, #Whether composites is used or not
