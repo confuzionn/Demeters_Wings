@@ -274,12 +274,13 @@ def weight_estimation(mission_profile=['ferry','standard'], #ferry or standard
                 A = 0.74, # From Raymer Table 3.1
                 C = -0.03, # From Raymer Table 3.1
                 W0 = 2e4, #lbs, initial empty weight
+                energy_density = 750, #Wh/kg
                 flg=True,
                 composite=False,
                 electric=False,
                 name=any
                 ):
-    
+    print(name)
     # print('LOADING: Weight estimation...')
     W0_history = []   # list of all W0 guesses for plot
     res = 1e-6        # relative convergence tolerance
@@ -299,8 +300,9 @@ def weight_estimation(mission_profile=['ferry','standard'], #ferry or standard
     # Source: Barrera, Thomas P., et al. "Next-generation aviation li-ion battery technologies—enabling electrified aircraft." ...
     #         The Electrochemical Society Interface 31.3 (2022): 69.
     # Units: W*h/kg * 3600s/h = Nm/kg --> *lbf/N * ft/m * kg/lb = lbf*ft/lb
-    battery_specific_energy = 500*3600*N2lbf*m2ft/kg2lb
+    battery_specific_energy = energy_density*3600*N2lbf*m2ft/kg2lb
     print('Battery Specific Energy =',battery_specific_energy,'lbf-ft/lb')
+    print('Battery Energy Density =',energy_density/kg2lb,'Wh/lb')
 
     # calculate the LD ratio for electric calculations
     LD_max, LD = ag_LD_estimates(b=b,S_wet=S_wet,fixed_lg=flg)
@@ -391,7 +393,7 @@ def weight_estimation(mission_profile=['ferry','standard'], #ferry or standard
             m_battery = (R/ft2nmi * W0) / (battery_efficiency*battery_specific_energy*LD) #lbs
             W0_history.append(W0) # add latest value to list                   
             empty_weight_fraction = (A*W0**C)*composite #empty weight ratio, lbs/lbs
-            # print('m bat',m_battery)
+            # print('E_constant',E_constant)
             W0_new = (payload) / (1 - empty_weight_fraction - ((m_battery) / W0)*E_constant)   # lbs
             error = abs(W0_new - W0) / abs(W0_new)
             # print(W0)
@@ -399,12 +401,12 @@ def weight_estimation(mission_profile=['ferry','standard'], #ferry or standard
 
             # error message
             if iter > 1e4:
-                print('ERROR, DID NOT CONVERGE')
+                print('ERROR: DID NOT CONVERGE')
                 W0 = 0
                 empty_weight_fraction = 0
                 error = res
             elif W0 < 1:
-                print('Battery Weight Fraction Exceeded Limit')
+                print('ERROR: BATTERY ENERGY DENSITY INSUFFICIENT')
                 W0 = 0
                 empty_weight_fraction = 0
                 error = res
@@ -441,5 +443,6 @@ weight_estimation('ferry', #ferry or standard mission profile
                 flg=True, #Landing Gear: True (fixed) or False (retractable)
                 composite=False, #Whether composites is used or not
                 electric=True, # Whether its electric or not
+                energy_density = 650, #Wh/kg, battery energy density
                 name='Crusty Dusty'
                 )
