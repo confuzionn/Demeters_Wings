@@ -274,7 +274,8 @@ def weight_estimation(mission_profile=['ferry','standard'], #ferry or standard
                 A = 0.74, # From Raymer Table 3.1
                 C = -0.03, # From Raymer Table 3.1
                 W0 = 2e4, #lbs, initial empty weight
-                energy_density = 750, #Wh/kg
+                energy_density = any, #Wh/kg
+                battery_efficiency = 0.7, # Battery efficiency from EAE130A_2025_WQ_Tutorial_Weight_Estimation.html
                 flg=True,
                 composite=False,
                 electric=False,
@@ -293,16 +294,15 @@ def weight_estimation(mission_profile=['ferry','standard'], #ferry or standard
     #find the range traveled in mission profile
     R = cruise_range(mission_profile=mission_profile) 
     
-    # Battery efficiency from EAE130A_2025_WQ_Tutorial_Weight_Estimation.html
-    battery_efficiency = 0.7
-
     # Battery specific energy for aviation
     # Source: Barrera, Thomas P., et al. "Next-generation aviation li-ion battery technologies—enabling electrified aircraft." ...
     #         The Electrochemical Society Interface 31.3 (2022): 69.
+
     # Units: W*h/kg * 3600s/h = Nm/kg --> *lbf/N * ft/m * kg/lb = lbf*ft/lb
     battery_specific_energy = energy_density*3600*N2lbf*m2ft/kg2lb
     print('Battery Specific Energy =',battery_specific_energy,'lbf-ft/lb')
     print('Battery Energy Density =',energy_density/kg2lb,'Wh/lb')
+    print('Battery Efficiency = ',battery_efficiency,'%')
 
     # calculate the LD ratio for electric calculations
     LD_max, LD = ag_LD_estimates(b=b,S_wet=S_wet,fixed_lg=flg)
@@ -437,12 +437,13 @@ def weight_estimation(mission_profile=['ferry','standard'], #ferry or standard
 #-------------------------------------------------------------------------------------------------------------------------#
 # Running the code
 weight_estimation('ferry', #ferry or standard mission profile
-                'fp', #fp, vp, or tp (fixed/variable pitch, or turboprop)
-                73.500003, #span, ft
-                526.87500, #wetted area, ft^2
+                'vp', #fp, vp, or tp (fixed/variable pitch, or turboprop)
+                90, #span, ft
+                550, #wetted area, ft^2
                 flg=True, #Landing Gear: True (fixed) or False (retractable)
-                composite=False, #Whether composites is used or not
+                composite=True, #Whether composites is used or not
                 electric=True, # Whether its electric or not
-                energy_density = 650, #Wh/kg, battery energy density
+                energy_density = 550, #Wh/kg, battery energy density
+                battery_efficiency = 0.85, #factor between 0 and 1
                 name='Crusty Dusty'
                 )
