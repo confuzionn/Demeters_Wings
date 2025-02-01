@@ -67,7 +67,7 @@ def operation_maintenance(t_b, CEF, MTOW, SHP_TO, W_A, W_f, W_b, R, RL, isElectr
 
     else:
         C_crew = (440 + 0.532 * (MTOW/1000) * (CEF) * (t_b))
-        C_battery = 200 * W_b * 550 * 2.20462 # (Price/kwH * battery weight * energy density * kg to lb)
+        C_battery = 1.05 * W_b * 2 * .550 # (Price/kwH * battery weight * energy density * kg to lb)
         C_airport = 1.5 * (MTOW/1000) * (CEF)
         C_navigation = 0.5 * (CEF) * (1.852*R)/t_b * np.sqrt((0.00045359237 * MTOW)/50)
         C_ML = 1.03 * (3 + (0.067 * W_A)/1000) * RL
@@ -76,7 +76,7 @@ def operation_maintenance(t_b, CEF, MTOW, SHP_TO, W_A, W_f, W_b, R, RL, isElectr
     
         U_annual = 1.5 * 10**3 * (3.4546 * t_b + 2.994 - (12.289 * t_b**2 - 5.6626 * t_b + 8.964)**0.5)
         C_insurance = ((0.02 * C_aircraft)/U_annual) * t_b
-        DOC = C_crew + C_airport + C_navigation + C_ML + C_MM + C_airframe_maintenance + C_EM + C_insurance + C_fuel
+        DOC = C_crew + C_airport + C_navigation + C_ML + C_MM + C_airframe_maintenance + C_insurance + C_battery
         C_registration = (0.001 + 10**-8 * MTOW) * DOC
         C_finance = 0.07 * DOC
         totalDOC = (DOC + C_registration + C_finance) / 25
@@ -85,13 +85,17 @@ def operation_maintenance(t_b, CEF, MTOW, SHP_TO, W_A, W_f, W_b, R, RL, isElectr
 
 # ------------------------------------------------------------------------------------------------------------------- #
 
-C_aircraft, C_engine, C_airframe, CEF = get_rough_aircraft_cost(MTOW = 5903, 
+MTOW = 5500
+W_e = 2984
+isElectric = False
+
+C_aircraft, C_engine, C_airframe, CEF = get_rough_aircraft_cost(MTOW = MTOW, 
                                                                 SHP_TO = 1000,
-                                                                isElectric=True,
+                                                                isElectric=isElectric,
                                                                 N_engine=1)
 print('Rough Estimated Cost: ${}'.format(C_aircraft))
 
-RDTE, flyaway = RAND_DAPCAP_IV(W_e = 5000,
+RDTE, flyaway = RAND_DAPCAP_IV(W_e = 2984,
                                V = 250,
                                Q = 1,
                                C_aircraft=C_aircraft,
@@ -101,12 +105,12 @@ print('Estimated 10% Profit Flyaway: ${}'.format(flyaway))
 
 totalDOC = operation_maintenance(t_b = 2,
                                 CEF = CEF, 
-                                MTOW = 5903, 
+                                MTOW = MTOW, 
                                 SHP_TO = 1000,
-                                W_A = 7000,
-                                W_f = 2000,
-                                W_b = 0,
+                                W_A = W_e,
+                                W_f = 330,
+                                W_b = 2943,
                                 R = 600,
                                 RL = 100,
-                                isElectric=False)
+                                isElectric=isElectric)
 print('Estimated DOC: ${}/cargo ton - nmi'.format(totalDOC))
