@@ -14,12 +14,12 @@ def get_rough_aircraft_cost(MTOW, SHP_TO):
     C_airframe = C_aircraft - C_engines
     return C_aircraft, C_engines, C_airframe, CEF
 
-C_aircraft, C_engine, C_airframe, CEF = get_rough_aircraft_cost(15000, 1300)
+C_aircraft, C_engine, C_airframe, CEF = get_rough_aircraft_cost(10000, 1000)
 print('Rough Estimated Cost: ${}'.format(C_aircraft))
 
 # ------------------------- RAND DAPCA IV Model for RDT&E and Production (10% Flyaway) Costs ------------------------- #
 
-def RAND_DAPCAP_IV(W_e, V, Q):
+def RAND_DAPCAP_IV(W_e, V, Q, C_aircraft, C_avionics):
     HE = 4.86 * (W_e**0.777) * (V**0.894) * (Q**0.163)      # Engineering hours
     HT = 5.99 * (W_e**0.777) * (V**0.696) * (Q**0.263)      # Tooling hours
     HM = 7.37 * (W_e**0.82) * (V**0.0484) * (Q**0.641)      # Manufacturing hours
@@ -36,16 +36,18 @@ def RAND_DAPCAP_IV(W_e, V, Q):
     RQ = 2.60 * y - 5112  # Quaility rate
     RM = 2.316 * y - 4552 # Manufacturing rate
 
-    RDTE = (HE * RE) + (HT * RT) + (HM * RM) + (HQ * RQ) + CD + CF + CM
-    #flyaway = (C_eng * N_eng) + C_avionics
-    return RDTE
-RDTE_flyaway = RAND_DAPCAP_IV(10000, 250, 10)
-print(RDTE_flyaway)
+    RDTE = (HE * RE) + (HT * RT) + (HM * RM) + (HQ * RQ) + CD + CF + CM     # Total RDT&E and produciton costs
+    flyaway = 1.1 * (C_aircraft + C_avionics)                    # Total flyaway with 10% profit margin
+    return RDTE, flyaway
+RDTE, flyaway = RAND_DAPCAP_IV(10000, 250, 10, C_aircraft, 40000)
+print(RDTE)
+print('Estimated 10% Profit Flyaway: ${}'.format(flyaway))
 
 # ------------------------- Operation and Maintenance Costs (DOC) ------------------------- #
 
-def operation_maintenance(t_b, CEF, MTOW, SHP_TO, W_A, R, RL):
+def operation_maintenance(t_b, CEF, MTOW, SHP_TO, W_A, W_f, R, RL):
     C_crew = (440 + 0.532 * (MTOW/1000) * (CEF) * (t_b))
+    C_fuel = 1.02 * W_f * 6.94 / 6.7 
     C_airport = 1.5 * (MTOW/1000) * (CEF)
     C_navigation = 0.5 * (CEF) * (1.852*R)/t_b * np.sqrt((0.00045359237 * MTOW)/50)
     C_ML = 1.03 * (3 + (0.067 * W_A)/1000) * RL
@@ -55,12 +57,19 @@ def operation_maintenance(t_b, CEF, MTOW, SHP_TO, W_A, R, RL):
     
     U_annual = 1.5 * 10**3 * (3.4546 * t_b + 2.994 - (12.289 * t_b**2 - 5.6626 * t_b + 8.964)**0.5)
     C_insurance = ((0.02 * C_aircraft)/U_annual) * t_b
-    DOC = C_crew + C_airport + C_navigation + C_ML + C_MM + C_airframe_maintenance + C_EM + C_insurance
+    DOC = C_crew + C_airport + C_navigation + C_ML + C_MM + C_airframe_maintenance + C_EM + C_insurance + C_fuel
     C_registration = (0.001 + 10**-8 * MTOW) * DOC
     C_finance = 0.07 * DOC
     totalDOC = DOC + C_registration + C_finance
 
     return totalDOC
 
-totalDOC = operation_maintenance(4, CEF, 17000, 1300, 7000, 600, 100)
+totalDOC = operation_maintenance(t_b = 2,
+                                CEF = CEF, 
+                                MTOW = 17000, 
+                                SHP_TO = 1000,
+                                W_A = 7000,
+                                W_f = 2000,
+                                R = 600,
+                                RL = 100)
 print(totalDOC)
