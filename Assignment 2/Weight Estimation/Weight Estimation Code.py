@@ -438,12 +438,12 @@ def weight_estimation(mission_profile=['ferry','standard'], #ferry or standard
 # Running the code
 weight_estimation('ferry', #ferry or standard mission profile
                 'vp', #fp, vp, or tp (fixed/variable pitch, or turboprop)
-                90, #span, ft
-                550, #wetted area, ft^2
+                73.5, #span, ft
+                534.37, #wetted area, ft^2
                 flg=True, #Landing Gear: True (fixed) or False (retractable)
                 composite=True, #Whether composites is used or not
                 electric=True, # Whether its electric or not
-                energy_density = 550, #Wh/kg, battery energy density
-                battery_efficiency = 0.85, #factor between 0 and 1
-                name='Crusty Dusty'
+                energy_density = 650, #Wh/kg, battery energy density
+                battery_efficiency = 0.8, #factor between 0 and 1
+                name='Concept 3'
                 )
