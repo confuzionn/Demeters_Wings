@@ -30,6 +30,9 @@ Sydney Makar
 Chris Santos
 [Chris Santos](clsantos@ucdavis.edu)
 
+Alexander Solakhyan
+[Alex Solakhyan](asolakhyan@ucdavis.edu)
+
 ## Version History
 
 
