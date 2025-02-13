@@ -8,13 +8,14 @@ e = 0.7558  # Oswald's Efficiency Factor
 Cd0 = 0.01849  # Zero Lift Drag Coefficient
 AR = 10.03268  # Aspect Ratio
 prop_eff = 0.8  # Propeller Efficiency
-CL_clean = 1.3  # Lift Coefficient (Clean Configuration 1)
 
 max_alt = 25000  # Maximum Altitude (ft)
 rho = 0.0343  # Air Density at 25,000 ft (lb/ft^3)
 
 # Induced Drag Factor
 k = 1 / (np.pi * e * AR)
+
+CL = np.sqrt(Cd0 / k)
 
 # Minimum Thrust-to-Weight Ratio
 T_W_min = 2 * np.sqrt(k * Cd0)
@@ -26,8 +27,11 @@ W_S_vals = np.linspace(0.1, 150, 100)
 abs_ceiling_vals = [T_W_min] * 100
 
 # Velocity and W/P Calculations for CL = 1.3
-V_1 = np.sqrt((2 * W) / (rho * CL_clean))
-W_P = (T_W_min ** (-1)) * prop_eff / V_1
+V = np.sqrt((2 * W) / (rho * CL))
+
+print(V)
+W_P = (T_W_min ** (-1)) * prop_eff / V
+print(W_P)
 W_P_vals = [W_P] * 100
 
 # Print Results
@@ -50,7 +54,7 @@ plt.show()
 
 # Plot 2: Weight-to-Power Ratio (W/P vs W/S)
 plt.figure(figsize=(8, 6))
-plt.plot(W_S_vals, W_P_vals, label="W/P (CL = 1.3)", color='r', linestyle='--', alpha=0.7)
+plt.plot(W_S_vals, W_P_vals, label="W/P (CL = 0.66)", color='r', linestyle='--', alpha=0.7)
 
 plt.xlim(0, 150)
 plt.ylim(0, 0.1)  # Adjust y-axis limit dynamically
