@@ -45,7 +45,7 @@ def oswald_efficiency(AR, sweep):
     e_straight = 1.78 * (1 - 0.045 * AR ** 0.68) - 0.64
     e_swept = 4.61 * (1 - 0.045 * AR ** 0.68) * (np.cos(sweep_rad) ** 0.15) - 3.1
 
-    e = e_straight
+    e = (e_straight + e_swept) / 2
     print(f"Oswald's Efficiency Factor (e) for AR = {AR}: {e:.4f}")
 
     return e
@@ -56,10 +56,16 @@ def Cd_Cl_Curve(Cd0, e, AR):
     e_landing = e - .1
 
     Cd0_clean = Cd0
-    Cd0_takeoff = Cd0 + 0.015
+    Cd0_takeoff = Cd0 + 0.02
     Cd0_takeoff_gear = Cd0_takeoff + 0.02
-    Cd0_landing = Cd0 + 0.065
+    Cd0_landing = Cd0 + 0.07
     Cd0_landing_gear = Cd0_landing + 0.02
+
+    print(1 / (np.pi * e_clean * AR))
+    print(1 / (np.pi * e_takeoff * AR))
+    print(1 / (np.pi * e_landing * AR))
+
+
 
     #We used a Clmax of 1.3 for cruise, 1.6 for takeoff, and 1.9 for landing
     CL_cruise = np.linspace(-1.3, 1.3, 100)
@@ -98,14 +104,14 @@ def Cd_Cl_Curve(Cd0, e, AR):
 
     plt.xlabel("Drag Coefficient (Cd)")
     plt.ylabel("Lift Coefficient (CL)")
-    plt.title("Drag Coefficient vs Lift Coefficient for Different Configurations")
+    plt.title("Drag Polar Curve for Different Configurations")
     plt.legend()
     plt.show()
 
 
 WTO = 16856  # lbs
-S = 534.375  # ft^2
-AR = 10.03268
+S = 654.375  # ft^2
+AR = 8.2556
 sweep = 15 # Degrees
 
 Cd0 = getZeroLiftDragCoef(WTO, S)
