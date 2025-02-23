@@ -271,8 +271,8 @@ def weight_estimation(mission_profile=['ferry','standard'], #ferry or standard
                 S_wet=any, #wetted area
                 V=(MSS+V_MO)/2, #knots, cruise speed, default is (Vmin+Vmax)/2
                 E=30, #m loiter time
-                A = 0.74, # From Raymer Table 3.1
-                C = -0.03, # From Raymer Table 3.1
+                A = 0.74, # From Raymer Table 3.1 fuel
+                C = -0.03, # From Raymer Table 3.1 fuel
                 W0 = 2e4, #lbs, initial empty weight
                 energy_density = any, #Wh/kg
                 battery_efficiency = 0.7, # Battery efficiency from EAE130A_2025_WQ_Tutorial_Weight_Estimation.html
@@ -281,6 +281,7 @@ def weight_estimation(mission_profile=['ferry','standard'], #ferry or standard
                 electric=False,
                 name=any
                 ):
+    print('|-----------------------------------------------------------------------------------------------|')
     print(name)
     # print('LOADING: Weight estimation...')
     W0_history = []   # list of all W0 guesses for plot
@@ -343,6 +344,7 @@ def weight_estimation(mission_profile=['ferry','standard'], #ferry or standard
             
         W0_history = np.array(W0_history)  # convert list to array
         We = empty_weight_fraction*W0
+
     else:
         while error > res:
             iter += 1
@@ -420,8 +422,10 @@ def weight_estimation(mission_profile=['ferry','standard'], #ferry or standard
         print('Battery Weight =',m_battery,'lbs')
         # print('R =',R,'nmi')
 
+
     print('Gross Weight =',W0,'lbs')
     print('Empty Weight =',We,'lbs')
+    print('|-----------------------------------------------------------------------------------------------|')
 
 
     # Plot Convergence
@@ -434,9 +438,193 @@ def weight_estimation(mission_profile=['ferry','standard'], #ferry or standard
     plt.legend(loc='best')
     plt.show()
 
+
+def energy_estimation(mission_profile=['ferry','standard'], #ferry or standard
+                propeller_type=['fp','vp','tp'], #fp, vp, or tp (fixed/variable pitch, or turboprop)
+                b=any, #span
+                S_wet=any, #wetted area
+                V=(MSS+V_MO)/2, #knots, cruise speed, default is (Vmin+Vmax)/2
+                E=30, #m loiter time
+                A = 0.74, # From Raymer Table 3.1
+                C = -0.03, # From Raymer Table 3.1
+                W0 = 2e4, #lbs, initial empty weight
+                energy_density = 600, #Wh/kg
+                battery_efficiency = 0.85, # Battery efficiency from EAE130A_2025_WQ_Tutorial_Weight_Estimation.html
+                flg=True,
+                composite=False,
+                electric=False,
+                name=any
+                ):
+    print('|-----------------------------------------------------------------------------------------------|')
+    print(name)
+    # print('LOADING: Weight estimation...')
+    W0_history = []   # list of all W0 guesses for plot
+    res = 1e-6        # relative convergence tolerance
+    error = 2*res     # any value greater than the tolerance
+    
+    #calculate final fuel fraction
+    fff = complete_ff(mission_profile=mission_profile, propeller_type=propeller_type,b=b, S_wet=S_wet, V=V, E=E,flg=flg)
+    print('Final fuel fraction',fff)
+
+    #find the range traveled in mission profile
+    R = cruise_range(mission_profile=mission_profile) 
+    
+    # Battery specific energy for aviation
+    # Source: Barrera, Thomas P., et al. "Next-generation aviation li-ion battery technologies—enabling electrified aircraft." ...
+    #         The Electrochemical Society Interface 31.3 (2022): 69.
+
+    # Units: W*h/kg * 3600s/h = Nm/kg --> *lbf/N * ft/m * kg/lb = lbf*ft/lb
+    battery_specific_energy = energy_density*3600*N2lbf*m2ft/kg2lb
+    print('Battery Specific Energy =',battery_specific_energy,'lbf-ft/lb')
+    print('Battery Energy Density =',energy_density/kg2lb,'Wh/lb')
+    print('Battery Efficiency = ',battery_efficiency,'%')
+
+    # calculate the LD ratio for electric calculations
+    LD_max, LD = ag_LD_estimates(b=b,S_wet=S_wet,fixed_lg=flg)
+    AR_wet = b**2/S_wet
+
+    print('Wetted Aspect Ratio =',AR_wet)
+    print('L/D =',LD)
+
+    # if there are composites present, the final weight will be lighter
+    if composite == True:
+        composite = composite_factor
+    elif composite == False:
+        composite = 1
+    else:
+        print('Error')
+    iter = 0
+    if electric == False:
+        fff = fff*trapped_fuel_factor
+        while error > res:
+            iter += 1
+            W0_history.append(W0) # add latest value to list
+            empty_weight_fraction = A*W0**C*composite #empty weight ratio, lbs/lbs
+
+            # Since the fuel fraction is greater than 1-We/W0, that means I have to consider part of the fuel as the payload
+            # converting the fuel into weight, we can then add that to the payload weight
+            Wf = fff*W0
+            
+            W0_new = (payload) / (1 - fff - empty_weight_fraction)
+            error = abs(W0_new - W0) / abs(W0_new) #find resolution
+            W0 = W0_new #lbs
+
+            # error message
+            if iter > 1e4:
+                print('ERROR, DID NOT CONVERGE')
+                W0 = 0
+                empty_weight_fraction = 0
+                error = res
+            
+        W0_history = np.array(W0_history)  # convert list to array
+        We = empty_weight_fraction*W0
+        print('Final Weight =',W0,'lbs')
+        print('|-----------------------------------------------------------------------------------------------|')
+
+        return Wf, W0, We
+
+    else:
+        while error > res:
+            iter += 1
+            W_f = fff*W0
+            
+            if mission_profile == 'standard':
+                Wf_cruise = W_f*cruise_ff(mission_profile='standard', propeller_type=propeller_type,b=b, S_wet=S_wet, V=V,flg=flg)
+
+                # Calculate the weights for the different mission segments
+                W1 = segment_ff('takeoff')*W0
+                W2 = segment_ff('climb')*W1
+                W3 = segment_ff('descent')*W2
+                W4 = segment_ff('climb')*W3
+                W5 = segment_ff('descent')*W4
+                W6 = W5*loiter_ff(mission_profile=mission_profile, propeller_type=propeller_type,b=b, S_wet=S_wet, V=V, E=E,flg=flg)
+
+                # Use weights from segments to augment the battery capacity
+                E01 = (1-segment_ff('takeoff'))*(W0/Wf_cruise)
+                E12 = (1-segment_ff('climb'))*(W1/Wf_cruise)
+                E23 = (1-segment_ff('descent'))*(W2/Wf_cruise)
+                E34 = (1-segment_ff('climb'))*(W3/Wf_cruise)
+                E45 = (1-segment_ff('descent'))*(W4/Wf_cruise)
+                E56 = (1-loiter_ff(mission_profile=mission_profile, propeller_type=propeller_type,b=b, S_wet=S_wet, V=V, E=E,flg=flg))*(W5/Wf_cruise)
+                E67 = (1-segment_ff('landing'))*(W6/Wf_cruise)
+
+                # Use the battery capcity to find a constant to substitute the fuel fraction
+                E_constant = (1+E01+E12+E23+E34+E45+E56+E67)
+
+            else:
+                Wf_cruise = W_f*cruise_ff(mission_profile='ferry', propeller_type=propeller_type,b=b, S_wet=S_wet, V=V,flg=flg)
+                # Calculate the weights for the different mission segments
+                W1 = segment_ff('takeoff')*W0
+                W2 = segment_ff('climb')*W1
+                W3 = segment_ff('descent')*W2
+                W4 = W3*loiter_ff(mission_profile=mission_profile, propeller_type=propeller_type,b=b, S_wet=S_wet, V=V, E=E,flg=flg)
+
+                # Use weights from segments to augment the battery capacity
+                E01 = (1-segment_ff('takeoff'))*(W0/Wf_cruise)
+                E12 = (1-segment_ff('climb'))*(W1/Wf_cruise)
+                E23 = (1-segment_ff('descent'))*(W2/Wf_cruise)
+                E34 = (1-loiter_ff(mission_profile=mission_profile, propeller_type=propeller_type,b=b, S_wet=S_wet, V=V, E=E,flg=flg))*(W3/Wf_cruise)
+                E45 = (1-segment_ff('landing'))*(W4/Wf_cruise)
+
+                # Use the battery capcity to find a constant to substitute the fuel fraction
+                E_constant = (1+E01+E12+E23+E34+E45)
+
+            #Units: lb = ft * lbf * lb/lbf-ft
+            m_battery = (R/ft2nmi * W0) / (battery_efficiency*battery_specific_energy*LD) #lbs
+            W0_history.append(W0) # add latest value to list                   
+            empty_weight_fraction = (A*W0**C)*composite #empty weight ratio, lbs/lbs
+            # print('E_constant',E_constant)
+            W0_new = (payload) / (1 - empty_weight_fraction - ((m_battery) / W0)*E_constant)   # lbs
+            error = abs(W0_new - W0) / abs(W0_new)
+            # print(W0)
+            W0 = W0_new #lbs 
+
+            # error message
+            if iter > 1e4:
+                print('ERROR: DID NOT CONVERGE')
+                W0 = 0
+                empty_weight_fraction = 0
+                error = res
+            elif W0 < 1:
+                print('ERROR: BATTERY ENERGY DENSITY INSUFFICIENT')
+                W0 = 0
+                empty_weight_fraction = 0
+                error = res
+
+        W0_history = np.array(W0_history)  # convert list to array
+        We = empty_weight_fraction*W0
+        
+        W_elec = W0 - payload - We
+
+        print('Battery Weight =',m_battery,'lbs')
+        print('Final Weight =',W0,'lbs')
+        print('|-----------------------------------------------------------------------------------------------|')
+        # print('R =',R,'nmi')
+
+        return m_battery, W0, We
+
 #-------------------------------------------------------------------------------------------------------------------------#
 # Running the code
-weight_estimation('ferry', #ferry or standard mission profile
+# weight_estimation('ferry', #ferry or standard mission profile
+#                 'vp', #fp, vp, or tp (fixed/variable pitch, or turboprop)
+#                 73.5, #span, ft
+#                 534.37, #wetted area, ft^2
+#                 flg=True, #Landing Gear: True (fixed) or False (retractable)
+#                 composite=True, #Whether composites is used or not
+#                 electric=True, # Whether its electric or not
+#                 energy_density = 550, #Wh/kg, battery energy density
+#                 battery_efficiency = 0.85, #factor between 0 and 1
+#                 A = 0.459, # From electric aircraft data
+#                 C = -0.000268, # From electric aircraft data
+#                 name='Fully Electric'
+#                 )
+
+def hybrid_estimation(hybrid_ratio= 0.5 # 1 = 100% electric
+                      ):
+    
+    
+
+    m_bat, WO_e, WE_e = energy_estimation('ferry', #ferry or standard mission profile
                 'vp', #fp, vp, or tp (fixed/variable pitch, or turboprop)
                 73.5, #span, ft
                 534.37, #wetted area, ft^2
@@ -445,5 +633,34 @@ weight_estimation('ferry', #ferry or standard mission profile
                 electric=True, # Whether its electric or not
                 energy_density = 650, #Wh/kg, battery energy density
                 battery_efficiency = 0.8, #factor between 0 and 1
-                name='Concept 3'
+                A = 0.459, # From electric aircraft data
+                C = -0.000268, # From electric aircraft data
+                name='Electric'
                 )
+    
+    m_fuel, WO_f, WE_f = energy_estimation('ferry', #ferry or standard mission profile
+                'vp', #fp, vp, or tp (fixed/variable pitch, or turboprop)
+                73.5, #span, ft
+                534.37, #wetted area, ft^2
+                flg=True, #Landing Gear: True (fixed) or False (retractable)
+                composite=True, #Whether composites is used or not
+                electric=False,
+                name='Fuel'
+                )
+    
+    # averaging the empty weight between two energy modes
+    WE = hybrid_ratio*WE_e + (1-hybrid_ratio)*WE_f
+    Energy_weight = hybrid_ratio*m_bat + (1-hybrid_ratio)*m_fuel
+    W0 = WE + Energy_weight + payload
+
+    print('|-----------------------------------------------------------------------------------------------|')
+    print('Hybrid')
+    print('Hybrid Fraction = {}% Electric'.format(hybrid_ratio*100))
+    print('Empty Weight =',WE,'lbs')
+    print('Battery Weight =',hybrid_ratio*m_bat,'lbs')
+    print('Fuel Weight =',(1-hybrid_ratio)*m_fuel,'lbs')
+    print('Total Weight =',W0,'lbs')
+    print('|-----------------------------------------------------------------------------------------------|')
+
+hybrid_estimation(hybrid_ratio= 0.5 # 1 = 100% electric
+                      )
