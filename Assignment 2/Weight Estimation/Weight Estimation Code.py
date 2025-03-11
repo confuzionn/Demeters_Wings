@@ -626,8 +626,8 @@ def hybrid_estimation(hybrid_ratio= 0.5 # 1 = 100% electric
 
     m_bat, WO_e, WE_e = energy_estimation('ferry', #ferry or standard mission profile
                 'vp', #fp, vp, or tp (fixed/variable pitch, or turboprop)
-                73.5, #span, ft
-                534.37, #wetted area, ft^2
+                52, #span, ft
+                312, #wetted area, ft^2
                 flg=True, #Landing Gear: True (fixed) or False (retractable)
                 composite=True, #Whether composites is used or not
                 electric=True, # Whether its electric or not
@@ -640,8 +640,8 @@ def hybrid_estimation(hybrid_ratio= 0.5 # 1 = 100% electric
     
     m_fuel, WO_f, WE_f = energy_estimation('ferry', #ferry or standard mission profile
                 'vp', #fp, vp, or tp (fixed/variable pitch, or turboprop)
-                73.5, #span, ft
-                534.37, #wetted area, ft^2
+                52, #span, ft
+                312, #wetted area, ft^2
                 flg=True, #Landing Gear: True (fixed) or False (retractable)
                 composite=True, #Whether composites is used or not
                 electric=False,
