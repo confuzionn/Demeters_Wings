@@ -16,8 +16,8 @@ CL_max = np.array([1.3, 1.5, 1.7, 1.9]) # Variable range of CL_max values based 
 
 # Calculate wing loading based on stall speed
 WS_stall = 0.5 * rho_cruise * v_stall**2 * CL_max # lb/ft^2 
-print(WS_stall)
 
+'''
 # Plot W/S vs W/P
 plt.figure()
 for i, ws in enumerate(WS_stall):
@@ -28,8 +28,7 @@ plt.ylabel("W/P $(lbf/hp)$")
 plt.xlim(0, max(WS_stall)+5)
 plt.ylim(0, 0.5)
 plt.legend(loc='best')
-plt.show()
-
+'''
 # ----------------------------------------------------------- Takeoff ----------------------------------------------------------- #
 
 S_TO_G = 1000 # ft
@@ -44,7 +43,7 @@ print('TOP23: {} '.format(TOP_23))
 W_S = np.linspace(1,xlim,N) # Create W/S array
 k_s = 1.2 # Takeoff speed factor
 v_TO = k_s * v_stall # Takeoff velocity
-
+'''
 # Plotting W/P vs W/S
 plt.figure()
 for CL_max in CL_max:
@@ -56,8 +55,7 @@ plt.ylabel("W/P $(lbf/hp)$")
 plt.xlim(0,60)
 plt.ylim(0,100)
 plt.legend(loc='best')
-plt.show()
-
+'''
 # ----------------------------------------------------------- Landing ----------------------------------------------------------- #
 
 #Balanced field length
@@ -77,7 +75,7 @@ for CL_max in CL_max_values:
 #Calculate W/S
 S_land = BFL *  0.6
 W_S =  (rho_takeoff/rho_SL * CL_max_values) / (80*0.65) * (S_land - S_a)
-
+'''
 # Plot W/S vs W/P
 plt.figure()
 for i, ws in enumerate(W_S):
@@ -88,11 +86,9 @@ plt.ylabel("W/P $(lbf/hp)$")
 plt.xlim(0, max(W_S)+5)
 plt.ylim(0, 0.5)
 plt.legend(loc='best')
-plt.show()
-
+'''
 #TW calculation
 TW_landing = np.tile(W_S, 50)
-print(f"TW_landing: {TW_landing}")
 
 # ----------------------------------------------------------- Climb ----------------------------------------------------------- #
 
@@ -142,7 +138,7 @@ case3_PW = []
 
 for i in WS:
     case3_PW.append((PW_vs_WS(G=G_balk,CD=CD0,CL=1.9,WS=i,rho=rho_SL)*((W_TO-2000)/W_TO)**(3/2))**(-1))
-
+'''
 plt.figure()
 plt.plot(WS,case1_PW,label="Level 1, CL=1.9, AEO")
 plt.plot(WS,case2_PW,label="Level 1, CL=1.3, OEI")
@@ -151,8 +147,7 @@ plt.xlabel('W/S')
 plt.ylabel('W/P')
 plt.legend()
 plt.title('W/P - W/S for Climb')
-plt.show()
-
+'''
 # ----------------------------------------------------------- Cruise ----------------------------------------------------------- #
 
 def cruise_power_sizing(v_cruise, rho_cruise, eta_prop, CD0, k, xlim, N):
@@ -193,7 +188,7 @@ WP_cruise, WS = cruise_power_sizing(v_cruise=150,
                                 xlim=xlim,
                                 N=N
 )
-
+'''
 # Plot
 plt.figure()
 plt.plot(WS,WP_cruise,label="$v_{cruise}$ = 150 kts")
@@ -202,8 +197,7 @@ plt.ylabel('W/P $(lbf/hp)$')
 plt.title('W/P - W/S for Cruise @ 8000 ft')
 plt.xlim(0,60)
 plt.legend()
-plt.show()
-
+'''
 # ----------------------------------------------------------- Ceiling ----------------------------------------------------------- #
 
 # Constants
@@ -238,10 +232,8 @@ V = 1.68781 * 110  # ft/s
 
 W_P = V * prop_eff / (550 * T_W_min)
 W_P_vals = [W_P] * 100
-# Print Results
-print(f"Induced Drag Factor: k = {k:.5f}")
-print(f"Minimum Thrust over Weight: T/W = {T_W_min:.4f}")
 
+'''
 plt.figure(figsize=(8, 6))
 plt.plot(W_S_vals, W_P_vals, label="W/P (CL = 0.66)", color='r', linestyle='--', alpha=0.7)
 
@@ -253,8 +245,7 @@ plt.ylabel("W/P (lb/hp)")
 plt.title("W/P - W/S for Ceiling")
 plt.legend()
 plt.grid(True)
-plt.show()
-
+'''
 # ----------------------------------------------------------- Maneuver ----------------------------------------------------------- #
 
 # Given parameters
@@ -270,13 +261,13 @@ v_MN = 1.68781 * 110  # ft/s
 q_MN = 0.5 * rho_SL * v_MN**2
 
 R = 1 / (np.sqrt(n**2 - 1) * (32.17 / (v_MN**2)))
-print(R)
 
 TW_MN = (q_MN * CD_0) / WS + ((n/q_MN)**2 * WS * k)
 
 # Compute W/P using velocity, prop efficiency, and HP conversion
 WP_MN = (v_MN * eta_p) / (550 * TW_MN) # lbf/hp
 
+'''
 # Plot
 plt.figure(figsize=(8, 6))
 plt.plot(WS, WP_MN, label="Maneuver Constraint", color='b')
@@ -286,7 +277,7 @@ plt.ylabel("W/P $(lb/hp)$")
 plt.title("W/P - W/S for Maneuver")
 plt.legend()
 plt.grid()
-plt.show()
+'''
 
 # ----------------------------------------------------------- Total Constraint ----------------------------------------------------------- #
 CL_max_19 = 1.9 # Setting CL_max = 1.9 for stall, takeoff, and landing
@@ -305,15 +296,15 @@ print('Design Parameters: {} $lbf/ft^2$, {} $lbf/hp$'.format(intersection_ws, in
 plt.figure(figsize=(8,4),facecolor='#e3dfd7ff')
 ax = plt.gca()  #
 ax.set_facecolor("#e3dfd7ff")
-plt.axvline(x=WS_stall, label='Stall', color='#284e3fff', linestyle='-', linewidth=2)
-plt.plot(WS, WP_TO_19, label='Takeoff field length', linestyle='--', linewidth=2, color='#284e3fff')
+plt.axvline(x=WS_stall, label='Stall', color='k',  linestyle='-', linewidth=2)
+plt.plot(WS, WP_TO_19, label='Takeoff field length', linestyle='--', linewidth=2)
 plt.axvline(x=WS_landing, label='Landing field length', color='#284e3fff', linestyle='-', linewidth=2)
-plt.plot(WS,case1_PW,label="Level 1 Climb, CL=1.9, AEO", linestyle='-.', color='#284e3fff')
-plt.plot(WS,case2_PW,label="Level 1 Climb, CL=1.3, OEI", linestyle='-.',color='#284e3fff')
-plt.plot(WS,case3_PW,label="Balked Climb, CL=1.9, AEO", linestyle='-.', color='#284e3fff')
-plt.plot(WS,WP_cruise, label='Cruise', linestyle=':', linewidth=2, color='#284e3fff')
-plt.plot(WS, WP_MN, label="Maneuver", linestyle='-', linewidth=2, color='#284e3fff')
-plt.scatter(intersection_ws, intersection_wp, color='#cc0000ff', zorder=5, label='Design Point')
+plt.plot(WS,case1_PW,label="Level 1 Climb, CL=1.9, AEO", linestyle='-.')
+plt.plot(WS,case2_PW,label="Level 1 Climb, CL=1.3, OEI", linestyle='-.')
+plt.plot(WS,case3_PW,label="Balked Climb, CL=1.9, AEO", linestyle='-.')
+plt.plot(WS,WP_cruise, label='Cruise', linestyle=':', linewidth=2)
+plt.plot(WS, WP_MN, label="Maneuver", linestyle='-', linewidth=2)
+plt.scatter(intersection_ws, intersection_wp, color='red', zorder=5, label='Design Point')
 plt.fill_between(WS, 0, np.minimum(WP_MN, WP_TO_19), where=(WS <= WS_stall), color='#356854ff', alpha=0.5, label="Feasible Region")
 plt.title('W/P - W/S', color='#301900ff')
 plt.xlabel("W/S $(lb/ft^2)$", color='#301900ff')
@@ -321,7 +312,226 @@ plt.ylabel("W/P $(lb/hp)$", color='#301900ff')
 plt.xlim(0,100)
 plt.ylim(0,100)
 plt.grid(True)
-# plt.legend(loc='upper right')
+legend = ax.legend(loc='upper right')
+# Put a nicer background color on the legend.
+legend.get_frame().set_facecolor('#e3dfd7ff')
+
+
+# ----------------------------------------------------------- POWER BALANCE EQUATIONS ----------------------------------------------------------- #
+
+from sympy import symbols, Eq, solve
+
+eff_GT = 0.4
+eff_PM = 0.99
+eff_EM = 0.96
+eff_P = 0.85
+eff_GB = 0.96
+
+def get_Powers(shaft_ratio, supplied_ratio, P_p):
+    # Define symbols for the unknowns
+    P_gt, P_f, P_s1, P_gb, P_p1, P_e1, P_e2, P_s2, P_p2, P_bat = symbols(
+        'P_gt P_f P_s1 P_gb P_p1 P_e1 P_e2 P_s2 P_p2 P_bat')
+
+    # Define the equations
+    eq1 = Eq(P_gt, eff_GT * P_f)
+    eq2 = Eq(P_s1 + P_gb, eff_GB * P_gt)
+    eq3 = Eq(P_p1, eff_P * P_s1)
+    eq4 = Eq(P_e1, eff_EM * P_gb)
+    eq5 = Eq(P_e2, eff_PM * (P_e1 + P_bat))
+    eq6 = Eq(P_s2, eff_EM * P_e2)
+    eq7 = Eq(P_p2, eff_P * P_s2)
+    eq8 = Eq(shaft_ratio, P_s2 / (P_s1 + P_s2))
+    eq9 = Eq(supplied_ratio, P_bat / (P_bat + P_f))
+    eq10 = Eq(P_p, P_p2 + P_p1)
+
+    # Solve the system of equations
+    solution = solve([eq1, eq2, eq3, eq4, eq5, eq6, eq7, eq8, eq9, eq10],
+                     (P_gt, P_f, P_s1, P_gb, P_p1, P_e1, P_e2, P_s2, P_p2, P_bat))
+
+    # Evaluate numerical values
+    numerical_solution = {var: value.evalf() for var, value in solution.items()}
+
+    return numerical_solution
+
+
+# ----------------------------------------------------------- Electric Battery Power Loading ----------------------------------------------------------- #
+
+WP_TO_bat = []
+WP_MN_bat = []
+
+for P_p in 1 / WP_TO_19:
+    sol = get_Powers(1, 1, P_p)
+    WP_TO_bat.append(1 / sol[symbols('P_bat')])
+
+for P_p in 1 / WP_MN:
+    sol = get_Powers(1, 1, P_p)
+    WP_MN_bat.append(1 / sol[symbols('P_bat')])
+
+# Ensure WP_MN_bat and WP_TO_bat are NumPy arrays
+WP_TO_bat = np.array([float(val.evalf()) for val in WP_TO_bat])
+WP_MN_bat = np.array([float(val.evalf()) for val in WP_MN_bat])
+
+# Find index of minimum difference
+intersection_idx2 = np.argmin(np.abs(WP_MN_bat - WP_TO_bat))
+
+# W/S and W/P values at intersection
+intersection_ws2 = WS[intersection_idx2]  # Assuming WS is a NumPy array or list with the same length as WP_MN_bat
+intersection_wp2 = np.abs(WP_MN_bat[intersection_idx2])  # W/P value at intersection
+
+# Print the result
+print('Max W/P Design Parameters: {} lbf/ft^2, {} lbf/hp'.format(intersection_ws2, intersection_wp2))
+
+WS = np.array(WS)
+
+# Electric Battery Power Loading
+plt.figure(figsize=(8,4),facecolor='#e3dfd7ff')
+ax = plt.gca()  #
+ax.set_facecolor("#e3dfd7ff")
+plt.axvline(x=WS_stall, label='Stall', color='k', linestyle='-', linewidth=2)
+plt.plot(WS, WP_TO_bat, label='Takeoff field length', linestyle='-', linewidth=2)
+plt.plot(WS, WP_MN_bat, label="Maneuver", linestyle='-', linewidth=2)
+plt.scatter(intersection_ws2, intersection_wp2, color='red', zorder=5, label='Design for min bat weight')
+plt.fill_between(
+    WS,
+    0,
+    np.minimum(WP_TO_bat, WP_MN_bat),
+    where=(WS <= WS_stall),
+    color='#284e3fff',
+    alpha=0.5,
+    label="Feasible Region"
+)
+plt.title('$W/P_{bat} - W/S$ for Electric Configuration')
+plt.xlabel("$W/S (lb/ft^2)$",color='#301900ff')
+plt.ylabel("$W/P_{bat} (lb/hp)$",color='#301900ff')
+plt.xlim(0,100)
+plt.ylim(0,100)
+plt.grid(True)
+legend = ax.legend(loc='upper right')
+# Put a nicer background color on the legend.
+legend.get_frame().set_facecolor('#e3dfd7ff')
+
+W_elec = 12224 # lbf (from weight estimation code)
+S_ref_elec = W_elec / WS
+P_elec = W_elec / intersection_wp2
+S_elec = W_elec / intersection_ws2
+P_MN_elec = W_elec / WP_TO_bat
+P_TO_elec = W_elec / WP_MN_bat
+P_case1_elec =  W_elec/np.array(case1_PW)
+P_case2_elec =  W_elec/np.array(case2_PW)
+P_case3_elec = W_elec/np.array(case3_PW)
+P_cruise_elec = W_elec/np.array(WP_cruise)
+S_stall = W_elec / WS_stall
+print('Electric P & S Design Parameters: {} ft^2, {} hp'.format(S_elec, P_elec))
+
+# Electric Power vs Wing Area Dimensional Constraint
+plt.figure(figsize=(8,4),facecolor='#e3dfd7ff')
+ax = plt.gca()  #
+ax.set_facecolor("#e3dfd7ff")
+plt.axvline(x=S_stall, label='Stall', color='k', linestyle='-', linewidth=2)
+plt.plot(S_ref_elec, np.abs(P_TO_elec), label='Takeoff field length', linestyle='-', linewidth=2)
+plt.plot(S_ref_elec, P_case1_elec,label="Level 1 Climb, CL=1.9, AEO")
+plt.plot(S_ref_elec, P_case2_elec,label="Level 1 Climb, CL=1.3, OEI")
+plt.plot(S_ref_elec, P_case3_elec,label="Balked Climb, CL=1.9, AEO")
+plt.plot(S_ref_elec, P_cruise_elec, label='Cruise', linestyle='-', linewidth=2)
+plt.plot(S_ref_elec, np.abs(P_MN_elec), label="Maneuver", linestyle='-', linewidth=2)
+plt.scatter(495, 1550, color='red', zorder=5, label='Design for min battery size')
+plt.fill_between(S_ref_elec, np.maximum(P_TO_elec, P_MN_elec), 4000, where=(S_ref_elec >= S_stall), color='#284e3fff', alpha=0.5, label="Feasible Region")
+plt.title('$P - S$ for Electric Configuration')
+plt.xlabel("$S (ft^2)$")
+plt.ylabel("$P (hp)$")
+plt.xlim(200,600)
+plt.ylim(0,4000)
+plt.grid(True)
+legend = ax.legend(loc='upper right')
+# Put a nicer background color on the legend.
+legend.get_frame().set_facecolor('#e3dfd7ff')
+
+# ----------------------------------------------------------- Hybrid Battery Power Loading ----------------------------------------------------------- #
+
+WP_TO_bat2 = []
+WP_MN_bat2 = []
+
+for P_p in 1 / WP_TO_19:
+    sol = get_Powers(0.5, 0.5, P_p)
+    WP_TO_bat2.append(1 / sol[symbols('P_bat')])
+
+for P_p in 1 / WP_MN:
+    sol = get_Powers(0.5, 0.5, P_p)
+    WP_MN_bat2.append(1 / sol[symbols('P_bat')])
+
+# Ensure WP_MN_gt and WP_TO_gt are NumPy arrays
+WP_TO_bat2 = np.array([float(val.evalf()) for val in WP_TO_bat2])
+WP_MN_bat2 = np.array([float(val.evalf()) for val in WP_MN_bat2])
+
+# Find index of minimum difference
+intersection_idx3 = np.argmin(np.abs(WP_MN_bat2 - WP_TO_bat2))
+
+# W/S and W/P values at intersection
+intersection_ws3 = WS[intersection_idx3]  # W/S value at intersection
+intersection_wp3 = np.abs(WP_MN_bat2[intersection_idx3])  # W/P value at intersection
+
+# Print the result
+print('Max W/P Design Parameters: {} lbf/ft^2, {} lbf/hp'.format(intersection_ws3, intersection_wp3))
+
+# Hybrid Power Loading
+plt.figure(figsize=(8,4),facecolor='#e3dfd7ff')
+ax = plt.gca()  #
+ax.set_facecolor("#e3dfd7ff")
+plt.axvline(x=WS_stall, label='Stall', color='k', linestyle='-', linewidth=2)
+plt.plot(WS, WP_TO_bat2, label='Takeoff field length', linestyle='-', linewidth=2)
+plt.plot(WS, WP_MN_bat2, label="Maneuver", linestyle='-', linewidth=2)
+plt.scatter(intersection_ws3, intersection_wp3, color='red', zorder=5, label='Design point')
+plt.fill_between(
+    WS,
+    0,
+    np.minimum(WP_TO_bat2, WP_MN_bat2),
+    where=(WS <= WS_stall),
+    color='#284e3fff',
+    alpha=0.5,
+    label="Feasible Region"
+)
+plt.title('$W/P_{bat} - W/S$ for Hybrid Configuration')
+plt.xlabel("$W/S (lb/ft^2)$")
+plt.ylabel("$W/P_{bat} (lb/hp)$")
+plt.xlim(0,100)
+plt.ylim(0,100)
+plt.grid(True)
+legend = ax.legend(loc='upper right')
+# Put a nicer background color on the legend.
+legend.get_frame().set_facecolor('#e3dfd7ff')
+
+W_hybrid = 7700 # lbf (from weight estimation code)
+S_ref_hybrid = W_hybrid / WS
+P_hybrid = W_hybrid / intersection_wp3
+S_hybrid = W_hybrid / intersection_ws3
+P_MN_hybrid = W_hybrid / WP_TO_bat2
+P_TO_hybrid = W_hybrid / WP_MN_bat2
+P_case1_hy =  W_hybrid/np.array(case1_PW)
+P_case2_hy =  W_hybrid/np.array(case2_PW)
+P_case3_hy = W_hybrid/np.array(case3_PW)
+P_cruise_hy = W_hybrid/np.array(WP_cruise)
+S_stall_hybrid = W_hybrid / WS_stall
+print('Hybrid P & S Design Parameters: {} ft^2, {} hp'.format(S_hybrid, P_hybrid))
+
+# Hybrid Power vs Wing Area Dimensional Constraint
+plt.figure(figsize=(8,4),facecolor='#e3dfd7ff')
+ax = plt.gca()  #
+ax.set_facecolor("#e3dfd7ff")
+plt.axvline(x=S_stall_hybrid, label='Stall', color='k', linestyle='-', linewidth=2)
+plt.plot(S_ref_hybrid, np.abs(P_TO_hybrid), label='Takeoff field length', linestyle='-', linewidth=2)
+plt.plot(S_ref_hybrid, np.abs(P_MN_hybrid), label="Maneuver", linestyle='-', linewidth=2)
+plt.plot(S_ref_hybrid, P_case1_hy,label="Level 1 Climb, CL=1.9, AEO")
+plt.plot(S_ref_hybrid, P_case2_hy,label="Level 1 Climb, CL=1.3, OEI")
+plt.plot(S_ref_hybrid, P_case3_hy,label="Balked Climb, CL=1.9, AEO")
+plt.plot(S_ref_hybrid, P_cruise_hy, label='Cruise', linestyle='-', linewidth=2)
+plt.scatter(312, 680, color='red', zorder=5, label='Design for min battery size')
+plt.fill_between(S_ref_hybrid, np.maximum(P_TO_hybrid, P_MN_hybrid), 4000, where=(S_ref_hybrid >= S_stall_hybrid),  color='#284e3fff', alpha=0.5, label="Feasible Region")
+plt.title('$P - S$ for Hybrid Configuration')
+plt.xlabel("$S (ft^2)$")
+plt.ylabel("$P (hp)$")
+plt.xlim(100,600)
+plt.ylim(0,2000)
+plt.grid(True)
 legend = ax.legend(loc='upper right')
 # Put a nicer background color on the legend.
 legend.get_frame().set_facecolor('#e3dfd7ff')
