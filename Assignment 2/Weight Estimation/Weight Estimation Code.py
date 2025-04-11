@@ -742,11 +742,12 @@ def updated_ff(P=P, W0=W0_PDR):
 
     # Cruise
     R_cruise = R - total_x_climb # nmi, Remaining range after climb
-    delta_R = (R_cruise / N_segments) * 6076 # ft, discretized range segments
+    delta_R = (R_cruise / N_segments) # nmi, discretized range segments
     print('dR',delta_R)
 
     v_cruise = 150 * knots2fps # ft/s, cruise velocity
-    c = (c_t * 550 / 3600) / (v_cruise/knots2fps * eta) 
+    # c = (c_t * 550) / (v_cruise/knots2fps * eta) 
+    c = (c_t * v_cruise/knots2fps)/(550*eta)
     # c = (c_t * 3600 * v_cruise/knots2fps) #lbm/(lbf*h*knots)
     print("c",c)
 
@@ -758,7 +759,7 @@ def updated_ff(P=P, W0=W0_PDR):
         # print("i",i)
         CL_cruise.append((2 * W0) / (rho_cruise * v_cruise**2 * S))
         LD_cruise.append(CL_cruise[i] / (CD0 + k * CL_cruise[i]**2))
-        cruise_ff.append(np.exp(-(delta_R/6076 * c) / (eta * LD_cruise[i]))) # W_i+1/W_i
+        cruise_ff.append(np.exp(-(delta_R * c/(v_cruise/knots2fps)) / (eta * LD_cruise[i]))) # W_i+1/W_i
 
         # print("exponent",(-(delta_R/6076 * c) / (eta * LD_cruise[i])))
         # print(CL_cruise)
