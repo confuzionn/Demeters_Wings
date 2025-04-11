@@ -676,7 +676,7 @@ P_hp = 680 # hp, max power
 P = P_hp * 550 # ft-lbf/s, max power
 CD0 = 0.02241  # Drag coefficient
 k = 0.0463  # Induced drag coefficient
-c_t = 0.4
+c_t = 0.4 #lbm/h/hp or lbm/(lbf*h*knots)
 eta = 0.8
 R = 600 # nmi, aircraft range
 
@@ -731,38 +731,41 @@ def updated_ff(P=P, W0=W0_PDR):
         D = 0.5 * CD_climb * rho[i] * v_climb[i] ** 2 * S # lbf, Calculate drag force 
         P_s = (P - D * v_climb[i]) / W0 # ft/s, Calculate P_s factor
         x_climb.append(delta_he[i] * v_climb[i] / P_s) # ft, Calculate horizontal distance due to climb
-        climb_ff.append(np.exp((((-c_t * 550 / 3600) / (v_climb[i] * eta)) * delta_he[i] * P_hp / v_climb[i]) / (0.8 * W0 * (1 - D / (P / v_climb[i]))))) # Calculate fuel factor of each segment
+        climb_ff.append(np.exp((((-c_t/3600 * v_climb[i]) / (550 * eta)) * delta_he[i] * (P / v_climb[i])) / (0.8 * W0 * (1 - D / (P / v_climb[i]))))) # Calculate fuel factor of each segment
         W0 *= climb_ff[i] # Update weight for next segment
     
     total_climb_ff = np.prod(climb_ff) # Multiply all segment ff together
     print('Climb ff: {}'.format(total_climb_ff))
-    print(W0)
     total_x_climb = np.sum(x_climb) / 6076 # Sum horizontal distance covered during climb and convert to nmi
     
 
     # Cruise
     R_cruise = R - total_x_climb # nmi, Remaining range after climb
-    delta_R = (R_cruise / N_segments) * 6076 # ft, discretized range segments
+    delta_R = (R_cruise / N_segments) # nmi, discretized range segments
 
-    v_cruise = 150 * knots2fps # ft/s, cruise velocity
-    c = (c_t * 550 / 3600) / (v_cruise * eta)
+    v_cruise = 150 # kts, cruise velocity
+    c_cruise = (c_t) / (550*eta) # 1/hr, SFC
 
     CL_cruise = []
     LD_cruise = []
     cruise_ff = []
 
-    for i in range(len(delta_h)):
-        CL_cruise.append((2 * W0) / (rho_cruise * v_cruise**2 * S))
+    for i in range(len(delta_h)): #for number of segments
+        CL_cruise.append((2 * W0) / (rho_cruise * (v_cruise * knots2fps)**2 * S))
         LD_cruise.append(CL_cruise[i] / (CD0 + k * CL_cruise[i]**2))
-        cruise_ff.append(np.exp(-delta_R * c / (eta * LD_cruise[i])))
+        cruise_ff.append(np.exp(-(delta_R * c_cruise) / (eta * LD_cruise[i]))) # W_i+1/W_i
         W0 *= cruise_ff[i]
 
-    print(CL_cruise)
-    print(LD_cruise)
-    print(cruise_ff)
     total_cruise_ff = np.prod(cruise_ff)
     print('Cruise ff: {}'.format(total_cruise_ff))
 
+
+    # Loiter
+    v_loiter = 80 # kts
+    c_loiter = (c_t) / (550*eta) # 1/nmi, SFC
+    LD_max = np.sqrt(CD0 / k) / (2 * CD0)
+    loiter_ff = np.exp((-(30 / 60) * v_loiter * c_loiter) / (eta * LD_max))
+    print('Loiter ff: {}'.format(loiter_ff))
 
     # Descent
     descent_ff = 0.990 # From historical data
@@ -770,11 +773,12 @@ def updated_ff(P=P, W0=W0_PDR):
 
     # Landing
     landing_ff = 0.995 # From historical data
-
+    total_ff = np.prod([taxi_ff, takeoff_ff, total_climb_ff, total_cruise_ff, loiter_ff, descent_ff, landing_ff])
+    print("Total ff:", total_ff)
 
     return W0, total_climb_ff, total_x_climb
 
 W0, total_climb_ff, total_x_climb = updated_ff(P=P, W0=W0_PDR)
-print(total_climb_ff)
-print(total_x_climb)
-print(W0)
+# print(total_climb_ff)
+# print(total_x_climb)
+# print(W0)
