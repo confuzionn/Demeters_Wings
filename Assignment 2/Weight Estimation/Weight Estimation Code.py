@@ -676,7 +676,7 @@ P_hp = 680 # hp, max power
 P = P_hp * 550 # ft-lbf/s, max power
 CD0 = 0.02241  # Drag coefficient
 k = 0.0463  # Induced drag coefficient
-c_t = 0.4
+c_t = 0.4 #lbm/h/hp or lbm/(lbf*h*knots)
 eta = 0.8
 R = 600 # nmi, aircraft range
 
@@ -736,30 +736,40 @@ def updated_ff(P=P, W0=W0_PDR):
     
     total_climb_ff = np.prod(climb_ff) # Multiply all segment ff together
     print('Climb ff: {}'.format(total_climb_ff))
-    print(W0)
+    print("W0",W0)
     total_x_climb = np.sum(x_climb) / 6076 # Sum horizontal distance covered during climb and convert to nmi
     
 
     # Cruise
     R_cruise = R - total_x_climb # nmi, Remaining range after climb
     delta_R = (R_cruise / N_segments) * 6076 # ft, discretized range segments
+    print('dR',delta_R)
 
     v_cruise = 150 * knots2fps # ft/s, cruise velocity
-    c = (c_t * 550 / 3600) / (v_cruise * eta)
+    c = (c_t * 550 / 3600) / (v_cruise/knots2fps * eta) 
+    # c = (c_t * 3600 * v_cruise/knots2fps) #lbm/(lbf*h*knots)
+    print("c",c)
 
     CL_cruise = []
     LD_cruise = []
     cruise_ff = []
 
-    for i in range(len(delta_h)):
+    for i in range(len(delta_h)): #for number of segments
+        # print("i",i)
         CL_cruise.append((2 * W0) / (rho_cruise * v_cruise**2 * S))
         LD_cruise.append(CL_cruise[i] / (CD0 + k * CL_cruise[i]**2))
-        cruise_ff.append(np.exp(-delta_R * c / (eta * LD_cruise[i])))
-        W0 *= cruise_ff[i]
+        cruise_ff.append(np.exp(-(delta_R/6076 * c) / (eta * LD_cruise[i]))) # W_i+1/W_i
 
-    print(CL_cruise)
-    print(LD_cruise)
-    print(cruise_ff)
+        # print("exponent",(-(delta_R/6076 * c) / (eta * LD_cruise[i])))
+        # print(CL_cruise)
+        # print(LD_cruise)
+        # print(cruise_ff)
+        W0 *= cruise_ff[i]
+        # print("weight_0 ", W0)
+
+    print("CL cruise",CL_cruise)
+    print("LD cruise",LD_cruise)
+    print("cruise ff",cruise_ff)
     total_cruise_ff = np.prod(cruise_ff)
     print('Cruise ff: {}'.format(total_cruise_ff))
 
@@ -775,6 +785,6 @@ def updated_ff(P=P, W0=W0_PDR):
     return W0, total_climb_ff, total_x_climb
 
 W0, total_climb_ff, total_x_climb = updated_ff(P=P, W0=W0_PDR)
-print(total_climb_ff)
-print(total_x_climb)
-print(W0)
+# print(total_climb_ff)
+# print(total_x_climb)
+# print(W0)
