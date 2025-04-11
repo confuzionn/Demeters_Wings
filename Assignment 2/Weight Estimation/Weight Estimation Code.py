@@ -773,7 +773,8 @@ def updated_ff(P=P, W0=W0_PDR):
 
     # Landing
     landing_ff = 0.995 # From historical data
-
+    total_ff = np.prod([taxi_ff, takeoff_ff, total_climb_ff, total_cruise_ff, loiter_ff, descent_ff, landing_ff])
+    print("Total ff:", total_ff)
 
     return W0, total_climb_ff, total_x_climb
 
