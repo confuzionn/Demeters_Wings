@@ -736,44 +736,36 @@ def updated_ff(P=P, W0=W0_PDR):
     
     total_climb_ff = np.prod(climb_ff) # Multiply all segment ff together
     print('Climb ff: {}'.format(total_climb_ff))
-    print("W0",W0)
     total_x_climb = np.sum(x_climb) / 6076 # Sum horizontal distance covered during climb and convert to nmi
     
 
     # Cruise
     R_cruise = R - total_x_climb # nmi, Remaining range after climb
     delta_R = (R_cruise / N_segments) # nmi, discretized range segments
-    print('dR',delta_R)
 
-    v_cruise = 150 * knots2fps # ft/s, cruise velocity
-    # c = (c_t * 550) / (v_cruise/knots2fps * eta) 
-    c = (c_t * v_cruise/knots2fps)/(550*eta)
-    # c = (c_t * 3600 * v_cruise/knots2fps) #lbm/(lbf*h*knots)
-    print("c",c)
+    v_cruise = 150 # kts, cruise velocity
+    c_cruise = (c_t * v_cruise) / (550*eta) # 1/hr, SFC
 
     CL_cruise = []
     LD_cruise = []
     cruise_ff = []
 
     for i in range(len(delta_h)): #for number of segments
-        # print("i",i)
-        CL_cruise.append((2 * W0) / (rho_cruise * v_cruise**2 * S))
+        CL_cruise.append((2 * W0) / (rho_cruise * (v_cruise * knots2fps)**2 * S))
         LD_cruise.append(CL_cruise[i] / (CD0 + k * CL_cruise[i]**2))
-        cruise_ff.append(np.exp(-(delta_R * c/(v_cruise/knots2fps)) / (eta * LD_cruise[i]))) # W_i+1/W_i
-
-        # print("exponent",(-(delta_R/6076 * c) / (eta * LD_cruise[i])))
-        # print(CL_cruise)
-        # print(LD_cruise)
-        # print(cruise_ff)
+        cruise_ff.append(np.exp(-(delta_R * (c_cruise / v_cruise)) / (eta * LD_cruise[i]))) # W_i+1/W_i
         W0 *= cruise_ff[i]
-        # print("weight_0 ", W0)
 
-    print("CL cruise",CL_cruise)
-    print("LD cruise",LD_cruise)
-    print("cruise ff",cruise_ff)
     total_cruise_ff = np.prod(cruise_ff)
     print('Cruise ff: {}'.format(total_cruise_ff))
 
+
+    # Loiter
+    v_loiter = 80 # kts
+    c_loiter = c_t / (v_loiter * 550 * eta) # 1/nmi, SFC
+    LD_max = np.sqrt(CD0 / k) / (2 * CD0)
+    loiter_ff = np.exp((-(30 / 60) * v_loiter * c_loiter) / (eta * LD_max))
+    print('Loiter ff: {}'.format(loiter_ff))
 
     # Descent
     descent_ff = 0.990 # From historical data
