@@ -662,7 +662,7 @@ def hybrid_estimation(hybrid_ratio= 0.5 # 1 = 100% electric
     print('Total Weight =',W0,'lbs')
     print('|-----------------------------------------------------------------------------------------------|')
 
-hybrid_estimation(hybrid_ratio= 0.75 # 1 = 100% electric
+hybrid_estimation(hybrid_ratio= 0.25 # 1 = 100% electric
                       )
 
 #-------------------------------------------------------------------------------------------------------------------------#
@@ -690,6 +690,7 @@ rho_SL = 2.377e-3  # slugs/ft^3, density at sea level
 T_SL = 518.97  # R, temperature at sea level
 T_cruise = T_SL + (a * h_cruise)
 rho_cruise = rho_SL * (T_cruise / T_SL) ** (-1 * ((g / (a * R)) + 1))
+print(rho_cruise)
 
 v_stall = np.sqrt(2 * W0_PDR / (1.9 * rho_SL * S))
 
@@ -744,8 +745,8 @@ def updated_ff(P=P, W0=W0_PDR):
     R_cruise = R - total_x_climb # nmi, Remaining range after climb
     delta_R = (R_cruise / N_segments) * 6076 # ft, discretized range segments
 
-    v_cruise = 150 * knots2fps # ft/s, cruise velocity
-    c = (c_t * 550 / 3600) / (v_cruise * eta)
+    v_cruise = 150 * 1.688 # ft/s, cruise velocity
+    c_cruise = (c_t * 550) / (3600 * v_cruise * eta)
 
     CL_cruise = []
     LD_cruise = []
@@ -754,7 +755,7 @@ def updated_ff(P=P, W0=W0_PDR):
     for i in range(len(delta_h)):
         CL_cruise.append((2 * W0) / (rho_cruise * v_cruise**2 * S))
         LD_cruise.append(CL_cruise[i] / (CD0 + k * CL_cruise[i]**2))
-        cruise_ff.append(np.exp(-delta_R * c / (eta * LD_cruise[i])))
+        cruise_ff.append(np.exp(-delta_R * c_cruise / (eta * LD_cruise[i])))
         W0 *= cruise_ff[i]
 
     print(CL_cruise)
@@ -763,6 +764,12 @@ def updated_ff(P=P, W0=W0_PDR):
     total_cruise_ff = np.prod(cruise_ff)
     print('Cruise ff: {}'.format(total_cruise_ff))
 
+    # Loiter
+    v_loiter = 80 * 1.688 # ft/s
+    c_loiter = (c_t * 550) / (3600 * v_loiter * eta) # SFC at loiter
+    LD_max = np.sqrt(CD0 / k) / (2 * CD0) # Max lift to drag ratio
+    loiter_ff = np.exp((-(30 * 60) * v_loiter * c_loiter) / (eta * LD_max))
+    print('Loiter ff: {}'.format(loiter_ff))
 
     # Descent
     descent_ff = 0.990 # From historical data
@@ -772,9 +779,6 @@ def updated_ff(P=P, W0=W0_PDR):
     landing_ff = 0.995 # From historical data
 
 
-    return W0, total_climb_ff, total_x_climb
+    return W0, total_climb_ff, total_x_climb, loiter_ff, descent_ff, landing_ff
 
-W0, total_climb_ff, total_x_climb = updated_ff(P=P, W0=W0_PDR)
-print(total_climb_ff)
-print(total_x_climb)
-print(W0)
+W0, total_climb_ff, total_x_climb, loiter_ff, descent_ff, landing_ff = updated_ff(P=P, W0=W0_PDR)
