@@ -731,7 +731,7 @@ def updated_ff(P=P, W0=W0_PDR):
         D = 0.5 * CD_climb * rho[i] * v_climb[i] ** 2 * S # lbf, Calculate drag force 
         P_s = (P - D * v_climb[i]) / W0 # ft/s, Calculate P_s factor
         x_climb.append(delta_he[i] * v_climb[i] / P_s) # ft, Calculate horizontal distance due to climb
-        climb_ff.append(np.exp((((-c_t * 550 / 3600) / (v_climb[i] * eta)) * delta_he[i] * P_hp / v_climb[i]) / (0.8 * W0 * (1 - D / (P / v_climb[i]))))) # Calculate fuel factor of each segment
+        climb_ff.append(np.exp((((-c_t/3600 * v_climb[i]) / (550 * eta)) * delta_he[i] * (P / v_climb[i])) / (0.8 * W0 * (1 - D / (P / v_climb[i]))))) # Calculate fuel factor of each segment
         W0 *= climb_ff[i] # Update weight for next segment
     
     total_climb_ff = np.prod(climb_ff) # Multiply all segment ff together
