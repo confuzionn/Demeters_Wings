@@ -744,7 +744,7 @@ def updated_ff(P=P, W0=W0_PDR):
     delta_R = (R_cruise / N_segments) # nmi, discretized range segments
 
     v_cruise = 150 # kts, cruise velocity
-    c_cruise = (c_t * v_cruise) / (550*eta) # 1/hr, SFC
+    c_cruise = (c_t) / (550*eta) # 1/hr, SFC
 
     CL_cruise = []
     LD_cruise = []
@@ -753,7 +753,7 @@ def updated_ff(P=P, W0=W0_PDR):
     for i in range(len(delta_h)): #for number of segments
         CL_cruise.append((2 * W0) / (rho_cruise * (v_cruise * knots2fps)**2 * S))
         LD_cruise.append(CL_cruise[i] / (CD0 + k * CL_cruise[i]**2))
-        cruise_ff.append(np.exp(-(delta_R * (c_cruise / v_cruise)) / (eta * LD_cruise[i]))) # W_i+1/W_i
+        cruise_ff.append(np.exp(-(delta_R * c_cruise) / (eta * LD_cruise[i]))) # W_i+1/W_i
         W0 *= cruise_ff[i]
 
     total_cruise_ff = np.prod(cruise_ff)
@@ -762,7 +762,7 @@ def updated_ff(P=P, W0=W0_PDR):
 
     # Loiter
     v_loiter = 80 # kts
-    c_loiter = c_t / (v_loiter * 550 * eta) # 1/nmi, SFC
+    c_loiter = (c_t) / (550*eta) # 1/nmi, SFC
     LD_max = np.sqrt(CD0 / k) / (2 * CD0)
     loiter_ff = np.exp((-(30 / 60) * v_loiter * c_loiter) / (eta * LD_max))
     print('Loiter ff: {}'.format(loiter_ff))
