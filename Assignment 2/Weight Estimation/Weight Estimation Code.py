@@ -702,7 +702,7 @@ def updated_ff(P=P, W0=W0_PDR):
 
 
     # Takeoff
-    takeoff_ff = 1 - ((1 / 60) * (c_t / eta) * (P / (1.2 * v_stall) / W0)) # Fuel fraction for takeoff
+    takeoff_ff = 1 - ((1 / 60) * (c_t / eta) * (P / (1.2 * v_stall) / W0)) # Fuel fraction for990takeoff
     W0 *= takeoff_ff # Update weight for next segment
     print('Takeoff ff: {}'.format(takeoff_ff))
 
@@ -776,9 +776,6 @@ def updated_ff(P=P, W0=W0_PDR):
     total_ff = np.prod([taxi_ff, takeoff_ff, total_climb_ff, total_cruise_ff, loiter_ff, descent_ff, landing_ff])
     print("Total ff:", total_ff)
 
-    return W0, total_climb_ff, total_x_climb
+    return total_ff
 
-W0, total_climb_ff, total_x_climb = updated_ff(P=P, W0=W0_PDR)
-# print(total_climb_ff)
-# print(total_x_climb)
-# print(W0)
+updated_ff(P=P, W0=W0_PDR)
