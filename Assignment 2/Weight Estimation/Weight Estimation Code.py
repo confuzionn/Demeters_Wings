@@ -676,25 +676,25 @@ P_hp = 680 # hp, max power
 P = P_hp * 550 # ft-lbf/s, max power
 CD0 = 0.02241  # Drag coefficient
 k = 0.0463  # Induced drag coefficient
-c_t = 0.4 #lbm/h/hp or lbm/(lbf*h*knots)
-eta = 0.8
-R = 600 # nmi, aircraft range
 
-h_cruise = 8000  # ft, cruising altitude
-delta_h = np.linspace(0, h_cruise, N_segments) # Discritized altitude values
-g = 32.17  # ft/s^2
-a = -0.00357  # R/ft, temperature gradient of troposphere
-R = 1717  # Universal gas constant
+def updated_ff(P, W0, S, CD0, k, N_segments):
+    
+    # Initial Parameters
+    c_t = 0.4 #lbm/h/hp or lbm/(lbf*h*knots)
+    eta = 0.8
+    R = 600 # nmi, aircraft range
+    h_cruise = 8000  # ft, cruising altitude
+    delta_h = np.linspace(0, h_cruise, N_segments) # Discritized altitude values
+    g = 32.17  # ft/s^2
+    a = -0.00357  # R/ft, temperature gradient of troposphere
+    R = 1717  # Universal gas constant
+    rho_SL = 2.377e-3  # slugs/ft^3, density at sea level
+    T_SL = 518.97  # R, temperature at sea level
+    T_cruise = T_SL + (a * h_cruise) # R, temperature at cruise
+    rho_cruise = rho_SL * (T_cruise / T_SL) ** (-1 * ((g / (a * R)) + 1)) # slugs/ft^3,. density at cruise
+    v_stall = np.sqrt(2 * W0_PDR / (1.9 * rho_SL * S)) # Stall speed
 
-rho_SL = 2.377e-3  # slugs/ft^3, density at sea level
-T_SL = 518.97  # R, temperature at sea level
-T_cruise = T_SL + (a * h_cruise)
-rho_cruise = rho_SL * (T_cruise / T_SL) ** (-1 * ((g / (a * R)) + 1))
 
-v_stall = np.sqrt(2 * W0_PDR / (1.9 * rho_SL * S))
-
-
-def updated_ff(P=P, W0=W0_PDR):
     # Taxi
     taxi_ff = 1 - ((15 / 60) * (c_t / eta) * (0.05 * P / 30 / W0)) # Taxi fuel fraction assuming taxi speed of 30 ft/s
     W0 *= taxi_ff # Update weight for next segment
@@ -778,4 +778,4 @@ def updated_ff(P=P, W0=W0_PDR):
 
     return total_ff
 
-updated_ff(P=P, W0=W0_PDR)
+updated_ff(P, W0_PDR, S, CD0, k, N_segments)
