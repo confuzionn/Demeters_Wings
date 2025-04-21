@@ -1,0 +1,109 @@
+#Name         
+Default       
+#Mach         
+0.8           
+#iYsym        #iZsym        #Zsym         
+0             0             0.0           
+#Sref         #cref         #bref         
+8869.0        39.38         247.6         
+#Xref         #Yref         #Zref         
+47.478        0.0           4.83          
+#CDp          
+0.0           
+#===============================================================================================
+#===============================================================================================
+SURFACE
+#Name         
+Wing          
+#Nchordwise   #Cspace       #NSpanwise    #Sspace       
+8             1.0           31            1.0           
+YDUPLICATE    
+0.0           
+TRANSLATE     
+0.0  0.0  0.0    
+#-----------------------------------------------------------------------------------------------
+SECTION
+#Xle          #Yle          #Zle          #Chord        #Ainc         #Nspanwise    #Sspace       
+0.0           0.0           0.0           59            0.0           0             0             
+AFILE         
+AVL/Airfoils/sc20710.dat  
+#-----------------------------------------------------------------------------------------------
+SECTION
+#Xle          #Yle          #Zle          #Chord        #Ainc         #Nspanwise    #Sspace       
+23.09401      40            -2.09631      44.25         -0.9776       0             0             
+AFILE         
+AVL/Airfoils/sc2010.dat  
+#-----------------------------------------------------------------------------------------------
+SECTION
+#Xle          #Yle          #Zle          #Chord        #Ainc         #Nspanwise    #Sspace       
+81.03618      122.75        -6.43306      13.275        -3            0             0             
+AFILE         
+AVL/Airfoils/sc20710.dat  
+#===============================================================================================
+#===============================================================================================
+SURFACE
+#Name         
+Hstab         
+#Nchordwise   #Cspace       #NSpanwise    #Sspace       
+8             1.0           12            1.0           
+YDUPLICATE    
+0.0           
+TRANSLATE     
+141.725  0.0  15     
+COMPONENT     
+1             
+#-----------------------------------------------------------------------------------------------
+SECTION
+#Xle          #Yle          #Zle          #Chord        #Ainc         #Nspanwise    #Sspace       
+0.0           0.0           0.0           28.8          0.0           0             0             
+AFILE         
+AVL/Airfoils/sc20012.dat  
+#-----------------------------------------------------------------------------------------------
+SECTION
+#Xle          #Yle          #Zle          #Chord        #Ainc         #Nspanwise    #Sspace       
+1.75052       2.5           0.0           27.6          0.0           0             0             
+AFILE         
+AVL/Airfoils/sc20012.dat  
+
+CONTROL
+#Cname        #Cgain        #Xhinge       #HingeVec     #SgnDup       
+Elevator      1.0           0.7           0.0 0.0 0.0   1             
+#-----------------------------------------------------------------------------------------------
+SECTION
+#Xle          #Yle          #Zle          #Chord        #Ainc         #Nspanwise    #Sspace       
+28.35841      40.5          0.0           9.36          0.0           0             0             
+AFILE         
+AVL/Airfoils/sc20012.dat  
+
+CONTROL
+#Cname        #Cgain        #Xhinge       #HingeVec     #SgnDup       
+Elevator      1.0           0.7           0.0 0.0 0.0   1             
+#-----------------------------------------------------------------------------------------------
+SECTION
+#Xle          #Yle          #Zle          #Chord        #Ainc         #Nspanwise    #Sspace       
+31.50934      45.0          0.0           7.2           0.0           0             0             
+AFILE         
+AVL/Airfoils/sc20012.dat  
+#===============================================================================================
+#===============================================================================================
+SURFACE
+#Name         
+Vstab         
+#Nchordwise   #Cspace       #NSpanwise    #Sspace       
+8             1.0           12            1.0           
+TRANSLATE     
+131.5  0.0  0.0    
+COMPONENT     
+1             
+#-----------------------------------------------------------------------------------------------
+SECTION
+#Xle          #Yle          #Zle          #Chord        #Ainc         #Nspanwise    #Sspace       
+0.0           0.0           0.0           35.00161      0.0           0             0             
+AFILE         
+AVL/Airfoils/sc20012.dat  
+#-----------------------------------------------------------------------------------------------
+SECTION
+#Xle          #Yle          #Zle          #Chord        #Ainc         #Nspanwise    #Sspace       
+27.3011       0             42.04         19.25089      0.0           0             0             
+AFILE         
+AVL/Airfoils/sc20012.dat  

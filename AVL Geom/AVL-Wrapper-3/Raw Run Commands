@@ -1,0 +1,19 @@
+load AVL/Planes/AR5_stick.avl
+mass AVL/Planes/AR5_stick.mass
+oper
+C1
+g 
+386.04
+D
+0.00000137615
+M 
+0.4575718731
+V
+960
+
+X
+
+mode
+n
+w
+AR5_stick.eig

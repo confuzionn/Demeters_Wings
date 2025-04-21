@@ -1,0 +1,6960 @@
+CT_DegenGeom
+
+#Mach
+ 0.35
+
+#IYsym   IZsym   Zsym
+ 0       0       0.0
+
+#Sref    Cref    Bref
+312.00   6.00    52.00
+
+#Xref    Yref    Zref
+9.33     0.00     0.67
+
+#--------------------------------------------------
+SURFACE 
+Canard 0 
+!Nchordwise  Cspace  Nspanwise  Sspace
+12           1.0              
+
+COMPONENT 
+1
+
+ANGLE
+0.0
+
+SCALE
+1.0   1.0   1.0
+
+TRANSLATE
+0.0  0.0  0.0
+
+
+SECTION
+#Xle    Yle    Zle     Chord   Ainc  Nspanwise  Sspace
+-2.00    0.00    0.00     2.67    0.00    10    0
+AFILE
+Canard_FXPTRHLMCG_0.dat
+
+SECTION
+#Xle    Yle    Zle     Chord   Ainc  Nspanwise  Sspace
+-2.00    2.00    0.00     2.67    0.00    10    0
+AFILE
+Canard_FXPTRHLMCG_1.dat
+
+SECTION
+#Xle    Yle    Zle     Chord   Ainc  Nspanwise  Sspace
+-2.00    4.00    0.00     2.67    0.00    10    0
+AFILE
+Canard_FXPTRHLMCG_2.dat
+
+SECTION
+#Xle    Yle    Zle     Chord   Ainc  Nspanwise  Sspace
+-2.00    6.00    0.00     2.67    0.00    10    0
+AFILE
+Canard_FXPTRHLMCG_3.dat
+
+SECTION
+#Xle    Yle    Zle     Chord   Ainc  Nspanwise  Sspace
+-2.00    8.00    0.00     2.67    0.00    10    0
+AFILE
+Canard_FXPTRHLMCG_4.dat
+
+SECTION
+#Xle    Yle    Zle     Chord   Ainc  Nspanwise  Sspace
+-2.00    10.00    0.00     2.67    0.00    1    0
+AFILE
+Canard_FXPTRHLMCG_5.dat
+
+#--------------------------------------------------
+SURFACE 
+Canard 1 
+!Nchordwise  Cspace  Nspanwise  Sspace
+12           1.0              
+
+COMPONENT 
+1
+
+ANGLE
+0.0
+
+SCALE
+1.0   1.0   1.0
+
+TRANSLATE
+0.0  0.0  0.0
+
+
+SECTION
+#Xle    Yle    Zle     Chord   Ainc  Nspanwise  Sspace
+-2.00    -10.00    0.00     2.67    0.00    10    0
+AFILE
+Canard_FXPTRHLMCG_5.dat
+
+SECTION
+#Xle    Yle    Zle     Chord   Ainc  Nspanwise  Sspace
+-2.00    -8.00    0.00     2.67    0.00    10    0
+AFILE
+Canard_FXPTRHLMCG_4.dat
+
+SECTION
+#Xle    Yle    Zle     Chord   Ainc  Nspanwise  Sspace
+-2.00    -6.00    0.00     2.67    0.00    10    0
+AFILE
+Canard_FXPTRHLMCG_3.dat
+
+SECTION
+#Xle    Yle    Zle     Chord   Ainc  Nspanwise  Sspace
+-2.00    -4.00    0.00     2.67    0.00    10    0
+AFILE
+Canard_FXPTRHLMCG_2.dat
+
+SECTION
+#Xle    Yle    Zle     Chord   Ainc  Nspanwise  Sspace
+-2.00    -2.00    0.00     2.67    0.00    10    0
+AFILE
+Canard_FXPTRHLMCG_1.dat
+
+SECTION
+#Xle    Yle    Zle     Chord   Ainc  Nspanwise  Sspace
+-2.00    0.00    0.00     2.67    0.00    1    0
+AFILE
+Canard_FXPTRHLMCG_0.dat
+
+#=============================================
+BODY
+Fuselage 0
+28   1.0
+#
+TRANSLATE
+0.0  0.11493184417486191  0.0
+#
+BFIL
+Fuselage_YQKQYGQZDA_0.dat
+
+#--------------------------------------------------
+SURFACE 
+Canard Winglet 0 
+!Nchordwise  Cspace  Nspanwise  Sspace
+12           1.0              
+
+COMPONENT 
+1
+
+ANGLE
+0.0
+
+SCALE
+1.0   1.0   1.0
+
+TRANSLATE
+0.0  0.0  0.0
+
+
+SECTION
+#Xle    Yle    Zle     Chord   Ainc  Nspanwise  Sspace
+-2.00    9.90    0.00     2.67    0.00    1    0
+AFILE
+Canard Winglet_AFVRYDFCXZ_0.dat
+
+SECTION
+#Xle    Yle    Zle     Chord   Ainc  Nspanwise  Sspace
+-1.88    10.04    0.14     2.40    0.00    1    0
+AFILE
+Canard Winglet_AFVRYDFCXZ_1.dat
+
+SECTION
+#Xle    Yle    Zle     Chord   Ainc  Nspanwise  Sspace
+-1.77    10.18    0.28     2.13    0.00    2    0
+AFILE
+Canard Winglet_AFVRYDFCXZ_2.dat
+
+SECTION
+#Xle    Yle    Zle     Chord   Ainc  Nspanwise  Sspace
+-1.65    10.32    0.42     1.87    0.00    1    0
+AFILE
+Canard Winglet_AFVRYDFCXZ_3.dat
+
+SECTION
+#Xle    Yle    Zle     Chord   Ainc  Nspanwise  Sspace
+-1.54    10.47    0.57     1.60    0.00    1    0
+AFILE
+Canard Winglet_AFVRYDFCXZ_4.dat
+
+SECTION
+#Xle    Yle    Zle     Chord   Ainc  Nspanwise  Sspace
+-1.42    10.61    0.71     1.33    0.00    1    0
+AFILE
+Canard Winglet_AFVRYDFCXZ_5.dat
+
+#--------------------------------------------------
+SURFACE 
+Canard Winglet 1 
+!Nchordwise  Cspace  Nspanwise  Sspace
+12           1.0              
+
+COMPONENT 
+1
+
+ANGLE
+0.0
+
+SCALE
+1.0   1.0   1.0
+
+TRANSLATE
+0.0  0.0  0.0
+
+
+SECTION
+#Xle    Yle    Zle     Chord   Ainc  Nspanwise  Sspace
+-1.42    -10.61    0.71     1.33    0.00    1    0
+AFILE
+Canard Winglet_AFVRYDFCXZ_5.dat
+
+SECTION
+#Xle    Yle    Zle     Chord   Ainc  Nspanwise  Sspace
+-1.54    -10.47    0.57     1.60    0.00    1    0
+AFILE
+Canard Winglet_AFVRYDFCXZ_4.dat
+
+SECTION
+#Xle    Yle    Zle     Chord   Ainc  Nspanwise  Sspace
+-1.65    -10.32    0.42     1.87    0.00    2    0
+AFILE
+Canard Winglet_AFVRYDFCXZ_3.dat
+
+SECTION
+#Xle    Yle    Zle     Chord   Ainc  Nspanwise  Sspace
+-1.77    -10.18    0.28     2.13    0.00    1    0
+AFILE
+Canard Winglet_AFVRYDFCXZ_2.dat
+
+SECTION
+#Xle    Yle    Zle     Chord   Ainc  Nspanwise  Sspace
+-1.88    -10.04    0.14     2.40    0.00    1    0
+AFILE
+Canard Winglet_AFVRYDFCXZ_1.dat
+
+SECTION
+#Xle    Yle    Zle     Chord   Ainc  Nspanwise  Sspace
+-2.00    -9.90    0.00     2.67    0.00    1    0
+AFILE
+Canard Winglet_AFVRYDFCXZ_0.dat
+
+#--------------------------------------------------
+SURFACE 
+Main Winglet 0 
+!Nchordwise  Cspace  Nspanwise  Sspace
+12           1.0              
+
+COMPONENT 
+1
+
+ANGLE
+0.0
+
+SCALE
+1.0   1.0   1.0
+
+TRANSLATE
+0.0  0.0  0.0
+
+
+SECTION
+#Xle    Yle    Zle     Chord   Ainc  Nspanwise  Sspace
+13.72    25.80    2.26     4.07    0.00    4    0
+AFILE
+Main Winglet_YNEEJRZMHS_0.dat
+
+SECTION
+#Xle    Yle    Zle     Chord   Ainc  Nspanwise  Sspace
+14.12    25.98    2.93     3.66    0.00    4    0
+AFILE
+Main Winglet_YNEEJRZMHS_1.dat
+
+SECTION
+#Xle    Yle    Zle     Chord   Ainc  Nspanwise  Sspace
+14.52    26.16    3.60     3.26    0.00    4    0
+AFILE
+Main Winglet_YNEEJRZMHS_2.dat
+
+SECTION
+#Xle    Yle    Zle     Chord   Ainc  Nspanwise  Sspace
+14.92    26.34    4.27     2.85    0.00    4    0
+AFILE
+Main Winglet_YNEEJRZMHS_3.dat
+
+SECTION
+#Xle    Yle    Zle     Chord   Ainc  Nspanwise  Sspace
+15.32    26.52    4.94     2.44    0.00    4    0
+AFILE
+Main Winglet_YNEEJRZMHS_4.dat
+
+SECTION
+#Xle    Yle    Zle     Chord   Ainc  Nspanwise  Sspace
+15.72    26.70    5.61     2.03    0.00    1    0
+AFILE
+Main Winglet_YNEEJRZMHS_5.dat
+
+#--------------------------------------------------
+SURFACE 
+Main Winglet 1 
+!Nchordwise  Cspace  Nspanwise  Sspace
+12           1.0              
+
+COMPONENT 
+1
+
+ANGLE
+0.0
+
+SCALE
+1.0   1.0   1.0
+
+TRANSLATE
+0.0  0.0  0.0
+
+
+SECTION
+#Xle    Yle    Zle     Chord   Ainc  Nspanwise  Sspace
+15.72    -26.70    5.61     2.03    0.00    4    0
+AFILE
+Main Winglet_YNEEJRZMHS_5.dat
+
+SECTION
+#Xle    Yle    Zle     Chord   Ainc  Nspanwise  Sspace
+15.32    -26.52    4.94     2.44    0.00    4    0
+AFILE
+Main Winglet_YNEEJRZMHS_4.dat
+
+SECTION
+#Xle    Yle    Zle     Chord   Ainc  Nspanwise  Sspace
+14.92    -26.34    4.27     2.85    0.00    4    0
+AFILE
+Main Winglet_YNEEJRZMHS_3.dat
+
+SECTION
+#Xle    Yle    Zle     Chord   Ainc  Nspanwise  Sspace
+14.52    -26.16    3.60     3.26    0.00    4    0
+AFILE
+Main Winglet_YNEEJRZMHS_2.dat
+
+SECTION
+#Xle    Yle    Zle     Chord   Ainc  Nspanwise  Sspace
+14.12    -25.98    2.93     3.66    0.00    4    0
+AFILE
+Main Winglet_YNEEJRZMHS_1.dat
+
+SECTION
+#Xle    Yle    Zle     Chord   Ainc  Nspanwise  Sspace
+13.72    -25.80    2.26     4.07    0.00    1    0
+AFILE
+Main Winglet_YNEEJRZMHS_0.dat
+
+#=============================================
+BODY
+LG front 0
+28   1.0
+#
+TRANSLATE
+0.0  0.5068101286888123  0.0
+#
+BFIL
+LG front_BIXFBOYFVN_0.dat
+
+#=============================================
+BODY
+LG rear 0
+28   1.0
+#
+TRANSLATE
+0.0  4.962810516357422  0.0
+#
+BFIL
+LG rear_LAMYMEDSTW_0.dat
+
+#=============================================
+BODY
+LG rear 1
+28   1.0
+#
+TRANSLATE
+0.0  -4.962810516357422  0.0
+#
+BFIL
+LG rear_LAMYMEDSTW_1.dat
+
+#=============================================
+BODY
+front wheel 0
+28   1.0
+#
+TRANSLATE
+0.0  0.16445696353912354  0.0
+#
+BFIL
+front wheel_MDVGMOUUKD_0.dat
+
+#=============================================
+BODY
+rear wheel 0
+28   1.0
+#
+TRANSLATE
+0.0  5.825659275054932  0.0
+#
+BFIL
+rear wheel_SPZQQYVMES_0.dat
+
+#=============================================
+BODY
+rear wheel 1
+28   1.0
+#
+TRANSLATE
+0.0  -5.825659275054932  0.0
+#
+BFIL
+rear wheel_SPZQQYVMES_1.dat
+
+#=============================================
+BODY
+Cabin 0
+28   1.0
+#
+TRANSLATE
+0.0  3.02590410482431e-17  0.0
+#
+BFIL
+Cabin_LYOJBHHXAZ_0.dat
+
+#=============================================
+BODY
+wing pods IB 0
+28   1.0
+#
+TRANSLATE
+0.0  13.333333015441895  0.0
+#
+BFIL
+wing pods IB_FQGBXBXPMW_0.dat
+
+#=============================================
+BODY
+wing pods IB 1
+28   1.0
+#
+TRANSLATE
+0.0  -13.333333015441895  0.0
+#
+BFIL
+wing pods IB_FQGBXBXPMW_1.dat
+
+#=============================================
+BODY
+wing pods IMB 0
+28   1.0
+#
+TRANSLATE
+0.0  16.66666603088379  0.0
+#
+BFIL
+wing pods IMB_VGDCPCAEGG_0.dat
+
+#=============================================
+BODY
+wing pods IMB 1
+28   1.0
+#
+TRANSLATE
+0.0  -16.66666603088379  0.0
+#
+BFIL
+wing pods IMB_VGDCPCAEGG_1.dat
+
+#=============================================
+BODY
+wing pods MB 0
+28   1.0
+#
+TRANSLATE
+0.0  20.0  0.0
+#
+BFIL
+wing pods MB_QNHGXYHNTF_0.dat
+
+#=============================================
+BODY
+wing pods MB 1
+28   1.0
+#
+TRANSLATE
+0.0  -20.0  0.0
+#
+BFIL
+wing pods MB_QNHGXYHNTF_1.dat
+
+#=============================================
+BODY
+wing pods OB 0
+28   1.0
+#
+TRANSLATE
+0.0  23.33333396911621  0.0
+#
+BFIL
+wing pods OB_RBAFYYPTJN_0.dat
+
+#=============================================
+BODY
+wing pods OB 1
+28   1.0
+#
+TRANSLATE
+0.0  -23.33333396911621  0.0
+#
+BFIL
+wing pods OB_RBAFYYPTJN_1.dat
+
+#=============================================
+BODY
+wing pods IIB 0
+28   1.0
+#
+TRANSLATE
+0.0  10.0  0.0
+#
+BFIL
+wing pods IIB_KQFQAHQPGM_0.dat
+
+#=============================================
+BODY
+wing pods IIB 1
+28   1.0
+#
+TRANSLATE
+0.0  -10.0  0.0
+#
+BFIL
+wing pods IIB_KQFQAHQPGM_1.dat
+
+#--------------------------------------------------
+SURFACE 
+Prop IIB 0 
+!Nchordwise  Cspace  Nspanwise  Sspace
+12           1.0              
+
+COMPONENT 
+1
+
+ANGLE
+0.0
+
+SCALE
+1.0   1.0   1.0
+
+TRANSLATE
+0.0  0.0  0.0
+
+
+SECTION
+#Xle    Yle    Zle     Chord   Ainc  Nspanwise  Sspace
+8.95    10.33    0.99     0.13    -43.25    1    0
+AFILE
+Prop IIB_JWEWUPNZJW_0.dat
+
+SECTION
+#Xle    Yle    Zle     Chord   Ainc  Nspanwise  Sspace
+8.93    10.45    0.97     0.19    -47.68    1    0
+AFILE
+Prop IIB_JWEWUPNZJW_1.dat
+
+SECTION
+#Xle    Yle    Zle     Chord   Ainc  Nspanwise  Sspace
+8.92    10.58    0.94     0.24    -51.84    1    0
+AFILE
+Prop IIB_JWEWUPNZJW_2.dat
+
+SECTION
+#Xle    Yle    Zle     Chord   Ainc  Nspanwise  Sspace
+8.92    10.70    0.92     0.29    -55.73    1    0
+AFILE
+Prop IIB_JWEWUPNZJW_3.dat
+
+SECTION
+#Xle    Yle    Zle     Chord   Ainc  Nspanwise  Sspace
+8.92    10.82    0.90     0.32    -59.34    1    0
+AFILE
+Prop IIB_JWEWUPNZJW_4.dat
+
+SECTION
+#Xle    Yle    Zle     Chord   Ainc  Nspanwise  Sspace
+8.92    10.94    0.89     0.33    -62.68    1    0
+AFILE
+Prop IIB_JWEWUPNZJW_5.dat
+
+SECTION
+#Xle    Yle    Zle     Chord   Ainc  Nspanwise  Sspace
+8.93    11.06    0.89     0.33    -65.75    1    0
+AFILE
+Prop IIB_JWEWUPNZJW_6.dat
+
+SECTION
+#Xle    Yle    Zle     Chord   Ainc  Nspanwise  Sspace
+8.94    11.18    0.88     0.33    -68.55    1    0
+AFILE
+Prop IIB_JWEWUPNZJW_7.dat
+
+SECTION
+#Xle    Yle    Zle     Chord   Ainc  Nspanwise  Sspace
+8.95    11.30    0.88     0.33    -71.07    1    0
+AFILE
+Prop IIB_JWEWUPNZJW_8.dat
+
+SECTION
+#Xle    Yle    Zle     Chord   Ainc  Nspanwise  Sspace
+8.95    11.42    0.88     0.33    -73.32    1    0
+AFILE
+Prop IIB_JWEWUPNZJW_9.dat
+
+SECTION
+#Xle    Yle    Zle     Chord   Ainc  Nspanwise  Sspace
+8.96    11.55    0.88     0.33    -75.30    1    0
+AFILE
+Prop IIB_JWEWUPNZJW_10.dat
+
+SECTION
+#Xle    Yle    Zle     Chord   Ainc  Nspanwise  Sspace
+8.98    11.67    0.93     0.22    -77.00    1    0
+AFILE
+Prop IIB_JWEWUPNZJW_11.dat
+
+#--------------------------------------------------
+SURFACE 
+Prop IIB 1 
+!Nchordwise  Cspace  Nspanwise  Sspace
+12           1.0              
+
+COMPONENT 
+1
+
+ANGLE
+0.0
+
+SCALE
+1.0   1.0   1.0
+
+TRANSLATE
+0.0  0.0  0.0
+
+
+SECTION
+#Xle    Yle    Zle     Chord   Ainc  Nspanwise  Sspace
+8.95    10.13    0.73     0.13    -20.03    1    0
+AFILE
+Prop IIB_JWEWUPNZJW_0.dat
+
+SECTION
+#Xle    Yle    Zle     Chord   Ainc  Nspanwise  Sspace
+8.93    10.17    0.61     0.19    -21.70    1    0
+AFILE
+Prop IIB_JWEWUPNZJW_1.dat
+
+SECTION
+#Xle    Yle    Zle     Chord   Ainc  Nspanwise  Sspace
+8.92    10.20    0.49     0.24    -23.15    1    0
+AFILE
+Prop IIB_JWEWUPNZJW_2.dat
+
+SECTION
+#Xle    Yle    Zle     Chord   Ainc  Nspanwise  Sspace
+8.92    10.25    0.38     0.29    -24.41    1    0
+AFILE
+Prop IIB_JWEWUPNZJW_3.dat
+
+SECTION
+#Xle    Yle    Zle     Chord   Ainc  Nspanwise  Sspace
+8.92    10.29    0.26     0.32    -25.48    1    0
+AFILE
+Prop IIB_JWEWUPNZJW_4.dat
+
+SECTION
+#Xle    Yle    Zle     Chord   Ainc  Nspanwise  Sspace
+8.92    10.34    0.15     0.33    -26.38    1    0
+AFILE
+Prop IIB_JWEWUPNZJW_5.dat
+
+SECTION
+#Xle    Yle    Zle     Chord   Ainc  Nspanwise  Sspace
+8.93    10.40    0.05     0.33    -27.12    1    0
+AFILE
+Prop IIB_JWEWUPNZJW_6.dat
+
+SECTION
+#Xle    Yle    Zle     Chord   Ainc  Nspanwise  Sspace
+8.94    10.46    -0.06     0.33    -27.73    1    0
+AFILE
+Prop IIB_JWEWUPNZJW_7.dat
+
+SECTION
+#Xle    Yle    Zle     Chord   Ainc  Nspanwise  Sspace
+8.95    10.51    -0.17     0.33    -28.23    1    0
+AFILE
+Prop IIB_JWEWUPNZJW_8.dat
+
+SECTION
+#Xle    Yle    Zle     Chord   Ainc  Nspanwise  Sspace
+8.95    10.57    -0.27     0.33    -28.62    1    0
+AFILE
+Prop IIB_JWEWUPNZJW_9.dat
+
+SECTION
+#Xle    Yle    Zle     Chord   Ainc  Nspanwise  Sspace
+8.96    10.63    -0.38     0.33    -28.92    1    0
+AFILE
+Prop IIB_JWEWUPNZJW_10.dat
+
+SECTION
+#Xle    Yle    Zle     Chord   Ainc  Nspanwise  Sspace
+8.98    10.74    -0.46     0.22    -29.16    1    0
+AFILE
+Prop IIB_JWEWUPNZJW_11.dat
+
+#--------------------------------------------------
+SURFACE 
+Prop IIB 2 
+!Nchordwise  Cspace  Nspanwise  Sspace
+12           1.0              
+
+COMPONENT 
+1
+
+ANGLE
+0.0
+
+SCALE
+1.0   1.0   1.0
+
+TRANSLATE
+0.0  0.0  0.0
+
+
+SECTION
+#Xle    Yle    Zle     Chord   Ainc  Nspanwise  Sspace
+8.98    9.08    -0.35     0.22    29.16    1    0
+AFILE
+Prop IIB_JWEWUPNZJW_11.dat
+
+SECTION
+#Xle    Yle    Zle     Chord   Ainc  Nspanwise  Sspace
+8.96    9.09    -0.22     0.33    28.92    1    0
+AFILE
+Prop IIB_JWEWUPNZJW_10.dat
+
+SECTION
+#Xle    Yle    Zle     Chord   Ainc  Nspanwise  Sspace
+8.95    9.15    -0.11     0.33    28.62    1    0
+AFILE
+Prop IIB_JWEWUPNZJW_9.dat
+
+SECTION
+#Xle    Yle    Zle     Chord   Ainc  Nspanwise  Sspace
+8.95    9.21    -0.01     0.33    28.23    1    0
+AFILE
+Prop IIB_JWEWUPNZJW_8.dat
+
+SECTION
+#Xle    Yle    Zle     Chord   Ainc  Nspanwise  Sspace
+8.94    9.27    0.09     0.33    27.73    1    0
+AFILE
+Prop IIB_JWEWUPNZJW_7.dat
+
+SECTION
+#Xle    Yle    Zle     Chord   Ainc  Nspanwise  Sspace
+8.93    9.34    0.20     0.33    27.12    1    0
+AFILE
+Prop IIB_JWEWUPNZJW_6.dat
+
+SECTION
+#Xle    Yle    Zle     Chord   Ainc  Nspanwise  Sspace
+8.92    9.40    0.30     0.33    26.38    1    0
+AFILE
+Prop IIB_JWEWUPNZJW_5.dat
+
+SECTION
+#Xle    Yle    Zle     Chord   Ainc  Nspanwise  Sspace
+8.92    9.47    0.40     0.32    25.48    1    0
+AFILE
+Prop IIB_JWEWUPNZJW_4.dat
+
+SECTION
+#Xle    Yle    Zle     Chord   Ainc  Nspanwise  Sspace
+8.92    9.55    0.50     0.29    24.41    1    0
+AFILE
+Prop IIB_JWEWUPNZJW_3.dat
+
+SECTION
+#Xle    Yle    Zle     Chord   Ainc  Nspanwise  Sspace
+8.92    9.63    0.59     0.24    23.15    1    0
+AFILE
+Prop IIB_JWEWUPNZJW_2.dat
+
+SECTION
+#Xle    Yle    Zle     Chord   Ainc  Nspanwise  Sspace
+8.93    9.71    0.68     0.19    21.70    1    0
+AFILE
+Prop IIB_JWEWUPNZJW_1.dat
+
+SECTION
+#Xle    Yle    Zle     Chord   Ainc  Nspanwise  Sspace
+8.95    9.79    0.77     0.13    20.03    1    0
+AFILE
+Prop IIB_JWEWUPNZJW_0.dat
+
+#--------------------------------------------------
+SURFACE 
+Prop IIB 3 
+!Nchordwise  Cspace  Nspanwise  Sspace
+12           1.0              
+
+COMPONENT 
+1
+
+ANGLE
+0.0
+
+SCALE
+1.0   1.0   1.0
+
+TRANSLATE
+0.0  0.0  0.0
+
+
+SECTION
+#Xle    Yle    Zle     Chord   Ainc  Nspanwise  Sspace
+8.98    8.33    1.15     0.22    77.00    1    0
+AFILE
+Prop IIB_JWEWUPNZJW_11.dat
+
+SECTION
+#Xle    Yle    Zle     Chord   Ainc  Nspanwise  Sspace
+8.96    8.45    1.20     0.33    75.30    1    0
+AFILE
+Prop IIB_JWEWUPNZJW_10.dat
+
+SECTION
+#Xle    Yle    Zle     Chord   Ainc  Nspanwise  Sspace
+8.95    8.58    1.20     0.33    73.32    1    0
+AFILE
+Prop IIB_JWEWUPNZJW_9.dat
+
+SECTION
+#Xle    Yle    Zle     Chord   Ainc  Nspanwise  Sspace
+8.95    8.70    1.20     0.33    71.07    1    0
+AFILE
+Prop IIB_JWEWUPNZJW_8.dat
+
+SECTION
+#Xle    Yle    Zle     Chord   Ainc  Nspanwise  Sspace
+8.94    8.82    1.20     0.33    68.55    1    0
+AFILE
+Prop IIB_JWEWUPNZJW_7.dat
+
+SECTION
+#Xle    Yle    Zle     Chord   Ainc  Nspanwise  Sspace
+8.93    8.94    1.19     0.33    65.75    1    0
+AFILE
+Prop IIB_JWEWUPNZJW_6.dat
+
+SECTION
+#Xle    Yle    Zle     Chord   Ainc  Nspanwise  Sspace
+8.92    9.06    1.19     0.33    62.68    1    0
+AFILE
+Prop IIB_JWEWUPNZJW_5.dat
+
+SECTION
+#Xle    Yle    Zle     Chord   Ainc  Nspanwise  Sspace
+8.92    9.18    1.18     0.32    59.34    1    0
+AFILE
+Prop IIB_JWEWUPNZJW_4.dat
+
+SECTION
+#Xle    Yle    Zle     Chord   Ainc  Nspanwise  Sspace
+8.92    9.30    1.16     0.29    55.73    1    0
+AFILE
+Prop IIB_JWEWUPNZJW_3.dat
+
+SECTION
+#Xle    Yle    Zle     Chord   Ainc  Nspanwise  Sspace
+8.92    9.42    1.14     0.24    51.84    1    0
+AFILE
+Prop IIB_JWEWUPNZJW_2.dat
+
+SECTION
+#Xle    Yle    Zle     Chord   Ainc  Nspanwise  Sspace
+8.93    9.55    1.11     0.19    47.68    1    0
+AFILE
+Prop IIB_JWEWUPNZJW_1.dat
+
+SECTION
+#Xle    Yle    Zle     Chord   Ainc  Nspanwise  Sspace
+8.95    9.67    1.09     0.13    43.25    1    0
+AFILE
+Prop IIB_JWEWUPNZJW_0.dat
+
+#--------------------------------------------------
+SURFACE 
+Prop IIB 4 
+!Nchordwise  Cspace  Nspanwise  Sspace
+12           1.0              
+
+COMPONENT 
+1
+
+ANGLE
+0.0
+
+SCALE
+1.0   1.0   1.0
+
+TRANSLATE
+0.0  0.0  0.0
+
+
+SECTION
+#Xle    Yle    Zle     Chord   Ainc  Nspanwise  Sspace
+8.98    9.26    2.54     0.22    29.16    1    0
+AFILE
+Prop IIB_JWEWUPNZJW_11.dat
+
+SECTION
+#Xle    Yle    Zle     Chord   Ainc  Nspanwise  Sspace
+8.96    9.37    2.46     0.33    28.92    1    0
+AFILE
+Prop IIB_JWEWUPNZJW_10.dat
+
+SECTION
+#Xle    Yle    Zle     Chord   Ainc  Nspanwise  Sspace
+8.95    9.43    2.35     0.33    28.62    1    0
+AFILE
+Prop IIB_JWEWUPNZJW_9.dat
+
+SECTION
+#Xle    Yle    Zle     Chord   Ainc  Nspanwise  Sspace
+8.95    9.49    2.25     0.33    28.23    1    0
+AFILE
+Prop IIB_JWEWUPNZJW_8.dat
+
+SECTION
+#Xle    Yle    Zle     Chord   Ainc  Nspanwise  Sspace
+8.94    9.54    2.14     0.33    27.73    1    0
+AFILE
+Prop IIB_JWEWUPNZJW_7.dat
+
+SECTION
+#Xle    Yle    Zle     Chord   Ainc  Nspanwise  Sspace
+8.93    9.60    2.03     0.33    27.12    1    0
+AFILE
+Prop IIB_JWEWUPNZJW_6.dat
+
+SECTION
+#Xle    Yle    Zle     Chord   Ainc  Nspanwise  Sspace
+8.92    9.66    1.93     0.33    26.38    1    0
+AFILE
+Prop IIB_JWEWUPNZJW_5.dat
+
+SECTION
+#Xle    Yle    Zle     Chord   Ainc  Nspanwise  Sspace
+8.92    9.71    1.82     0.32    25.48    1    0
+AFILE
+Prop IIB_JWEWUPNZJW_4.dat
+
+SECTION
+#Xle    Yle    Zle     Chord   Ainc  Nspanwise  Sspace
+8.92    9.75    1.70     0.29    24.41    1    0
+AFILE
+Prop IIB_JWEWUPNZJW_3.dat
+
+SECTION
+#Xle    Yle    Zle     Chord   Ainc  Nspanwise  Sspace
+8.92    9.80    1.59     0.24    23.15    1    0
+AFILE
+Prop IIB_JWEWUPNZJW_2.dat
+
+SECTION
+#Xle    Yle    Zle     Chord   Ainc  Nspanwise  Sspace
+8.93    9.83    1.47     0.19    21.70    1    0
+AFILE
+Prop IIB_JWEWUPNZJW_1.dat
+
+SECTION
+#Xle    Yle    Zle     Chord   Ainc  Nspanwise  Sspace
+8.95    9.87    1.35     0.13    20.03    1    0
+AFILE
+Prop IIB_JWEWUPNZJW_0.dat
+
+#--------------------------------------------------
+SURFACE 
+Prop IIB 5 
+!Nchordwise  Cspace  Nspanwise  Sspace
+12           1.0              
+
+COMPONENT 
+1
+
+ANGLE
+0.0
+
+SCALE
+1.0   1.0   1.0
+
+TRANSLATE
+0.0  0.0  0.0
+
+
+SECTION
+#Xle    Yle    Zle     Chord   Ainc  Nspanwise  Sspace
+8.95    10.21    1.31     0.13    -20.03    1    0
+AFILE
+Prop IIB_JWEWUPNZJW_0.dat
+
+SECTION
+#Xle    Yle    Zle     Chord   Ainc  Nspanwise  Sspace
+8.93    10.29    1.40     0.19    -21.70    1    0
+AFILE
+Prop IIB_JWEWUPNZJW_1.dat
+
+SECTION
+#Xle    Yle    Zle     Chord   Ainc  Nspanwise  Sspace
+8.92    10.37    1.49     0.24    -23.15    1    0
+AFILE
+Prop IIB_JWEWUPNZJW_2.dat
+
+SECTION
+#Xle    Yle    Zle     Chord   Ainc  Nspanwise  Sspace
+8.92    10.45    1.58     0.29    -24.41    1    0
+AFILE
+Prop IIB_JWEWUPNZJW_3.dat
+
+SECTION
+#Xle    Yle    Zle     Chord   Ainc  Nspanwise  Sspace
+8.92    10.53    1.68     0.32    -25.48    1    0
+AFILE
+Prop IIB_JWEWUPNZJW_4.dat
+
+SECTION
+#Xle    Yle    Zle     Chord   Ainc  Nspanwise  Sspace
+8.92    10.60    1.78     0.33    -26.38    1    0
+AFILE
+Prop IIB_JWEWUPNZJW_5.dat
+
+SECTION
+#Xle    Yle    Zle     Chord   Ainc  Nspanwise  Sspace
+8.93    10.66    1.88     0.33    -27.12    1    0
+AFILE
+Prop IIB_JWEWUPNZJW_6.dat
+
+SECTION
+#Xle    Yle    Zle     Chord   Ainc  Nspanwise  Sspace
+8.94    10.73    1.99     0.33    -27.73    1    0
+AFILE
+Prop IIB_JWEWUPNZJW_7.dat
+
+SECTION
+#Xle    Yle    Zle     Chord   Ainc  Nspanwise  Sspace
+8.95    10.79    2.09     0.33    -28.23    1    0
+AFILE
+Prop IIB_JWEWUPNZJW_8.dat
+
+SECTION
+#Xle    Yle    Zle     Chord   Ainc  Nspanwise  Sspace
+8.95    10.85    2.19     0.33    -28.62    1    0
+AFILE
+Prop IIB_JWEWUPNZJW_9.dat
+
+SECTION
+#Xle    Yle    Zle     Chord   Ainc  Nspanwise  Sspace
+8.96    10.91    2.30     0.33    -28.92    1    0
+AFILE
+Prop IIB_JWEWUPNZJW_10.dat
+
+SECTION
+#Xle    Yle    Zle     Chord   Ainc  Nspanwise  Sspace
+8.98    10.92    2.43     0.22    -29.16    1    0
+AFILE
+Prop IIB_JWEWUPNZJW_11.dat
+
+#--------------------------------------------------
+SURFACE 
+Prop IIB 6 
+!Nchordwise  Cspace  Nspanwise  Sspace
+12           1.0              
+
+COMPONENT 
+1
+
+ANGLE
+0.0
+
+SCALE
+1.0   1.0   1.0
+
+TRANSLATE
+0.0  0.0  0.0
+
+
+SECTION
+#Xle    Yle    Zle     Chord   Ainc  Nspanwise  Sspace
+8.98    -11.67    0.93     0.22    -77.00    1    0
+AFILE
+Prop IIB_JWEWUPNZJW_11.dat
+
+SECTION
+#Xle    Yle    Zle     Chord   Ainc  Nspanwise  Sspace
+8.96    -11.55    0.88     0.33    -75.30    1    0
+AFILE
+Prop IIB_JWEWUPNZJW_10.dat
+
+SECTION
+#Xle    Yle    Zle     Chord   Ainc  Nspanwise  Sspace
+8.95    -11.42    0.88     0.33    -73.32    1    0
+AFILE
+Prop IIB_JWEWUPNZJW_9.dat
+
+SECTION
+#Xle    Yle    Zle     Chord   Ainc  Nspanwise  Sspace
+8.95    -11.30    0.88     0.33    -71.07    1    0
+AFILE
+Prop IIB_JWEWUPNZJW_8.dat
+
+SECTION
+#Xle    Yle    Zle     Chord   Ainc  Nspanwise  Sspace
+8.94    -11.18    0.88     0.33    -68.55    1    0
+AFILE
+Prop IIB_JWEWUPNZJW_7.dat
+
+SECTION
+#Xle    Yle    Zle     Chord   Ainc  Nspanwise  Sspace
+8.93    -11.06    0.89     0.33    -65.75    1    0
+AFILE
+Prop IIB_JWEWUPNZJW_6.dat
+
+SECTION
+#Xle    Yle    Zle     Chord   Ainc  Nspanwise  Sspace
+8.92    -10.94    0.89     0.33    -62.68    1    0
+AFILE
+Prop IIB_JWEWUPNZJW_5.dat
+
+SECTION
+#Xle    Yle    Zle     Chord   Ainc  Nspanwise  Sspace
+8.92    -10.82    0.90     0.32    -59.34    1    0
+AFILE
+Prop IIB_JWEWUPNZJW_4.dat
+
+SECTION
+#Xle    Yle    Zle     Chord   Ainc  Nspanwise  Sspace
+8.92    -10.70    0.92     0.29    -55.73    1    0
+AFILE
+Prop IIB_JWEWUPNZJW_3.dat
+
+SECTION
+#Xle    Yle    Zle     Chord   Ainc  Nspanwise  Sspace
+8.92    -10.58    0.94     0.24    -51.84    1    0
+AFILE
+Prop IIB_JWEWUPNZJW_2.dat
+
+SECTION
+#Xle    Yle    Zle     Chord   Ainc  Nspanwise  Sspace
+8.93    -10.45    0.97     0.19    -47.68    1    0
+AFILE
+Prop IIB_JWEWUPNZJW_1.dat
+
+SECTION
+#Xle    Yle    Zle     Chord   Ainc  Nspanwise  Sspace
+8.95    -10.33    0.99     0.13    -43.25    1    0
+AFILE
+Prop IIB_JWEWUPNZJW_0.dat
+
+#--------------------------------------------------
+SURFACE 
+Prop IIB 7 
+!Nchordwise  Cspace  Nspanwise  Sspace
+12           1.0              
+
+COMPONENT 
+1
+
+ANGLE
+0.0
+
+SCALE
+1.0   1.0   1.0
+
+TRANSLATE
+0.0  0.0  0.0
+
+
+SECTION
+#Xle    Yle    Zle     Chord   Ainc  Nspanwise  Sspace
+8.98    -10.74    -0.46     0.22    -29.16    1    0
+AFILE
+Prop IIB_JWEWUPNZJW_11.dat
+
+SECTION
+#Xle    Yle    Zle     Chord   Ainc  Nspanwise  Sspace
+8.96    -10.63    -0.38     0.33    -28.92    1    0
+AFILE
+Prop IIB_JWEWUPNZJW_10.dat
+
+SECTION
+#Xle    Yle    Zle     Chord   Ainc  Nspanwise  Sspace
+8.95    -10.57    -0.27     0.33    -28.62    1    0
+AFILE
+Prop IIB_JWEWUPNZJW_9.dat
+
+SECTION
+#Xle    Yle    Zle     Chord   Ainc  Nspanwise  Sspace
+8.95    -10.51    -0.17     0.33    -28.23    1    0
+AFILE
+Prop IIB_JWEWUPNZJW_8.dat
+
+SECTION
+#Xle    Yle    Zle     Chord   Ainc  Nspanwise  Sspace
+8.94    -10.46    -0.06     0.33    -27.73    1    0
+AFILE
+Prop IIB_JWEWUPNZJW_7.dat
+
+SECTION
+#Xle    Yle    Zle     Chord   Ainc  Nspanwise  Sspace
+8.93    -10.40    0.05     0.33    -27.12    1    0
+AFILE
+Prop IIB_JWEWUPNZJW_6.dat
+
+SECTION
+#Xle    Yle    Zle     Chord   Ainc  Nspanwise  Sspace
+8.92    -10.34    0.15     0.33    -26.38    1    0
+AFILE
+Prop IIB_JWEWUPNZJW_5.dat
+
+SECTION
+#Xle    Yle    Zle     Chord   Ainc  Nspanwise  Sspace
+8.92    -10.29    0.26     0.32    -25.48    1    0
+AFILE
+Prop IIB_JWEWUPNZJW_4.dat
+
+SECTION
+#Xle    Yle    Zle     Chord   Ainc  Nspanwise  Sspace
+8.92    -10.25    0.38     0.29    -24.41    1    0
+AFILE
+Prop IIB_JWEWUPNZJW_3.dat
+
+SECTION
+#Xle    Yle    Zle     Chord   Ainc  Nspanwise  Sspace
+8.92    -10.20    0.49     0.24    -23.15    1    0
+AFILE
+Prop IIB_JWEWUPNZJW_2.dat
+
+SECTION
+#Xle    Yle    Zle     Chord   Ainc  Nspanwise  Sspace
+8.93    -10.17    0.61     0.19    -21.70    1    0
+AFILE
+Prop IIB_JWEWUPNZJW_1.dat
+
+SECTION
+#Xle    Yle    Zle     Chord   Ainc  Nspanwise  Sspace
+8.95    -10.13    0.73     0.13    -20.03    1    0
+AFILE
+Prop IIB_JWEWUPNZJW_0.dat
+
+#--------------------------------------------------
+SURFACE 
+Prop IIB 8 
+!Nchordwise  Cspace  Nspanwise  Sspace
+12           1.0              
+
+COMPONENT 
+1
+
+ANGLE
+0.0
+
+SCALE
+1.0   1.0   1.0
+
+TRANSLATE
+0.0  0.0  0.0
+
+
+SECTION
+#Xle    Yle    Zle     Chord   Ainc  Nspanwise  Sspace
+8.95    -9.79    0.77     0.13    20.03    1    0
+AFILE
+Prop IIB_JWEWUPNZJW_0.dat
+
+SECTION
+#Xle    Yle    Zle     Chord   Ainc  Nspanwise  Sspace
+8.93    -9.71    0.68     0.19    21.70    1    0
+AFILE
+Prop IIB_JWEWUPNZJW_1.dat
+
+SECTION
+#Xle    Yle    Zle     Chord   Ainc  Nspanwise  Sspace
+8.92    -9.63    0.59     0.24    23.15    1    0
+AFILE
+Prop IIB_JWEWUPNZJW_2.dat
+
+SECTION
+#Xle    Yle    Zle     Chord   Ainc  Nspanwise  Sspace
+8.92    -9.55    0.50     0.29    24.41    1    0
+AFILE
+Prop IIB_JWEWUPNZJW_3.dat
+
+SECTION
+#Xle    Yle    Zle     Chord   Ainc  Nspanwise  Sspace
+8.92    -9.47    0.40     0.32    25.48    1    0
+AFILE
+Prop IIB_JWEWUPNZJW_4.dat
+
+SECTION
+#Xle    Yle    Zle     Chord   Ainc  Nspanwise  Sspace
+8.92    -9.40    0.30     0.33    26.38    1    0
+AFILE
+Prop IIB_JWEWUPNZJW_5.dat
+
+SECTION
+#Xle    Yle    Zle     Chord   Ainc  Nspanwise  Sspace
+8.93    -9.34    0.20     0.33    27.12    1    0
+AFILE
+Prop IIB_JWEWUPNZJW_6.dat
+
+SECTION
+#Xle    Yle    Zle     Chord   Ainc  Nspanwise  Sspace
+8.94    -9.27    0.09     0.33    27.73    1    0
+AFILE
+Prop IIB_JWEWUPNZJW_7.dat
+
+SECTION
+#Xle    Yle    Zle     Chord   Ainc  Nspanwise  Sspace
+8.95    -9.21    -0.01     0.33    28.23    1    0
+AFILE
+Prop IIB_JWEWUPNZJW_8.dat
+
+SECTION
+#Xle    Yle    Zle     Chord   Ainc  Nspanwise  Sspace
+8.95    -9.15    -0.11     0.33    28.62    1    0
+AFILE
+Prop IIB_JWEWUPNZJW_9.dat
+
+SECTION
+#Xle    Yle    Zle     Chord   Ainc  Nspanwise  Sspace
+8.96    -9.09    -0.22     0.33    28.92    1    0
+AFILE
+Prop IIB_JWEWUPNZJW_10.dat
+
+SECTION
+#Xle    Yle    Zle     Chord   Ainc  Nspanwise  Sspace
+8.98    -9.08    -0.35     0.22    29.16    1    0
+AFILE
+Prop IIB_JWEWUPNZJW_11.dat
+
+#--------------------------------------------------
+SURFACE 
+Prop IIB 9 
+!Nchordwise  Cspace  Nspanwise  Sspace
+12           1.0              
+
+COMPONENT 
+1
+
+ANGLE
+0.0
+
+SCALE
+1.0   1.0   1.0
+
+TRANSLATE
+0.0  0.0  0.0
+
+
+SECTION
+#Xle    Yle    Zle     Chord   Ainc  Nspanwise  Sspace
+8.95    -9.67    1.09     0.13    43.25    1    0
+AFILE
+Prop IIB_JWEWUPNZJW_0.dat
+
+SECTION
+#Xle    Yle    Zle     Chord   Ainc  Nspanwise  Sspace
+8.93    -9.55    1.11     0.19    47.68    1    0
+AFILE
+Prop IIB_JWEWUPNZJW_1.dat
+
+SECTION
+#Xle    Yle    Zle     Chord   Ainc  Nspanwise  Sspace
+8.92    -9.42    1.14     0.24    51.84    1    0
+AFILE
+Prop IIB_JWEWUPNZJW_2.dat
+
+SECTION
+#Xle    Yle    Zle     Chord   Ainc  Nspanwise  Sspace
+8.92    -9.30    1.16     0.29    55.73    1    0
+AFILE
+Prop IIB_JWEWUPNZJW_3.dat
+
+SECTION
+#Xle    Yle    Zle     Chord   Ainc  Nspanwise  Sspace
+8.92    -9.18    1.18     0.32    59.34    1    0
+AFILE
+Prop IIB_JWEWUPNZJW_4.dat
+
+SECTION
+#Xle    Yle    Zle     Chord   Ainc  Nspanwise  Sspace
+8.92    -9.06    1.19     0.33    62.68    1    0
+AFILE
+Prop IIB_JWEWUPNZJW_5.dat
+
+SECTION
+#Xle    Yle    Zle     Chord   Ainc  Nspanwise  Sspace
+8.93    -8.94    1.19     0.33    65.75    1    0
+AFILE
+Prop IIB_JWEWUPNZJW_6.dat
+
+SECTION
+#Xle    Yle    Zle     Chord   Ainc  Nspanwise  Sspace
+8.94    -8.82    1.20     0.33    68.55    1    0
+AFILE
+Prop IIB_JWEWUPNZJW_7.dat
+
+SECTION
+#Xle    Yle    Zle     Chord   Ainc  Nspanwise  Sspace
+8.95    -8.70    1.20     0.33    71.07    1    0
+AFILE
+Prop IIB_JWEWUPNZJW_8.dat
+
+SECTION
+#Xle    Yle    Zle     Chord   Ainc  Nspanwise  Sspace
+8.95    -8.58    1.20     0.33    73.32    1    0
+AFILE
+Prop IIB_JWEWUPNZJW_9.dat
+
+SECTION
+#Xle    Yle    Zle     Chord   Ainc  Nspanwise  Sspace
+8.96    -8.45    1.20     0.33    75.30    1    0
+AFILE
+Prop IIB_JWEWUPNZJW_10.dat
+
+SECTION
+#Xle    Yle    Zle     Chord   Ainc  Nspanwise  Sspace
+8.98    -8.33    1.15     0.22    77.00    1    0
+AFILE
+Prop IIB_JWEWUPNZJW_11.dat
+
+#--------------------------------------------------
+SURFACE 
+Prop IIB 10 
+!Nchordwise  Cspace  Nspanwise  Sspace
+12           1.0              
+
+COMPONENT 
+1
+
+ANGLE
+0.0
+
+SCALE
+1.0   1.0   1.0
+
+TRANSLATE
+0.0  0.0  0.0
+
+
+SECTION
+#Xle    Yle    Zle     Chord   Ainc  Nspanwise  Sspace
+8.95    -9.87    1.35     0.13    20.03    1    0
+AFILE
+Prop IIB_JWEWUPNZJW_0.dat
+
+SECTION
+#Xle    Yle    Zle     Chord   Ainc  Nspanwise  Sspace
+8.93    -9.83    1.47     0.19    21.70    1    0
+AFILE
+Prop IIB_JWEWUPNZJW_1.dat
+
+SECTION
+#Xle    Yle    Zle     Chord   Ainc  Nspanwise  Sspace
+8.92    -9.80    1.59     0.24    23.15    1    0
+AFILE
+Prop IIB_JWEWUPNZJW_2.dat
+
+SECTION
+#Xle    Yle    Zle     Chord   Ainc  Nspanwise  Sspace
+8.92    -9.75    1.70     0.29    24.41    1    0
+AFILE
+Prop IIB_JWEWUPNZJW_3.dat
+
+SECTION
+#Xle    Yle    Zle     Chord   Ainc  Nspanwise  Sspace
+8.92    -9.71    1.82     0.32    25.48    1    0
+AFILE
+Prop IIB_JWEWUPNZJW_4.dat
+
+SECTION
+#Xle    Yle    Zle     Chord   Ainc  Nspanwise  Sspace
+8.92    -9.66    1.93     0.33    26.38    1    0
+AFILE
+Prop IIB_JWEWUPNZJW_5.dat
+
+SECTION
+#Xle    Yle    Zle     Chord   Ainc  Nspanwise  Sspace
+8.93    -9.60    2.03     0.33    27.12    1    0
+AFILE
+Prop IIB_JWEWUPNZJW_6.dat
+
+SECTION
+#Xle    Yle    Zle     Chord   Ainc  Nspanwise  Sspace
+8.94    -9.54    2.14     0.33    27.73    1    0
+AFILE
+Prop IIB_JWEWUPNZJW_7.dat
+
+SECTION
+#Xle    Yle    Zle     Chord   Ainc  Nspanwise  Sspace
+8.95    -9.49    2.25     0.33    28.23    1    0
+AFILE
+Prop IIB_JWEWUPNZJW_8.dat
+
+SECTION
+#Xle    Yle    Zle     Chord   Ainc  Nspanwise  Sspace
+8.95    -9.43    2.35     0.33    28.62    1    0
+AFILE
+Prop IIB_JWEWUPNZJW_9.dat
+
+SECTION
+#Xle    Yle    Zle     Chord   Ainc  Nspanwise  Sspace
+8.96    -9.37    2.46     0.33    28.92    1    0
+AFILE
+Prop IIB_JWEWUPNZJW_10.dat
+
+SECTION
+#Xle    Yle    Zle     Chord   Ainc  Nspanwise  Sspace
+8.98    -9.26    2.54     0.22    29.16    1    0
+AFILE
+Prop IIB_JWEWUPNZJW_11.dat
+
+#--------------------------------------------------
+SURFACE 
+Prop IIB 11 
+!Nchordwise  Cspace  Nspanwise  Sspace
+12           1.0              
+
+COMPONENT 
+1
+
+ANGLE
+0.0
+
+SCALE
+1.0   1.0   1.0
+
+TRANSLATE
+0.0  0.0  0.0
+
+
+SECTION
+#Xle    Yle    Zle     Chord   Ainc  Nspanwise  Sspace
+8.98    -10.92    2.43     0.22    -29.16    1    0
+AFILE
+Prop IIB_JWEWUPNZJW_11.dat
+
+SECTION
+#Xle    Yle    Zle     Chord   Ainc  Nspanwise  Sspace
+8.96    -10.91    2.30     0.33    -28.92    1    0
+AFILE
+Prop IIB_JWEWUPNZJW_10.dat
+
+SECTION
+#Xle    Yle    Zle     Chord   Ainc  Nspanwise  Sspace
+8.95    -10.85    2.19     0.33    -28.62    1    0
+AFILE
+Prop IIB_JWEWUPNZJW_9.dat
+
+SECTION
+#Xle    Yle    Zle     Chord   Ainc  Nspanwise  Sspace
+8.95    -10.79    2.09     0.33    -28.23    1    0
+AFILE
+Prop IIB_JWEWUPNZJW_8.dat
+
+SECTION
+#Xle    Yle    Zle     Chord   Ainc  Nspanwise  Sspace
+8.94    -10.73    1.99     0.33    -27.73    1    0
+AFILE
+Prop IIB_JWEWUPNZJW_7.dat
+
+SECTION
+#Xle    Yle    Zle     Chord   Ainc  Nspanwise  Sspace
+8.93    -10.66    1.88     0.33    -27.12    1    0
+AFILE
+Prop IIB_JWEWUPNZJW_6.dat
+
+SECTION
+#Xle    Yle    Zle     Chord   Ainc  Nspanwise  Sspace
+8.92    -10.60    1.78     0.33    -26.38    1    0
+AFILE
+Prop IIB_JWEWUPNZJW_5.dat
+
+SECTION
+#Xle    Yle    Zle     Chord   Ainc  Nspanwise  Sspace
+8.92    -10.53    1.68     0.32    -25.48    1    0
+AFILE
+Prop IIB_JWEWUPNZJW_4.dat
+
+SECTION
+#Xle    Yle    Zle     Chord   Ainc  Nspanwise  Sspace
+8.92    -10.45    1.58     0.29    -24.41    1    0
+AFILE
+Prop IIB_JWEWUPNZJW_3.dat
+
+SECTION
+#Xle    Yle    Zle     Chord   Ainc  Nspanwise  Sspace
+8.92    -10.37    1.49     0.24    -23.15    1    0
+AFILE
+Prop IIB_JWEWUPNZJW_2.dat
+
+SECTION
+#Xle    Yle    Zle     Chord   Ainc  Nspanwise  Sspace
+8.93    -10.29    1.40     0.19    -21.70    1    0
+AFILE
+Prop IIB_JWEWUPNZJW_1.dat
+
+SECTION
+#Xle    Yle    Zle     Chord   Ainc  Nspanwise  Sspace
+8.95    -10.21    1.31     0.13    -20.03    1    0
+AFILE
+Prop IIB_JWEWUPNZJW_0.dat
+
+#--------------------------------------------------
+SURFACE 
+Prop IB 0 
+!Nchordwise  Cspace  Nspanwise  Sspace
+12           1.0              
+
+COMPONENT 
+1
+
+ANGLE
+0.0
+
+SCALE
+1.0   1.0   1.0
+
+TRANSLATE
+0.0  0.0  0.0
+
+
+SECTION
+#Xle    Yle    Zle     Chord   Ainc  Nspanwise  Sspace
+9.68    13.67    1.29     0.13    -43.25    1    0
+AFILE
+Prop IB_WWWXHQJPUT_0.dat
+
+SECTION
+#Xle    Yle    Zle     Chord   Ainc  Nspanwise  Sspace
+9.67    13.79    1.26     0.19    -47.68    1    0
+AFILE
+Prop IB_WWWXHQJPUT_1.dat
+
+SECTION
+#Xle    Yle    Zle     Chord   Ainc  Nspanwise  Sspace
+9.66    13.91    1.24     0.24    -51.84    1    0
+AFILE
+Prop IB_WWWXHQJPUT_2.dat
+
+SECTION
+#Xle    Yle    Zle     Chord   Ainc  Nspanwise  Sspace
+9.65    14.03    1.22     0.29    -55.73    1    0
+AFILE
+Prop IB_WWWXHQJPUT_3.dat
+
+SECTION
+#Xle    Yle    Zle     Chord   Ainc  Nspanwise  Sspace
+9.65    14.15    1.20     0.32    -59.34    1    0
+AFILE
+Prop IB_WWWXHQJPUT_4.dat
+
+SECTION
+#Xle    Yle    Zle     Chord   Ainc  Nspanwise  Sspace
+9.66    14.27    1.19     0.33    -62.68    1    0
+AFILE
+Prop IB_WWWXHQJPUT_5.dat
+
+SECTION
+#Xle    Yle    Zle     Chord   Ainc  Nspanwise  Sspace
+9.66    14.39    1.18     0.33    -65.75    1    0
+AFILE
+Prop IB_WWWXHQJPUT_6.dat
+
+SECTION
+#Xle    Yle    Zle     Chord   Ainc  Nspanwise  Sspace
+9.67    14.52    1.18     0.33    -68.55    1    0
+AFILE
+Prop IB_WWWXHQJPUT_7.dat
+
+SECTION
+#Xle    Yle    Zle     Chord   Ainc  Nspanwise  Sspace
+9.68    14.64    1.18     0.33    -71.07    1    0
+AFILE
+Prop IB_WWWXHQJPUT_8.dat
+
+SECTION
+#Xle    Yle    Zle     Chord   Ainc  Nspanwise  Sspace
+9.69    14.76    1.17     0.33    -73.32    1    0
+AFILE
+Prop IB_WWWXHQJPUT_9.dat
+
+SECTION
+#Xle    Yle    Zle     Chord   Ainc  Nspanwise  Sspace
+9.69    14.88    1.17     0.33    -75.30    1    0
+AFILE
+Prop IB_WWWXHQJPUT_10.dat
+
+SECTION
+#Xle    Yle    Zle     Chord   Ainc  Nspanwise  Sspace
+9.71    15.00    1.23     0.22    -77.00    1    0
+AFILE
+Prop IB_WWWXHQJPUT_11.dat
+
+#--------------------------------------------------
+SURFACE 
+Prop IB 1 
+!Nchordwise  Cspace  Nspanwise  Sspace
+12           1.0              
+
+COMPONENT 
+1
+
+ANGLE
+0.0
+
+SCALE
+1.0   1.0   1.0
+
+TRANSLATE
+0.0  0.0  0.0
+
+
+SECTION
+#Xle    Yle    Zle     Chord   Ainc  Nspanwise  Sspace
+9.68    13.46    1.02     0.13    -20.03    1    0
+AFILE
+Prop IB_WWWXHQJPUT_0.dat
+
+SECTION
+#Xle    Yle    Zle     Chord   Ainc  Nspanwise  Sspace
+9.67    13.50    0.90     0.19    -21.70    1    0
+AFILE
+Prop IB_WWWXHQJPUT_1.dat
+
+SECTION
+#Xle    Yle    Zle     Chord   Ainc  Nspanwise  Sspace
+9.66    13.54    0.79     0.24    -23.15    1    0
+AFILE
+Prop IB_WWWXHQJPUT_2.dat
+
+SECTION
+#Xle    Yle    Zle     Chord   Ainc  Nspanwise  Sspace
+9.65    13.58    0.67     0.29    -24.41    1    0
+AFILE
+Prop IB_WWWXHQJPUT_3.dat
+
+SECTION
+#Xle    Yle    Zle     Chord   Ainc  Nspanwise  Sspace
+9.65    13.62    0.56     0.32    -25.48    1    0
+AFILE
+Prop IB_WWWXHQJPUT_4.dat
+
+SECTION
+#Xle    Yle    Zle     Chord   Ainc  Nspanwise  Sspace
+9.66    13.68    0.45     0.33    -26.38    1    0
+AFILE
+Prop IB_WWWXHQJPUT_5.dat
+
+SECTION
+#Xle    Yle    Zle     Chord   Ainc  Nspanwise  Sspace
+9.66    13.73    0.34     0.33    -27.12    1    0
+AFILE
+Prop IB_WWWXHQJPUT_6.dat
+
+SECTION
+#Xle    Yle    Zle     Chord   Ainc  Nspanwise  Sspace
+9.67    13.79    0.23     0.33    -27.73    1    0
+AFILE
+Prop IB_WWWXHQJPUT_7.dat
+
+SECTION
+#Xle    Yle    Zle     Chord   Ainc  Nspanwise  Sspace
+9.68    13.85    0.13     0.33    -28.23    1    0
+AFILE
+Prop IB_WWWXHQJPUT_8.dat
+
+SECTION
+#Xle    Yle    Zle     Chord   Ainc  Nspanwise  Sspace
+9.69    13.91    0.02     0.33    -28.62    1    0
+AFILE
+Prop IB_WWWXHQJPUT_9.dat
+
+SECTION
+#Xle    Yle    Zle     Chord   Ainc  Nspanwise  Sspace
+9.69    13.97    -0.09     0.33    -28.92    1    0
+AFILE
+Prop IB_WWWXHQJPUT_10.dat
+
+SECTION
+#Xle    Yle    Zle     Chord   Ainc  Nspanwise  Sspace
+9.71    14.08    -0.16     0.22    -29.16    1    0
+AFILE
+Prop IB_WWWXHQJPUT_11.dat
+
+#--------------------------------------------------
+SURFACE 
+Prop IB 2 
+!Nchordwise  Cspace  Nspanwise  Sspace
+12           1.0              
+
+COMPONENT 
+1
+
+ANGLE
+0.0
+
+SCALE
+1.0   1.0   1.0
+
+TRANSLATE
+0.0  0.0  0.0
+
+
+SECTION
+#Xle    Yle    Zle     Chord   Ainc  Nspanwise  Sspace
+9.71    12.41    -0.06     0.22    29.16    1    0
+AFILE
+Prop IB_WWWXHQJPUT_11.dat
+
+SECTION
+#Xle    Yle    Zle     Chord   Ainc  Nspanwise  Sspace
+9.69    12.42    0.08     0.33    28.92    1    0
+AFILE
+Prop IB_WWWXHQJPUT_10.dat
+
+SECTION
+#Xle    Yle    Zle     Chord   Ainc  Nspanwise  Sspace
+9.69    12.48    0.18     0.33    28.62    1    0
+AFILE
+Prop IB_WWWXHQJPUT_9.dat
+
+SECTION
+#Xle    Yle    Zle     Chord   Ainc  Nspanwise  Sspace
+9.68    12.55    0.28     0.33    28.23    1    0
+AFILE
+Prop IB_WWWXHQJPUT_8.dat
+
+SECTION
+#Xle    Yle    Zle     Chord   Ainc  Nspanwise  Sspace
+9.67    12.61    0.39     0.33    27.73    1    0
+AFILE
+Prop IB_WWWXHQJPUT_7.dat
+
+SECTION
+#Xle    Yle    Zle     Chord   Ainc  Nspanwise  Sspace
+9.66    12.67    0.49     0.33    27.12    1    0
+AFILE
+Prop IB_WWWXHQJPUT_6.dat
+
+SECTION
+#Xle    Yle    Zle     Chord   Ainc  Nspanwise  Sspace
+9.66    12.74    0.59     0.33    26.37    1    0
+AFILE
+Prop IB_WWWXHQJPUT_5.dat
+
+SECTION
+#Xle    Yle    Zle     Chord   Ainc  Nspanwise  Sspace
+9.65    12.81    0.69     0.32    25.48    1    0
+AFILE
+Prop IB_WWWXHQJPUT_4.dat
+
+SECTION
+#Xle    Yle    Zle     Chord   Ainc  Nspanwise  Sspace
+9.65    12.88    0.79     0.29    24.41    1    0
+AFILE
+Prop IB_WWWXHQJPUT_3.dat
+
+SECTION
+#Xle    Yle    Zle     Chord   Ainc  Nspanwise  Sspace
+9.66    12.96    0.88     0.24    23.15    1    0
+AFILE
+Prop IB_WWWXHQJPUT_2.dat
+
+SECTION
+#Xle    Yle    Zle     Chord   Ainc  Nspanwise  Sspace
+9.67    13.04    0.98     0.19    21.70    1    0
+AFILE
+Prop IB_WWWXHQJPUT_1.dat
+
+SECTION
+#Xle    Yle    Zle     Chord   Ainc  Nspanwise  Sspace
+9.68    13.13    1.07     0.13    20.03    1    0
+AFILE
+Prop IB_WWWXHQJPUT_0.dat
+
+#--------------------------------------------------
+SURFACE 
+Prop IB 3 
+!Nchordwise  Cspace  Nspanwise  Sspace
+12           1.0              
+
+COMPONENT 
+1
+
+ANGLE
+0.0
+
+SCALE
+1.0   1.0   1.0
+
+TRANSLATE
+0.0  0.0  0.0
+
+
+SECTION
+#Xle    Yle    Zle     Chord   Ainc  Nspanwise  Sspace
+9.71    11.67    1.44     0.22    77.00    1    0
+AFILE
+Prop IB_WWWXHQJPUT_11.dat
+
+SECTION
+#Xle    Yle    Zle     Chord   Ainc  Nspanwise  Sspace
+9.69    11.79    1.49     0.33    75.30    1    0
+AFILE
+Prop IB_WWWXHQJPUT_10.dat
+
+SECTION
+#Xle    Yle    Zle     Chord   Ainc  Nspanwise  Sspace
+9.69    11.91    1.49     0.33    73.32    1    0
+AFILE
+Prop IB_WWWXHQJPUT_9.dat
+
+SECTION
+#Xle    Yle    Zle     Chord   Ainc  Nspanwise  Sspace
+9.68    12.03    1.49     0.33    71.07    1    0
+AFILE
+Prop IB_WWWXHQJPUT_8.dat
+
+SECTION
+#Xle    Yle    Zle     Chord   Ainc  Nspanwise  Sspace
+9.67    12.15    1.49     0.33    68.55    1    0
+AFILE
+Prop IB_WWWXHQJPUT_7.dat
+
+SECTION
+#Xle    Yle    Zle     Chord   Ainc  Nspanwise  Sspace
+9.66    12.27    1.49     0.33    65.75    1    0
+AFILE
+Prop IB_WWWXHQJPUT_6.dat
+
+SECTION
+#Xle    Yle    Zle     Chord   Ainc  Nspanwise  Sspace
+9.66    12.39    1.48     0.33    62.68    1    0
+AFILE
+Prop IB_WWWXHQJPUT_5.dat
+
+SECTION
+#Xle    Yle    Zle     Chord   Ainc  Nspanwise  Sspace
+9.65    12.52    1.47     0.32    59.34    1    0
+AFILE
+Prop IB_WWWXHQJPUT_4.dat
+
+SECTION
+#Xle    Yle    Zle     Chord   Ainc  Nspanwise  Sspace
+9.65    12.64    1.45     0.29    55.73    1    0
+AFILE
+Prop IB_WWWXHQJPUT_3.dat
+
+SECTION
+#Xle    Yle    Zle     Chord   Ainc  Nspanwise  Sspace
+9.66    12.76    1.43     0.24    51.84    1    0
+AFILE
+Prop IB_WWWXHQJPUT_2.dat
+
+SECTION
+#Xle    Yle    Zle     Chord   Ainc  Nspanwise  Sspace
+9.67    12.88    1.40     0.19    47.68    1    0
+AFILE
+Prop IB_WWWXHQJPUT_1.dat
+
+SECTION
+#Xle    Yle    Zle     Chord   Ainc  Nspanwise  Sspace
+9.68    13.00    1.38     0.13    43.25    1    0
+AFILE
+Prop IB_WWWXHQJPUT_0.dat
+
+#--------------------------------------------------
+SURFACE 
+Prop IB 4 
+!Nchordwise  Cspace  Nspanwise  Sspace
+12           1.0              
+
+COMPONENT 
+1
+
+ANGLE
+0.0
+
+SCALE
+1.0   1.0   1.0
+
+TRANSLATE
+0.0  0.0  0.0
+
+
+SECTION
+#Xle    Yle    Zle     Chord   Ainc  Nspanwise  Sspace
+9.71    12.59    2.83     0.22    29.16    1    0
+AFILE
+Prop IB_WWWXHQJPUT_11.dat
+
+SECTION
+#Xle    Yle    Zle     Chord   Ainc  Nspanwise  Sspace
+9.69    12.70    2.75     0.33    28.92    1    0
+AFILE
+Prop IB_WWWXHQJPUT_10.dat
+
+SECTION
+#Xle    Yle    Zle     Chord   Ainc  Nspanwise  Sspace
+9.69    12.76    2.65     0.33    28.62    1    0
+AFILE
+Prop IB_WWWXHQJPUT_9.dat
+
+SECTION
+#Xle    Yle    Zle     Chord   Ainc  Nspanwise  Sspace
+9.68    12.82    2.54     0.33    28.23    1    0
+AFILE
+Prop IB_WWWXHQJPUT_8.dat
+
+SECTION
+#Xle    Yle    Zle     Chord   Ainc  Nspanwise  Sspace
+9.67    12.88    2.43     0.33    27.73    1    0
+AFILE
+Prop IB_WWWXHQJPUT_7.dat
+
+SECTION
+#Xle    Yle    Zle     Chord   Ainc  Nspanwise  Sspace
+9.66    12.93    2.33     0.33    27.12    1    0
+AFILE
+Prop IB_WWWXHQJPUT_6.dat
+
+SECTION
+#Xle    Yle    Zle     Chord   Ainc  Nspanwise  Sspace
+9.66    12.99    2.22     0.33    26.37    1    0
+AFILE
+Prop IB_WWWXHQJPUT_5.dat
+
+SECTION
+#Xle    Yle    Zle     Chord   Ainc  Nspanwise  Sspace
+9.65    13.04    2.11     0.32    25.48    1    0
+AFILE
+Prop IB_WWWXHQJPUT_4.dat
+
+SECTION
+#Xle    Yle    Zle     Chord   Ainc  Nspanwise  Sspace
+9.65    13.09    2.00     0.29    24.41    1    0
+AFILE
+Prop IB_WWWXHQJPUT_3.dat
+
+SECTION
+#Xle    Yle    Zle     Chord   Ainc  Nspanwise  Sspace
+9.66    13.13    1.88     0.24    23.15    1    0
+AFILE
+Prop IB_WWWXHQJPUT_2.dat
+
+SECTION
+#Xle    Yle    Zle     Chord   Ainc  Nspanwise  Sspace
+9.67    13.17    1.76     0.19    21.70    1    0
+AFILE
+Prop IB_WWWXHQJPUT_1.dat
+
+SECTION
+#Xle    Yle    Zle     Chord   Ainc  Nspanwise  Sspace
+9.68    13.21    1.64     0.13    20.03    1    0
+AFILE
+Prop IB_WWWXHQJPUT_0.dat
+
+#--------------------------------------------------
+SURFACE 
+Prop IB 5 
+!Nchordwise  Cspace  Nspanwise  Sspace
+12           1.0              
+
+COMPONENT 
+1
+
+ANGLE
+0.0
+
+SCALE
+1.0   1.0   1.0
+
+TRANSLATE
+0.0  0.0  0.0
+
+
+SECTION
+#Xle    Yle    Zle     Chord   Ainc  Nspanwise  Sspace
+9.68    13.54    1.60     0.13    -20.03    1    0
+AFILE
+Prop IB_WWWXHQJPUT_0.dat
+
+SECTION
+#Xle    Yle    Zle     Chord   Ainc  Nspanwise  Sspace
+9.67    13.62    1.69     0.19    -21.70    1    0
+AFILE
+Prop IB_WWWXHQJPUT_1.dat
+
+SECTION
+#Xle    Yle    Zle     Chord   Ainc  Nspanwise  Sspace
+9.66    13.70    1.78     0.24    -23.15    1    0
+AFILE
+Prop IB_WWWXHQJPUT_2.dat
+
+SECTION
+#Xle    Yle    Zle     Chord   Ainc  Nspanwise  Sspace
+9.65    13.78    1.88     0.29    -24.41    1    0
+AFILE
+Prop IB_WWWXHQJPUT_3.dat
+
+SECTION
+#Xle    Yle    Zle     Chord   Ainc  Nspanwise  Sspace
+9.65    13.86    1.97     0.32    -25.48    1    0
+AFILE
+Prop IB_WWWXHQJPUT_4.dat
+
+SECTION
+#Xle    Yle    Zle     Chord   Ainc  Nspanwise  Sspace
+9.66    13.93    2.07     0.33    -26.38    1    0
+AFILE
+Prop IB_WWWXHQJPUT_5.dat
+
+SECTION
+#Xle    Yle    Zle     Chord   Ainc  Nspanwise  Sspace
+9.66    14.00    2.18     0.33    -27.12    1    0
+AFILE
+Prop IB_WWWXHQJPUT_6.dat
+
+SECTION
+#Xle    Yle    Zle     Chord   Ainc  Nspanwise  Sspace
+9.67    14.06    2.28     0.33    -27.73    1    0
+AFILE
+Prop IB_WWWXHQJPUT_7.dat
+
+SECTION
+#Xle    Yle    Zle     Chord   Ainc  Nspanwise  Sspace
+9.68    14.12    2.38     0.33    -28.23    1    0
+AFILE
+Prop IB_WWWXHQJPUT_8.dat
+
+SECTION
+#Xle    Yle    Zle     Chord   Ainc  Nspanwise  Sspace
+9.69    14.18    2.49     0.33    -28.62    1    0
+AFILE
+Prop IB_WWWXHQJPUT_9.dat
+
+SECTION
+#Xle    Yle    Zle     Chord   Ainc  Nspanwise  Sspace
+9.69    14.25    2.59     0.33    -28.92    1    0
+AFILE
+Prop IB_WWWXHQJPUT_10.dat
+
+SECTION
+#Xle    Yle    Zle     Chord   Ainc  Nspanwise  Sspace
+9.71    14.26    2.72     0.22    -29.16    1    0
+AFILE
+Prop IB_WWWXHQJPUT_11.dat
+
+#--------------------------------------------------
+SURFACE 
+Prop IB 6 
+!Nchordwise  Cspace  Nspanwise  Sspace
+12           1.0              
+
+COMPONENT 
+1
+
+ANGLE
+0.0
+
+SCALE
+1.0   1.0   1.0
+
+TRANSLATE
+0.0  0.0  0.0
+
+
+SECTION
+#Xle    Yle    Zle     Chord   Ainc  Nspanwise  Sspace
+9.71    -15.00    1.23     0.22    -77.00    1    0
+AFILE
+Prop IB_WWWXHQJPUT_11.dat
+
+SECTION
+#Xle    Yle    Zle     Chord   Ainc  Nspanwise  Sspace
+9.69    -14.88    1.17     0.33    -75.30    1    0
+AFILE
+Prop IB_WWWXHQJPUT_10.dat
+
+SECTION
+#Xle    Yle    Zle     Chord   Ainc  Nspanwise  Sspace
+9.69    -14.76    1.17     0.33    -73.32    1    0
+AFILE
+Prop IB_WWWXHQJPUT_9.dat
+
+SECTION
+#Xle    Yle    Zle     Chord   Ainc  Nspanwise  Sspace
+9.68    -14.64    1.18     0.33    -71.07    1    0
+AFILE
+Prop IB_WWWXHQJPUT_8.dat
+
+SECTION
+#Xle    Yle    Zle     Chord   Ainc  Nspanwise  Sspace
+9.67    -14.52    1.18     0.33    -68.55    1    0
+AFILE
+Prop IB_WWWXHQJPUT_7.dat
+
+SECTION
+#Xle    Yle    Zle     Chord   Ainc  Nspanwise  Sspace
+9.66    -14.39    1.18     0.33    -65.75    1    0
+AFILE
+Prop IB_WWWXHQJPUT_6.dat
+
+SECTION
+#Xle    Yle    Zle     Chord   Ainc  Nspanwise  Sspace
+9.66    -14.27    1.19     0.33    -62.68    1    0
+AFILE
+Prop IB_WWWXHQJPUT_5.dat
+
+SECTION
+#Xle    Yle    Zle     Chord   Ainc  Nspanwise  Sspace
+9.65    -14.15    1.20     0.32    -59.34    1    0
+AFILE
+Prop IB_WWWXHQJPUT_4.dat
+
+SECTION
+#Xle    Yle    Zle     Chord   Ainc  Nspanwise  Sspace
+9.65    -14.03    1.22     0.29    -55.73    1    0
+AFILE
+Prop IB_WWWXHQJPUT_3.dat
+
+SECTION
+#Xle    Yle    Zle     Chord   Ainc  Nspanwise  Sspace
+9.66    -13.91    1.24     0.24    -51.84    1    0
+AFILE
+Prop IB_WWWXHQJPUT_2.dat
+
+SECTION
+#Xle    Yle    Zle     Chord   Ainc  Nspanwise  Sspace
+9.67    -13.79    1.26     0.19    -47.68    1    0
+AFILE
+Prop IB_WWWXHQJPUT_1.dat
+
+SECTION
+#Xle    Yle    Zle     Chord   Ainc  Nspanwise  Sspace
+9.68    -13.67    1.29     0.13    -43.25    1    0
+AFILE
+Prop IB_WWWXHQJPUT_0.dat
+
+#--------------------------------------------------
+SURFACE 
+Prop IB 7 
+!Nchordwise  Cspace  Nspanwise  Sspace
+12           1.0              
+
+COMPONENT 
+1
+
+ANGLE
+0.0
+
+SCALE
+1.0   1.0   1.0
+
+TRANSLATE
+0.0  0.0  0.0
+
+
+SECTION
+#Xle    Yle    Zle     Chord   Ainc  Nspanwise  Sspace
+9.71    -14.08    -0.16     0.22    -29.16    1    0
+AFILE
+Prop IB_WWWXHQJPUT_11.dat
+
+SECTION
+#Xle    Yle    Zle     Chord   Ainc  Nspanwise  Sspace
+9.69    -13.97    -0.09     0.33    -28.92    1    0
+AFILE
+Prop IB_WWWXHQJPUT_10.dat
+
+SECTION
+#Xle    Yle    Zle     Chord   Ainc  Nspanwise  Sspace
+9.69    -13.91    0.02     0.33    -28.62    1    0
+AFILE
+Prop IB_WWWXHQJPUT_9.dat
+
+SECTION
+#Xle    Yle    Zle     Chord   Ainc  Nspanwise  Sspace
+9.68    -13.85    0.13     0.33    -28.23    1    0
+AFILE
+Prop IB_WWWXHQJPUT_8.dat
+
+SECTION
+#Xle    Yle    Zle     Chord   Ainc  Nspanwise  Sspace
+9.67    -13.79    0.23     0.33    -27.73    1    0
+AFILE
+Prop IB_WWWXHQJPUT_7.dat
+
+SECTION
+#Xle    Yle    Zle     Chord   Ainc  Nspanwise  Sspace
+9.66    -13.73    0.34     0.33    -27.12    1    0
+AFILE
+Prop IB_WWWXHQJPUT_6.dat
+
+SECTION
+#Xle    Yle    Zle     Chord   Ainc  Nspanwise  Sspace
+9.66    -13.68    0.45     0.33    -26.38    1    0
+AFILE
+Prop IB_WWWXHQJPUT_5.dat
+
+SECTION
+#Xle    Yle    Zle     Chord   Ainc  Nspanwise  Sspace
+9.65    -13.62    0.56     0.32    -25.48    1    0
+AFILE
+Prop IB_WWWXHQJPUT_4.dat
+
+SECTION
+#Xle    Yle    Zle     Chord   Ainc  Nspanwise  Sspace
+9.65    -13.58    0.67     0.29    -24.41    1    0
+AFILE
+Prop IB_WWWXHQJPUT_3.dat
+
+SECTION
+#Xle    Yle    Zle     Chord   Ainc  Nspanwise  Sspace
+9.66    -13.54    0.79     0.24    -23.15    1    0
+AFILE
+Prop IB_WWWXHQJPUT_2.dat
+
+SECTION
+#Xle    Yle    Zle     Chord   Ainc  Nspanwise  Sspace
+9.67    -13.50    0.90     0.19    -21.70    1    0
+AFILE
+Prop IB_WWWXHQJPUT_1.dat
+
+SECTION
+#Xle    Yle    Zle     Chord   Ainc  Nspanwise  Sspace
+9.68    -13.46    1.02     0.13    -20.03    1    0
+AFILE
+Prop IB_WWWXHQJPUT_0.dat
+
+#--------------------------------------------------
+SURFACE 
+Prop IB 8 
+!Nchordwise  Cspace  Nspanwise  Sspace
+12           1.0              
+
+COMPONENT 
+1
+
+ANGLE
+0.0
+
+SCALE
+1.0   1.0   1.0
+
+TRANSLATE
+0.0  0.0  0.0
+
+
+SECTION
+#Xle    Yle    Zle     Chord   Ainc  Nspanwise  Sspace
+9.68    -13.13    1.07     0.13    20.03    1    0
+AFILE
+Prop IB_WWWXHQJPUT_0.dat
+
+SECTION
+#Xle    Yle    Zle     Chord   Ainc  Nspanwise  Sspace
+9.67    -13.04    0.98     0.19    21.70    1    0
+AFILE
+Prop IB_WWWXHQJPUT_1.dat
+
+SECTION
+#Xle    Yle    Zle     Chord   Ainc  Nspanwise  Sspace
+9.66    -12.96    0.88     0.24    23.15    1    0
+AFILE
+Prop IB_WWWXHQJPUT_2.dat
+
+SECTION
+#Xle    Yle    Zle     Chord   Ainc  Nspanwise  Sspace
+9.65    -12.88    0.79     0.29    24.41    1    0
+AFILE
+Prop IB_WWWXHQJPUT_3.dat
+
+SECTION
+#Xle    Yle    Zle     Chord   Ainc  Nspanwise  Sspace
+9.65    -12.81    0.69     0.32    25.48    1    0
+AFILE
+Prop IB_WWWXHQJPUT_4.dat
+
+SECTION
+#Xle    Yle    Zle     Chord   Ainc  Nspanwise  Sspace
+9.66    -12.74    0.59     0.33    26.37    1    0
+AFILE
+Prop IB_WWWXHQJPUT_5.dat
+
+SECTION
+#Xle    Yle    Zle     Chord   Ainc  Nspanwise  Sspace
+9.66    -12.67    0.49     0.33    27.12    1    0
+AFILE
+Prop IB_WWWXHQJPUT_6.dat
+
+SECTION
+#Xle    Yle    Zle     Chord   Ainc  Nspanwise  Sspace
+9.67    -12.61    0.39     0.33    27.73    1    0
+AFILE
+Prop IB_WWWXHQJPUT_7.dat
+
+SECTION
+#Xle    Yle    Zle     Chord   Ainc  Nspanwise  Sspace
+9.68    -12.55    0.28     0.33    28.23    1    0
+AFILE
+Prop IB_WWWXHQJPUT_8.dat
+
+SECTION
+#Xle    Yle    Zle     Chord   Ainc  Nspanwise  Sspace
+9.69    -12.48    0.18     0.33    28.62    1    0
+AFILE
+Prop IB_WWWXHQJPUT_9.dat
+
+SECTION
+#Xle    Yle    Zle     Chord   Ainc  Nspanwise  Sspace
+9.69    -12.42    0.08     0.33    28.92    1    0
+AFILE
+Prop IB_WWWXHQJPUT_10.dat
+
+SECTION
+#Xle    Yle    Zle     Chord   Ainc  Nspanwise  Sspace
+9.71    -12.41    -0.06     0.22    29.16    1    0
+AFILE
+Prop IB_WWWXHQJPUT_11.dat
+
+#--------------------------------------------------
+SURFACE 
+Prop IB 9 
+!Nchordwise  Cspace  Nspanwise  Sspace
+12           1.0              
+
+COMPONENT 
+1
+
+ANGLE
+0.0
+
+SCALE
+1.0   1.0   1.0
+
+TRANSLATE
+0.0  0.0  0.0
+
+
+SECTION
+#Xle    Yle    Zle     Chord   Ainc  Nspanwise  Sspace
+9.68    -13.00    1.38     0.13    43.25    1    0
+AFILE
+Prop IB_WWWXHQJPUT_0.dat
+
+SECTION
+#Xle    Yle    Zle     Chord   Ainc  Nspanwise  Sspace
+9.67    -12.88    1.40     0.19    47.68    1    0
+AFILE
+Prop IB_WWWXHQJPUT_1.dat
+
+SECTION
+#Xle    Yle    Zle     Chord   Ainc  Nspanwise  Sspace
+9.66    -12.76    1.43     0.24    51.84    1    0
+AFILE
+Prop IB_WWWXHQJPUT_2.dat
+
+SECTION
+#Xle    Yle    Zle     Chord   Ainc  Nspanwise  Sspace
+9.65    -12.64    1.45     0.29    55.73    1    0
+AFILE
+Prop IB_WWWXHQJPUT_3.dat
+
+SECTION
+#Xle    Yle    Zle     Chord   Ainc  Nspanwise  Sspace
+9.65    -12.52    1.47     0.32    59.34    1    0
+AFILE
+Prop IB_WWWXHQJPUT_4.dat
+
+SECTION
+#Xle    Yle    Zle     Chord   Ainc  Nspanwise  Sspace
+9.66    -12.39    1.48     0.33    62.68    1    0
+AFILE
+Prop IB_WWWXHQJPUT_5.dat
+
+SECTION
+#Xle    Yle    Zle     Chord   Ainc  Nspanwise  Sspace
+9.66    -12.27    1.49     0.33    65.75    1    0
+AFILE
+Prop IB_WWWXHQJPUT_6.dat
+
+SECTION
+#Xle    Yle    Zle     Chord   Ainc  Nspanwise  Sspace
+9.67    -12.15    1.49     0.33    68.55    1    0
+AFILE
+Prop IB_WWWXHQJPUT_7.dat
+
+SECTION
+#Xle    Yle    Zle     Chord   Ainc  Nspanwise  Sspace
+9.68    -12.03    1.49     0.33    71.07    1    0
+AFILE
+Prop IB_WWWXHQJPUT_8.dat
+
+SECTION
+#Xle    Yle    Zle     Chord   Ainc  Nspanwise  Sspace
+9.69    -11.91    1.49     0.33    73.32    1    0
+AFILE
+Prop IB_WWWXHQJPUT_9.dat
+
+SECTION
+#Xle    Yle    Zle     Chord   Ainc  Nspanwise  Sspace
+9.69    -11.79    1.49     0.33    75.30    1    0
+AFILE
+Prop IB_WWWXHQJPUT_10.dat
+
+SECTION
+#Xle    Yle    Zle     Chord   Ainc  Nspanwise  Sspace
+9.71    -11.67    1.44     0.22    77.00    1    0
+AFILE
+Prop IB_WWWXHQJPUT_11.dat
+
+#--------------------------------------------------
+SURFACE 
+Prop IB 10 
+!Nchordwise  Cspace  Nspanwise  Sspace
+12           1.0              
+
+COMPONENT 
+1
+
+ANGLE
+0.0
+
+SCALE
+1.0   1.0   1.0
+
+TRANSLATE
+0.0  0.0  0.0
+
+
+SECTION
+#Xle    Yle    Zle     Chord   Ainc  Nspanwise  Sspace
+9.68    -13.21    1.64     0.13    20.03    1    0
+AFILE
+Prop IB_WWWXHQJPUT_0.dat
+
+SECTION
+#Xle    Yle    Zle     Chord   Ainc  Nspanwise  Sspace
+9.67    -13.17    1.76     0.19    21.70    1    0
+AFILE
+Prop IB_WWWXHQJPUT_1.dat
+
+SECTION
+#Xle    Yle    Zle     Chord   Ainc  Nspanwise  Sspace
+9.66    -13.13    1.88     0.24    23.15    1    0
+AFILE
+Prop IB_WWWXHQJPUT_2.dat
+
+SECTION
+#Xle    Yle    Zle     Chord   Ainc  Nspanwise  Sspace
+9.65    -13.09    2.00     0.29    24.41    1    0
+AFILE
+Prop IB_WWWXHQJPUT_3.dat
+
+SECTION
+#Xle    Yle    Zle     Chord   Ainc  Nspanwise  Sspace
+9.65    -13.04    2.11     0.32    25.48    1    0
+AFILE
+Prop IB_WWWXHQJPUT_4.dat
+
+SECTION
+#Xle    Yle    Zle     Chord   Ainc  Nspanwise  Sspace
+9.66    -12.99    2.22     0.33    26.37    1    0
+AFILE
+Prop IB_WWWXHQJPUT_5.dat
+
+SECTION
+#Xle    Yle    Zle     Chord   Ainc  Nspanwise  Sspace
+9.66    -12.93    2.33     0.33    27.12    1    0
+AFILE
+Prop IB_WWWXHQJPUT_6.dat
+
+SECTION
+#Xle    Yle    Zle     Chord   Ainc  Nspanwise  Sspace
+9.67    -12.88    2.43     0.33    27.73    1    0
+AFILE
+Prop IB_WWWXHQJPUT_7.dat
+
+SECTION
+#Xle    Yle    Zle     Chord   Ainc  Nspanwise  Sspace
+9.68    -12.82    2.54     0.33    28.23    1    0
+AFILE
+Prop IB_WWWXHQJPUT_8.dat
+
+SECTION
+#Xle    Yle    Zle     Chord   Ainc  Nspanwise  Sspace
+9.69    -12.76    2.65     0.33    28.62    1    0
+AFILE
+Prop IB_WWWXHQJPUT_9.dat
+
+SECTION
+#Xle    Yle    Zle     Chord   Ainc  Nspanwise  Sspace
+9.69    -12.70    2.75     0.33    28.92    1    0
+AFILE
+Prop IB_WWWXHQJPUT_10.dat
+
+SECTION
+#Xle    Yle    Zle     Chord   Ainc  Nspanwise  Sspace
+9.71    -12.59    2.83     0.22    29.16    1    0
+AFILE
+Prop IB_WWWXHQJPUT_11.dat
+
+#--------------------------------------------------
+SURFACE 
+Prop IB 11 
+!Nchordwise  Cspace  Nspanwise  Sspace
+12           1.0              
+
+COMPONENT 
+1
+
+ANGLE
+0.0
+
+SCALE
+1.0   1.0   1.0
+
+TRANSLATE
+0.0  0.0  0.0
+
+
+SECTION
+#Xle    Yle    Zle     Chord   Ainc  Nspanwise  Sspace
+9.71    -14.26    2.72     0.22    -29.16    1    0
+AFILE
+Prop IB_WWWXHQJPUT_11.dat
+
+SECTION
+#Xle    Yle    Zle     Chord   Ainc  Nspanwise  Sspace
+9.69    -14.25    2.59     0.33    -28.92    1    0
+AFILE
+Prop IB_WWWXHQJPUT_10.dat
+
+SECTION
+#Xle    Yle    Zle     Chord   Ainc  Nspanwise  Sspace
+9.69    -14.18    2.49     0.33    -28.62    1    0
+AFILE
+Prop IB_WWWXHQJPUT_9.dat
+
+SECTION
+#Xle    Yle    Zle     Chord   Ainc  Nspanwise  Sspace
+9.68    -14.12    2.38     0.33    -28.23    1    0
+AFILE
+Prop IB_WWWXHQJPUT_8.dat
+
+SECTION
+#Xle    Yle    Zle     Chord   Ainc  Nspanwise  Sspace
+9.67    -14.06    2.28     0.33    -27.73    1    0
+AFILE
+Prop IB_WWWXHQJPUT_7.dat
+
+SECTION
+#Xle    Yle    Zle     Chord   Ainc  Nspanwise  Sspace
+9.66    -14.00    2.18     0.33    -27.12    1    0
+AFILE
+Prop IB_WWWXHQJPUT_6.dat
+
+SECTION
+#Xle    Yle    Zle     Chord   Ainc  Nspanwise  Sspace
+9.66    -13.93    2.07     0.33    -26.38    1    0
+AFILE
+Prop IB_WWWXHQJPUT_5.dat
+
+SECTION
+#Xle    Yle    Zle     Chord   Ainc  Nspanwise  Sspace
+9.65    -13.86    1.97     0.32    -25.48    1    0
+AFILE
+Prop IB_WWWXHQJPUT_4.dat
+
+SECTION
+#Xle    Yle    Zle     Chord   Ainc  Nspanwise  Sspace
+9.65    -13.78    1.88     0.29    -24.41    1    0
+AFILE
+Prop IB_WWWXHQJPUT_3.dat
+
+SECTION
+#Xle    Yle    Zle     Chord   Ainc  Nspanwise  Sspace
+9.66    -13.70    1.78     0.24    -23.15    1    0
+AFILE
+Prop IB_WWWXHQJPUT_2.dat
+
+SECTION
+#Xle    Yle    Zle     Chord   Ainc  Nspanwise  Sspace
+9.67    -13.62    1.69     0.19    -21.70    1    0
+AFILE
+Prop IB_WWWXHQJPUT_1.dat
+
+SECTION
+#Xle    Yle    Zle     Chord   Ainc  Nspanwise  Sspace
+9.68    -13.54    1.60     0.13    -20.03    1    0
+AFILE
+Prop IB_WWWXHQJPUT_0.dat
+
+#--------------------------------------------------
+SURFACE 
+Prop IMB 0 
+!Nchordwise  Cspace  Nspanwise  Sspace
+12           1.0              
+
+COMPONENT 
+1
+
+ANGLE
+0.0
+
+SCALE
+1.0   1.0   1.0
+
+TRANSLATE
+0.0  0.0  0.0
+
+
+SECTION
+#Xle    Yle    Zle     Chord   Ainc  Nspanwise  Sspace
+10.28    17.00    1.57     0.13    -43.25    1    0
+AFILE
+Prop IMB_DRRIXEKSIQ_0.dat
+
+SECTION
+#Xle    Yle    Zle     Chord   Ainc  Nspanwise  Sspace
+10.27    17.12    1.55     0.19    -47.68    1    0
+AFILE
+Prop IMB_DRRIXEKSIQ_1.dat
+
+SECTION
+#Xle    Yle    Zle     Chord   Ainc  Nspanwise  Sspace
+10.26    17.24    1.52     0.24    -51.84    1    0
+AFILE
+Prop IMB_DRRIXEKSIQ_2.dat
+
+SECTION
+#Xle    Yle    Zle     Chord   Ainc  Nspanwise  Sspace
+10.25    17.36    1.50     0.29    -55.73    1    0
+AFILE
+Prop IMB_DRRIXEKSIQ_3.dat
+
+SECTION
+#Xle    Yle    Zle     Chord   Ainc  Nspanwise  Sspace
+10.25    17.48    1.48     0.32    -59.34    1    0
+AFILE
+Prop IMB_DRRIXEKSIQ_4.dat
+
+SECTION
+#Xle    Yle    Zle     Chord   Ainc  Nspanwise  Sspace
+10.26    17.61    1.47     0.33    -62.68    1    0
+AFILE
+Prop IMB_DRRIXEKSIQ_5.dat
+
+SECTION
+#Xle    Yle    Zle     Chord   Ainc  Nspanwise  Sspace
+10.26    17.73    1.47     0.33    -65.75    1    0
+AFILE
+Prop IMB_DRRIXEKSIQ_6.dat
+
+SECTION
+#Xle    Yle    Zle     Chord   Ainc  Nspanwise  Sspace
+10.27    17.85    1.46     0.33    -68.55    1    0
+AFILE
+Prop IMB_DRRIXEKSIQ_7.dat
+
+SECTION
+#Xle    Yle    Zle     Chord   Ainc  Nspanwise  Sspace
+10.28    17.97    1.46     0.33    -71.07    1    0
+AFILE
+Prop IMB_DRRIXEKSIQ_8.dat
+
+SECTION
+#Xle    Yle    Zle     Chord   Ainc  Nspanwise  Sspace
+10.29    18.09    1.46     0.33    -73.32    1    0
+AFILE
+Prop IMB_DRRIXEKSIQ_9.dat
+
+SECTION
+#Xle    Yle    Zle     Chord   Ainc  Nspanwise  Sspace
+10.29    18.21    1.46     0.33    -75.30    1    0
+AFILE
+Prop IMB_DRRIXEKSIQ_10.dat
+
+SECTION
+#Xle    Yle    Zle     Chord   Ainc  Nspanwise  Sspace
+10.31    18.33    1.51     0.22    -77.00    1    0
+AFILE
+Prop IMB_DRRIXEKSIQ_11.dat
+
+#--------------------------------------------------
+SURFACE 
+Prop IMB 1 
+!Nchordwise  Cspace  Nspanwise  Sspace
+12           1.0              
+
+COMPONENT 
+1
+
+ANGLE
+0.0
+
+SCALE
+1.0   1.0   1.0
+
+TRANSLATE
+0.0  0.0  0.0
+
+
+SECTION
+#Xle    Yle    Zle     Chord   Ainc  Nspanwise  Sspace
+10.28    16.79    1.31     0.13    -20.03    1    0
+AFILE
+Prop IMB_DRRIXEKSIQ_0.dat
+
+SECTION
+#Xle    Yle    Zle     Chord   Ainc  Nspanwise  Sspace
+10.27    16.83    1.19     0.19    -21.70    1    0
+AFILE
+Prop IMB_DRRIXEKSIQ_1.dat
+
+SECTION
+#Xle    Yle    Zle     Chord   Ainc  Nspanwise  Sspace
+10.26    16.87    1.07     0.24    -23.15    1    0
+AFILE
+Prop IMB_DRRIXEKSIQ_2.dat
+
+SECTION
+#Xle    Yle    Zle     Chord   Ainc  Nspanwise  Sspace
+10.25    16.91    0.96     0.29    -24.41    1    0
+AFILE
+Prop IMB_DRRIXEKSIQ_3.dat
+
+SECTION
+#Xle    Yle    Zle     Chord   Ainc  Nspanwise  Sspace
+10.25    16.96    0.84     0.32    -25.48    1    0
+AFILE
+Prop IMB_DRRIXEKSIQ_4.dat
+
+SECTION
+#Xle    Yle    Zle     Chord   Ainc  Nspanwise  Sspace
+10.26    17.01    0.73     0.33    -26.38    1    0
+AFILE
+Prop IMB_DRRIXEKSIQ_5.dat
+
+SECTION
+#Xle    Yle    Zle     Chord   Ainc  Nspanwise  Sspace
+10.26    17.07    0.63     0.33    -27.12    1    0
+AFILE
+Prop IMB_DRRIXEKSIQ_6.dat
+
+SECTION
+#Xle    Yle    Zle     Chord   Ainc  Nspanwise  Sspace
+10.27    17.12    0.52     0.33    -27.73    1    0
+AFILE
+Prop IMB_DRRIXEKSIQ_7.dat
+
+SECTION
+#Xle    Yle    Zle     Chord   Ainc  Nspanwise  Sspace
+10.28    17.18    0.41     0.33    -28.23    1    0
+AFILE
+Prop IMB_DRRIXEKSIQ_8.dat
+
+SECTION
+#Xle    Yle    Zle     Chord   Ainc  Nspanwise  Sspace
+10.29    17.24    0.31     0.33    -28.62    1    0
+AFILE
+Prop IMB_DRRIXEKSIQ_9.dat
+
+SECTION
+#Xle    Yle    Zle     Chord   Ainc  Nspanwise  Sspace
+10.29    17.30    0.20     0.33    -28.92    1    0
+AFILE
+Prop IMB_DRRIXEKSIQ_10.dat
+
+SECTION
+#Xle    Yle    Zle     Chord   Ainc  Nspanwise  Sspace
+10.31    17.41    0.12     0.22    -29.16    1    0
+AFILE
+Prop IMB_DRRIXEKSIQ_11.dat
+
+#--------------------------------------------------
+SURFACE 
+Prop IMB 2 
+!Nchordwise  Cspace  Nspanwise  Sspace
+12           1.0              
+
+COMPONENT 
+1
+
+ANGLE
+0.0
+
+SCALE
+1.0   1.0   1.0
+
+TRANSLATE
+0.0  0.0  0.0
+
+
+SECTION
+#Xle    Yle    Zle     Chord   Ainc  Nspanwise  Sspace
+10.31    15.74    0.23     0.22    29.16    1    0
+AFILE
+Prop IMB_DRRIXEKSIQ_11.dat
+
+SECTION
+#Xle    Yle    Zle     Chord   Ainc  Nspanwise  Sspace
+10.29    15.75    0.36     0.33    28.92    1    0
+AFILE
+Prop IMB_DRRIXEKSIQ_10.dat
+
+SECTION
+#Xle    Yle    Zle     Chord   Ainc  Nspanwise  Sspace
+10.29    15.82    0.47     0.33    28.62    1    0
+AFILE
+Prop IMB_DRRIXEKSIQ_9.dat
+
+SECTION
+#Xle    Yle    Zle     Chord   Ainc  Nspanwise  Sspace
+10.28    15.88    0.57     0.33    28.23    1    0
+AFILE
+Prop IMB_DRRIXEKSIQ_8.dat
+
+SECTION
+#Xle    Yle    Zle     Chord   Ainc  Nspanwise  Sspace
+10.27    15.94    0.67     0.33    27.73    1    0
+AFILE
+Prop IMB_DRRIXEKSIQ_7.dat
+
+SECTION
+#Xle    Yle    Zle     Chord   Ainc  Nspanwise  Sspace
+10.26    16.00    0.78     0.33    27.12    1    0
+AFILE
+Prop IMB_DRRIXEKSIQ_6.dat
+
+SECTION
+#Xle    Yle    Zle     Chord   Ainc  Nspanwise  Sspace
+10.26    16.07    0.88     0.33    26.38    1    0
+AFILE
+Prop IMB_DRRIXEKSIQ_5.dat
+
+SECTION
+#Xle    Yle    Zle     Chord   Ainc  Nspanwise  Sspace
+10.25    16.14    0.98     0.32    25.48    1    0
+AFILE
+Prop IMB_DRRIXEKSIQ_4.dat
+
+SECTION
+#Xle    Yle    Zle     Chord   Ainc  Nspanwise  Sspace
+10.25    16.22    1.08     0.29    24.41    1    0
+AFILE
+Prop IMB_DRRIXEKSIQ_3.dat
+
+SECTION
+#Xle    Yle    Zle     Chord   Ainc  Nspanwise  Sspace
+10.26    16.30    1.17     0.24    23.15    1    0
+AFILE
+Prop IMB_DRRIXEKSIQ_2.dat
+
+SECTION
+#Xle    Yle    Zle     Chord   Ainc  Nspanwise  Sspace
+10.27    16.38    1.26     0.19    21.70    1    0
+AFILE
+Prop IMB_DRRIXEKSIQ_1.dat
+
+SECTION
+#Xle    Yle    Zle     Chord   Ainc  Nspanwise  Sspace
+10.28    16.46    1.35     0.13    20.04    1    0
+AFILE
+Prop IMB_DRRIXEKSIQ_0.dat
+
+#--------------------------------------------------
+SURFACE 
+Prop IMB 3 
+!Nchordwise  Cspace  Nspanwise  Sspace
+12           1.0              
+
+COMPONENT 
+1
+
+ANGLE
+0.0
+
+SCALE
+1.0   1.0   1.0
+
+TRANSLATE
+0.0  0.0  0.0
+
+
+SECTION
+#Xle    Yle    Zle     Chord   Ainc  Nspanwise  Sspace
+10.31    15.00    1.73     0.22    77.00    1    0
+AFILE
+Prop IMB_DRRIXEKSIQ_11.dat
+
+SECTION
+#Xle    Yle    Zle     Chord   Ainc  Nspanwise  Sspace
+10.29    15.12    1.78     0.33    75.30    1    0
+AFILE
+Prop IMB_DRRIXEKSIQ_10.dat
+
+SECTION
+#Xle    Yle    Zle     Chord   Ainc  Nspanwise  Sspace
+10.29    15.24    1.78     0.33    73.32    1    0
+AFILE
+Prop IMB_DRRIXEKSIQ_9.dat
+
+SECTION
+#Xle    Yle    Zle     Chord   Ainc  Nspanwise  Sspace
+10.28    15.36    1.78     0.33    71.07    1    0
+AFILE
+Prop IMB_DRRIXEKSIQ_8.dat
+
+SECTION
+#Xle    Yle    Zle     Chord   Ainc  Nspanwise  Sspace
+10.27    15.48    1.78     0.33    68.55    1    0
+AFILE
+Prop IMB_DRRIXEKSIQ_7.dat
+
+SECTION
+#Xle    Yle    Zle     Chord   Ainc  Nspanwise  Sspace
+10.26    15.61    1.77     0.33    65.75    1    0
+AFILE
+Prop IMB_DRRIXEKSIQ_6.dat
+
+SECTION
+#Xle    Yle    Zle     Chord   Ainc  Nspanwise  Sspace
+10.26    15.73    1.77     0.33    62.68    1    0
+AFILE
+Prop IMB_DRRIXEKSIQ_5.dat
+
+SECTION
+#Xle    Yle    Zle     Chord   Ainc  Nspanwise  Sspace
+10.25    15.85    1.76     0.32    59.34    1    0
+AFILE
+Prop IMB_DRRIXEKSIQ_4.dat
+
+SECTION
+#Xle    Yle    Zle     Chord   Ainc  Nspanwise  Sspace
+10.25    15.97    1.74     0.29    55.73    1    0
+AFILE
+Prop IMB_DRRIXEKSIQ_3.dat
+
+SECTION
+#Xle    Yle    Zle     Chord   Ainc  Nspanwise  Sspace
+10.26    16.09    1.72     0.24    51.84    1    0
+AFILE
+Prop IMB_DRRIXEKSIQ_2.dat
+
+SECTION
+#Xle    Yle    Zle     Chord   Ainc  Nspanwise  Sspace
+10.27    16.21    1.69     0.19    47.68    1    0
+AFILE
+Prop IMB_DRRIXEKSIQ_1.dat
+
+SECTION
+#Xle    Yle    Zle     Chord   Ainc  Nspanwise  Sspace
+10.28    16.33    1.67     0.13    43.25    1    0
+AFILE
+Prop IMB_DRRIXEKSIQ_0.dat
+
+#--------------------------------------------------
+SURFACE 
+Prop IMB 4 
+!Nchordwise  Cspace  Nspanwise  Sspace
+12           1.0              
+
+COMPONENT 
+1
+
+ANGLE
+0.0
+
+SCALE
+1.0   1.0   1.0
+
+TRANSLATE
+0.0  0.0  0.0
+
+
+SECTION
+#Xle    Yle    Zle     Chord   Ainc  Nspanwise  Sspace
+10.31    15.92    3.12     0.22    29.16    1    0
+AFILE
+Prop IMB_DRRIXEKSIQ_11.dat
+
+SECTION
+#Xle    Yle    Zle     Chord   Ainc  Nspanwise  Sspace
+10.29    16.03    3.04     0.33    28.92    1    0
+AFILE
+Prop IMB_DRRIXEKSIQ_10.dat
+
+SECTION
+#Xle    Yle    Zle     Chord   Ainc  Nspanwise  Sspace
+10.29    16.09    2.93     0.33    28.62    1    0
+AFILE
+Prop IMB_DRRIXEKSIQ_9.dat
+
+SECTION
+#Xle    Yle    Zle     Chord   Ainc  Nspanwise  Sspace
+10.28    16.15    2.83     0.33    28.23    1    0
+AFILE
+Prop IMB_DRRIXEKSIQ_8.dat
+
+SECTION
+#Xle    Yle    Zle     Chord   Ainc  Nspanwise  Sspace
+10.27    16.21    2.72     0.33    27.73    1    0
+AFILE
+Prop IMB_DRRIXEKSIQ_7.dat
+
+SECTION
+#Xle    Yle    Zle     Chord   Ainc  Nspanwise  Sspace
+10.26    16.27    2.61     0.33    27.12    1    0
+AFILE
+Prop IMB_DRRIXEKSIQ_6.dat
+
+SECTION
+#Xle    Yle    Zle     Chord   Ainc  Nspanwise  Sspace
+10.26    16.32    2.51     0.33    26.38    1    0
+AFILE
+Prop IMB_DRRIXEKSIQ_5.dat
+
+SECTION
+#Xle    Yle    Zle     Chord   Ainc  Nspanwise  Sspace
+10.25    16.38    2.40     0.32    25.48    1    0
+AFILE
+Prop IMB_DRRIXEKSIQ_4.dat
+
+SECTION
+#Xle    Yle    Zle     Chord   Ainc  Nspanwise  Sspace
+10.25    16.42    2.28     0.29    24.41    1    0
+AFILE
+Prop IMB_DRRIXEKSIQ_3.dat
+
+SECTION
+#Xle    Yle    Zle     Chord   Ainc  Nspanwise  Sspace
+10.26    16.46    2.17     0.24    23.15    1    0
+AFILE
+Prop IMB_DRRIXEKSIQ_2.dat
+
+SECTION
+#Xle    Yle    Zle     Chord   Ainc  Nspanwise  Sspace
+10.27    16.50    2.05     0.19    21.70    1    0
+AFILE
+Prop IMB_DRRIXEKSIQ_1.dat
+
+SECTION
+#Xle    Yle    Zle     Chord   Ainc  Nspanwise  Sspace
+10.28    16.54    1.93     0.13    20.04    1    0
+AFILE
+Prop IMB_DRRIXEKSIQ_0.dat
+
+#--------------------------------------------------
+SURFACE 
+Prop IMB 5 
+!Nchordwise  Cspace  Nspanwise  Sspace
+12           1.0              
+
+COMPONENT 
+1
+
+ANGLE
+0.0
+
+SCALE
+1.0   1.0   1.0
+
+TRANSLATE
+0.0  0.0  0.0
+
+
+SECTION
+#Xle    Yle    Zle     Chord   Ainc  Nspanwise  Sspace
+10.28    16.87    1.89     0.13    -20.03    1    0
+AFILE
+Prop IMB_DRRIXEKSIQ_0.dat
+
+SECTION
+#Xle    Yle    Zle     Chord   Ainc  Nspanwise  Sspace
+10.27    16.96    1.98     0.19    -21.70    1    0
+AFILE
+Prop IMB_DRRIXEKSIQ_1.dat
+
+SECTION
+#Xle    Yle    Zle     Chord   Ainc  Nspanwise  Sspace
+10.26    17.04    2.07     0.24    -23.15    1    0
+AFILE
+Prop IMB_DRRIXEKSIQ_2.dat
+
+SECTION
+#Xle    Yle    Zle     Chord   Ainc  Nspanwise  Sspace
+10.25    17.12    2.16     0.29    -24.41    1    0
+AFILE
+Prop IMB_DRRIXEKSIQ_3.dat
+
+SECTION
+#Xle    Yle    Zle     Chord   Ainc  Nspanwise  Sspace
+10.25    17.19    2.26     0.32    -25.48    1    0
+AFILE
+Prop IMB_DRRIXEKSIQ_4.dat
+
+SECTION
+#Xle    Yle    Zle     Chord   Ainc  Nspanwise  Sspace
+10.26    17.26    2.36     0.33    -26.38    1    0
+AFILE
+Prop IMB_DRRIXEKSIQ_5.dat
+
+SECTION
+#Xle    Yle    Zle     Chord   Ainc  Nspanwise  Sspace
+10.26    17.33    2.46     0.33    -27.12    1    0
+AFILE
+Prop IMB_DRRIXEKSIQ_6.dat
+
+SECTION
+#Xle    Yle    Zle     Chord   Ainc  Nspanwise  Sspace
+10.27    17.39    2.57     0.33    -27.73    1    0
+AFILE
+Prop IMB_DRRIXEKSIQ_7.dat
+
+SECTION
+#Xle    Yle    Zle     Chord   Ainc  Nspanwise  Sspace
+10.28    17.45    2.67     0.33    -28.23    1    0
+AFILE
+Prop IMB_DRRIXEKSIQ_8.dat
+
+SECTION
+#Xle    Yle    Zle     Chord   Ainc  Nspanwise  Sspace
+10.29    17.52    2.77     0.33    -28.62    1    0
+AFILE
+Prop IMB_DRRIXEKSIQ_9.dat
+
+SECTION
+#Xle    Yle    Zle     Chord   Ainc  Nspanwise  Sspace
+10.29    17.58    2.88     0.33    -28.92    1    0
+AFILE
+Prop IMB_DRRIXEKSIQ_10.dat
+
+SECTION
+#Xle    Yle    Zle     Chord   Ainc  Nspanwise  Sspace
+10.31    17.59    3.01     0.22    -29.16    1    0
+AFILE
+Prop IMB_DRRIXEKSIQ_11.dat
+
+#--------------------------------------------------
+SURFACE 
+Prop IMB 6 
+!Nchordwise  Cspace  Nspanwise  Sspace
+12           1.0              
+
+COMPONENT 
+1
+
+ANGLE
+0.0
+
+SCALE
+1.0   1.0   1.0
+
+TRANSLATE
+0.0  0.0  0.0
+
+
+SECTION
+#Xle    Yle    Zle     Chord   Ainc  Nspanwise  Sspace
+10.31    -18.33    1.51     0.22    -77.00    1    0
+AFILE
+Prop IMB_DRRIXEKSIQ_11.dat
+
+SECTION
+#Xle    Yle    Zle     Chord   Ainc  Nspanwise  Sspace
+10.29    -18.21    1.46     0.33    -75.30    1    0
+AFILE
+Prop IMB_DRRIXEKSIQ_10.dat
+
+SECTION
+#Xle    Yle    Zle     Chord   Ainc  Nspanwise  Sspace
+10.29    -18.09    1.46     0.33    -73.32    1    0
+AFILE
+Prop IMB_DRRIXEKSIQ_9.dat
+
+SECTION
+#Xle    Yle    Zle     Chord   Ainc  Nspanwise  Sspace
+10.28    -17.97    1.46     0.33    -71.07    1    0
+AFILE
+Prop IMB_DRRIXEKSIQ_8.dat
+
+SECTION
+#Xle    Yle    Zle     Chord   Ainc  Nspanwise  Sspace
+10.27    -17.85    1.46     0.33    -68.55    1    0
+AFILE
+Prop IMB_DRRIXEKSIQ_7.dat
+
+SECTION
+#Xle    Yle    Zle     Chord   Ainc  Nspanwise  Sspace
+10.26    -17.73    1.47     0.33    -65.75    1    0
+AFILE
+Prop IMB_DRRIXEKSIQ_6.dat
+
+SECTION
+#Xle    Yle    Zle     Chord   Ainc  Nspanwise  Sspace
+10.26    -17.61    1.47     0.33    -62.68    1    0
+AFILE
+Prop IMB_DRRIXEKSIQ_5.dat
+
+SECTION
+#Xle    Yle    Zle     Chord   Ainc  Nspanwise  Sspace
+10.25    -17.48    1.48     0.32    -59.34    1    0
+AFILE
+Prop IMB_DRRIXEKSIQ_4.dat
+
+SECTION
+#Xle    Yle    Zle     Chord   Ainc  Nspanwise  Sspace
+10.25    -17.36    1.50     0.29    -55.73    1    0
+AFILE
+Prop IMB_DRRIXEKSIQ_3.dat
+
+SECTION
+#Xle    Yle    Zle     Chord   Ainc  Nspanwise  Sspace
+10.26    -17.24    1.52     0.24    -51.84    1    0
+AFILE
+Prop IMB_DRRIXEKSIQ_2.dat
+
+SECTION
+#Xle    Yle    Zle     Chord   Ainc  Nspanwise  Sspace
+10.27    -17.12    1.55     0.19    -47.68    1    0
+AFILE
+Prop IMB_DRRIXEKSIQ_1.dat
+
+SECTION
+#Xle    Yle    Zle     Chord   Ainc  Nspanwise  Sspace
+10.28    -17.00    1.57     0.13    -43.25    1    0
+AFILE
+Prop IMB_DRRIXEKSIQ_0.dat
+
+#--------------------------------------------------
+SURFACE 
+Prop IMB 7 
+!Nchordwise  Cspace  Nspanwise  Sspace
+12           1.0              
+
+COMPONENT 
+1
+
+ANGLE
+0.0
+
+SCALE
+1.0   1.0   1.0
+
+TRANSLATE
+0.0  0.0  0.0
+
+
+SECTION
+#Xle    Yle    Zle     Chord   Ainc  Nspanwise  Sspace
+10.31    -17.41    0.12     0.22    -29.16    1    0
+AFILE
+Prop IMB_DRRIXEKSIQ_11.dat
+
+SECTION
+#Xle    Yle    Zle     Chord   Ainc  Nspanwise  Sspace
+10.29    -17.30    0.20     0.33    -28.92    1    0
+AFILE
+Prop IMB_DRRIXEKSIQ_10.dat
+
+SECTION
+#Xle    Yle    Zle     Chord   Ainc  Nspanwise  Sspace
+10.29    -17.24    0.31     0.33    -28.62    1    0
+AFILE
+Prop IMB_DRRIXEKSIQ_9.dat
+
+SECTION
+#Xle    Yle    Zle     Chord   Ainc  Nspanwise  Sspace
+10.28    -17.18    0.41     0.33    -28.23    1    0
+AFILE
+Prop IMB_DRRIXEKSIQ_8.dat
+
+SECTION
+#Xle    Yle    Zle     Chord   Ainc  Nspanwise  Sspace
+10.27    -17.12    0.52     0.33    -27.73    1    0
+AFILE
+Prop IMB_DRRIXEKSIQ_7.dat
+
+SECTION
+#Xle    Yle    Zle     Chord   Ainc  Nspanwise  Sspace
+10.26    -17.07    0.63     0.33    -27.12    1    0
+AFILE
+Prop IMB_DRRIXEKSIQ_6.dat
+
+SECTION
+#Xle    Yle    Zle     Chord   Ainc  Nspanwise  Sspace
+10.26    -17.01    0.73     0.33    -26.38    1    0
+AFILE
+Prop IMB_DRRIXEKSIQ_5.dat
+
+SECTION
+#Xle    Yle    Zle     Chord   Ainc  Nspanwise  Sspace
+10.25    -16.96    0.84     0.32    -25.48    1    0
+AFILE
+Prop IMB_DRRIXEKSIQ_4.dat
+
+SECTION
+#Xle    Yle    Zle     Chord   Ainc  Nspanwise  Sspace
+10.25    -16.91    0.96     0.29    -24.41    1    0
+AFILE
+Prop IMB_DRRIXEKSIQ_3.dat
+
+SECTION
+#Xle    Yle    Zle     Chord   Ainc  Nspanwise  Sspace
+10.26    -16.87    1.07     0.24    -23.15    1    0
+AFILE
+Prop IMB_DRRIXEKSIQ_2.dat
+
+SECTION
+#Xle    Yle    Zle     Chord   Ainc  Nspanwise  Sspace
+10.27    -16.83    1.19     0.19    -21.70    1    0
+AFILE
+Prop IMB_DRRIXEKSIQ_1.dat
+
+SECTION
+#Xle    Yle    Zle     Chord   Ainc  Nspanwise  Sspace
+10.28    -16.79    1.31     0.13    -20.03    1    0
+AFILE
+Prop IMB_DRRIXEKSIQ_0.dat
+
+#--------------------------------------------------
+SURFACE 
+Prop IMB 8 
+!Nchordwise  Cspace  Nspanwise  Sspace
+12           1.0              
+
+COMPONENT 
+1
+
+ANGLE
+0.0
+
+SCALE
+1.0   1.0   1.0
+
+TRANSLATE
+0.0  0.0  0.0
+
+
+SECTION
+#Xle    Yle    Zle     Chord   Ainc  Nspanwise  Sspace
+10.28    -16.46    1.35     0.13    20.04    1    0
+AFILE
+Prop IMB_DRRIXEKSIQ_0.dat
+
+SECTION
+#Xle    Yle    Zle     Chord   Ainc  Nspanwise  Sspace
+10.27    -16.38    1.26     0.19    21.70    1    0
+AFILE
+Prop IMB_DRRIXEKSIQ_1.dat
+
+SECTION
+#Xle    Yle    Zle     Chord   Ainc  Nspanwise  Sspace
+10.26    -16.30    1.17     0.24    23.15    1    0
+AFILE
+Prop IMB_DRRIXEKSIQ_2.dat
+
+SECTION
+#Xle    Yle    Zle     Chord   Ainc  Nspanwise  Sspace
+10.25    -16.22    1.08     0.29    24.41    1    0
+AFILE
+Prop IMB_DRRIXEKSIQ_3.dat
+
+SECTION
+#Xle    Yle    Zle     Chord   Ainc  Nspanwise  Sspace
+10.25    -16.14    0.98     0.32    25.48    1    0
+AFILE
+Prop IMB_DRRIXEKSIQ_4.dat
+
+SECTION
+#Xle    Yle    Zle     Chord   Ainc  Nspanwise  Sspace
+10.26    -16.07    0.88     0.33    26.38    1    0
+AFILE
+Prop IMB_DRRIXEKSIQ_5.dat
+
+SECTION
+#Xle    Yle    Zle     Chord   Ainc  Nspanwise  Sspace
+10.26    -16.00    0.78     0.33    27.12    1    0
+AFILE
+Prop IMB_DRRIXEKSIQ_6.dat
+
+SECTION
+#Xle    Yle    Zle     Chord   Ainc  Nspanwise  Sspace
+10.27    -15.94    0.67     0.33    27.73    1    0
+AFILE
+Prop IMB_DRRIXEKSIQ_7.dat
+
+SECTION
+#Xle    Yle    Zle     Chord   Ainc  Nspanwise  Sspace
+10.28    -15.88    0.57     0.33    28.23    1    0
+AFILE
+Prop IMB_DRRIXEKSIQ_8.dat
+
+SECTION
+#Xle    Yle    Zle     Chord   Ainc  Nspanwise  Sspace
+10.29    -15.82    0.47     0.33    28.62    1    0
+AFILE
+Prop IMB_DRRIXEKSIQ_9.dat
+
+SECTION
+#Xle    Yle    Zle     Chord   Ainc  Nspanwise  Sspace
+10.29    -15.75    0.36     0.33    28.92    1    0
+AFILE
+Prop IMB_DRRIXEKSIQ_10.dat
+
+SECTION
+#Xle    Yle    Zle     Chord   Ainc  Nspanwise  Sspace
+10.31    -15.74    0.23     0.22    29.16    1    0
+AFILE
+Prop IMB_DRRIXEKSIQ_11.dat
+
+#--------------------------------------------------
+SURFACE 
+Prop IMB 9 
+!Nchordwise  Cspace  Nspanwise  Sspace
+12           1.0              
+
+COMPONENT 
+1
+
+ANGLE
+0.0
+
+SCALE
+1.0   1.0   1.0
+
+TRANSLATE
+0.0  0.0  0.0
+
+
+SECTION
+#Xle    Yle    Zle     Chord   Ainc  Nspanwise  Sspace
+10.28    -16.33    1.67     0.13    43.25    1    0
+AFILE
+Prop IMB_DRRIXEKSIQ_0.dat
+
+SECTION
+#Xle    Yle    Zle     Chord   Ainc  Nspanwise  Sspace
+10.27    -16.21    1.69     0.19    47.68    1    0
+AFILE
+Prop IMB_DRRIXEKSIQ_1.dat
+
+SECTION
+#Xle    Yle    Zle     Chord   Ainc  Nspanwise  Sspace
+10.26    -16.09    1.72     0.24    51.84    1    0
+AFILE
+Prop IMB_DRRIXEKSIQ_2.dat
+
+SECTION
+#Xle    Yle    Zle     Chord   Ainc  Nspanwise  Sspace
+10.25    -15.97    1.74     0.29    55.73    1    0
+AFILE
+Prop IMB_DRRIXEKSIQ_3.dat
+
+SECTION
+#Xle    Yle    Zle     Chord   Ainc  Nspanwise  Sspace
+10.25    -15.85    1.76     0.32    59.34    1    0
+AFILE
+Prop IMB_DRRIXEKSIQ_4.dat
+
+SECTION
+#Xle    Yle    Zle     Chord   Ainc  Nspanwise  Sspace
+10.26    -15.73    1.77     0.33    62.68    1    0
+AFILE
+Prop IMB_DRRIXEKSIQ_5.dat
+
+SECTION
+#Xle    Yle    Zle     Chord   Ainc  Nspanwise  Sspace
+10.26    -15.61    1.77     0.33    65.75    1    0
+AFILE
+Prop IMB_DRRIXEKSIQ_6.dat
+
+SECTION
+#Xle    Yle    Zle     Chord   Ainc  Nspanwise  Sspace
+10.27    -15.48    1.78     0.33    68.55    1    0
+AFILE
+Prop IMB_DRRIXEKSIQ_7.dat
+
+SECTION
+#Xle    Yle    Zle     Chord   Ainc  Nspanwise  Sspace
+10.28    -15.36    1.78     0.33    71.07    1    0
+AFILE
+Prop IMB_DRRIXEKSIQ_8.dat
+
+SECTION
+#Xle    Yle    Zle     Chord   Ainc  Nspanwise  Sspace
+10.29    -15.24    1.78     0.33    73.32    1    0
+AFILE
+Prop IMB_DRRIXEKSIQ_9.dat
+
+SECTION
+#Xle    Yle    Zle     Chord   Ainc  Nspanwise  Sspace
+10.29    -15.12    1.78     0.33    75.30    1    0
+AFILE
+Prop IMB_DRRIXEKSIQ_10.dat
+
+SECTION
+#Xle    Yle    Zle     Chord   Ainc  Nspanwise  Sspace
+10.31    -15.00    1.73     0.22    77.00    1    0
+AFILE
+Prop IMB_DRRIXEKSIQ_11.dat
+
+#--------------------------------------------------
+SURFACE 
+Prop IMB 10 
+!Nchordwise  Cspace  Nspanwise  Sspace
+12           1.0              
+
+COMPONENT 
+1
+
+ANGLE
+0.0
+
+SCALE
+1.0   1.0   1.0
+
+TRANSLATE
+0.0  0.0  0.0
+
+
+SECTION
+#Xle    Yle    Zle     Chord   Ainc  Nspanwise  Sspace
+10.28    -16.54    1.93     0.13    20.04    1    0
+AFILE
+Prop IMB_DRRIXEKSIQ_0.dat
+
+SECTION
+#Xle    Yle    Zle     Chord   Ainc  Nspanwise  Sspace
+10.27    -16.50    2.05     0.19    21.70    1    0
+AFILE
+Prop IMB_DRRIXEKSIQ_1.dat
+
+SECTION
+#Xle    Yle    Zle     Chord   Ainc  Nspanwise  Sspace
+10.26    -16.46    2.17     0.24    23.15    1    0
+AFILE
+Prop IMB_DRRIXEKSIQ_2.dat
+
+SECTION
+#Xle    Yle    Zle     Chord   Ainc  Nspanwise  Sspace
+10.25    -16.42    2.28     0.29    24.41    1    0
+AFILE
+Prop IMB_DRRIXEKSIQ_3.dat
+
+SECTION
+#Xle    Yle    Zle     Chord   Ainc  Nspanwise  Sspace
+10.25    -16.38    2.40     0.32    25.48    1    0
+AFILE
+Prop IMB_DRRIXEKSIQ_4.dat
+
+SECTION
+#Xle    Yle    Zle     Chord   Ainc  Nspanwise  Sspace
+10.26    -16.32    2.51     0.33    26.38    1    0
+AFILE
+Prop IMB_DRRIXEKSIQ_5.dat
+
+SECTION
+#Xle    Yle    Zle     Chord   Ainc  Nspanwise  Sspace
+10.26    -16.27    2.61     0.33    27.12    1    0
+AFILE
+Prop IMB_DRRIXEKSIQ_6.dat
+
+SECTION
+#Xle    Yle    Zle     Chord   Ainc  Nspanwise  Sspace
+10.27    -16.21    2.72     0.33    27.73    1    0
+AFILE
+Prop IMB_DRRIXEKSIQ_7.dat
+
+SECTION
+#Xle    Yle    Zle     Chord   Ainc  Nspanwise  Sspace
+10.28    -16.15    2.83     0.33    28.23    1    0
+AFILE
+Prop IMB_DRRIXEKSIQ_8.dat
+
+SECTION
+#Xle    Yle    Zle     Chord   Ainc  Nspanwise  Sspace
+10.29    -16.09    2.93     0.33    28.62    1    0
+AFILE
+Prop IMB_DRRIXEKSIQ_9.dat
+
+SECTION
+#Xle    Yle    Zle     Chord   Ainc  Nspanwise  Sspace
+10.29    -16.03    3.04     0.33    28.92    1    0
+AFILE
+Prop IMB_DRRIXEKSIQ_10.dat
+
+SECTION
+#Xle    Yle    Zle     Chord   Ainc  Nspanwise  Sspace
+10.31    -15.92    3.12     0.22    29.16    1    0
+AFILE
+Prop IMB_DRRIXEKSIQ_11.dat
+
+#--------------------------------------------------
+SURFACE 
+Prop IMB 11 
+!Nchordwise  Cspace  Nspanwise  Sspace
+12           1.0              
+
+COMPONENT 
+1
+
+ANGLE
+0.0
+
+SCALE
+1.0   1.0   1.0
+
+TRANSLATE
+0.0  0.0  0.0
+
+
+SECTION
+#Xle    Yle    Zle     Chord   Ainc  Nspanwise  Sspace
+10.31    -17.59    3.01     0.22    -29.16    1    0
+AFILE
+Prop IMB_DRRIXEKSIQ_11.dat
+
+SECTION
+#Xle    Yle    Zle     Chord   Ainc  Nspanwise  Sspace
+10.29    -17.58    2.88     0.33    -28.92    1    0
+AFILE
+Prop IMB_DRRIXEKSIQ_10.dat
+
+SECTION
+#Xle    Yle    Zle     Chord   Ainc  Nspanwise  Sspace
+10.29    -17.52    2.77     0.33    -28.62    1    0
+AFILE
+Prop IMB_DRRIXEKSIQ_9.dat
+
+SECTION
+#Xle    Yle    Zle     Chord   Ainc  Nspanwise  Sspace
+10.28    -17.45    2.67     0.33    -28.23    1    0
+AFILE
+Prop IMB_DRRIXEKSIQ_8.dat
+
+SECTION
+#Xle    Yle    Zle     Chord   Ainc  Nspanwise  Sspace
+10.27    -17.39    2.57     0.33    -27.73    1    0
+AFILE
+Prop IMB_DRRIXEKSIQ_7.dat
+
+SECTION
+#Xle    Yle    Zle     Chord   Ainc  Nspanwise  Sspace
+10.26    -17.33    2.46     0.33    -27.12    1    0
+AFILE
+Prop IMB_DRRIXEKSIQ_6.dat
+
+SECTION
+#Xle    Yle    Zle     Chord   Ainc  Nspanwise  Sspace
+10.26    -17.26    2.36     0.33    -26.38    1    0
+AFILE
+Prop IMB_DRRIXEKSIQ_5.dat
+
+SECTION
+#Xle    Yle    Zle     Chord   Ainc  Nspanwise  Sspace
+10.25    -17.19    2.26     0.32    -25.48    1    0
+AFILE
+Prop IMB_DRRIXEKSIQ_4.dat
+
+SECTION
+#Xle    Yle    Zle     Chord   Ainc  Nspanwise  Sspace
+10.25    -17.12    2.16     0.29    -24.41    1    0
+AFILE
+Prop IMB_DRRIXEKSIQ_3.dat
+
+SECTION
+#Xle    Yle    Zle     Chord   Ainc  Nspanwise  Sspace
+10.26    -17.04    2.07     0.24    -23.15    1    0
+AFILE
+Prop IMB_DRRIXEKSIQ_2.dat
+
+SECTION
+#Xle    Yle    Zle     Chord   Ainc  Nspanwise  Sspace
+10.27    -16.96    1.98     0.19    -21.70    1    0
+AFILE
+Prop IMB_DRRIXEKSIQ_1.dat
+
+SECTION
+#Xle    Yle    Zle     Chord   Ainc  Nspanwise  Sspace
+10.28    -16.87    1.89     0.13    -20.03    1    0
+AFILE
+Prop IMB_DRRIXEKSIQ_0.dat
+
+#--------------------------------------------------
+SURFACE 
+Prop MB 0 
+!Nchordwise  Cspace  Nspanwise  Sspace
+12           1.0              
+
+COMPONENT 
+1
+
+ANGLE
+0.0
+
+SCALE
+1.0   1.0   1.0
+
+TRANSLATE
+0.0  0.0  0.0
+
+
+SECTION
+#Xle    Yle    Zle     Chord   Ainc  Nspanwise  Sspace
+10.82    20.33    1.85     0.13    -43.25    1    0
+AFILE
+Prop MB_CSDXNMFWVI_0.dat
+
+SECTION
+#Xle    Yle    Zle     Chord   Ainc  Nspanwise  Sspace
+10.80    20.45    1.83     0.19    -47.68    1    0
+AFILE
+Prop MB_CSDXNMFWVI_1.dat
+
+SECTION
+#Xle    Yle    Zle     Chord   Ainc  Nspanwise  Sspace
+10.79    20.58    1.80     0.24    -51.84    1    0
+AFILE
+Prop MB_CSDXNMFWVI_2.dat
+
+SECTION
+#Xle    Yle    Zle     Chord   Ainc  Nspanwise  Sspace
+10.79    20.70    1.78     0.29    -55.73    1    0
+AFILE
+Prop MB_CSDXNMFWVI_3.dat
+
+SECTION
+#Xle    Yle    Zle     Chord   Ainc  Nspanwise  Sspace
+10.79    20.82    1.76     0.32    -59.34    1    0
+AFILE
+Prop MB_CSDXNMFWVI_4.dat
+
+SECTION
+#Xle    Yle    Zle     Chord   Ainc  Nspanwise  Sspace
+10.79    20.94    1.75     0.33    -62.68    1    0
+AFILE
+Prop MB_CSDXNMFWVI_5.dat
+
+SECTION
+#Xle    Yle    Zle     Chord   Ainc  Nspanwise  Sspace
+10.80    21.06    1.75     0.33    -65.75    1    0
+AFILE
+Prop MB_CSDXNMFWVI_6.dat
+
+SECTION
+#Xle    Yle    Zle     Chord   Ainc  Nspanwise  Sspace
+10.81    21.18    1.74     0.33    -68.55    1    0
+AFILE
+Prop MB_CSDXNMFWVI_7.dat
+
+SECTION
+#Xle    Yle    Zle     Chord   Ainc  Nspanwise  Sspace
+10.81    21.30    1.74     0.33    -71.07    1    0
+AFILE
+Prop MB_CSDXNMFWVI_8.dat
+
+SECTION
+#Xle    Yle    Zle     Chord   Ainc  Nspanwise  Sspace
+10.82    21.42    1.74     0.33    -73.32    1    0
+AFILE
+Prop MB_CSDXNMFWVI_9.dat
+
+SECTION
+#Xle    Yle    Zle     Chord   Ainc  Nspanwise  Sspace
+10.82    21.55    1.74     0.33    -75.30    1    0
+AFILE
+Prop MB_CSDXNMFWVI_10.dat
+
+SECTION
+#Xle    Yle    Zle     Chord   Ainc  Nspanwise  Sspace
+10.84    21.67    1.79     0.22    -77.00    1    0
+AFILE
+Prop MB_CSDXNMFWVI_11.dat
+
+#--------------------------------------------------
+SURFACE 
+Prop MB 1 
+!Nchordwise  Cspace  Nspanwise  Sspace
+12           1.0              
+
+COMPONENT 
+1
+
+ANGLE
+0.0
+
+SCALE
+1.0   1.0   1.0
+
+TRANSLATE
+0.0  0.0  0.0
+
+
+SECTION
+#Xle    Yle    Zle     Chord   Ainc  Nspanwise  Sspace
+10.82    20.13    1.59     0.13    -20.03    1    0
+AFILE
+Prop MB_CSDXNMFWVI_0.dat
+
+SECTION
+#Xle    Yle    Zle     Chord   Ainc  Nspanwise  Sspace
+10.80    20.17    1.47     0.19    -21.70    1    0
+AFILE
+Prop MB_CSDXNMFWVI_1.dat
+
+SECTION
+#Xle    Yle    Zle     Chord   Ainc  Nspanwise  Sspace
+10.79    20.20    1.35     0.24    -23.15    1    0
+AFILE
+Prop MB_CSDXNMFWVI_2.dat
+
+SECTION
+#Xle    Yle    Zle     Chord   Ainc  Nspanwise  Sspace
+10.79    20.25    1.24     0.29    -24.41    1    0
+AFILE
+Prop MB_CSDXNMFWVI_3.dat
+
+SECTION
+#Xle    Yle    Zle     Chord   Ainc  Nspanwise  Sspace
+10.79    20.29    1.12     0.32    -25.48    1    0
+AFILE
+Prop MB_CSDXNMFWVI_4.dat
+
+SECTION
+#Xle    Yle    Zle     Chord   Ainc  Nspanwise  Sspace
+10.79    20.34    1.01     0.33    -26.38    1    0
+AFILE
+Prop MB_CSDXNMFWVI_5.dat
+
+SECTION
+#Xle    Yle    Zle     Chord   Ainc  Nspanwise  Sspace
+10.80    20.40    0.91     0.33    -27.12    1    0
+AFILE
+Prop MB_CSDXNMFWVI_6.dat
+
+SECTION
+#Xle    Yle    Zle     Chord   Ainc  Nspanwise  Sspace
+10.81    20.46    0.80     0.33    -27.73    1    0
+AFILE
+Prop MB_CSDXNMFWVI_7.dat
+
+SECTION
+#Xle    Yle    Zle     Chord   Ainc  Nspanwise  Sspace
+10.81    20.51    0.69     0.33    -28.23    1    0
+AFILE
+Prop MB_CSDXNMFWVI_8.dat
+
+SECTION
+#Xle    Yle    Zle     Chord   Ainc  Nspanwise  Sspace
+10.82    20.57    0.59     0.33    -28.62    1    0
+AFILE
+Prop MB_CSDXNMFWVI_9.dat
+
+SECTION
+#Xle    Yle    Zle     Chord   Ainc  Nspanwise  Sspace
+10.82    20.63    0.48     0.33    -28.92    1    0
+AFILE
+Prop MB_CSDXNMFWVI_10.dat
+
+SECTION
+#Xle    Yle    Zle     Chord   Ainc  Nspanwise  Sspace
+10.84    20.74    0.40     0.22    -29.16    1    0
+AFILE
+Prop MB_CSDXNMFWVI_11.dat
+
+#--------------------------------------------------
+SURFACE 
+Prop MB 2 
+!Nchordwise  Cspace  Nspanwise  Sspace
+12           1.0              
+
+COMPONENT 
+1
+
+ANGLE
+0.0
+
+SCALE
+1.0   1.0   1.0
+
+TRANSLATE
+0.0  0.0  0.0
+
+
+SECTION
+#Xle    Yle    Zle     Chord   Ainc  Nspanwise  Sspace
+10.84    19.08    0.51     0.22    29.16    1    0
+AFILE
+Prop MB_CSDXNMFWVI_11.dat
+
+SECTION
+#Xle    Yle    Zle     Chord   Ainc  Nspanwise  Sspace
+10.82    19.09    0.64     0.33    28.92    1    0
+AFILE
+Prop MB_CSDXNMFWVI_10.dat
+
+SECTION
+#Xle    Yle    Zle     Chord   Ainc  Nspanwise  Sspace
+10.82    19.15    0.75     0.33    28.62    1    0
+AFILE
+Prop MB_CSDXNMFWVI_9.dat
+
+SECTION
+#Xle    Yle    Zle     Chord   Ainc  Nspanwise  Sspace
+10.81    19.21    0.85     0.33    28.23    1    0
+AFILE
+Prop MB_CSDXNMFWVI_8.dat
+
+SECTION
+#Xle    Yle    Zle     Chord   Ainc  Nspanwise  Sspace
+10.81    19.27    0.95     0.33    27.73    1    0
+AFILE
+Prop MB_CSDXNMFWVI_7.dat
+
+SECTION
+#Xle    Yle    Zle     Chord   Ainc  Nspanwise  Sspace
+10.80    19.34    1.06     0.33    27.12    1    0
+AFILE
+Prop MB_CSDXNMFWVI_6.dat
+
+SECTION
+#Xle    Yle    Zle     Chord   Ainc  Nspanwise  Sspace
+10.79    19.40    1.16     0.33    26.38    1    0
+AFILE
+Prop MB_CSDXNMFWVI_5.dat
+
+SECTION
+#Xle    Yle    Zle     Chord   Ainc  Nspanwise  Sspace
+10.79    19.47    1.26     0.32    25.48    1    0
+AFILE
+Prop MB_CSDXNMFWVI_4.dat
+
+SECTION
+#Xle    Yle    Zle     Chord   Ainc  Nspanwise  Sspace
+10.79    19.55    1.36     0.29    24.41    1    0
+AFILE
+Prop MB_CSDXNMFWVI_3.dat
+
+SECTION
+#Xle    Yle    Zle     Chord   Ainc  Nspanwise  Sspace
+10.79    19.63    1.45     0.24    23.15    1    0
+AFILE
+Prop MB_CSDXNMFWVI_2.dat
+
+SECTION
+#Xle    Yle    Zle     Chord   Ainc  Nspanwise  Sspace
+10.80    19.71    1.54     0.19    21.70    1    0
+AFILE
+Prop MB_CSDXNMFWVI_1.dat
+
+SECTION
+#Xle    Yle    Zle     Chord   Ainc  Nspanwise  Sspace
+10.82    19.79    1.63     0.13    20.03    1    0
+AFILE
+Prop MB_CSDXNMFWVI_0.dat
+
+#--------------------------------------------------
+SURFACE 
+Prop MB 3 
+!Nchordwise  Cspace  Nspanwise  Sspace
+12           1.0              
+
+COMPONENT 
+1
+
+ANGLE
+0.0
+
+SCALE
+1.0   1.0   1.0
+
+TRANSLATE
+0.0  0.0  0.0
+
+
+SECTION
+#Xle    Yle    Zle     Chord   Ainc  Nspanwise  Sspace
+10.84    18.33    2.01     0.22    77.00    1    0
+AFILE
+Prop MB_CSDXNMFWVI_11.dat
+
+SECTION
+#Xle    Yle    Zle     Chord   Ainc  Nspanwise  Sspace
+10.82    18.45    2.06     0.33    75.30    1    0
+AFILE
+Prop MB_CSDXNMFWVI_10.dat
+
+SECTION
+#Xle    Yle    Zle     Chord   Ainc  Nspanwise  Sspace
+10.82    18.58    2.06     0.33    73.32    1    0
+AFILE
+Prop MB_CSDXNMFWVI_9.dat
+
+SECTION
+#Xle    Yle    Zle     Chord   Ainc  Nspanwise  Sspace
+10.81    18.70    2.06     0.33    71.07    1    0
+AFILE
+Prop MB_CSDXNMFWVI_8.dat
+
+SECTION
+#Xle    Yle    Zle     Chord   Ainc  Nspanwise  Sspace
+10.81    18.82    2.06     0.33    68.55    1    0
+AFILE
+Prop MB_CSDXNMFWVI_7.dat
+
+SECTION
+#Xle    Yle    Zle     Chord   Ainc  Nspanwise  Sspace
+10.80    18.94    2.05     0.33    65.75    1    0
+AFILE
+Prop MB_CSDXNMFWVI_6.dat
+
+SECTION
+#Xle    Yle    Zle     Chord   Ainc  Nspanwise  Sspace
+10.79    19.06    2.05     0.33    62.68    1    0
+AFILE
+Prop MB_CSDXNMFWVI_5.dat
+
+SECTION
+#Xle    Yle    Zle     Chord   Ainc  Nspanwise  Sspace
+10.79    19.18    2.04     0.32    59.34    1    0
+AFILE
+Prop MB_CSDXNMFWVI_4.dat
+
+SECTION
+#Xle    Yle    Zle     Chord   Ainc  Nspanwise  Sspace
+10.79    19.30    2.02     0.29    55.73    1    0
+AFILE
+Prop MB_CSDXNMFWVI_3.dat
+
+SECTION
+#Xle    Yle    Zle     Chord   Ainc  Nspanwise  Sspace
+10.79    19.42    2.00     0.24    51.84    1    0
+AFILE
+Prop MB_CSDXNMFWVI_2.dat
+
+SECTION
+#Xle    Yle    Zle     Chord   Ainc  Nspanwise  Sspace
+10.80    19.55    1.97     0.19    47.68    1    0
+AFILE
+Prop MB_CSDXNMFWVI_1.dat
+
+SECTION
+#Xle    Yle    Zle     Chord   Ainc  Nspanwise  Sspace
+10.82    19.67    1.95     0.13    43.25    1    0
+AFILE
+Prop MB_CSDXNMFWVI_0.dat
+
+#--------------------------------------------------
+SURFACE 
+Prop MB 4 
+!Nchordwise  Cspace  Nspanwise  Sspace
+12           1.0              
+
+COMPONENT 
+1
+
+ANGLE
+0.0
+
+SCALE
+1.0   1.0   1.0
+
+TRANSLATE
+0.0  0.0  0.0
+
+
+SECTION
+#Xle    Yle    Zle     Chord   Ainc  Nspanwise  Sspace
+10.84    19.26    3.40     0.22    29.16    1    0
+AFILE
+Prop MB_CSDXNMFWVI_11.dat
+
+SECTION
+#Xle    Yle    Zle     Chord   Ainc  Nspanwise  Sspace
+10.82    19.37    3.32     0.33    28.92    1    0
+AFILE
+Prop MB_CSDXNMFWVI_10.dat
+
+SECTION
+#Xle    Yle    Zle     Chord   Ainc  Nspanwise  Sspace
+10.82    19.43    3.21     0.33    28.62    1    0
+AFILE
+Prop MB_CSDXNMFWVI_9.dat
+
+SECTION
+#Xle    Yle    Zle     Chord   Ainc  Nspanwise  Sspace
+10.81    19.49    3.11     0.33    28.23    1    0
+AFILE
+Prop MB_CSDXNMFWVI_8.dat
+
+SECTION
+#Xle    Yle    Zle     Chord   Ainc  Nspanwise  Sspace
+10.81    19.54    3.00     0.33    27.73    1    0
+AFILE
+Prop MB_CSDXNMFWVI_7.dat
+
+SECTION
+#Xle    Yle    Zle     Chord   Ainc  Nspanwise  Sspace
+10.80    19.60    2.89     0.33    27.12    1    0
+AFILE
+Prop MB_CSDXNMFWVI_6.dat
+
+SECTION
+#Xle    Yle    Zle     Chord   Ainc  Nspanwise  Sspace
+10.79    19.66    2.79     0.33    26.38    1    0
+AFILE
+Prop MB_CSDXNMFWVI_5.dat
+
+SECTION
+#Xle    Yle    Zle     Chord   Ainc  Nspanwise  Sspace
+10.79    19.71    2.68     0.32    25.48    1    0
+AFILE
+Prop MB_CSDXNMFWVI_4.dat
+
+SECTION
+#Xle    Yle    Zle     Chord   Ainc  Nspanwise  Sspace
+10.79    19.75    2.56     0.29    24.41    1    0
+AFILE
+Prop MB_CSDXNMFWVI_3.dat
+
+SECTION
+#Xle    Yle    Zle     Chord   Ainc  Nspanwise  Sspace
+10.79    19.80    2.45     0.24    23.15    1    0
+AFILE
+Prop MB_CSDXNMFWVI_2.dat
+
+SECTION
+#Xle    Yle    Zle     Chord   Ainc  Nspanwise  Sspace
+10.80    19.83    2.33     0.19    21.70    1    0
+AFILE
+Prop MB_CSDXNMFWVI_1.dat
+
+SECTION
+#Xle    Yle    Zle     Chord   Ainc  Nspanwise  Sspace
+10.82    19.87    2.21     0.13    20.03    1    0
+AFILE
+Prop MB_CSDXNMFWVI_0.dat
+
+#--------------------------------------------------
+SURFACE 
+Prop MB 5 
+!Nchordwise  Cspace  Nspanwise  Sspace
+12           1.0              
+
+COMPONENT 
+1
+
+ANGLE
+0.0
+
+SCALE
+1.0   1.0   1.0
+
+TRANSLATE
+0.0  0.0  0.0
+
+
+SECTION
+#Xle    Yle    Zle     Chord   Ainc  Nspanwise  Sspace
+10.82    20.21    2.17     0.13    -20.03    1    0
+AFILE
+Prop MB_CSDXNMFWVI_0.dat
+
+SECTION
+#Xle    Yle    Zle     Chord   Ainc  Nspanwise  Sspace
+10.80    20.29    2.26     0.19    -21.70    1    0
+AFILE
+Prop MB_CSDXNMFWVI_1.dat
+
+SECTION
+#Xle    Yle    Zle     Chord   Ainc  Nspanwise  Sspace
+10.79    20.37    2.35     0.24    -23.15    1    0
+AFILE
+Prop MB_CSDXNMFWVI_2.dat
+
+SECTION
+#Xle    Yle    Zle     Chord   Ainc  Nspanwise  Sspace
+10.79    20.45    2.44     0.29    -24.41    1    0
+AFILE
+Prop MB_CSDXNMFWVI_3.dat
+
+SECTION
+#Xle    Yle    Zle     Chord   Ainc  Nspanwise  Sspace
+10.79    20.53    2.54     0.32    -25.48    1    0
+AFILE
+Prop MB_CSDXNMFWVI_4.dat
+
+SECTION
+#Xle    Yle    Zle     Chord   Ainc  Nspanwise  Sspace
+10.79    20.60    2.64     0.33    -26.38    1    0
+AFILE
+Prop MB_CSDXNMFWVI_5.dat
+
+SECTION
+#Xle    Yle    Zle     Chord   Ainc  Nspanwise  Sspace
+10.80    20.66    2.74     0.33    -27.12    1    0
+AFILE
+Prop MB_CSDXNMFWVI_6.dat
+
+SECTION
+#Xle    Yle    Zle     Chord   Ainc  Nspanwise  Sspace
+10.81    20.73    2.85     0.33    -27.73    1    0
+AFILE
+Prop MB_CSDXNMFWVI_7.dat
+
+SECTION
+#Xle    Yle    Zle     Chord   Ainc  Nspanwise  Sspace
+10.81    20.79    2.95     0.33    -28.23    1    0
+AFILE
+Prop MB_CSDXNMFWVI_8.dat
+
+SECTION
+#Xle    Yle    Zle     Chord   Ainc  Nspanwise  Sspace
+10.82    20.85    3.05     0.33    -28.62    1    0
+AFILE
+Prop MB_CSDXNMFWVI_9.dat
+
+SECTION
+#Xle    Yle    Zle     Chord   Ainc  Nspanwise  Sspace
+10.82    20.91    3.16     0.33    -28.92    1    0
+AFILE
+Prop MB_CSDXNMFWVI_10.dat
+
+SECTION
+#Xle    Yle    Zle     Chord   Ainc  Nspanwise  Sspace
+10.84    20.92    3.29     0.22    -29.16    1    0
+AFILE
+Prop MB_CSDXNMFWVI_11.dat
+
+#--------------------------------------------------
+SURFACE 
+Prop MB 6 
+!Nchordwise  Cspace  Nspanwise  Sspace
+12           1.0              
+
+COMPONENT 
+1
+
+ANGLE
+0.0
+
+SCALE
+1.0   1.0   1.0
+
+TRANSLATE
+0.0  0.0  0.0
+
+
+SECTION
+#Xle    Yle    Zle     Chord   Ainc  Nspanwise  Sspace
+10.84    -21.67    1.79     0.22    -77.00    1    0
+AFILE
+Prop MB_CSDXNMFWVI_11.dat
+
+SECTION
+#Xle    Yle    Zle     Chord   Ainc  Nspanwise  Sspace
+10.82    -21.55    1.74     0.33    -75.30    1    0
+AFILE
+Prop MB_CSDXNMFWVI_10.dat
+
+SECTION
+#Xle    Yle    Zle     Chord   Ainc  Nspanwise  Sspace
+10.82    -21.42    1.74     0.33    -73.32    1    0
+AFILE
+Prop MB_CSDXNMFWVI_9.dat
+
+SECTION
+#Xle    Yle    Zle     Chord   Ainc  Nspanwise  Sspace
+10.81    -21.30    1.74     0.33    -71.07    1    0
+AFILE
+Prop MB_CSDXNMFWVI_8.dat
+
+SECTION
+#Xle    Yle    Zle     Chord   Ainc  Nspanwise  Sspace
+10.81    -21.18    1.74     0.33    -68.55    1    0
+AFILE
+Prop MB_CSDXNMFWVI_7.dat
+
+SECTION
+#Xle    Yle    Zle     Chord   Ainc  Nspanwise  Sspace
+10.80    -21.06    1.75     0.33    -65.75    1    0
+AFILE
+Prop MB_CSDXNMFWVI_6.dat
+
+SECTION
+#Xle    Yle    Zle     Chord   Ainc  Nspanwise  Sspace
+10.79    -20.94    1.75     0.33    -62.68    1    0
+AFILE
+Prop MB_CSDXNMFWVI_5.dat
+
+SECTION
+#Xle    Yle    Zle     Chord   Ainc  Nspanwise  Sspace
+10.79    -20.82    1.76     0.32    -59.34    1    0
+AFILE
+Prop MB_CSDXNMFWVI_4.dat
+
+SECTION
+#Xle    Yle    Zle     Chord   Ainc  Nspanwise  Sspace
+10.79    -20.70    1.78     0.29    -55.73    1    0
+AFILE
+Prop MB_CSDXNMFWVI_3.dat
+
+SECTION
+#Xle    Yle    Zle     Chord   Ainc  Nspanwise  Sspace
+10.79    -20.58    1.80     0.24    -51.84    1    0
+AFILE
+Prop MB_CSDXNMFWVI_2.dat
+
+SECTION
+#Xle    Yle    Zle     Chord   Ainc  Nspanwise  Sspace
+10.80    -20.45    1.83     0.19    -47.68    1    0
+AFILE
+Prop MB_CSDXNMFWVI_1.dat
+
+SECTION
+#Xle    Yle    Zle     Chord   Ainc  Nspanwise  Sspace
+10.82    -20.33    1.85     0.13    -43.25    1    0
+AFILE
+Prop MB_CSDXNMFWVI_0.dat
+
+#--------------------------------------------------
+SURFACE 
+Prop MB 7 
+!Nchordwise  Cspace  Nspanwise  Sspace
+12           1.0              
+
+COMPONENT 
+1
+
+ANGLE
+0.0
+
+SCALE
+1.0   1.0   1.0
+
+TRANSLATE
+0.0  0.0  0.0
+
+
+SECTION
+#Xle    Yle    Zle     Chord   Ainc  Nspanwise  Sspace
+10.84    -20.74    0.40     0.22    -29.16    1    0
+AFILE
+Prop MB_CSDXNMFWVI_11.dat
+
+SECTION
+#Xle    Yle    Zle     Chord   Ainc  Nspanwise  Sspace
+10.82    -20.63    0.48     0.33    -28.92    1    0
+AFILE
+Prop MB_CSDXNMFWVI_10.dat
+
+SECTION
+#Xle    Yle    Zle     Chord   Ainc  Nspanwise  Sspace
+10.82    -20.57    0.59     0.33    -28.62    1    0
+AFILE
+Prop MB_CSDXNMFWVI_9.dat
+
+SECTION
+#Xle    Yle    Zle     Chord   Ainc  Nspanwise  Sspace
+10.81    -20.51    0.69     0.33    -28.23    1    0
+AFILE
+Prop MB_CSDXNMFWVI_8.dat
+
+SECTION
+#Xle    Yle    Zle     Chord   Ainc  Nspanwise  Sspace
+10.81    -20.46    0.80     0.33    -27.73    1    0
+AFILE
+Prop MB_CSDXNMFWVI_7.dat
+
+SECTION
+#Xle    Yle    Zle     Chord   Ainc  Nspanwise  Sspace
+10.80    -20.40    0.91     0.33    -27.12    1    0
+AFILE
+Prop MB_CSDXNMFWVI_6.dat
+
+SECTION
+#Xle    Yle    Zle     Chord   Ainc  Nspanwise  Sspace
+10.79    -20.34    1.01     0.33    -26.38    1    0
+AFILE
+Prop MB_CSDXNMFWVI_5.dat
+
+SECTION
+#Xle    Yle    Zle     Chord   Ainc  Nspanwise  Sspace
+10.79    -20.29    1.12     0.32    -25.48    1    0
+AFILE
+Prop MB_CSDXNMFWVI_4.dat
+
+SECTION
+#Xle    Yle    Zle     Chord   Ainc  Nspanwise  Sspace
+10.79    -20.25    1.24     0.29    -24.41    1    0
+AFILE
+Prop MB_CSDXNMFWVI_3.dat
+
+SECTION
+#Xle    Yle    Zle     Chord   Ainc  Nspanwise  Sspace
+10.79    -20.20    1.35     0.24    -23.15    1    0
+AFILE
+Prop MB_CSDXNMFWVI_2.dat
+
+SECTION
+#Xle    Yle    Zle     Chord   Ainc  Nspanwise  Sspace
+10.80    -20.17    1.47     0.19    -21.70    1    0
+AFILE
+Prop MB_CSDXNMFWVI_1.dat
+
+SECTION
+#Xle    Yle    Zle     Chord   Ainc  Nspanwise  Sspace
+10.82    -20.13    1.59     0.13    -20.03    1    0
+AFILE
+Prop MB_CSDXNMFWVI_0.dat
+
+#--------------------------------------------------
+SURFACE 
+Prop MB 8 
+!Nchordwise  Cspace  Nspanwise  Sspace
+12           1.0              
+
+COMPONENT 
+1
+
+ANGLE
+0.0
+
+SCALE
+1.0   1.0   1.0
+
+TRANSLATE
+0.0  0.0  0.0
+
+
+SECTION
+#Xle    Yle    Zle     Chord   Ainc  Nspanwise  Sspace
+10.82    -19.79    1.63     0.13    20.03    1    0
+AFILE
+Prop MB_CSDXNMFWVI_0.dat
+
+SECTION
+#Xle    Yle    Zle     Chord   Ainc  Nspanwise  Sspace
+10.80    -19.71    1.54     0.19    21.70    1    0
+AFILE
+Prop MB_CSDXNMFWVI_1.dat
+
+SECTION
+#Xle    Yle    Zle     Chord   Ainc  Nspanwise  Sspace
+10.79    -19.63    1.45     0.24    23.15    1    0
+AFILE
+Prop MB_CSDXNMFWVI_2.dat
+
+SECTION
+#Xle    Yle    Zle     Chord   Ainc  Nspanwise  Sspace
+10.79    -19.55    1.36     0.29    24.41    1    0
+AFILE
+Prop MB_CSDXNMFWVI_3.dat
+
+SECTION
+#Xle    Yle    Zle     Chord   Ainc  Nspanwise  Sspace
+10.79    -19.47    1.26     0.32    25.48    1    0
+AFILE
+Prop MB_CSDXNMFWVI_4.dat
+
+SECTION
+#Xle    Yle    Zle     Chord   Ainc  Nspanwise  Sspace
+10.79    -19.40    1.16     0.33    26.38    1    0
+AFILE
+Prop MB_CSDXNMFWVI_5.dat
+
+SECTION
+#Xle    Yle    Zle     Chord   Ainc  Nspanwise  Sspace
+10.80    -19.34    1.06     0.33    27.12    1    0
+AFILE
+Prop MB_CSDXNMFWVI_6.dat
+
+SECTION
+#Xle    Yle    Zle     Chord   Ainc  Nspanwise  Sspace
+10.81    -19.27    0.95     0.33    27.73    1    0
+AFILE
+Prop MB_CSDXNMFWVI_7.dat
+
+SECTION
+#Xle    Yle    Zle     Chord   Ainc  Nspanwise  Sspace
+10.81    -19.21    0.85     0.33    28.23    1    0
+AFILE
+Prop MB_CSDXNMFWVI_8.dat
+
+SECTION
+#Xle    Yle    Zle     Chord   Ainc  Nspanwise  Sspace
+10.82    -19.15    0.75     0.33    28.62    1    0
+AFILE
+Prop MB_CSDXNMFWVI_9.dat
+
+SECTION
+#Xle    Yle    Zle     Chord   Ainc  Nspanwise  Sspace
+10.82    -19.09    0.64     0.33    28.92    1    0
+AFILE
+Prop MB_CSDXNMFWVI_10.dat
+
+SECTION
+#Xle    Yle    Zle     Chord   Ainc  Nspanwise  Sspace
+10.84    -19.08    0.51     0.22    29.16    1    0
+AFILE
+Prop MB_CSDXNMFWVI_11.dat
+
+#--------------------------------------------------
+SURFACE 
+Prop MB 9 
+!Nchordwise  Cspace  Nspanwise  Sspace
+12           1.0              
+
+COMPONENT 
+1
+
+ANGLE
+0.0
+
+SCALE
+1.0   1.0   1.0
+
+TRANSLATE
+0.0  0.0  0.0
+
+
+SECTION
+#Xle    Yle    Zle     Chord   Ainc  Nspanwise  Sspace
+10.82    -19.67    1.95     0.13    43.25    1    0
+AFILE
+Prop MB_CSDXNMFWVI_0.dat
+
+SECTION
+#Xle    Yle    Zle     Chord   Ainc  Nspanwise  Sspace
+10.80    -19.55    1.97     0.19    47.68    1    0
+AFILE
+Prop MB_CSDXNMFWVI_1.dat
+
+SECTION
+#Xle    Yle    Zle     Chord   Ainc  Nspanwise  Sspace
+10.79    -19.42    2.00     0.24    51.84    1    0
+AFILE
+Prop MB_CSDXNMFWVI_2.dat
+
+SECTION
+#Xle    Yle    Zle     Chord   Ainc  Nspanwise  Sspace
+10.79    -19.30    2.02     0.29    55.73    1    0
+AFILE
+Prop MB_CSDXNMFWVI_3.dat
+
+SECTION
+#Xle    Yle    Zle     Chord   Ainc  Nspanwise  Sspace
+10.79    -19.18    2.04     0.32    59.34    1    0
+AFILE
+Prop MB_CSDXNMFWVI_4.dat
+
+SECTION
+#Xle    Yle    Zle     Chord   Ainc  Nspanwise  Sspace
+10.79    -19.06    2.05     0.33    62.68    1    0
+AFILE
+Prop MB_CSDXNMFWVI_5.dat
+
+SECTION
+#Xle    Yle    Zle     Chord   Ainc  Nspanwise  Sspace
+10.80    -18.94    2.05     0.33    65.75    1    0
+AFILE
+Prop MB_CSDXNMFWVI_6.dat
+
+SECTION
+#Xle    Yle    Zle     Chord   Ainc  Nspanwise  Sspace
+10.81    -18.82    2.06     0.33    68.55    1    0
+AFILE
+Prop MB_CSDXNMFWVI_7.dat
+
+SECTION
+#Xle    Yle    Zle     Chord   Ainc  Nspanwise  Sspace
+10.81    -18.70    2.06     0.33    71.07    1    0
+AFILE
+Prop MB_CSDXNMFWVI_8.dat
+
+SECTION
+#Xle    Yle    Zle     Chord   Ainc  Nspanwise  Sspace
+10.82    -18.58    2.06     0.33    73.32    1    0
+AFILE
+Prop MB_CSDXNMFWVI_9.dat
+
+SECTION
+#Xle    Yle    Zle     Chord   Ainc  Nspanwise  Sspace
+10.82    -18.45    2.06     0.33    75.30    1    0
+AFILE
+Prop MB_CSDXNMFWVI_10.dat
+
+SECTION
+#Xle    Yle    Zle     Chord   Ainc  Nspanwise  Sspace
+10.84    -18.33    2.01     0.22    77.00    1    0
+AFILE
+Prop MB_CSDXNMFWVI_11.dat
+
+#--------------------------------------------------
+SURFACE 
+Prop MB 10 
+!Nchordwise  Cspace  Nspanwise  Sspace
+12           1.0              
+
+COMPONENT 
+1
+
+ANGLE
+0.0
+
+SCALE
+1.0   1.0   1.0
+
+TRANSLATE
+0.0  0.0  0.0
+
+
+SECTION
+#Xle    Yle    Zle     Chord   Ainc  Nspanwise  Sspace
+10.82    -19.87    2.21     0.13    20.03    1    0
+AFILE
+Prop MB_CSDXNMFWVI_0.dat
+
+SECTION
+#Xle    Yle    Zle     Chord   Ainc  Nspanwise  Sspace
+10.80    -19.83    2.33     0.19    21.70    1    0
+AFILE
+Prop MB_CSDXNMFWVI_1.dat
+
+SECTION
+#Xle    Yle    Zle     Chord   Ainc  Nspanwise  Sspace
+10.79    -19.80    2.45     0.24    23.15    1    0
+AFILE
+Prop MB_CSDXNMFWVI_2.dat
+
+SECTION
+#Xle    Yle    Zle     Chord   Ainc  Nspanwise  Sspace
+10.79    -19.75    2.56     0.29    24.41    1    0
+AFILE
+Prop MB_CSDXNMFWVI_3.dat
+
+SECTION
+#Xle    Yle    Zle     Chord   Ainc  Nspanwise  Sspace
+10.79    -19.71    2.68     0.32    25.48    1    0
+AFILE
+Prop MB_CSDXNMFWVI_4.dat
+
+SECTION
+#Xle    Yle    Zle     Chord   Ainc  Nspanwise  Sspace
+10.79    -19.66    2.79     0.33    26.38    1    0
+AFILE
+Prop MB_CSDXNMFWVI_5.dat
+
+SECTION
+#Xle    Yle    Zle     Chord   Ainc  Nspanwise  Sspace
+10.80    -19.60    2.89     0.33    27.12    1    0
+AFILE
+Prop MB_CSDXNMFWVI_6.dat
+
+SECTION
+#Xle    Yle    Zle     Chord   Ainc  Nspanwise  Sspace
+10.81    -19.54    3.00     0.33    27.73    1    0
+AFILE
+Prop MB_CSDXNMFWVI_7.dat
+
+SECTION
+#Xle    Yle    Zle     Chord   Ainc  Nspanwise  Sspace
+10.81    -19.49    3.11     0.33    28.23    1    0
+AFILE
+Prop MB_CSDXNMFWVI_8.dat
+
+SECTION
+#Xle    Yle    Zle     Chord   Ainc  Nspanwise  Sspace
+10.82    -19.43    3.21     0.33    28.62    1    0
+AFILE
+Prop MB_CSDXNMFWVI_9.dat
+
+SECTION
+#Xle    Yle    Zle     Chord   Ainc  Nspanwise  Sspace
+10.82    -19.37    3.32     0.33    28.92    1    0
+AFILE
+Prop MB_CSDXNMFWVI_10.dat
+
+SECTION
+#Xle    Yle    Zle     Chord   Ainc  Nspanwise  Sspace
+10.84    -19.26    3.40     0.22    29.16    1    0
+AFILE
+Prop MB_CSDXNMFWVI_11.dat
+
+#--------------------------------------------------
+SURFACE 
+Prop MB 11 
+!Nchordwise  Cspace  Nspanwise  Sspace
+12           1.0              
+
+COMPONENT 
+1
+
+ANGLE
+0.0
+
+SCALE
+1.0   1.0   1.0
+
+TRANSLATE
+0.0  0.0  0.0
+
+
+SECTION
+#Xle    Yle    Zle     Chord   Ainc  Nspanwise  Sspace
+10.84    -20.92    3.29     0.22    -29.16    1    0
+AFILE
+Prop MB_CSDXNMFWVI_11.dat
+
+SECTION
+#Xle    Yle    Zle     Chord   Ainc  Nspanwise  Sspace
+10.82    -20.91    3.16     0.33    -28.92    1    0
+AFILE
+Prop MB_CSDXNMFWVI_10.dat
+
+SECTION
+#Xle    Yle    Zle     Chord   Ainc  Nspanwise  Sspace
+10.82    -20.85    3.05     0.33    -28.62    1    0
+AFILE
+Prop MB_CSDXNMFWVI_9.dat
+
+SECTION
+#Xle    Yle    Zle     Chord   Ainc  Nspanwise  Sspace
+10.81    -20.79    2.95     0.33    -28.23    1    0
+AFILE
+Prop MB_CSDXNMFWVI_8.dat
+
+SECTION
+#Xle    Yle    Zle     Chord   Ainc  Nspanwise  Sspace
+10.81    -20.73    2.85     0.33    -27.73    1    0
+AFILE
+Prop MB_CSDXNMFWVI_7.dat
+
+SECTION
+#Xle    Yle    Zle     Chord   Ainc  Nspanwise  Sspace
+10.80    -20.66    2.74     0.33    -27.12    1    0
+AFILE
+Prop MB_CSDXNMFWVI_6.dat
+
+SECTION
+#Xle    Yle    Zle     Chord   Ainc  Nspanwise  Sspace
+10.79    -20.60    2.64     0.33    -26.38    1    0
+AFILE
+Prop MB_CSDXNMFWVI_5.dat
+
+SECTION
+#Xle    Yle    Zle     Chord   Ainc  Nspanwise  Sspace
+10.79    -20.53    2.54     0.32    -25.48    1    0
+AFILE
+Prop MB_CSDXNMFWVI_4.dat
+
+SECTION
+#Xle    Yle    Zle     Chord   Ainc  Nspanwise  Sspace
+10.79    -20.45    2.44     0.29    -24.41    1    0
+AFILE
+Prop MB_CSDXNMFWVI_3.dat
+
+SECTION
+#Xle    Yle    Zle     Chord   Ainc  Nspanwise  Sspace
+10.79    -20.37    2.35     0.24    -23.15    1    0
+AFILE
+Prop MB_CSDXNMFWVI_2.dat
+
+SECTION
+#Xle    Yle    Zle     Chord   Ainc  Nspanwise  Sspace
+10.80    -20.29    2.26     0.19    -21.70    1    0
+AFILE
+Prop MB_CSDXNMFWVI_1.dat
+
+SECTION
+#Xle    Yle    Zle     Chord   Ainc  Nspanwise  Sspace
+10.82    -20.21    2.17     0.13    -20.03    1    0
+AFILE
+Prop MB_CSDXNMFWVI_0.dat
+
+#--------------------------------------------------
+SURFACE 
+Prop OB 0 
+!Nchordwise  Cspace  Nspanwise  Sspace
+12           1.0              
+
+COMPONENT 
+1
+
+ANGLE
+0.0
+
+SCALE
+1.0   1.0   1.0
+
+TRANSLATE
+0.0  0.0  0.0
+
+
+SECTION
+#Xle    Yle    Zle     Chord   Ainc  Nspanwise  Sspace
+11.48    23.67    2.14     0.13    -43.25    1    0
+AFILE
+Prop OB_FAXUJBVACW_0.dat
+
+SECTION
+#Xle    Yle    Zle     Chord   Ainc  Nspanwise  Sspace
+11.47    23.79    2.12     0.19    -47.68    1    0
+AFILE
+Prop OB_FAXUJBVACW_1.dat
+
+SECTION
+#Xle    Yle    Zle     Chord   Ainc  Nspanwise  Sspace
+11.46    23.91    2.09     0.24    -51.84    1    0
+AFILE
+Prop OB_FAXUJBVACW_2.dat
+
+SECTION
+#Xle    Yle    Zle     Chord   Ainc  Nspanwise  Sspace
+11.45    24.03    2.07     0.29    -55.73    1    0
+AFILE
+Prop OB_FAXUJBVACW_3.dat
+
+SECTION
+#Xle    Yle    Zle     Chord   Ainc  Nspanwise  Sspace
+11.45    24.15    2.05     0.32    -59.34    1    0
+AFILE
+Prop OB_FAXUJBVACW_4.dat
+
+SECTION
+#Xle    Yle    Zle     Chord   Ainc  Nspanwise  Sspace
+11.46    24.27    2.04     0.33    -62.68    1    0
+AFILE
+Prop OB_FAXUJBVACW_5.dat
+
+SECTION
+#Xle    Yle    Zle     Chord   Ainc  Nspanwise  Sspace
+11.46    24.39    2.03     0.33    -65.75    1    0
+AFILE
+Prop OB_FAXUJBVACW_6.dat
+
+SECTION
+#Xle    Yle    Zle     Chord   Ainc  Nspanwise  Sspace
+11.47    24.52    2.03     0.33    -68.55    1    0
+AFILE
+Prop OB_FAXUJBVACW_7.dat
+
+SECTION
+#Xle    Yle    Zle     Chord   Ainc  Nspanwise  Sspace
+11.48    24.64    2.03     0.33    -71.07    1    0
+AFILE
+Prop OB_FAXUJBVACW_8.dat
+
+SECTION
+#Xle    Yle    Zle     Chord   Ainc  Nspanwise  Sspace
+11.49    24.76    2.03     0.33    -73.32    1    0
+AFILE
+Prop OB_FAXUJBVACW_9.dat
+
+SECTION
+#Xle    Yle    Zle     Chord   Ainc  Nspanwise  Sspace
+11.49    24.88    2.03     0.33    -75.30    1    0
+AFILE
+Prop OB_FAXUJBVACW_10.dat
+
+SECTION
+#Xle    Yle    Zle     Chord   Ainc  Nspanwise  Sspace
+11.51    25.00    2.08     0.22    -77.00    1    0
+AFILE
+Prop OB_FAXUJBVACW_11.dat
+
+#--------------------------------------------------
+SURFACE 
+Prop OB 1 
+!Nchordwise  Cspace  Nspanwise  Sspace
+12           1.0              
+
+COMPONENT 
+1
+
+ANGLE
+0.0
+
+SCALE
+1.0   1.0   1.0
+
+TRANSLATE
+0.0  0.0  0.0
+
+
+SECTION
+#Xle    Yle    Zle     Chord   Ainc  Nspanwise  Sspace
+11.48    23.46    1.88     0.13    -20.04    1    0
+AFILE
+Prop OB_FAXUJBVACW_0.dat
+
+SECTION
+#Xle    Yle    Zle     Chord   Ainc  Nspanwise  Sspace
+11.47    23.50    1.76     0.19    -21.70    1    0
+AFILE
+Prop OB_FAXUJBVACW_1.dat
+
+SECTION
+#Xle    Yle    Zle     Chord   Ainc  Nspanwise  Sspace
+11.46    23.54    1.64     0.24    -23.15    1    0
+AFILE
+Prop OB_FAXUJBVACW_2.dat
+
+SECTION
+#Xle    Yle    Zle     Chord   Ainc  Nspanwise  Sspace
+11.45    23.58    1.52     0.29    -24.41    1    0
+AFILE
+Prop OB_FAXUJBVACW_3.dat
+
+SECTION
+#Xle    Yle    Zle     Chord   Ainc  Nspanwise  Sspace
+11.45    23.62    1.41     0.32    -25.48    1    0
+AFILE
+Prop OB_FAXUJBVACW_4.dat
+
+SECTION
+#Xle    Yle    Zle     Chord   Ainc  Nspanwise  Sspace
+11.46    23.68    1.30     0.33    -26.38    1    0
+AFILE
+Prop OB_FAXUJBVACW_5.dat
+
+SECTION
+#Xle    Yle    Zle     Chord   Ainc  Nspanwise  Sspace
+11.46    23.73    1.19     0.33    -27.12    1    0
+AFILE
+Prop OB_FAXUJBVACW_6.dat
+
+SECTION
+#Xle    Yle    Zle     Chord   Ainc  Nspanwise  Sspace
+11.47    23.79    1.09     0.33    -27.73    1    0
+AFILE
+Prop OB_FAXUJBVACW_7.dat
+
+SECTION
+#Xle    Yle    Zle     Chord   Ainc  Nspanwise  Sspace
+11.48    23.85    0.98     0.33    -28.23    1    0
+AFILE
+Prop OB_FAXUJBVACW_8.dat
+
+SECTION
+#Xle    Yle    Zle     Chord   Ainc  Nspanwise  Sspace
+11.49    23.91    0.87     0.33    -28.62    1    0
+AFILE
+Prop OB_FAXUJBVACW_9.dat
+
+SECTION
+#Xle    Yle    Zle     Chord   Ainc  Nspanwise  Sspace
+11.49    23.97    0.77     0.33    -28.92    1    0
+AFILE
+Prop OB_FAXUJBVACW_10.dat
+
+SECTION
+#Xle    Yle    Zle     Chord   Ainc  Nspanwise  Sspace
+11.51    24.08    0.69     0.22    -29.16    1    0
+AFILE
+Prop OB_FAXUJBVACW_11.dat
+
+#--------------------------------------------------
+SURFACE 
+Prop OB 2 
+!Nchordwise  Cspace  Nspanwise  Sspace
+12           1.0              
+
+COMPONENT 
+1
+
+ANGLE
+0.0
+
+SCALE
+1.0   1.0   1.0
+
+TRANSLATE
+0.0  0.0  0.0
+
+
+SECTION
+#Xle    Yle    Zle     Chord   Ainc  Nspanwise  Sspace
+11.51    22.41    0.80     0.22    29.16    1    0
+AFILE
+Prop OB_FAXUJBVACW_11.dat
+
+SECTION
+#Xle    Yle    Zle     Chord   Ainc  Nspanwise  Sspace
+11.49    22.42    0.93     0.33    28.92    1    0
+AFILE
+Prop OB_FAXUJBVACW_10.dat
+
+SECTION
+#Xle    Yle    Zle     Chord   Ainc  Nspanwise  Sspace
+11.49    22.48    1.03     0.33    28.62    1    0
+AFILE
+Prop OB_FAXUJBVACW_9.dat
+
+SECTION
+#Xle    Yle    Zle     Chord   Ainc  Nspanwise  Sspace
+11.48    22.55    1.14     0.33    28.23    1    0
+AFILE
+Prop OB_FAXUJBVACW_8.dat
+
+SECTION
+#Xle    Yle    Zle     Chord   Ainc  Nspanwise  Sspace
+11.47    22.61    1.24     0.33    27.73    1    0
+AFILE
+Prop OB_FAXUJBVACW_7.dat
+
+SECTION
+#Xle    Yle    Zle     Chord   Ainc  Nspanwise  Sspace
+11.46    22.67    1.34     0.33    27.12    1    0
+AFILE
+Prop OB_FAXUJBVACW_6.dat
+
+SECTION
+#Xle    Yle    Zle     Chord   Ainc  Nspanwise  Sspace
+11.46    22.74    1.45     0.33    26.38    1    0
+AFILE
+Prop OB_FAXUJBVACW_5.dat
+
+SECTION
+#Xle    Yle    Zle     Chord   Ainc  Nspanwise  Sspace
+11.45    22.81    1.55     0.32    25.48    1    0
+AFILE
+Prop OB_FAXUJBVACW_4.dat
+
+SECTION
+#Xle    Yle    Zle     Chord   Ainc  Nspanwise  Sspace
+11.45    22.88    1.64     0.29    24.41    1    0
+AFILE
+Prop OB_FAXUJBVACW_3.dat
+
+SECTION
+#Xle    Yle    Zle     Chord   Ainc  Nspanwise  Sspace
+11.46    22.96    1.74     0.24    23.15    1    0
+AFILE
+Prop OB_FAXUJBVACW_2.dat
+
+SECTION
+#Xle    Yle    Zle     Chord   Ainc  Nspanwise  Sspace
+11.47    23.04    1.83     0.19    21.70    1    0
+AFILE
+Prop OB_FAXUJBVACW_1.dat
+
+SECTION
+#Xle    Yle    Zle     Chord   Ainc  Nspanwise  Sspace
+11.48    23.13    1.92     0.13    20.03    1    0
+AFILE
+Prop OB_FAXUJBVACW_0.dat
+
+#--------------------------------------------------
+SURFACE 
+Prop OB 3 
+!Nchordwise  Cspace  Nspanwise  Sspace
+12           1.0              
+
+COMPONENT 
+1
+
+ANGLE
+0.0
+
+SCALE
+1.0   1.0   1.0
+
+TRANSLATE
+0.0  0.0  0.0
+
+
+SECTION
+#Xle    Yle    Zle     Chord   Ainc  Nspanwise  Sspace
+11.51    21.67    2.29     0.22    77.00    1    0
+AFILE
+Prop OB_FAXUJBVACW_11.dat
+
+SECTION
+#Xle    Yle    Zle     Chord   Ainc  Nspanwise  Sspace
+11.49    21.79    2.35     0.33    75.30    1    0
+AFILE
+Prop OB_FAXUJBVACW_10.dat
+
+SECTION
+#Xle    Yle    Zle     Chord   Ainc  Nspanwise  Sspace
+11.49    21.91    2.35     0.33    73.32    1    0
+AFILE
+Prop OB_FAXUJBVACW_9.dat
+
+SECTION
+#Xle    Yle    Zle     Chord   Ainc  Nspanwise  Sspace
+11.48    22.03    2.34     0.33    71.07    1    0
+AFILE
+Prop OB_FAXUJBVACW_8.dat
+
+SECTION
+#Xle    Yle    Zle     Chord   Ainc  Nspanwise  Sspace
+11.47    22.15    2.34     0.33    68.55    1    0
+AFILE
+Prop OB_FAXUJBVACW_7.dat
+
+SECTION
+#Xle    Yle    Zle     Chord   Ainc  Nspanwise  Sspace
+11.46    22.27    2.34     0.33    65.75    1    0
+AFILE
+Prop OB_FAXUJBVACW_6.dat
+
+SECTION
+#Xle    Yle    Zle     Chord   Ainc  Nspanwise  Sspace
+11.46    22.39    2.33     0.33    62.68    1    0
+AFILE
+Prop OB_FAXUJBVACW_5.dat
+
+SECTION
+#Xle    Yle    Zle     Chord   Ainc  Nspanwise  Sspace
+11.45    22.52    2.32     0.32    59.34    1    0
+AFILE
+Prop OB_FAXUJBVACW_4.dat
+
+SECTION
+#Xle    Yle    Zle     Chord   Ainc  Nspanwise  Sspace
+11.45    22.64    2.30     0.29    55.73    1    0
+AFILE
+Prop OB_FAXUJBVACW_3.dat
+
+SECTION
+#Xle    Yle    Zle     Chord   Ainc  Nspanwise  Sspace
+11.46    22.76    2.28     0.24    51.84    1    0
+AFILE
+Prop OB_FAXUJBVACW_2.dat
+
+SECTION
+#Xle    Yle    Zle     Chord   Ainc  Nspanwise  Sspace
+11.47    22.88    2.26     0.19    47.68    1    0
+AFILE
+Prop OB_FAXUJBVACW_1.dat
+
+SECTION
+#Xle    Yle    Zle     Chord   Ainc  Nspanwise  Sspace
+11.48    23.00    2.23     0.13    43.25    1    0
+AFILE
+Prop OB_FAXUJBVACW_0.dat
+
+#--------------------------------------------------
+SURFACE 
+Prop OB 4 
+!Nchordwise  Cspace  Nspanwise  Sspace
+12           1.0              
+
+COMPONENT 
+1
+
+ANGLE
+0.0
+
+SCALE
+1.0   1.0   1.0
+
+TRANSLATE
+0.0  0.0  0.0
+
+
+SECTION
+#Xle    Yle    Zle     Chord   Ainc  Nspanwise  Sspace
+11.51    22.59    3.68     0.22    29.16    1    0
+AFILE
+Prop OB_FAXUJBVACW_11.dat
+
+SECTION
+#Xle    Yle    Zle     Chord   Ainc  Nspanwise  Sspace
+11.49    22.70    3.61     0.33    28.92    1    0
+AFILE
+Prop OB_FAXUJBVACW_10.dat
+
+SECTION
+#Xle    Yle    Zle     Chord   Ainc  Nspanwise  Sspace
+11.49    22.76    3.50     0.33    28.62    1    0
+AFILE
+Prop OB_FAXUJBVACW_9.dat
+
+SECTION
+#Xle    Yle    Zle     Chord   Ainc  Nspanwise  Sspace
+11.48    22.82    3.39     0.33    28.23    1    0
+AFILE
+Prop OB_FAXUJBVACW_8.dat
+
+SECTION
+#Xle    Yle    Zle     Chord   Ainc  Nspanwise  Sspace
+11.47    22.88    3.29     0.33    27.73    1    0
+AFILE
+Prop OB_FAXUJBVACW_7.dat
+
+SECTION
+#Xle    Yle    Zle     Chord   Ainc  Nspanwise  Sspace
+11.46    22.93    3.18     0.33    27.12    1    0
+AFILE
+Prop OB_FAXUJBVACW_6.dat
+
+SECTION
+#Xle    Yle    Zle     Chord   Ainc  Nspanwise  Sspace
+11.46    22.99    3.07     0.33    26.38    1    0
+AFILE
+Prop OB_FAXUJBVACW_5.dat
+
+SECTION
+#Xle    Yle    Zle     Chord   Ainc  Nspanwise  Sspace
+11.45    23.04    2.96     0.32    25.48    1    0
+AFILE
+Prop OB_FAXUJBVACW_4.dat
+
+SECTION
+#Xle    Yle    Zle     Chord   Ainc  Nspanwise  Sspace
+11.45    23.09    2.85     0.29    24.41    1    0
+AFILE
+Prop OB_FAXUJBVACW_3.dat
+
+SECTION
+#Xle    Yle    Zle     Chord   Ainc  Nspanwise  Sspace
+11.46    23.13    2.73     0.24    23.15    1    0
+AFILE
+Prop OB_FAXUJBVACW_2.dat
+
+SECTION
+#Xle    Yle    Zle     Chord   Ainc  Nspanwise  Sspace
+11.47    23.17    2.62     0.19    21.70    1    0
+AFILE
+Prop OB_FAXUJBVACW_1.dat
+
+SECTION
+#Xle    Yle    Zle     Chord   Ainc  Nspanwise  Sspace
+11.48    23.21    2.50     0.13    20.03    1    0
+AFILE
+Prop OB_FAXUJBVACW_0.dat
+
+#--------------------------------------------------
+SURFACE 
+Prop OB 5 
+!Nchordwise  Cspace  Nspanwise  Sspace
+12           1.0              
+
+COMPONENT 
+1
+
+ANGLE
+0.0
+
+SCALE
+1.0   1.0   1.0
+
+TRANSLATE
+0.0  0.0  0.0
+
+
+SECTION
+#Xle    Yle    Zle     Chord   Ainc  Nspanwise  Sspace
+11.48    23.54    2.45     0.13    -20.04    1    0
+AFILE
+Prop OB_FAXUJBVACW_0.dat
+
+SECTION
+#Xle    Yle    Zle     Chord   Ainc  Nspanwise  Sspace
+11.47    23.62    2.54     0.19    -21.70    1    0
+AFILE
+Prop OB_FAXUJBVACW_1.dat
+
+SECTION
+#Xle    Yle    Zle     Chord   Ainc  Nspanwise  Sspace
+11.46    23.70    2.64     0.24    -23.15    1    0
+AFILE
+Prop OB_FAXUJBVACW_2.dat
+
+SECTION
+#Xle    Yle    Zle     Chord   Ainc  Nspanwise  Sspace
+11.45    23.78    2.73     0.29    -24.41    1    0
+AFILE
+Prop OB_FAXUJBVACW_3.dat
+
+SECTION
+#Xle    Yle    Zle     Chord   Ainc  Nspanwise  Sspace
+11.45    23.86    2.83     0.32    -25.48    1    0
+AFILE
+Prop OB_FAXUJBVACW_4.dat
+
+SECTION
+#Xle    Yle    Zle     Chord   Ainc  Nspanwise  Sspace
+11.46    23.93    2.93     0.33    -26.38    1    0
+AFILE
+Prop OB_FAXUJBVACW_5.dat
+
+SECTION
+#Xle    Yle    Zle     Chord   Ainc  Nspanwise  Sspace
+11.46    24.00    3.03     0.33    -27.12    1    0
+AFILE
+Prop OB_FAXUJBVACW_6.dat
+
+SECTION
+#Xle    Yle    Zle     Chord   Ainc  Nspanwise  Sspace
+11.47    24.06    3.13     0.33    -27.73    1    0
+AFILE
+Prop OB_FAXUJBVACW_7.dat
+
+SECTION
+#Xle    Yle    Zle     Chord   Ainc  Nspanwise  Sspace
+11.48    24.12    3.24     0.33    -28.23    1    0
+AFILE
+Prop OB_FAXUJBVACW_8.dat
+
+SECTION
+#Xle    Yle    Zle     Chord   Ainc  Nspanwise  Sspace
+11.49    24.18    3.34     0.33    -28.62    1    0
+AFILE
+Prop OB_FAXUJBVACW_9.dat
+
+SECTION
+#Xle    Yle    Zle     Chord   Ainc  Nspanwise  Sspace
+11.49    24.25    3.44     0.33    -28.92    1    0
+AFILE
+Prop OB_FAXUJBVACW_10.dat
+
+SECTION
+#Xle    Yle    Zle     Chord   Ainc  Nspanwise  Sspace
+11.51    24.26    3.58     0.22    -29.16    1    0
+AFILE
+Prop OB_FAXUJBVACW_11.dat
+
+#--------------------------------------------------
+SURFACE 
+Prop OB 6 
+!Nchordwise  Cspace  Nspanwise  Sspace
+12           1.0              
+
+COMPONENT 
+1
+
+ANGLE
+0.0
+
+SCALE
+1.0   1.0   1.0
+
+TRANSLATE
+0.0  0.0  0.0
+
+
+SECTION
+#Xle    Yle    Zle     Chord   Ainc  Nspanwise  Sspace
+11.51    -25.00    2.08     0.22    -77.00    1    0
+AFILE
+Prop OB_FAXUJBVACW_11.dat
+
+SECTION
+#Xle    Yle    Zle     Chord   Ainc  Nspanwise  Sspace
+11.49    -24.88    2.03     0.33    -75.30    1    0
+AFILE
+Prop OB_FAXUJBVACW_10.dat
+
+SECTION
+#Xle    Yle    Zle     Chord   Ainc  Nspanwise  Sspace
+11.49    -24.76    2.03     0.33    -73.32    1    0
+AFILE
+Prop OB_FAXUJBVACW_9.dat
+
+SECTION
+#Xle    Yle    Zle     Chord   Ainc  Nspanwise  Sspace
+11.48    -24.64    2.03     0.33    -71.07    1    0
+AFILE
+Prop OB_FAXUJBVACW_8.dat
+
+SECTION
+#Xle    Yle    Zle     Chord   Ainc  Nspanwise  Sspace
+11.47    -24.52    2.03     0.33    -68.55    1    0
+AFILE
+Prop OB_FAXUJBVACW_7.dat
+
+SECTION
+#Xle    Yle    Zle     Chord   Ainc  Nspanwise  Sspace
+11.46    -24.39    2.03     0.33    -65.75    1    0
+AFILE
+Prop OB_FAXUJBVACW_6.dat
+
+SECTION
+#Xle    Yle    Zle     Chord   Ainc  Nspanwise  Sspace
+11.46    -24.27    2.04     0.33    -62.68    1    0
+AFILE
+Prop OB_FAXUJBVACW_5.dat
+
+SECTION
+#Xle    Yle    Zle     Chord   Ainc  Nspanwise  Sspace
+11.45    -24.15    2.05     0.32    -59.34    1    0
+AFILE
+Prop OB_FAXUJBVACW_4.dat
+
+SECTION
+#Xle    Yle    Zle     Chord   Ainc  Nspanwise  Sspace
+11.45    -24.03    2.07     0.29    -55.73    1    0
+AFILE
+Prop OB_FAXUJBVACW_3.dat
+
+SECTION
+#Xle    Yle    Zle     Chord   Ainc  Nspanwise  Sspace
+11.46    -23.91    2.09     0.24    -51.84    1    0
+AFILE
+Prop OB_FAXUJBVACW_2.dat
+
+SECTION
+#Xle    Yle    Zle     Chord   Ainc  Nspanwise  Sspace
+11.47    -23.79    2.12     0.19    -47.68    1    0
+AFILE
+Prop OB_FAXUJBVACW_1.dat
+
+SECTION
+#Xle    Yle    Zle     Chord   Ainc  Nspanwise  Sspace
+11.48    -23.67    2.14     0.13    -43.25    1    0
+AFILE
+Prop OB_FAXUJBVACW_0.dat
+
+#--------------------------------------------------
+SURFACE 
+Prop OB 7 
+!Nchordwise  Cspace  Nspanwise  Sspace
+12           1.0              
+
+COMPONENT 
+1
+
+ANGLE
+0.0
+
+SCALE
+1.0   1.0   1.0
+
+TRANSLATE
+0.0  0.0  0.0
+
+
+SECTION
+#Xle    Yle    Zle     Chord   Ainc  Nspanwise  Sspace
+11.51    -24.08    0.69     0.22    -29.16    1    0
+AFILE
+Prop OB_FAXUJBVACW_11.dat
+
+SECTION
+#Xle    Yle    Zle     Chord   Ainc  Nspanwise  Sspace
+11.49    -23.97    0.77     0.33    -28.92    1    0
+AFILE
+Prop OB_FAXUJBVACW_10.dat
+
+SECTION
+#Xle    Yle    Zle     Chord   Ainc  Nspanwise  Sspace
+11.49    -23.91    0.87     0.33    -28.62    1    0
+AFILE
+Prop OB_FAXUJBVACW_9.dat
+
+SECTION
+#Xle    Yle    Zle     Chord   Ainc  Nspanwise  Sspace
+11.48    -23.85    0.98     0.33    -28.23    1    0
+AFILE
+Prop OB_FAXUJBVACW_8.dat
+
+SECTION
+#Xle    Yle    Zle     Chord   Ainc  Nspanwise  Sspace
+11.47    -23.79    1.09     0.33    -27.73    1    0
+AFILE
+Prop OB_FAXUJBVACW_7.dat
+
+SECTION
+#Xle    Yle    Zle     Chord   Ainc  Nspanwise  Sspace
+11.46    -23.73    1.19     0.33    -27.12    1    0
+AFILE
+Prop OB_FAXUJBVACW_6.dat
+
+SECTION
+#Xle    Yle    Zle     Chord   Ainc  Nspanwise  Sspace
+11.46    -23.68    1.30     0.33    -26.38    1    0
+AFILE
+Prop OB_FAXUJBVACW_5.dat
+
+SECTION
+#Xle    Yle    Zle     Chord   Ainc  Nspanwise  Sspace
+11.45    -23.62    1.41     0.32    -25.48    1    0
+AFILE
+Prop OB_FAXUJBVACW_4.dat
+
+SECTION
+#Xle    Yle    Zle     Chord   Ainc  Nspanwise  Sspace
+11.45    -23.58    1.52     0.29    -24.41    1    0
+AFILE
+Prop OB_FAXUJBVACW_3.dat
+
+SECTION
+#Xle    Yle    Zle     Chord   Ainc  Nspanwise  Sspace
+11.46    -23.54    1.64     0.24    -23.15    1    0
+AFILE
+Prop OB_FAXUJBVACW_2.dat
+
+SECTION
+#Xle    Yle    Zle     Chord   Ainc  Nspanwise  Sspace
+11.47    -23.50    1.76     0.19    -21.70    1    0
+AFILE
+Prop OB_FAXUJBVACW_1.dat
+
+SECTION
+#Xle    Yle    Zle     Chord   Ainc  Nspanwise  Sspace
+11.48    -23.46    1.88     0.13    -20.04    1    0
+AFILE
+Prop OB_FAXUJBVACW_0.dat
+
+#--------------------------------------------------
+SURFACE 
+Prop OB 8 
+!Nchordwise  Cspace  Nspanwise  Sspace
+12           1.0              
+
+COMPONENT 
+1
+
+ANGLE
+0.0
+
+SCALE
+1.0   1.0   1.0
+
+TRANSLATE
+0.0  0.0  0.0
+
+
+SECTION
+#Xle    Yle    Zle     Chord   Ainc  Nspanwise  Sspace
+11.48    -23.13    1.92     0.13    20.03    1    0
+AFILE
+Prop OB_FAXUJBVACW_0.dat
+
+SECTION
+#Xle    Yle    Zle     Chord   Ainc  Nspanwise  Sspace
+11.47    -23.04    1.83     0.19    21.70    1    0
+AFILE
+Prop OB_FAXUJBVACW_1.dat
+
+SECTION
+#Xle    Yle    Zle     Chord   Ainc  Nspanwise  Sspace
+11.46    -22.96    1.74     0.24    23.15    1    0
+AFILE
+Prop OB_FAXUJBVACW_2.dat
+
+SECTION
+#Xle    Yle    Zle     Chord   Ainc  Nspanwise  Sspace
+11.45    -22.88    1.64     0.29    24.41    1    0
+AFILE
+Prop OB_FAXUJBVACW_3.dat
+
+SECTION
+#Xle    Yle    Zle     Chord   Ainc  Nspanwise  Sspace
+11.45    -22.81    1.55     0.32    25.48    1    0
+AFILE
+Prop OB_FAXUJBVACW_4.dat
+
+SECTION
+#Xle    Yle    Zle     Chord   Ainc  Nspanwise  Sspace
+11.46    -22.74    1.45     0.33    26.38    1    0
+AFILE
+Prop OB_FAXUJBVACW_5.dat
+
+SECTION
+#Xle    Yle    Zle     Chord   Ainc  Nspanwise  Sspace
+11.46    -22.67    1.34     0.33    27.12    1    0
+AFILE
+Prop OB_FAXUJBVACW_6.dat
+
+SECTION
+#Xle    Yle    Zle     Chord   Ainc  Nspanwise  Sspace
+11.47    -22.61    1.24     0.33    27.73    1    0
+AFILE
+Prop OB_FAXUJBVACW_7.dat
+
+SECTION
+#Xle    Yle    Zle     Chord   Ainc  Nspanwise  Sspace
+11.48    -22.55    1.14     0.33    28.23    1    0
+AFILE
+Prop OB_FAXUJBVACW_8.dat
+
+SECTION
+#Xle    Yle    Zle     Chord   Ainc  Nspanwise  Sspace
+11.49    -22.48    1.03     0.33    28.62    1    0
+AFILE
+Prop OB_FAXUJBVACW_9.dat
+
+SECTION
+#Xle    Yle    Zle     Chord   Ainc  Nspanwise  Sspace
+11.49    -22.42    0.93     0.33    28.92    1    0
+AFILE
+Prop OB_FAXUJBVACW_10.dat
+
+SECTION
+#Xle    Yle    Zle     Chord   Ainc  Nspanwise  Sspace
+11.51    -22.41    0.80     0.22    29.16    1    0
+AFILE
+Prop OB_FAXUJBVACW_11.dat
+
+#--------------------------------------------------
+SURFACE 
+Prop OB 9 
+!Nchordwise  Cspace  Nspanwise  Sspace
+12           1.0              
+
+COMPONENT 
+1
+
+ANGLE
+0.0
+
+SCALE
+1.0   1.0   1.0
+
+TRANSLATE
+0.0  0.0  0.0
+
+
+SECTION
+#Xle    Yle    Zle     Chord   Ainc  Nspanwise  Sspace
+11.48    -23.00    2.23     0.13    43.25    1    0
+AFILE
+Prop OB_FAXUJBVACW_0.dat
+
+SECTION
+#Xle    Yle    Zle     Chord   Ainc  Nspanwise  Sspace
+11.47    -22.88    2.26     0.19    47.68    1    0
+AFILE
+Prop OB_FAXUJBVACW_1.dat
+
+SECTION
+#Xle    Yle    Zle     Chord   Ainc  Nspanwise  Sspace
+11.46    -22.76    2.28     0.24    51.84    1    0
+AFILE
+Prop OB_FAXUJBVACW_2.dat
+
+SECTION
+#Xle    Yle    Zle     Chord   Ainc  Nspanwise  Sspace
+11.45    -22.64    2.30     0.29    55.73    1    0
+AFILE
+Prop OB_FAXUJBVACW_3.dat
+
+SECTION
+#Xle    Yle    Zle     Chord   Ainc  Nspanwise  Sspace
+11.45    -22.52    2.32     0.32    59.34    1    0
+AFILE
+Prop OB_FAXUJBVACW_4.dat
+
+SECTION
+#Xle    Yle    Zle     Chord   Ainc  Nspanwise  Sspace
+11.46    -22.39    2.33     0.33    62.68    1    0
+AFILE
+Prop OB_FAXUJBVACW_5.dat
+
+SECTION
+#Xle    Yle    Zle     Chord   Ainc  Nspanwise  Sspace
+11.46    -22.27    2.34     0.33    65.75    1    0
+AFILE
+Prop OB_FAXUJBVACW_6.dat
+
+SECTION
+#Xle    Yle    Zle     Chord   Ainc  Nspanwise  Sspace
+11.47    -22.15    2.34     0.33    68.55    1    0
+AFILE
+Prop OB_FAXUJBVACW_7.dat
+
+SECTION
+#Xle    Yle    Zle     Chord   Ainc  Nspanwise  Sspace
+11.48    -22.03    2.34     0.33    71.07    1    0
+AFILE
+Prop OB_FAXUJBVACW_8.dat
+
+SECTION
+#Xle    Yle    Zle     Chord   Ainc  Nspanwise  Sspace
+11.49    -21.91    2.35     0.33    73.32    1    0
+AFILE
+Prop OB_FAXUJBVACW_9.dat
+
+SECTION
+#Xle    Yle    Zle     Chord   Ainc  Nspanwise  Sspace
+11.49    -21.79    2.35     0.33    75.30    1    0
+AFILE
+Prop OB_FAXUJBVACW_10.dat
+
+SECTION
+#Xle    Yle    Zle     Chord   Ainc  Nspanwise  Sspace
+11.51    -21.67    2.29     0.22    77.00    1    0
+AFILE
+Prop OB_FAXUJBVACW_11.dat
+
+#--------------------------------------------------
+SURFACE 
+Prop OB 10 
+!Nchordwise  Cspace  Nspanwise  Sspace
+12           1.0              
+
+COMPONENT 
+1
+
+ANGLE
+0.0
+
+SCALE
+1.0   1.0   1.0
+
+TRANSLATE
+0.0  0.0  0.0
+
+
+SECTION
+#Xle    Yle    Zle     Chord   Ainc  Nspanwise  Sspace
+11.48    -23.21    2.50     0.13    20.03    1    0
+AFILE
+Prop OB_FAXUJBVACW_0.dat
+
+SECTION
+#Xle    Yle    Zle     Chord   Ainc  Nspanwise  Sspace
+11.47    -23.17    2.62     0.19    21.70    1    0
+AFILE
+Prop OB_FAXUJBVACW_1.dat
+
+SECTION
+#Xle    Yle    Zle     Chord   Ainc  Nspanwise  Sspace
+11.46    -23.13    2.73     0.24    23.15    1    0
+AFILE
+Prop OB_FAXUJBVACW_2.dat
+
+SECTION
+#Xle    Yle    Zle     Chord   Ainc  Nspanwise  Sspace
+11.45    -23.09    2.85     0.29    24.41    1    0
+AFILE
+Prop OB_FAXUJBVACW_3.dat
+
+SECTION
+#Xle    Yle    Zle     Chord   Ainc  Nspanwise  Sspace
+11.45    -23.04    2.96     0.32    25.48    1    0
+AFILE
+Prop OB_FAXUJBVACW_4.dat
+
+SECTION
+#Xle    Yle    Zle     Chord   Ainc  Nspanwise  Sspace
+11.46    -22.99    3.07     0.33    26.38    1    0
+AFILE
+Prop OB_FAXUJBVACW_5.dat
+
+SECTION
+#Xle    Yle    Zle     Chord   Ainc  Nspanwise  Sspace
+11.46    -22.93    3.18     0.33    27.12    1    0
+AFILE
+Prop OB_FAXUJBVACW_6.dat
+
+SECTION
+#Xle    Yle    Zle     Chord   Ainc  Nspanwise  Sspace
+11.47    -22.88    3.29     0.33    27.73    1    0
+AFILE
+Prop OB_FAXUJBVACW_7.dat
+
+SECTION
+#Xle    Yle    Zle     Chord   Ainc  Nspanwise  Sspace
+11.48    -22.82    3.39     0.33    28.23    1    0
+AFILE
+Prop OB_FAXUJBVACW_8.dat
+
+SECTION
+#Xle    Yle    Zle     Chord   Ainc  Nspanwise  Sspace
+11.49    -22.76    3.50     0.33    28.62    1    0
+AFILE
+Prop OB_FAXUJBVACW_9.dat
+
+SECTION
+#Xle    Yle    Zle     Chord   Ainc  Nspanwise  Sspace
+11.49    -22.70    3.61     0.33    28.92    1    0
+AFILE
+Prop OB_FAXUJBVACW_10.dat
+
+SECTION
+#Xle    Yle    Zle     Chord   Ainc  Nspanwise  Sspace
+11.51    -22.59    3.68     0.22    29.16    1    0
+AFILE
+Prop OB_FAXUJBVACW_11.dat
+
+#--------------------------------------------------
+SURFACE 
+Prop OB 11 
+!Nchordwise  Cspace  Nspanwise  Sspace
+12           1.0              
+
+COMPONENT 
+1
+
+ANGLE
+0.0
+
+SCALE
+1.0   1.0   1.0
+
+TRANSLATE
+0.0  0.0  0.0
+
+
+SECTION
+#Xle    Yle    Zle     Chord   Ainc  Nspanwise  Sspace
+11.51    -24.26    3.58     0.22    -29.16    1    0
+AFILE
+Prop OB_FAXUJBVACW_11.dat
+
+SECTION
+#Xle    Yle    Zle     Chord   Ainc  Nspanwise  Sspace
+11.49    -24.25    3.44     0.33    -28.92    1    0
+AFILE
+Prop OB_FAXUJBVACW_10.dat
+
+SECTION
+#Xle    Yle    Zle     Chord   Ainc  Nspanwise  Sspace
+11.49    -24.18    3.34     0.33    -28.62    1    0
+AFILE
+Prop OB_FAXUJBVACW_9.dat
+
+SECTION
+#Xle    Yle    Zle     Chord   Ainc  Nspanwise  Sspace
+11.48    -24.12    3.24     0.33    -28.23    1    0
+AFILE
+Prop OB_FAXUJBVACW_8.dat
+
+SECTION
+#Xle    Yle    Zle     Chord   Ainc  Nspanwise  Sspace
+11.47    -24.06    3.13     0.33    -27.73    1    0
+AFILE
+Prop OB_FAXUJBVACW_7.dat
+
+SECTION
+#Xle    Yle    Zle     Chord   Ainc  Nspanwise  Sspace
+11.46    -24.00    3.03     0.33    -27.12    1    0
+AFILE
+Prop OB_FAXUJBVACW_6.dat
+
+SECTION
+#Xle    Yle    Zle     Chord   Ainc  Nspanwise  Sspace
+11.46    -23.93    2.93     0.33    -26.38    1    0
+AFILE
+Prop OB_FAXUJBVACW_5.dat
+
+SECTION
+#Xle    Yle    Zle     Chord   Ainc  Nspanwise  Sspace
+11.45    -23.86    2.83     0.32    -25.48    1    0
+AFILE
+Prop OB_FAXUJBVACW_4.dat
+
+SECTION
+#Xle    Yle    Zle     Chord   Ainc  Nspanwise  Sspace
+11.45    -23.78    2.73     0.29    -24.41    1    0
+AFILE
+Prop OB_FAXUJBVACW_3.dat
+
+SECTION
+#Xle    Yle    Zle     Chord   Ainc  Nspanwise  Sspace
+11.46    -23.70    2.64     0.24    -23.15    1    0
+AFILE
+Prop OB_FAXUJBVACW_2.dat
+
+SECTION
+#Xle    Yle    Zle     Chord   Ainc  Nspanwise  Sspace
+11.47    -23.62    2.54     0.19    -21.70    1    0
+AFILE
+Prop OB_FAXUJBVACW_1.dat
+
+SECTION
+#Xle    Yle    Zle     Chord   Ainc  Nspanwise  Sspace
+11.48    -23.54    2.45     0.13    -20.04    1    0
+AFILE
+Prop OB_FAXUJBVACW_0.dat
+
+#=============================================
+BODY
+Twin booom 0
+28   1.0
+#
+TRANSLATE
+0.0  8.019681930541992  0.0
+#
+BFIL
+Twin booom_PLXMRMKESW_0.dat
+
+#=============================================
+BODY
+Twin booom 1
+28   1.0
+#
+TRANSLATE
+0.0  -8.019681930541992  0.0
+#
+BFIL
+Twin booom_PLXMRMKESW_1.dat
+
+#--------------------------------------------------
+SURFACE 
+Twin Vstab Tail 0 
+!Nchordwise  Cspace  Nspanwise  Sspace
+12           1.0              
+
+COMPONENT 
+1
+
+ANGLE
+0.0
+
+SCALE
+1.0   1.0   1.0
+
+TRANSLATE
+0.0  0.0  0.0
+
+
+SECTION
+#Xle    Yle    Zle     Chord   Ainc  Nspanwise  Sspace
+26.98    8.00    8.00     2.50    0.00    7    0
+AFILE
+Twin Vstab Tail_TDPDUFXSPG_10.dat
+
+SECTION
+#Xle    Yle    Zle     Chord   Ainc  Nspanwise  Sspace
+26.21    8.00    6.67     3.00    0.00    7    0
+AFILE
+Twin Vstab Tail_TDPDUFXSPG_9.dat
+
+SECTION
+#Xle    Yle    Zle     Chord   Ainc  Nspanwise  Sspace
+25.44    8.00    5.33     3.50    0.00    7    0
+AFILE
+Twin Vstab Tail_TDPDUFXSPG_8.dat
+
+SECTION
+#Xle    Yle    Zle     Chord   Ainc  Nspanwise  Sspace
+24.67    8.00    4.00     4.00    0.00    7    0
+AFILE
+Twin Vstab Tail_TDPDUFXSPG_7.dat
+
+SECTION
+#Xle    Yle    Zle     Chord   Ainc  Nspanwise  Sspace
+23.90    8.00    2.67     4.50    0.00    7    0
+AFILE
+Twin Vstab Tail_TDPDUFXSPG_6.dat
+
+SECTION
+#Xle    Yle    Zle     Chord   Ainc  Nspanwise  Sspace
+23.13    8.00    1.33     5.00    0.00    3    0
+AFILE
+Twin Vstab Tail_TDPDUFXSPG_5.dat
+
+SECTION
+#Xle    Yle    Zle     Chord   Ainc  Nspanwise  Sspace
+23.43    8.00    0.80     4.62    0.00    3    0
+AFILE
+Twin Vstab Tail_TDPDUFXSPG_4.dat
+
+SECTION
+#Xle    Yle    Zle     Chord   Ainc  Nspanwise  Sspace
+23.74    8.00    0.27     4.24    0.00    3    0
+AFILE
+Twin Vstab Tail_TDPDUFXSPG_3.dat
+
+SECTION
+#Xle    Yle    Zle     Chord   Ainc  Nspanwise  Sspace
+24.05    8.00    -0.27     3.87    0.00    3    0
+AFILE
+Twin Vstab Tail_TDPDUFXSPG_2.dat
+
+SECTION
+#Xle    Yle    Zle     Chord   Ainc  Nspanwise  Sspace
+24.36    8.00    -0.80     3.49    0.00    3    0
+AFILE
+Twin Vstab Tail_TDPDUFXSPG_1.dat
+
+SECTION
+#Xle    Yle    Zle     Chord   Ainc  Nspanwise  Sspace
+24.67    8.00    -1.33     3.11    0.00    1    0
+AFILE
+Twin Vstab Tail_TDPDUFXSPG_0.dat
+
+#--------------------------------------------------
+SURFACE 
+Twin Vstab Tail 1 
+!Nchordwise  Cspace  Nspanwise  Sspace
+12           1.0              
+
+COMPONENT 
+1
+
+ANGLE
+0.0
+
+SCALE
+1.0   1.0   1.0
+
+TRANSLATE
+0.0  0.0  0.0
+
+
+SECTION
+#Xle    Yle    Zle     Chord   Ainc  Nspanwise  Sspace
+26.98    -8.00    8.00     2.50    0.00    7    0
+AFILE
+Twin Vstab Tail_TDPDUFXSPG_10.dat
+
+SECTION
+#Xle    Yle    Zle     Chord   Ainc  Nspanwise  Sspace
+26.21    -8.00    6.67     3.00    0.00    7    0
+AFILE
+Twin Vstab Tail_TDPDUFXSPG_9.dat
+
+SECTION
+#Xle    Yle    Zle     Chord   Ainc  Nspanwise  Sspace
+25.44    -8.00    5.33     3.50    0.00    7    0
+AFILE
+Twin Vstab Tail_TDPDUFXSPG_8.dat
+
+SECTION
+#Xle    Yle    Zle     Chord   Ainc  Nspanwise  Sspace
+24.67    -8.00    4.00     4.00    0.00    7    0
+AFILE
+Twin Vstab Tail_TDPDUFXSPG_7.dat
+
+SECTION
+#Xle    Yle    Zle     Chord   Ainc  Nspanwise  Sspace
+23.90    -8.00    2.67     4.50    0.00    7    0
+AFILE
+Twin Vstab Tail_TDPDUFXSPG_6.dat
+
+SECTION
+#Xle    Yle    Zle     Chord   Ainc  Nspanwise  Sspace
+23.13    -8.00    1.33     5.00    0.00    3    0
+AFILE
+Twin Vstab Tail_TDPDUFXSPG_5.dat
+
+SECTION
+#Xle    Yle    Zle     Chord   Ainc  Nspanwise  Sspace
+23.43    -8.00    0.80     4.62    0.00    3    0
+AFILE
+Twin Vstab Tail_TDPDUFXSPG_4.dat
+
+SECTION
+#Xle    Yle    Zle     Chord   Ainc  Nspanwise  Sspace
+23.74    -8.00    0.27     4.24    0.00    3    0
+AFILE
+Twin Vstab Tail_TDPDUFXSPG_3.dat
+
+SECTION
+#Xle    Yle    Zle     Chord   Ainc  Nspanwise  Sspace
+24.05    -8.00    -0.27     3.87    0.00    3    0
+AFILE
+Twin Vstab Tail_TDPDUFXSPG_2.dat
+
+SECTION
+#Xle    Yle    Zle     Chord   Ainc  Nspanwise  Sspace
+24.36    -8.00    -0.80     3.49    0.00    3    0
+AFILE
+Twin Vstab Tail_TDPDUFXSPG_1.dat
+
+SECTION
+#Xle    Yle    Zle     Chord   Ainc  Nspanwise  Sspace
+24.67    -8.00    -1.33     3.11    0.00    1    0
+AFILE
+Twin Vstab Tail_TDPDUFXSPG_0.dat
+
+#--------------------------------------------------
+SURFACE 
+H Stab 0 
+!Nchordwise  Cspace  Nspanwise  Sspace
+12           1.0              
+
+COMPONENT 
+1
+
+ANGLE
+0.0
+
+SCALE
+1.0   1.0   1.0
+
+TRANSLATE
+0.0  0.0  0.0
+
+
+SECTION
+#Xle    Yle    Zle     Chord   Ainc  Nspanwise  Sspace
+27.00    0.00    8.00     2.50    0.00    8    0
+AFILE
+H Stab_IVPKXLWNFV_0.dat
+
+SECTION
+#Xle    Yle    Zle     Chord   Ainc  Nspanwise  Sspace
+27.00    1.60    8.00     2.50    0.00    8    0
+AFILE
+H Stab_IVPKXLWNFV_1.dat
+
+SECTION
+#Xle    Yle    Zle     Chord   Ainc  Nspanwise  Sspace
+27.00    3.20    8.00     2.50    0.00    9    0
+AFILE
+H Stab_IVPKXLWNFV_2.dat
+
+SECTION
+#Xle    Yle    Zle     Chord   Ainc  Nspanwise  Sspace
+27.00    4.80    8.00     2.50    0.00    8    0
+AFILE
+H Stab_IVPKXLWNFV_3.dat
+
+SECTION
+#Xle    Yle    Zle     Chord   Ainc  Nspanwise  Sspace
+27.00    6.40    8.00     2.50    0.00    8    0
+AFILE
+H Stab_IVPKXLWNFV_4.dat
+
+SECTION
+#Xle    Yle    Zle     Chord   Ainc  Nspanwise  Sspace
+27.00    8.00    8.00     2.50    0.00    1    0
+AFILE
+H Stab_IVPKXLWNFV_5.dat
+
+#--------------------------------------------------
+SURFACE 
+H Stab 1 
+!Nchordwise  Cspace  Nspanwise  Sspace
+12           1.0              
+
+COMPONENT 
+1
+
+ANGLE
+0.0
+
+SCALE
+1.0   1.0   1.0
+
+TRANSLATE
+0.0  0.0  0.0
+
+
+SECTION
+#Xle    Yle    Zle     Chord   Ainc  Nspanwise  Sspace
+27.00    -8.00    8.00     2.50    0.00    8    0
+AFILE
+H Stab_IVPKXLWNFV_5.dat
+
+SECTION
+#Xle    Yle    Zle     Chord   Ainc  Nspanwise  Sspace
+27.00    -6.40    8.00     2.50    0.00    8    0
+AFILE
+H Stab_IVPKXLWNFV_4.dat
+
+SECTION
+#Xle    Yle    Zle     Chord   Ainc  Nspanwise  Sspace
+27.00    -4.80    8.00     2.50    0.00    9    0
+AFILE
+H Stab_IVPKXLWNFV_3.dat
+
+SECTION
+#Xle    Yle    Zle     Chord   Ainc  Nspanwise  Sspace
+27.00    -3.20    8.00     2.50    0.00    8    0
+AFILE
+H Stab_IVPKXLWNFV_2.dat
+
+SECTION
+#Xle    Yle    Zle     Chord   Ainc  Nspanwise  Sspace
+27.00    -1.60    8.00     2.50    0.00    8    0
+AFILE
+H Stab_IVPKXLWNFV_1.dat
+
+SECTION
+#Xle    Yle    Zle     Chord   Ainc  Nspanwise  Sspace
+27.00    0.00    8.00     2.50    0.00    1    0
+AFILE
+H Stab_IVPKXLWNFV_0.dat
+
+#--------------------------------------------------
+SURFACE 
+Main Wing 0 
+!Nchordwise  Cspace  Nspanwise  Sspace
+12           1.0              
+
+COMPONENT 
+1
+
+ANGLE
+0.0
+
+SCALE
+1.0   1.0   1.0
+
+TRANSLATE
+0.0  0.0  0.0
+
+
+SECTION
+#Xle    Yle    Zle     Chord   Ainc  Nspanwise  Sspace
+9.33    0.00    0.67     8.00    0.00    27    0
+AFILE
+Main Wing_LWGXDXVPMC_0.dat
+
+SECTION
+#Xle    Yle    Zle     Chord   Ainc  Nspanwise  Sspace
+10.25    5.20    0.93     7.20    -0.33    27    0
+AFILE
+Main Wing_LWGXDXVPMC_1.dat
+
+SECTION
+#Xle    Yle    Zle     Chord   Ainc  Nspanwise  Sspace
+11.17    10.40    1.19     6.40    -0.75    27    0
+AFILE
+Main Wing_LWGXDXVPMC_2.dat
+
+SECTION
+#Xle    Yle    Zle     Chord   Ainc  Nspanwise  Sspace
+12.09    15.60    1.45     5.60    -1.29    27    0
+AFILE
+Main Wing_LWGXDXVPMC_3.dat
+
+SECTION
+#Xle    Yle    Zle     Chord   Ainc  Nspanwise  Sspace
+13.01    20.80    1.72     4.80    -2.00    27    0
+AFILE
+Main Wing_LWGXDXVPMC_4.dat
+
+SECTION
+#Xle    Yle    Zle     Chord   Ainc  Nspanwise  Sspace
+13.93    26.00    1.98     4.00    -3.00    1    0
+AFILE
+Main Wing_LWGXDXVPMC_5.dat
+
+#--------------------------------------------------
+SURFACE 
+Main Wing 1 
+!Nchordwise  Cspace  Nspanwise  Sspace
+12           1.0              
+
+COMPONENT 
+1
+
+ANGLE
+0.0
+
+SCALE
+1.0   1.0   1.0
+
+TRANSLATE
+0.0  0.0  0.0
+
+
+SECTION
+#Xle    Yle    Zle     Chord   Ainc  Nspanwise  Sspace
+13.93    -26.00    1.98     4.00    -3.00    27    0
+AFILE
+Main Wing_LWGXDXVPMC_5.dat
+
+SECTION
+#Xle    Yle    Zle     Chord   Ainc  Nspanwise  Sspace
+13.01    -20.80    1.72     4.80    -2.00    27    0
+AFILE
+Main Wing_LWGXDXVPMC_4.dat
+
+SECTION
+#Xle    Yle    Zle     Chord   Ainc  Nspanwise  Sspace
+12.09    -15.60    1.45     5.60    -1.29    27    0
+AFILE
+Main Wing_LWGXDXVPMC_3.dat
+
+SECTION
+#Xle    Yle    Zle     Chord   Ainc  Nspanwise  Sspace
+11.17    -10.40    1.19     6.40    -0.75    27    0
+AFILE
+Main Wing_LWGXDXVPMC_2.dat
+
+SECTION
+#Xle    Yle    Zle     Chord   Ainc  Nspanwise  Sspace
+10.25    -5.20    0.93     7.20    -0.33    27    0
+AFILE
+Main Wing_LWGXDXVPMC_1.dat
+
+SECTION
+#Xle    Yle    Zle     Chord   Ainc  Nspanwise  Sspace
+9.33    0.00    0.67     8.00    0.00    1    0
+AFILE
+Main Wing_LWGXDXVPMC_0.dat
+
+#--------------------------------------------------
+SURFACE 
+PropGeom 0 
+!Nchordwise  Cspace  Nspanwise  Sspace
+12           1.0              
+
+COMPONENT 
+1
+
+ANGLE
+0.0
+
+SCALE
+1.0   1.0   1.0
+
+TRANSLATE
+0.0  0.0  0.0
+
+
+SECTION
+#Xle    Yle    Zle     Chord   Ainc  Nspanwise  Sspace
+-5.33    0.56    0.02     0.36    20.03    2    0
+AFILE
+PropGeom_YYAUTYUECT_0.dat
+
+SECTION
+#Xle    Yle    Zle     Chord   Ainc  Nspanwise  Sspace
+-5.29    0.78    -0.23     0.52    21.70    2    0
+AFILE
+PropGeom_YYAUTYUECT_1.dat
+
+SECTION
+#Xle    Yle    Zle     Chord   Ainc  Nspanwise  Sspace
+-5.26    1.00    -0.48     0.66    23.15    2    0
+AFILE
+PropGeom_YYAUTYUECT_2.dat
+
+SECTION
+#Xle    Yle    Zle     Chord   Ainc  Nspanwise  Sspace
+-5.25    1.22    -0.73     0.77    24.41    2    0
+AFILE
+PropGeom_YYAUTYUECT_3.dat
+
+SECTION
+#Xle    Yle    Zle     Chord   Ainc  Nspanwise  Sspace
+-5.25    1.42    -0.99     0.85    25.48    2    0
+AFILE
+PropGeom_YYAUTYUECT_4.dat
+
+SECTION
+#Xle    Yle    Zle     Chord   Ainc  Nspanwise  Sspace
+-5.26    1.61    -1.26     0.89    26.38    2    0
+AFILE
+PropGeom_YYAUTYUECT_5.dat
+
+SECTION
+#Xle    Yle    Zle     Chord   Ainc  Nspanwise  Sspace
+-5.28    1.79    -1.54     0.90    27.12    2    0
+AFILE
+PropGeom_YYAUTYUECT_6.dat
+
+SECTION
+#Xle    Yle    Zle     Chord   Ainc  Nspanwise  Sspace
+-5.30    1.96    -1.82     0.90    27.73    2    0
+AFILE
+PropGeom_YYAUTYUECT_7.dat
+
+SECTION
+#Xle    Yle    Zle     Chord   Ainc  Nspanwise  Sspace
+-5.32    2.13    -2.10     0.90    28.23    2    0
+AFILE
+PropGeom_YYAUTYUECT_8.dat
+
+SECTION
+#Xle    Yle    Zle     Chord   Ainc  Nspanwise  Sspace
+-5.34    2.30    -2.38     0.90    28.62    2    0
+AFILE
+PropGeom_YYAUTYUECT_9.dat
+
+SECTION
+#Xle    Yle    Zle     Chord   Ainc  Nspanwise  Sspace
+-5.35    2.46    -2.66     0.90    28.92    2    0
+AFILE
+PropGeom_YYAUTYUECT_10.dat
+
+SECTION
+#Xle    Yle    Zle     Chord   Ainc  Nspanwise  Sspace
+-5.40    2.50    -3.02     0.59    29.16    1    0
+AFILE
+PropGeom_YYAUTYUECT_11.dat
+
+#--------------------------------------------------
+SURFACE 
+PropGeom 1 
+!Nchordwise  Cspace  Nspanwise  Sspace
+12           1.0              
+
+COMPONENT 
+1
+
+ANGLE
+0.0
+
+SCALE
+1.0   1.0   1.0
+
+TRANSLATE
+0.0  0.0  0.0
+
+
+SECTION
+#Xle    Yle    Zle     Chord   Ainc  Nspanwise  Sspace
+-5.33    0.90    0.86     0.36    43.25    2    0
+AFILE
+PropGeom_YYAUTYUECT_0.dat
+
+SECTION
+#Xle    Yle    Zle     Chord   Ainc  Nspanwise  Sspace
+-5.29    1.23    0.93     0.52    47.68    2    0
+AFILE
+PropGeom_YYAUTYUECT_1.dat
+
+SECTION
+#Xle    Yle    Zle     Chord   Ainc  Nspanwise  Sspace
+-5.26    1.55    1.00     0.66    51.84    2    0
+AFILE
+PropGeom_YYAUTYUECT_2.dat
+
+SECTION
+#Xle    Yle    Zle     Chord   Ainc  Nspanwise  Sspace
+-5.25    1.88    1.06     0.77    55.73    2    0
+AFILE
+PropGeom_YYAUTYUECT_3.dat
+
+SECTION
+#Xle    Yle    Zle     Chord   Ainc  Nspanwise  Sspace
+-5.25    2.21    1.10     0.85    59.34    2    0
+AFILE
+PropGeom_YYAUTYUECT_4.dat
+
+SECTION
+#Xle    Yle    Zle     Chord   Ainc  Nspanwise  Sspace
+-5.26    2.54    1.14     0.89    62.68    2    0
+AFILE
+PropGeom_YYAUTYUECT_5.dat
+
+SECTION
+#Xle    Yle    Zle     Chord   Ainc  Nspanwise  Sspace
+-5.28    2.86    1.15     0.90    65.75    2    0
+AFILE
+PropGeom_YYAUTYUECT_6.dat
+
+SECTION
+#Xle    Yle    Zle     Chord   Ainc  Nspanwise  Sspace
+-5.30    3.19    1.16     0.90    68.55    2    0
+AFILE
+PropGeom_YYAUTYUECT_7.dat
+
+SECTION
+#Xle    Yle    Zle     Chord   Ainc  Nspanwise  Sspace
+-5.32    3.52    1.16     0.90    71.07    2    0
+AFILE
+PropGeom_YYAUTYUECT_8.dat
+
+SECTION
+#Xle    Yle    Zle     Chord   Ainc  Nspanwise  Sspace
+-5.34    3.85    1.17     0.90    73.32    2    0
+AFILE
+PropGeom_YYAUTYUECT_9.dat
+
+SECTION
+#Xle    Yle    Zle     Chord   Ainc  Nspanwise  Sspace
+-5.35    4.17    1.17     0.90    75.30    2    0
+AFILE
+PropGeom_YYAUTYUECT_10.dat
+
+SECTION
+#Xle    Yle    Zle     Chord   Ainc  Nspanwise  Sspace
+-5.40    4.50    1.02     0.59    77.00    1    0
+AFILE
+PropGeom_YYAUTYUECT_11.dat
+
+#--------------------------------------------------
+SURFACE 
+PropGeom 2 
+!Nchordwise  Cspace  Nspanwise  Sspace
+12           1.0              
+
+COMPONENT 
+1
+
+ANGLE
+0.0
+
+SCALE
+1.0   1.0   1.0
+
+TRANSLATE
+0.0  0.0  0.0
+
+
+SECTION
+#Xle    Yle    Zle     Chord   Ainc  Nspanwise  Sspace
+-5.33    0.34    1.58     0.36    20.03    2    0
+AFILE
+PropGeom_YYAUTYUECT_0.dat
+
+SECTION
+#Xle    Yle    Zle     Chord   Ainc  Nspanwise  Sspace
+-5.29    0.45    1.90     0.52    21.70    2    0
+AFILE
+PropGeom_YYAUTYUECT_1.dat
+
+SECTION
+#Xle    Yle    Zle     Chord   Ainc  Nspanwise  Sspace
+-5.26    0.55    2.21     0.66    23.15    2    0
+AFILE
+PropGeom_YYAUTYUECT_2.dat
+
+SECTION
+#Xle    Yle    Zle     Chord   Ainc  Nspanwise  Sspace
+-5.25    0.66    2.53     0.77    24.41    2    0
+AFILE
+PropGeom_YYAUTYUECT_3.dat
+
+SECTION
+#Xle    Yle    Zle     Chord   Ainc  Nspanwise  Sspace
+-5.25    0.79    2.83     0.85    25.48    2    0
+AFILE
+PropGeom_YYAUTYUECT_4.dat
+
+SECTION
+#Xle    Yle    Zle     Chord   Ainc  Nspanwise  Sspace
+-5.26    0.92    3.13     0.89    26.38    2    0
+AFILE
+PropGeom_YYAUTYUECT_5.dat
+
+SECTION
+#Xle    Yle    Zle     Chord   Ainc  Nspanwise  Sspace
+-5.28    1.08    3.42     0.90    27.12    2    0
+AFILE
+PropGeom_YYAUTYUECT_6.dat
+
+SECTION
+#Xle    Yle    Zle     Chord   Ainc  Nspanwise  Sspace
+-5.30    1.23    3.71     0.90    27.73    2    0
+AFILE
+PropGeom_YYAUTYUECT_7.dat
+
+SECTION
+#Xle    Yle    Zle     Chord   Ainc  Nspanwise  Sspace
+-5.32    1.39    4.00     0.90    28.23    2    0
+AFILE
+PropGeom_YYAUTYUECT_8.dat
+
+SECTION
+#Xle    Yle    Zle     Chord   Ainc  Nspanwise  Sspace
+-5.34    1.55    4.28     0.90    28.62    2    0
+AFILE
+PropGeom_YYAUTYUECT_9.dat
+
+SECTION
+#Xle    Yle    Zle     Chord   Ainc  Nspanwise  Sspace
+-5.35    1.71    4.57     0.90    28.92    2    0
+AFILE
+PropGeom_YYAUTYUECT_10.dat
+
+SECTION
+#Xle    Yle    Zle     Chord   Ainc  Nspanwise  Sspace
+-5.40    2.00    4.78     0.58    29.16    1    0
+AFILE
+PropGeom_YYAUTYUECT_11.dat
+
+#--------------------------------------------------
+SURFACE 
+PropGeom 3 
+!Nchordwise  Cspace  Nspanwise  Sspace
+12           1.0              
+
+COMPONENT 
+1
+
+ANGLE
+0.0
+
+SCALE
+1.0   1.0   1.0
+
+TRANSLATE
+0.0  0.0  0.0
+
+
+SECTION
+#Xle    Yle    Zle     Chord   Ainc  Nspanwise  Sspace
+-5.40    -2.50    4.49     0.58    -29.16    2    0
+AFILE
+PropGeom_YYAUTYUECT_11.dat
+
+SECTION
+#Xle    Yle    Zle     Chord   Ainc  Nspanwise  Sspace
+-5.35    -2.46    4.13     0.90    -28.92    2    0
+AFILE
+PropGeom_YYAUTYUECT_10.dat
+
+SECTION
+#Xle    Yle    Zle     Chord   Ainc  Nspanwise  Sspace
+-5.34    -2.30    3.85     0.90    -28.62    2    0
+AFILE
+PropGeom_YYAUTYUECT_9.dat
+
+SECTION
+#Xle    Yle    Zle     Chord   Ainc  Nspanwise  Sspace
+-5.32    -2.13    3.57     0.90    -28.23    2    0
+AFILE
+PropGeom_YYAUTYUECT_8.dat
+
+SECTION
+#Xle    Yle    Zle     Chord   Ainc  Nspanwise  Sspace
+-5.30    -1.96    3.29     0.90    -27.73    2    0
+AFILE
+PropGeom_YYAUTYUECT_7.dat
+
+SECTION
+#Xle    Yle    Zle     Chord   Ainc  Nspanwise  Sspace
+-5.28    -1.79    3.01     0.90    -27.12    2    0
+AFILE
+PropGeom_YYAUTYUECT_6.dat
+
+SECTION
+#Xle    Yle    Zle     Chord   Ainc  Nspanwise  Sspace
+-5.26    -1.61    2.74     0.89    -26.38    2    0
+AFILE
+PropGeom_YYAUTYUECT_5.dat
+
+SECTION
+#Xle    Yle    Zle     Chord   Ainc  Nspanwise  Sspace
+-5.25    -1.42    2.47     0.85    -25.48    2    0
+AFILE
+PropGeom_YYAUTYUECT_4.dat
+
+SECTION
+#Xle    Yle    Zle     Chord   Ainc  Nspanwise  Sspace
+-5.25    -1.22    2.21     0.77    -24.41    2    0
+AFILE
+PropGeom_YYAUTYUECT_3.dat
+
+SECTION
+#Xle    Yle    Zle     Chord   Ainc  Nspanwise  Sspace
+-5.26    -1.00    1.95     0.66    -23.15    2    0
+AFILE
+PropGeom_YYAUTYUECT_2.dat
+
+SECTION
+#Xle    Yle    Zle     Chord   Ainc  Nspanwise  Sspace
+-5.29    -0.78    1.70     0.52    -21.70    2    0
+AFILE
+PropGeom_YYAUTYUECT_1.dat
+
+SECTION
+#Xle    Yle    Zle     Chord   Ainc  Nspanwise  Sspace
+-5.33    -0.56    1.46     0.36    -20.03    1    0
+AFILE
+PropGeom_YYAUTYUECT_0.dat
+
+#--------------------------------------------------
+SURFACE 
+PropGeom 4 
+!Nchordwise  Cspace  Nspanwise  Sspace
+12           1.0              
+
+COMPONENT 
+1
+
+ANGLE
+0.0
+
+SCALE
+1.0   1.0   1.0
+
+TRANSLATE
+0.0  0.0  0.0
+
+
+SECTION
+#Xle    Yle    Zle     Chord   Ainc  Nspanwise  Sspace
+-5.40    -4.50    0.45     0.59    -77.00    2    0
+AFILE
+PropGeom_YYAUTYUECT_11.dat
+
+SECTION
+#Xle    Yle    Zle     Chord   Ainc  Nspanwise  Sspace
+-5.35    -4.17    0.30     0.90    -75.30    2    0
+AFILE
+PropGeom_YYAUTYUECT_10.dat
+
+SECTION
+#Xle    Yle    Zle     Chord   Ainc  Nspanwise  Sspace
+-5.34    -3.85    0.31     0.90    -73.32    2    0
+AFILE
+PropGeom_YYAUTYUECT_9.dat
+
+SECTION
+#Xle    Yle    Zle     Chord   Ainc  Nspanwise  Sspace
+-5.32    -3.52    0.31     0.90    -71.07    2    0
+AFILE
+PropGeom_YYAUTYUECT_8.dat
+
+SECTION
+#Xle    Yle    Zle     Chord   Ainc  Nspanwise  Sspace
+-5.30    -3.19    0.32     0.90    -68.55    2    0
+AFILE
+PropGeom_YYAUTYUECT_7.dat
+
+SECTION
+#Xle    Yle    Zle     Chord   Ainc  Nspanwise  Sspace
+-5.28    -2.86    0.33     0.90    -65.75    2    0
+AFILE
+PropGeom_YYAUTYUECT_6.dat
+
+SECTION
+#Xle    Yle    Zle     Chord   Ainc  Nspanwise  Sspace
+-5.26    -2.54    0.34     0.89    -62.68    2    0
+AFILE
+PropGeom_YYAUTYUECT_5.dat
+
+SECTION
+#Xle    Yle    Zle     Chord   Ainc  Nspanwise  Sspace
+-5.25    -2.21    0.37     0.85    -59.34    2    0
+AFILE
+PropGeom_YYAUTYUECT_4.dat
+
+SECTION
+#Xle    Yle    Zle     Chord   Ainc  Nspanwise  Sspace
+-5.25    -1.88    0.42     0.77    -55.73    2    0
+AFILE
+PropGeom_YYAUTYUECT_3.dat
+
+SECTION
+#Xle    Yle    Zle     Chord   Ainc  Nspanwise  Sspace
+-5.26    -1.55    0.48     0.66    -51.84    2    0
+AFILE
+PropGeom_YYAUTYUECT_2.dat
+
+SECTION
+#Xle    Yle    Zle     Chord   Ainc  Nspanwise  Sspace
+-5.29    -1.23    0.54     0.52    -47.68    2    0
+AFILE
+PropGeom_YYAUTYUECT_1.dat
+
+SECTION
+#Xle    Yle    Zle     Chord   Ainc  Nspanwise  Sspace
+-5.33    -0.90    0.61     0.36    -43.25    1    0
+AFILE
+PropGeom_YYAUTYUECT_0.dat
+
+#--------------------------------------------------
+SURFACE 
+PropGeom 5 
+!Nchordwise  Cspace  Nspanwise  Sspace
+12           1.0              
+
+COMPONENT 
+1
+
+ANGLE
+0.0
+
+SCALE
+1.0   1.0   1.0
+
+TRANSLATE
+0.0  0.0  0.0
+
+
+SECTION
+#Xle    Yle    Zle     Chord   Ainc  Nspanwise  Sspace
+-5.40    -2.00    -3.30     0.59    -29.16    2    0
+AFILE
+PropGeom_YYAUTYUECT_11.dat
+
+SECTION
+#Xle    Yle    Zle     Chord   Ainc  Nspanwise  Sspace
+-5.35    -1.71    -3.09     0.90    -28.92    2    0
+AFILE
+PropGeom_YYAUTYUECT_10.dat
+
+SECTION
+#Xle    Yle    Zle     Chord   Ainc  Nspanwise  Sspace
+-5.34    -1.55    -2.81     0.90    -28.62    2    0
+AFILE
+PropGeom_YYAUTYUECT_9.dat
+
+SECTION
+#Xle    Yle    Zle     Chord   Ainc  Nspanwise  Sspace
+-5.32    -1.39    -2.52     0.90    -28.23    2    0
+AFILE
+PropGeom_YYAUTYUECT_8.dat
+
+SECTION
+#Xle    Yle    Zle     Chord   Ainc  Nspanwise  Sspace
+-5.30    -1.23    -2.24     0.90    -27.73    2    0
+AFILE
+PropGeom_YYAUTYUECT_7.dat
+
+SECTION
+#Xle    Yle    Zle     Chord   Ainc  Nspanwise  Sspace
+-5.28    -1.08    -1.95     0.90    -27.12    2    0
+AFILE
+PropGeom_YYAUTYUECT_6.dat
+
+SECTION
+#Xle    Yle    Zle     Chord   Ainc  Nspanwise  Sspace
+-5.26    -0.92    -1.66     0.89    -26.38    2    0
+AFILE
+PropGeom_YYAUTYUECT_5.dat
+
+SECTION
+#Xle    Yle    Zle     Chord   Ainc  Nspanwise  Sspace
+-5.25    -0.79    -1.36     0.85    -25.48    2    0
+AFILE
+PropGeom_YYAUTYUECT_4.dat
+
+SECTION
+#Xle    Yle    Zle     Chord   Ainc  Nspanwise  Sspace
+-5.25    -0.66    -1.05     0.77    -24.41    2    0
+AFILE
+PropGeom_YYAUTYUECT_3.dat
+
+SECTION
+#Xle    Yle    Zle     Chord   Ainc  Nspanwise  Sspace
+-5.26    -0.55    -0.74     0.66    -23.15    2    0
+AFILE
+PropGeom_YYAUTYUECT_2.dat
+
+SECTION
+#Xle    Yle    Zle     Chord   Ainc  Nspanwise  Sspace
+-5.29    -0.45    -0.42     0.52    -21.70    2    0
+AFILE
+PropGeom_YYAUTYUECT_1.dat
+
+SECTION
+#Xle    Yle    Zle     Chord   Ainc  Nspanwise  Sspace
+-5.33    -0.34    -0.10     0.36    -20.03    1    0
+AFILE
+PropGeom_YYAUTYUECT_0.dat
+

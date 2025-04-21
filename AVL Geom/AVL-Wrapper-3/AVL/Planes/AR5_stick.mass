@@ -1,0 +1,55 @@
+#
+#  AR5 Stick
+#  Mass & Inertia breakdown
+#
+#  xyz is location of item's own CG
+#  Ixx.. are item's inertias about item's own CG
+#
+#   x back
+#   y right
+#   z up
+#
+#  x,y,z system here must have origin 
+#  at same location as AVL input file
+#
+Lunit = 1 inch
+Munit = 1 slug
+Tunit = 1.0 s
+
+
+g   = 386.04
+rho = 0.00000137615
+
+#
+#  mass   x     y     z       Ixx     Iyy    Izz   [ Ixy  Ixz  Iyz ]
+
+ 3.6634  7.77   0.0   0.0        0      0      0       ! fuselage
+
+
+ 0.5254  3.62   0.0  -5.284        0      0      0       ! nose landing gear
+ 0.8262 29.96   0.0  -5.261        0      0      0       ! main landing gear
+
+
+ 1.7273 27.08 -14.4  2.45        0      0      0       ! left wing
+ 1.7273 27.08  14.4  2.45        0      0      0       ! right wing
+
+ 0.259  27.47   0.0   0.0        0      0      0       ! wing-fuse attachment
+
+ 1.087 26.97 -11.95  0.29        0      0      0       ! left pylon
+ 1.087 26.97  11.95  0.29        0      0      0       ! right pylon
+
+ 1.4   26.97 -11.95  -0.22       0      0      0       ! left bottle
+ 1.4   26.97  11.95  -0.22       0      0      0       ! right bottle
+
+0.2488 63.64    0.0   5.68       0      0      0       ! V-Stab
+
+0.2804 65.56   -5.93  11.22       0      0      0       ! H-Stab left
+0.3569 65.92    5.13  11.22       0      0      0       ! H-Stab left
+
+0.06625 67.37   2.15  11.21       0      0      0       ! elev servo
+0.06625 65.11  -0.042  11.21       0      0      0       ! rudder servo
+
+
+ 
+
+

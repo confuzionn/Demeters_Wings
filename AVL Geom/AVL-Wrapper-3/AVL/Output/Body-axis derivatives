@@ -1,0 +1,63 @@
+ ---------------------------------------------------------------
+ Vortex Lattice Output -- Total Forces
+
+ Configuration: TitanWing                                                   
+     # Surfaces =   5
+     # Strips   =  98
+     # Vortices = 784
+
+  Sref =  8890.0       Cref =  38.120       Bref =  247.49    
+  Xref =  45.478       Yref =  0.0000       Zref =  4.8300    
+
+ Standard axis orientation,  X fwd, Z down         
+
+ Run case:  -unnamed-                              
+
+  Alpha =   5.00000     pb/2V =  -0.00000     p'b/2V =  -0.00000
+  Beta  =   0.00000     qc/2V =   0.00000
+  Mach  =     0.000     rb/2V =  -0.00000     r'b/2V =  -0.00000
+
+  CXtot =   0.03626     Cltot =  -0.00000     Cl'tot =   0.00000
+  CYtot =  -0.00000     Cmtot =   0.00000
+  CZtot =  -0.69973     Cntot =   0.00000     Cn'tot =   0.00000
+
+  CLtot =   0.70023
+  CDtot =   0.02486
+  CDvis =   0.00000     CDind = 0.0248619
+  CLff  =   0.70366     CDff  = 0.0230781    | Trefftz
+  CYff  =  -0.00000         e =    0.9912    | Plane  
+
+   Elevator        =  -4.30547
+
+ ---------------------------------------------------------------
+
+ Geometry-axis derivatives...
+
+                    axial   vel. u     sideslip vel. v      normal  vel. w
+                  ----------------    ----------------    ----------------
+ x force CX  |    CXu =   0.003759    CXv =   0.000000    CXw =   0.789150
+ y force CY  |    CYu =  -0.000000    CYv =  -0.264920    CYw =  -0.000000
+ z force CZ  |    CZu =  -0.990349    CZv =  -0.000000    CZw =  -4.737329
+ x mom.  Cl  |    Clu =  -0.000000    Clv =  -0.103725    Clw =  -0.000000
+ y mom.  Cm  |    Cmu =   0.062845    Cmv =  -0.000000    Cmw =  -0.718316
+ z mom.  Cn  |    Cnu =   0.000000    Cnv =   0.119885    Cnw =  -0.000000
+
+                      roll rate  p       pitch rate  q         yaw rate  r
+                  ----------------    ----------------    ----------------
+ x force CX  |    CXp =  -0.000000    CXq =   0.243527    CXr =  -0.000000
+ y force CY  |    CYp =   0.313618    CYq =   0.000000    CYr =   0.230253
+ z force CZ  |    CZp =  -0.000000    CZq =  -8.253130    CZr =   0.000000
+ x mom.  Cl  |    Clp =  -0.431034    Clq =   0.000000    Clr =   0.143893
+ y mom.  Cm  |    Cmp =  -0.000000    Cmq = -15.336227    Cmr =   0.000000
+ z mom.  Cn  |    Cnp =  -0.117572    Cnq =  -0.000000    Cnr =  -0.107147
+
+                  Elevator     d01 
+                  ----------------
+ x force CX  |   CXd01 =   0.000117
+ y force CY  |   CYd01 =  -0.000000
+ z force CZ  |   CZd01 =  -0.005678
+ x mom.  Cl  |   Cld01 =  -0.000000
+ y mom.  Cm  |   Cmd01 =  -0.017064
+ z mom.  Cn  |   Cnd01 =   0.000000
+
+
