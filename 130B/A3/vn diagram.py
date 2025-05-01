@@ -1,7 +1,20 @@
 # vn diagram code
 # B-08-VnDiagram: Slide 12-50
 
+# imports
 import numpy as np
+
+# ## Known Variables ## ---------------------------------------------------------------------------------------------------
+CLmax = 1.9
+Clmin = -0.8
+MTOW = 8145 #lbs
+S_ref = 312 #ft^2
+c_ref = 6 #ft
+altitude = 8000 #ft
+rho_8k = 0.00187 #slugs/ft^3
+rho_sl = 0.0023769 #slugs/ft^3
+grav = 32.17 #ft/s^2
+
 
 # ## Design airspeeds ## ---------------------------------------------------------------------------------------------------
 
