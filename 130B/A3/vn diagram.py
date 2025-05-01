@@ -11,13 +11,13 @@ import numpy as np
 
 # DEFINING STALLING SPEED EQUATION
 def VS1(
-    W,
-    rho,
-    S_ref,
-    CL_max
+    W, #lbs
+    S, #ft^2
+    rho, #slug/ft^3
+    CL_max 
     ):
-    Vs1 = ((2*W)/rho*S_ref*CL_max)**(1/2)
-    Vs_1 = ((-2*W)/rho*S_ref*CL_max)**(1/2)
+    Vs1 = ((2*W/S)*1/(rho*CL_max))**(1/2)
+    Vs_1 = ((2*-W/S)*1/(rho*CL_max))**(1/2)
     return Vs1, Vs_1
 
 # # Design Maneuvering speed or corner speed
@@ -26,17 +26,17 @@ def VS1(
 
 # # Design speed for maximum gust intensity
 #     # speed at which the aircraft can experience maximum gust loads without structural damage
-# VB >= Vs1*(1 + ((Kg*Udec*Vc*CLa)/(498*W/S)))
+# VB >= Vs1*(1 + ((Kg*Ude*Vc*CLa)/(498*W/S)))
 
 # DEFINING DESIGN SPEED FOR MAX GUST EQUATION
 def VB(
-    Vs1,
+    Vs1, #knots
     Kg,
-    Udec,
-    Vc,
-    CLa,
-    W,
-    S,
+    Udec, #ft/s
+    Vc, #knots
+    CLa, #rad^-1
+    W, #lbs
+    S, #ft^2
     ):
     # Greater than or equal to
     V_B = Vs1*(1 + ((Kg*Udec*Vc*CLa)/(498*W/S)))
@@ -60,8 +60,8 @@ def VB(
 
 # DEFINING MAX LEVEL FLIGHT SPEED EQUATION
 def VH(
-    W,
-    S,
+    W, #lbs
+    S, #ft^2
     ):
     # Greater than or equal to
     V_H = 33*(W/S)**(1/2)
@@ -82,7 +82,7 @@ def VH(
 
 # DEFINING CRUISING SPEED EQUATION
 def VC(
-    VD  
+    VD #knots
     ):
     V_C = VD/1.25
     return V_C
@@ -117,11 +117,11 @@ def VC(
 
 # DEFINING MAXIMUM LIMIT LOAD EQUATION
 def max_lim_load(
-    rho_SL,
-    VEAS,
+    rho_SL, #slugs/ft^3
+    VEAS, #knots
     CL_max,
-    W,
-    S,
+    W, #lbs
+    S, #ft^2
     ):
     n_maxlim = L/W = (rho_SL*VEAS**2*CL_max)/(2*W/S)
     return n_maxlim
@@ -131,10 +131,26 @@ def max_lim_load(
 #     # is usually "n = +2.5". the negative value is "n = -1.0"
 
 # # Design Flap Speed
-#     # May not be less than:
-#         # 1.6*Vs1 with the flaps in takeoff position at max take off weight (MTOW)
-#         # 1.8*Vs1 with the flaps in approach position at max landing weight (MLW)
-#         # 1.8*Vs1 with the flaps in landing position at MLW
+#     # VF may not be less than:
+#    (1)  # 1.6*Vs1 with the flaps in takeoff position at max take off weight (MTOW)
+#    (2)  # 1.8*Vs1 with the flaps in approach position at max landing weight (MLW)
+#    (3)  # 1.8*Vs1 with the flaps in landing position at MLW
+
+# DEFINING DESIGN FLAP SPEED EQUATION
+def VF(
+    Vs1, #knots
+    case_num #look comments above
+    ):
+    if case_num == 1:
+        V_F = 1.6*Vs1
+    elif case_num == 2:
+        V_F = 1.8*Vs1
+    elif case_num == 3:
+        V_F = 1.8*Vs1
+    else:
+        print('Not Valid Case Number')
+    
+    return V_F
 
 # ## General Comments ## ---------------------------------------------------------------------------------------------------
 
@@ -180,12 +196,12 @@ def max_lim_load(
 
 # DEFINING INSTANTANEOUS LOAD FACTOR CHANGE DUE TO GUST EQUATION
 def n_inst_gust(
-    CLa,
-    Ude,
-    rho_0,
-    V,
-    W,
-    S
+    CLa, #rad^-1
+    Ude, #ft/s
+    rho_0, #slug/ft^3
+    V, #knots
+    W, #lbs
+    S #ft^2
     ):
     n_instagust = 1 + (CLa*Ude*rho_0*V)/(2*W/S)
     return n_instagust
@@ -197,11 +213,11 @@ def n_inst_gust(
 # DEFINING NON-INSTANTANEOUS LOAD FACTOR CHANGE DUE TO GUST EQUATION
 def n_inst_gust(
     Kg,
-    CLa,
-    Ude,
-    VEAS,
-    W,
-    S
+    CLa, #rad^-1
+    Ude, #ft/s
+    VEAS, #knots
+    W, #lbs
+    S #ft^2
     ):
     n_gustpos = 1 + (Kg*CLa*Ude*VEAS)/(498*W/S)
     n_gustneg = 1 - (Kg*CLa*Ude*VEAS)/(498*W/S)
@@ -215,14 +231,21 @@ def n_inst_gust(
 # Kg = (0.88*mu)/(5.3 + mu)
 # mu = (2*W/S)/(rho*c_bar*CLa*g)
 
+# DEFINING REFERENCE GUST EQUATION
+def UDE_VC(
+    h, #ft
+    ):
+    Ude_for_VC = 56 + ((44 - 56)/15000)*h
+    return Ude_for_VC
+
 # DEFINING KG EQUATION
 def KG(
-    W,
-    S,
-    rho,
-    c_bar,
-    CLa,
-    g
+    W, #lbs
+    S, #ft^2
+    rho, #slug/ft^3
+    c_bar, #ft
+    CLa, #rad^-1
+    g #ft/s^2
     ):
     mu = (2*W/S)/(rho*c_bar*CLa*g)
     Kg = (0.88*mu)/(5.3 + mu)
