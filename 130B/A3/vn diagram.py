@@ -121,3 +121,17 @@ delta_AoA = arctan(Ude/V) ~= (Ude/V)
 delta_L = CLa*delta_AoA*q*S = CLa*(Ude/V)*q*S = 1/2*CLa*Ude*rho_0*V*S
 
 # And the load factor:
+n = 1 + delta_n = 1 + delta_L/W = 1 + (CLa*Ude*rho_0*V)/(2*W/S)
+
+# To account for non-instantaneous nature of gusts we add a factor Kg
+# The gust load may be computed from the expresssion given in FAR part 25 (Part 23 uses the same)
+n = 1 +- (Kg*CLa*Ude*VEAS)/(498*W/S)
+
+# Definitions
+# Ude = Reference gust, EAS (ft/s)
+# VEAS = Equivalent airspeed (knots)
+# CLa = Lift slope in rad^-1
+# Kg = Gust alleviation factor
+Kg = (0.88*mu)/(5.3 + mu)
+mu = (2*W/S)/(rho*c_bar*CLa*g)
+
