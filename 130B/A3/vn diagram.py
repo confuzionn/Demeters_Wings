@@ -8,7 +8,8 @@ import matplotlib.pyplot as plt
 # ## Known Variables ## ---------------------------------------------------------------------------------------------------
 CLmax = 1.9
 CLmin = -0.8
-MTOW = 8145 #lbs
+# MTOW = 8145 #lbs
+MTOW = 5507+160+95+160 #lbs
 S_ref = 312 #ft^2
 c_ref = 6 #ft
 altitude = 8000 #ft
@@ -410,6 +411,7 @@ plt.grid()
 ax = plt.gca()
 ax.set_xlim([VEAS_min, VEAS_max])
 ax.set_ylim([n_min, n_max])
+plt.title(['V-N Diagram: Weight =',MTOW,'lbs'])
 
 # Plotting calculated V
 plt.plot(Vs1,n,'b:',label='VS1')
