@@ -3,10 +3,11 @@
 
 # imports
 import numpy as np
+import matplotlib.pyplot as plt
 
 # ## Known Variables ## ---------------------------------------------------------------------------------------------------
 CLmax = 1.9
-Clmin = -0.8
+CLmin = -0.8
 MTOW = 8145 #lbs
 S_ref = 312 #ft^2
 c_ref = 6 #ft
@@ -14,10 +15,13 @@ altitude = 8000 #ft
 rho_8k = 0.00187 #slugs/ft^3
 rho_sl = 0.0023769 #slugs/ft^3
 grav = 32.17 #ft/s^2
-e = 0.7922
-AR = 8.7
-
-
+n_max = 4.4
+n_min = -1.8
+VEAS_max = 250 #knots
+VEAS_min = 0 #knots
+e_efficiency = 0.7922
+Aspect_ratio = 8.7
+iterations = 100
 
 # ## Design airspeeds ## ---------------------------------------------------------------------------------------------------
 
@@ -27,18 +31,53 @@ AR = 8.7
 
 # DEFINING STALLING SPEED EQUATION
 def VS1(
+    n, #load factor
     W, #lbs
     S, #ft^2
     rho, #slug/ft^3
-    CL_max 
+    CL_max
     ):
-    Vs1 = ((2*W/S)*1/(rho*CL_max))**(1/2)
-    Vs_1 = ((2*-W/S)*1/(rho*CL_max))**(1/2)
-    return Vs1, Vs_1
+    Vs1 = np.sqrt((2*n*W)/(rho*S*CL_max))
+
+    return Vs1
+
+def VS_1(
+    n, #load factor
+    W, #lbs
+    S, #ft^2
+    rho, #slug/ft^3
+    CL_max
+    ):
+    Vs_1 = np.sqrt((2*-n*W)/(rho*S*CL_max))
+
+    return Vs_1
 
 # # Design Maneuvering speed or corner speed
 #     # Speed at which the aircraft will stall at the same point the max_lim load factor is achieved
 # VA = ?
+def VA(
+    n,
+    CL_max, 
+    rho_SL,  #slug/ft^3
+    W, #lbs
+    S   #ft^2
+    ):
+    n_max = 4.4
+    V_A = np.sqrt(n_max * (2 * (n*W)/ S) / (rho_SL * CL_max))
+
+    return V_A
+
+def VG(
+    n,
+    CL_min, 
+    rho_SL,  #slug/ft^3
+    W, #lbs
+    S   #ft^2
+    ):
+    n_min = -1.8
+    V_G = np.sqrt(-n_min * (2 * (n*W) / S) / (rho_SL * CL_min))
+
+    return V_G
 
 # # Design speed for maximum gust intensity
 #     # speed at which the aircraft can experience maximum gust loads without structural damage
@@ -46,6 +85,7 @@ def VS1(
 
 # DEFINING DESIGN SPEED FOR MAX GUST EQUATION
 def VB(
+    n, 
     Vs1, #knots
     Kg,
     Udec, #ft/s
@@ -55,7 +95,7 @@ def VB(
     S, #ft^2
     ):
     # Greater than or equal to
-    V_B = Vs1*(1 + ((Kg*Udec*Vc*CLa)/(498*W/S)))
+    V_B = Vs1*(1 + ((Kg*Udec*Vc*CLa)/(498*(n*W)/S)))
     return V_B
 
 # # Positive High AoA (PHA)
@@ -76,14 +116,22 @@ def VB(
 
 # DEFINING MAX LEVEL FLIGHT SPEED EQUATION
 def VH(
+    n, 
     W, #lbs
     S, #ft^2
     ):
     # Greater than or equal to
-    V_H = 33*(W/S)**(1/2)
+    V_H = 33*np.sqrt((n*W)/S)
+    return V_H
+
+def VD(
+    V_H #knots
+    ):
     # Greater than or equal to
-    V_D = V_H/0.9
-    return V_H, V_D
+    V_D = V_H/(0.9)
+    return V_D
+
+
 
 # # Design cruising speed
 #     # Speed selected by the designer to ensure that the aircraft withstands particular loads specific in FARs or applicable AC (i.e., gust loads).
@@ -125,26 +173,6 @@ def VC(
     
 #     # Maneuvering load factors lower than those specified in this section may be used if...
 #     # the airplane has design features that make it impossible to exceed these values in flight
-
-# ## How to choose max limit loads ## ---------------------------------------------------------------------------------------------------
-#     # This shows the variation in load factor with airspeed for maneuvers
-#     # At low speeds the max load factor is constrained by aircraft CL_max ("This is why it is a curve")
-# n = L/W = (rho_SL*VEAS**2*CL_max)/(2*W/S)
-
-# DEFINING MAXIMUM LIMIT LOAD EQUATION
-def max_lim_load(
-    rho_SL, #slugs/ft^3
-    VEAS, #knots
-    CL_max,
-    W, #lbs
-    S, #ft^2
-    ):
-    n_maxlim = L/W = (rho_SL*VEAS**2*CL_max)/(2*W/S)
-    return n_maxlim
-
-#     # At higher speeds it becomes restricted by FAR and AC regulations
-#     # The maximum maneuver load factor for airplanes weighing more than 50,000 lbs...
-#     # is usually "n = +2.5". the negative value is "n = -1.0"
 
 # # Design Flap Speed
 #     # VF may not be less than:
@@ -199,6 +227,36 @@ def VF(
 
 # # "How to design safely for that?"
 
+# ## How to choose max limit loads ## ---------------------------------------------------------------------------------------------------
+#     # This shows the variation in load factor with airspeed for maneuvers
+#     # At low speeds the max load factor is constrained by aircraft CL_max ("This is why it is a curve")
+# n = L/W = (rho_SL*VEAS**2*CL_max)/(2*W/S)
+
+# DEFINING MAXIMUM LIMIT LOAD EQUATION
+def max_lim_load(
+    rho_SL, #slugs/ft^3
+    VEAS, #knots
+    CL_max,
+    W, #lbs
+    S, #ft^2
+    ):
+    n_maxlim = (rho_SL*VEAS**2*CL_max)/(2*W/S)
+    return n_maxlim
+
+def min_lim_load(
+    rho_SL, #slugs/ft^3
+    VEAS, #knots
+    CL_max,
+    W, #lbs
+    S, #ft^2
+    ):
+    n_minlim = (rho_SL*VEAS**2*CL_max)/(2*-W/S)
+    return n_minlim
+
+#     # At higher speeds it becomes restricted by FAR and AC regulations
+#     # The maximum maneuver load factor for airplanes weighing more than 50,000 lbs...
+#     # is usually "n = +2.5". the negative value is "n = -1.0"
+
 # ## Angle of Attack is Affected ## ---------------------------------------------------------------------------------------------------
 
 # # An instantaneous vertical gust (Ude) changes the AoA of the aircraft:
@@ -211,7 +269,7 @@ def VF(
 # n = 1 + delta_n = 1 + delta_L/W = 1 + (CLa*Ude*rho_0*V)/(2*W/S)
 
 # DEFINING INSTANTANEOUS LOAD FACTOR CHANGE DUE TO GUST EQUATION
-def n_inst_gust(
+def n_insta_gust(
     CLa, #rad^-1
     Ude, #ft/s
     rho_0, #slug/ft^3
@@ -227,7 +285,7 @@ def n_inst_gust(
 # n = 1 +- (Kg*CLa*Ude*VEAS)/(498*W/S)
 
 # DEFINING NON-INSTANTANEOUS LOAD FACTOR CHANGE DUE TO GUST EQUATION
-def n_inst_gust(
+def n_noinsta_gust_pos(
     Kg,
     CLa, #rad^-1
     Ude, #ft/s
@@ -236,8 +294,18 @@ def n_inst_gust(
     S #ft^2
     ):
     n_gustpos = 1 + (Kg*CLa*Ude*VEAS)/(498*W/S)
+    return n_gustpos
+
+def n_noinsta_gust_neg(
+    Kg,
+    CLa, #rad^-1
+    Ude, #ft/s
+    VEAS, #knots
+    W, #lbs
+    S #ft^2
+    ):
     n_gustneg = 1 - (Kg*CLa*Ude*VEAS)/(498*W/S)
-    return n_gustpos, n_gustneg
+    return n_gustneg
 
 # # Definitions
 # # Ude = Reference gust, EAS (ft/s)
@@ -277,19 +345,92 @@ def CLa(
     C_La = C_la / (1 + 57.3 * C_la / (np.pi * AR * e))
     return C_La
 
-def V_A(
-    Cl_max, 
-    Cl_min, 
-    rho_SL,  #slug/ft^3
-    W, #lbs
-    S   #ft^2
-    ):
-    n_max = 4.4
-    n_min = -1.8
+# CALCULATING CONSTANTS
+CL_a = CLa(Aspect_ratio,e_efficiency)
+Kg = KG(MTOW,S_ref,rho_8k,c_ref,CL_a,grav)
+Ude_VC = UDE_VC(altitude)
+Ude_VB = Ude_VC
+Ude_VD = Ude_VC/2
 
-    V_A = np.sqrt(n_max * (2 * W / S) / (rho_SL * CL_max))
-    V_G = np.sqrt(n_min * (2 * W / S) / (rho_SL * CL_min))
+# CALCULATING VELOCITIES BASED ON LOAD FACTOR
+n = np.linspace(n_min,n_max,iterations+1)
 
-    return V_A, V_G
+# Velocity history
+Vs1 = []
+Vs_1 = []
+V_H = []
+V_D = []
+V_C = []
+V_B = []
+V_F_case1 = []
+V_F_case2 = []
+V_F_case3 = []
+V_A = []
+V_G = []
 
+count = -1
+for i in n:
+    count = count + 1
+    Vs1.append(VS1(i,MTOW,S_ref,rho_8k,CLmax))
+    Vs_1.append(VS_1(i,MTOW,S_ref,rho_8k,CLmax))
+    V_H.append(VH(i,MTOW,S_ref))
+    V_D.append(VD(V_H[count]))
+    V_C.append(VC(V_D[count]))
+    V_B.append(VB(i,Vs1[count],Kg,Ude_VB,V_C[count],CL_a,MTOW,S_ref))
+    V_F_case1.append(VF(Vs1[count],1))
+    V_F_case2.append(VF(Vs1[count],2))
+    V_F_case3.append(VF(Vs1[count],3))
+    V_A.append(VA(i,CLmax,rho_sl,MTOW,S_ref))
+    V_G.append(VG(i,CLmin,rho_sl,MTOW,S_ref))
 
+# CALCULATING LOAD FACTOR BASED ON VELOCITIES
+V_EAS = np.linspace(VEAS_min,VEAS_max,iterations+1)
+
+# Load Factor history
+n_maxlim = []
+n_minlim = []
+n_instagust = []
+n_gustpos = []
+n_gustneg = []
+
+count = -1
+for v in V_EAS:
+    count = count + 1
+    n_maxlim.append(max_lim_load(rho_sl,v,CLmax,MTOW,S_ref))
+    n_minlim.append(min_lim_load(rho_sl,v,CLmax,MTOW,S_ref))
+    n_instagust.append(n_insta_gust(CL_a,Ude_VC,rho_sl,v,MTOW,S_ref))
+    n_gustpos.append(n_noinsta_gust_pos(Kg,CL_a,Ude_VC,v,MTOW,S_ref))
+    n_gustneg.append(n_noinsta_gust_neg(Kg,CL_a,Ude_VC,v,MTOW,S_ref))
+
+# PLOT THE V-N DIAGRAM
+plt.figure()
+plt.xlabel('Velocity [knots]')
+plt.ylabel('Load Factor, n')
+plt.grid()
+ax = plt.gca()
+ax.set_xlim([VEAS_min, VEAS_max])
+ax.set_ylim([n_min, n_max])
+
+# Plotting calculated V
+plt.plot(Vs1,n,'b:',label='VS1')
+plt.plot(Vs_1,n,'b:',label='VS-1')
+plt.plot(V_H,n,':',label='VH')
+plt.plot(V_D,n,':',label='VD')
+plt.plot(V_C,n,':',label='VC')
+plt.plot(V_B,n,':',label='VB')
+plt.plot(V_F_case1,n,'g-.',label='VF1')
+plt.plot(V_F_case2,n,'g-',label='VF2')
+plt.plot(V_F_case3,n,'g:',label='VF3')
+plt.plot(V_A,n,':',label='VA')
+plt.plot(V_G,n,':',label='VG')
+
+# plotting calculated n
+plt.plot(V_EAS,n_maxlim,'k--',label='Max LF')
+plt.plot(V_EAS,n_minlim,'k--',label='Min LF')
+plt.plot(V_EAS,n_instagust,'m--',label='Instant Gust LF')
+plt.plot(V_EAS,n_gustpos,'r--',label='Gust +LF')
+plt.plot(V_EAS,n_gustneg,'r--',label='Gust -LF')
+
+plt.legend()
+
+plt.show()
