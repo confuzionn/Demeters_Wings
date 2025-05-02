@@ -1,0 +1,60 @@
+
+AVL KEYWORD CHEATSHEET
+
+╔════════════╗─────────────────────────────────────┬─────────────────────────────────────────────────────────────────────────────────┐
+║  SURFACE   ║ Syntax                              │ Description                                                                     │
+╚════════════╝─────────────────────────────────────┼─────────────────────────────────────────────────────────────────────────────────┤                                                                                             
+│ COMPONENT  │ COMPONENT                           │ (or INDEX) Turns SURFACEs with the same Lcomp value into a single component.    │                                                                                           
+│            │ {Lcomp}                             │ Used to prevent calculate corruption due to intersecting geometry.              │                                                                           
+│            │                                     │                                                                                 │        
+│ YDUPLICATE │ YDUPLICATE                          │ Ydupl is the Y-coordinate of Y-symmetry plane. No symmetry if not present.      │                                                                                        
+│            │ {Ydupl}                             │ Only usable if iYsym in header is zero.                                         │                        
+│            │                                     │                                                                                 │        
+│ SCALE      │ SCALE                               │ Scaling factors applied to all X,Y,Z coordinates. Chords are scaled by Xscale.  │                                                                                        
+│            │ {Xscale} {Yscale} {Zscale}          │ Applied before TRANSLATE.                                                       │                                            
+│            │                                     │                                                                                 │                            
+│ TRANSLATE  │ TRANSLATE                           │ Offset values applied to X,Y,Z coordinates to shift the surface. Changes        │                                                                                    
+│            │ {dX} {dY} {dZ}                      │ location of entire SURFACE. Applied after SCALE.                                │                                                            
+│            │                                     │                                                                                 │                                            
+│ ANGLE      │ ANGLE                               │ Offset value applied to Ainc for all SECTIONs (i.e., changes incidence angle of │                                                                                        
+│            │ {dAinc}                             │ entire SURFACE). Unaffected by SCALE.                                           │                                                            
+│            │                                     │                                                                                 │        
+│ NOWAKE     │ NOWAKE                              │ SURFACE does not shed a wake. Kutta condition not imposed, near-zero net lift,  │                                                                                        
+│            │                                     │ but nonzero moment (e.g., non-lifting fuselage).                                │                                                            
+│            │                                     │                                                                                 │                                                                            
+│ NOALBE     │ NOALBE                              │ Specifies that SURFACE is unaffected by changes in alpha, beta, p, q, and r.    │                                                                                        
+│            │                                     │ Only affected by perturbations of horseshoe vortices (e.g., wind tunnel walls). │                                                                                        
+│            │                                     │                                                                                 │                                                                            
+│ NOLOAD     │ NOLOAD                              │ Specifies that forces on this SURFACE are not added to final force coefficient  │                                                                                        
+│            │                                     │ calculations (e.g., wind tunnel walls)                                          │                                                
+│            │                                     │                                                                                 │
+│ CDCL       │ CDCL                                │ Adds a parabolic drag polar to all SECTIONs in the SURFACE. See AVL             │                                                                                        
+│            │ {CL1} {CD1} {CL2} {CD2} {CL3} {CD3} │ documentation for more details.                                                 │                                                
+│            │                                     │                                                                                 │                                            
+└────────────┴─────────────────────────────────────┴─────────────────────────────────────────────────────────────────────────────────┘
+
+
+
+
+╔════════════╗─────────────────────────────────────┬─────────────────────────────────────────────────────────────────────────────────┐
+║  SECTION   ║ Syntax                              │ Description                                                                     │
+╚════════════╝─────────────────────────────────────┼─────────────────────────────────────────────────────────────────────────────────┤                                                                                             
+│ NACA       │ NACA                                │ SECTION uses the specified 4-digit NACA airfoil. naca4 is the 4-digit code of   │                                                                                           
+│            │ {naca4}                             │ a NACA 4-digit series airfoil.                                                  │                                                                           
+│            │                                     │                                                                                 │        
+│ AIRFOIL    │ AIRFOIL                             │ Creates an airfoil based on the points provided. x/c and y/c are columns of     │                                                                                        
+│            │ {x/c} {y/c}                         │ points in Selig format.                                                         │                        
+│            │                                     │                                                                                 │        
+│ AFILE      │ AFILE                               │ Airfoil file with reference to launch location of AVL. File should be in Selig  │                                                                                        
+│            │ {filename}                          │ format.                                                                         │                                            
+│            │                                     │                                                                                 │                            
+│ DESIGN     │ DESIGN                              │ Adds a design variable to a SECTION that modifies the SECTION incidence.        │                                                                                    
+│            │ {DName} {Wdes}                      │ DName is the variable name, Wdes is the variable scaling factor.                │                                                            
+│            │                                     │                                                                                 │                                            
+│ CLAF       │ CLAF                                │ CLaf is a scaling factor for the section dCL/da. Useful for thick airfoils.     │                                                                                        
+│            │ {CLaf}                              │                                                                                 │                                                            
+│            │                                     │                                                                                 │        
+│ CDCL       │ CDCL                                │ Adds a parabolic drag polar to the SECTION. See AVL documentation for more      │                                                                                        
+│            │ {CL1} {CD1} {CL2} {CD2} {CL3} {CD3} │ details.                                                                        │                                                            
+│            │                                     │                                                                                 │                                               
+└────────────┴─────────────────────────────────────┴─────────────────────────────────────────────────────────────────────────────────┘

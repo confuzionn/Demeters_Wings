@@ -1,0 +1,399 @@
+# AIRFOIL METADATA CSV FILE
+
+Airfoil File Directory, C:/Users/tadco/OneDrive/Desktop/school/EAE 130A/Demeters_Wings/AVL Geom/
+
+########################################
+Airfoil File Name, Canard_FXPTRHLMCG_0.dat
+Geom Name, Canard
+Geom ID, FXPTRHLMCG
+Airfoil Index, 0
+XSec Flag, 1
+XSec Index, 0
+XSecSurf ID, IEWGMLJVLO
+FoilSurf u Value, 0.000000
+Global u Value, 0.333333
+Leading Edge Point, 0.000000, 0.000000, 0.000000
+Trailing Edge Point, 2.666667, 0.000000, 0.000000
+Chord, 2.666667
+########################################
+
+########################################
+Airfoil File Name, Canard_FXPTRHLMCG_1.dat
+Geom Name, Canard
+Geom ID, FXPTRHLMCG
+Airfoil Index, 1
+XSec Flag, 0
+FoilSurf u Value, 0.200000
+Global u Value, 0.400000
+Leading Edge Point, 0.000000, 2.000000, 0.000000
+Trailing Edge Point, 2.666667, 2.000000, 0.000000
+Chord, 2.666667
+########################################
+
+########################################
+Airfoil File Name, Canard_FXPTRHLMCG_2.dat
+Geom Name, Canard
+Geom ID, FXPTRHLMCG
+Airfoil Index, 2
+XSec Flag, 0
+FoilSurf u Value, 0.400000
+Global u Value, 0.466667
+Leading Edge Point, 0.000000, 4.000000, 0.000000
+Trailing Edge Point, 2.666667, 4.000000, 0.000000
+Chord, 2.666667
+########################################
+
+########################################
+Airfoil File Name, Canard_FXPTRHLMCG_3.dat
+Geom Name, Canard
+Geom ID, FXPTRHLMCG
+Airfoil Index, 3
+XSec Flag, 0
+FoilSurf u Value, 0.600000
+Global u Value, 0.533333
+Leading Edge Point, 0.000000, 6.000000, 0.000000
+Trailing Edge Point, 2.666667, 6.000000, 0.000000
+Chord, 2.666667
+########################################
+
+########################################
+Airfoil File Name, Canard_FXPTRHLMCG_4.dat
+Geom Name, Canard
+Geom ID, FXPTRHLMCG
+Airfoil Index, 4
+XSec Flag, 0
+FoilSurf u Value, 0.800000
+Global u Value, 0.600000
+Leading Edge Point, 0.000000, 8.000000, 0.000000
+Trailing Edge Point, 2.666667, 8.000000, 0.000000
+Chord, 2.666667
+########################################
+
+########################################
+Airfoil File Name, Canard_FXPTRHLMCG_5.dat
+Geom Name, Canard
+Geom ID, FXPTRHLMCG
+Airfoil Index, 5
+XSec Flag, 1
+XSec Index, 1
+XSecSurf ID, IEWGMLJVLO
+FoilSurf u Value, 1.000000
+Global u Value, 0.666667
+Leading Edge Point, 0.000000, 10.000000, 0.000000
+Trailing Edge Point, 2.666667, 10.000000, 0.000000
+Chord, 2.666667
+########################################
+
+########################################
+Airfoil File Name, Main Wing_LWGXDXVPMC_0.dat
+Geom Name, Main Wing
+Geom ID, LWGXDXVPMC
+Airfoil Index, 0
+XSec Flag, 1
+XSec Index, 0
+XSecSurf ID, RVOEESPNMT
+FoilSurf u Value, 0.000000
+Global u Value, 0.333333
+Leading Edge Point, 0.000000, 0.000000, 0.000000
+Trailing Edge Point, 8.000000, 0.000000, 0.000000
+Chord, 8.000000
+########################################
+
+########################################
+Airfoil File Name, Main Wing_LWGXDXVPMC_1.dat
+Geom Name, Main Wing
+Geom ID, LWGXDXVPMC
+Airfoil Index, 1
+XSec Flag, 0
+FoilSurf u Value, 0.200000
+Global u Value, 0.400000
+Leading Edge Point, 0.918433, 5.200000, 0.262053
+Trailing Edge Point, 8.117336, 5.200000, 0.303922
+Chord, 7.199025
+########################################
+
+########################################
+Airfoil File Name, Main Wing_LWGXDXVPMC_2.dat
+Geom Name, Main Wing
+Geom ID, LWGXDXVPMC
+Airfoil Index, 2
+XSec Flag, 0
+FoilSurf u Value, 0.400000
+Global u Value, 0.466667
+Leading Edge Point, 1.836865, 10.400000, 0.524107
+Trailing Edge Point, 8.234673, 10.400000, 0.607844
+Chord, 6.398355
+########################################
+
+########################################
+Airfoil File Name, Main Wing_LWGXDXVPMC_3.dat
+Geom Name, Main Wing
+Geom ID, LWGXDXVPMC
+Airfoil Index, 3
+XSec Flag, 0
+FoilSurf u Value, 0.600000
+Global u Value, 0.533333
+Leading Edge Point, 2.755298, 15.600000, 0.786160
+Trailing Edge Point, 8.352009, 15.600000, 0.911766
+Chord, 5.598120
+########################################
+
+########################################
+Airfoil File Name, Main Wing_LWGXDXVPMC_4.dat
+Geom Name, Main Wing
+Geom ID, LWGXDXVPMC
+Airfoil Index, 4
+XSec Flag, 0
+FoilSurf u Value, 0.800000
+Global u Value, 0.600000
+Leading Edge Point, 3.673731, 20.800000, 1.048213
+Trailing Edge Point, 8.469345, 20.800000, 1.215688
+Chord, 4.798538
+########################################
+
+########################################
+Airfoil File Name, Main Wing_LWGXDXVPMC_5.dat
+Geom Name, Main Wing
+Geom ID, LWGXDXVPMC
+Airfoil Index, 5
+XSec Flag, 1
+XSec Index, 1
+XSecSurf ID, RVOEESPNMT
+FoilSurf u Value, 1.000000
+Global u Value, 0.666667
+Leading Edge Point, 4.592163, 26.000000, 1.310266
+Trailing Edge Point, 8.586682, 26.000000, 1.519610
+Chord, 4.000000
+########################################
+
+########################################
+Airfoil File Name, Twin Vstab Tail_TDPDUFXSPG_0.dat
+Geom Name, Twin Vstab Tail
+Geom ID, TDPDUFXSPG
+Airfoil Index, 0
+XSec Flag, 1
+XSec Index, 0
+XSecSurf ID, KZDFDPUIYX
+FoilSurf u Value, 0.000000
+Global u Value, 0.250000
+Leading Edge Point, 0.000000, 0.000000, 0.000000
+Trailing Edge Point, 3.111111, 0.000000, 0.000000
+Chord, 3.111111
+########################################
+
+########################################
+Airfoil File Name, Twin Vstab Tail_TDPDUFXSPG_1.dat
+Geom Name, Twin Vstab Tail
+Geom ID, TDPDUFXSPG
+Airfoil Index, 1
+XSec Flag, 0
+FoilSurf u Value, 0.100000
+Global u Value, 0.300000
+Leading Edge Point, -0.307920, 0.533333, 0.000000
+Trailing Edge Point, 3.180969, 0.533333, 0.000000
+Chord, 3.488889
+########################################
+
+########################################
+Airfoil File Name, Twin Vstab Tail_TDPDUFXSPG_2.dat
+Geom Name, Twin Vstab Tail
+Geom ID, TDPDUFXSPG
+Airfoil Index, 2
+XSec Flag, 0
+FoilSurf u Value, 0.200000
+Global u Value, 0.350000
+Leading Edge Point, -0.615840, 1.066667, 0.000000
+Trailing Edge Point, 3.250826, 1.066667, 0.000000
+Chord, 3.866667
+########################################
+
+########################################
+Airfoil File Name, Twin Vstab Tail_TDPDUFXSPG_3.dat
+Geom Name, Twin Vstab Tail
+Geom ID, TDPDUFXSPG
+Airfoil Index, 3
+XSec Flag, 0
+FoilSurf u Value, 0.300000
+Global u Value, 0.400000
+Leading Edge Point, -0.923760, 1.600000, 0.000000
+Trailing Edge Point, 3.320684, 1.600000, 0.000000
+Chord, 4.244444
+########################################
+
+########################################
+Airfoil File Name, Twin Vstab Tail_TDPDUFXSPG_4.dat
+Geom Name, Twin Vstab Tail
+Geom ID, TDPDUFXSPG
+Airfoil Index, 4
+XSec Flag, 0
+FoilSurf u Value, 0.400000
+Global u Value, 0.450000
+Leading Edge Point, -1.231681, 2.133333, 0.000000
+Trailing Edge Point, 3.390542, 2.133333, 0.000000
+Chord, 4.622222
+########################################
+
+########################################
+Airfoil File Name, Twin Vstab Tail_TDPDUFXSPG_5.dat
+Geom Name, Twin Vstab Tail
+Geom ID, TDPDUFXSPG
+Airfoil Index, 5
+XSec Flag, 1
+XSec Index, 1
+XSecSurf ID, KZDFDPUIYX
+FoilSurf u Value, 0.500000
+Global u Value, 0.500000
+Leading Edge Point, -1.539601, 2.666667, 0.000000
+Trailing Edge Point, 3.460399, 2.666667, 0.000000
+Chord, 5.000000
+########################################
+
+########################################
+Airfoil File Name, Twin Vstab Tail_TDPDUFXSPG_6.dat
+Geom Name, Twin Vstab Tail
+Geom ID, TDPDUFXSPG
+Airfoil Index, 6
+XSec Flag, 0
+FoilSurf u Value, 0.600000
+Global u Value, 0.550000
+Leading Edge Point, -0.769800, 4.000000, 0.000000
+Trailing Edge Point, 3.730200, 4.000000, 0.000000
+Chord, 4.500000
+########################################
+
+########################################
+Airfoil File Name, Twin Vstab Tail_TDPDUFXSPG_7.dat
+Geom Name, Twin Vstab Tail
+Geom ID, TDPDUFXSPG
+Airfoil Index, 7
+XSec Flag, 0
+FoilSurf u Value, 0.700000
+Global u Value, 0.600000
+Leading Edge Point, -0.000000, 5.333333, 0.000000
+Trailing Edge Point, 4.000000, 5.333333, 0.000000
+Chord, 4.000000
+########################################
+
+########################################
+Airfoil File Name, Twin Vstab Tail_TDPDUFXSPG_8.dat
+Geom Name, Twin Vstab Tail
+Geom ID, TDPDUFXSPG
+Airfoil Index, 8
+XSec Flag, 0
+FoilSurf u Value, 0.800000
+Global u Value, 0.650000
+Leading Edge Point, 0.769800, 6.666667, 0.000000
+Trailing Edge Point, 4.269800, 6.666667, 0.000000
+Chord, 3.500000
+########################################
+
+########################################
+Airfoil File Name, Twin Vstab Tail_TDPDUFXSPG_9.dat
+Geom Name, Twin Vstab Tail
+Geom ID, TDPDUFXSPG
+Airfoil Index, 9
+XSec Flag, 0
+FoilSurf u Value, 0.900000
+Global u Value, 0.700000
+Leading Edge Point, 1.539601, 8.000000, 0.000000
+Trailing Edge Point, 4.539601, 8.000000, 0.000000
+Chord, 3.000000
+########################################
+
+########################################
+Airfoil File Name, Twin Vstab Tail_TDPDUFXSPG_10.dat
+Geom Name, Twin Vstab Tail
+Geom ID, TDPDUFXSPG
+Airfoil Index, 10
+XSec Flag, 1
+XSec Index, 2
+XSecSurf ID, KZDFDPUIYX
+FoilSurf u Value, 1.000000
+Global u Value, 0.750000
+Leading Edge Point, 2.309401, 9.333333, 0.000000
+Trailing Edge Point, 4.809401, 9.333333, 0.000000
+Chord, 2.500000
+########################################
+
+########################################
+Airfoil File Name, H Stab_IVPKXLWNFV_0.dat
+Geom Name, H Stab
+Geom ID, IVPKXLWNFV
+Airfoil Index, 0
+XSec Flag, 1
+XSec Index, 0
+XSecSurf ID, PMJGRPPQYH
+FoilSurf u Value, 0.000000
+Global u Value, 0.333333
+Leading Edge Point, 0.000000, 0.000000, 0.000000
+Trailing Edge Point, 4.000000, 0.000000, 0.000000
+Chord, 4.000000
+########################################
+
+########################################
+Airfoil File Name, H Stab_IVPKXLWNFV_1.dat
+Geom Name, H Stab
+Geom ID, IVPKXLWNFV
+Airfoil Index, 1
+XSec Flag, 0
+FoilSurf u Value, 0.200000
+Global u Value, 0.400000
+Leading Edge Point, 0.000000, 1.600000, 0.000000
+Trailing Edge Point, 4.000000, 1.600000, 0.000000
+Chord, 4.000000
+########################################
+
+########################################
+Airfoil File Name, H Stab_IVPKXLWNFV_2.dat
+Geom Name, H Stab
+Geom ID, IVPKXLWNFV
+Airfoil Index, 2
+XSec Flag, 0
+FoilSurf u Value, 0.400000
+Global u Value, 0.466667
+Leading Edge Point, 0.000000, 3.200000, 0.000000
+Trailing Edge Point, 4.000000, 3.200000, 0.000000
+Chord, 4.000000
+########################################
+
+########################################
+Airfoil File Name, H Stab_IVPKXLWNFV_3.dat
+Geom Name, H Stab
+Geom ID, IVPKXLWNFV
+Airfoil Index, 3
+XSec Flag, 0
+FoilSurf u Value, 0.600000
+Global u Value, 0.533333
+Leading Edge Point, 0.000000, 4.800000, 0.000000
+Trailing Edge Point, 4.000000, 4.800000, 0.000000
+Chord, 4.000000
+########################################
+
+########################################
+Airfoil File Name, H Stab_IVPKXLWNFV_4.dat
+Geom Name, H Stab
+Geom ID, IVPKXLWNFV
+Airfoil Index, 4
+XSec Flag, 0
+FoilSurf u Value, 0.800000
+Global u Value, 0.600000
+Leading Edge Point, 0.000000, 6.400000, 0.000000
+Trailing Edge Point, 4.000000, 6.400000, 0.000000
+Chord, 4.000000
+########################################
+
+########################################
+Airfoil File Name, H Stab_IVPKXLWNFV_5.dat
+Geom Name, H Stab
+Geom ID, IVPKXLWNFV
+Airfoil Index, 5
+XSec Flag, 1
+XSec Index, 1
+XSecSurf ID, PMJGRPPQYH
+FoilSurf u Value, 1.000000
+Global u Value, 0.666667
+Leading Edge Point, 0.000000, 8.000000, 0.000000
+Trailing Edge Point, 4.000000, 8.000000, 0.000000
+Chord, 4.000000
+########################################
+

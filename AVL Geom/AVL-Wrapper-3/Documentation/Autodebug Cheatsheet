@@ -1,0 +1,44 @@
+
+AUTODEBUG CHEATSHEET
+
+╔════════════╦════════════════════════╦═══════════════════════════════════════╦════════════════════════════════════════════════════════════════════════╗
+║ Error Code ║ Flag term (in Log.txt) ║ Causes                                ║ Troubleshooting                                                        ║
+╚════════════╩════════════════════════╩═══════════════════════════════════════╩════════════════════════════════════════════════════════════════════════╝
+│ -          │ "****"                 │ - Not a number (NaN) result           │ AVL failed to produce a number result. This is an issue with the run   │
+│            │                        │                                       │ case, but please contact a developer because they have not been able   │
+│            │                        │                                       │ to reproduce this.                                                     │
+│            │                        │                                       │                                                                        │
+│ 10         │ "corrupted"            │ - AVL could not find your .avl file   │ Check if your .avl is located in the proper directory.                 │
+│            │                        │ - .avl file did not load properly     │ Check the file extension.                                              │
+│            │                        │                                       │                                                                        │
+│ 20         │ "first!"               │ - Flow execution not performed ('x')  │ Make sure to include a flow execution input to AVL (through _x() or    │
+│            │                        │                                       │ input('x')).                                                           │
+│            │                        │                                       │ Flow execution might have failed before trying to access results.      │
+│            │                        │                                       │                                                                        │
+│ 30         │ "failed"               │ - Trim convergence failed             │ Check which control surface or variable is trimming.                   │
+│            │                        │ - Incorrect control surface-moment    │ Check reference X,Y,Z.                                                 │
+│            │                        │   pairing                             │ Check that control surfaces have a beginning and end.                  │
+│            │                        │                                       │                                                                        │
+│ 40         │ "large"                │ - Resulting angle is too large        │ Likely to happen when CL is too high. May occur when demanding high    │
+│            │                        │ - Incorrect control surface-moment    │ CL values from high-lift devices.                                      │
+│            │                        │   pairing                             │                                                                        │
+│            │                        │                                       │                                                                        │
+│ 50         │ "zero-camber"          │ - No airfoile provided                │ Check that airfoil is in the airfoil folder.                           │
+│            │                        │ - Airfoil file directory is incorrect │ Airfoil coordinates must be Selig format (counterclockwise TE→LE→TE)   │
+│            │                        │ - Airfoil file does not exist         │ Check the airfoil name in the .avl file.                               │
+│            │                        │                                       │                                                                        │
+│ 60         │ "    **"               │ - Conflicting vcv                     │ Two or more vcvs were given the same constraint.                       │
+│            │                        │                                       │                                                                        │
+│ 70         │ "Insufficient"         │ - Insufficient spanwise vortices      │ Increase the SURFACE Nspanwise (does not guarantee each SECTION        │
+│            │                        │                                       │ has vortices) or define SECTION Nspanwise (guarantees each             │
+│            │                        │                                       │ SECTION has vortices).                                                 │
+│            │                        │                                       │                                                                        │
+│ 80         │ "# Vortices =   0"     │ - Zero vortices on model              │ Nspanwise is not defined for any SURFACE or SECTION.                   │
+│            │                        │                                       │                                                                        │
+│ 90         │ "not recognized"       │ - Unrecognized command in AVL         │ Only appears if no other errors are raised.                            │
+│            │                        │ - Does not appear if other errors     │ Check which menu you are in when the command is passed.                │    
+│            │                        │   are present                         │                                                                        │
+│            │                        │                                       │                                                                        │
+│ 100        │ "* Configuration"      │ - Plane not loaded correctly          │ Plane was not successfully loaded before entering the oper menu.       │
+│            │                        │                                       │ Check the Log.txt for specific errors.                                 │
+└────────────┴────────────────────────┴───────────────────────────────────────┴────────────────────────────────────────────────────────────────────────┘

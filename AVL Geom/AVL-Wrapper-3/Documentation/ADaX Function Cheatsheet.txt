@@ -1,0 +1,150 @@
+
+ADaX FUNCTION CHEATSHEET
+
+╔════════════════════════╦════════════════════════╦══════════════════════════╗
+║ Function               ║ Input/Ooutput          ║ Description              ║
+╚════════════════════════╩════════════════════════╩══════════════════════════╝
+│ Functions that take no arguments │              │
+├────────────────────────┬─────────┘              │
+│ _top()                 │ None                   │ Sends AVL back to the top level menu.
+│                        │                        │      
+│ _oper()                │ None                   │ Sends AVL to the oper menu.
+│                        │                        │ 
+│ _clear()               │ None                   │ Clears the input list (self.__inputlist). Called at the end of run().
+│                        │                        │ 
+│ _load()                │ None                   │ Loads the plane into AVL. Must be the first command present
+│                        │                        │ in the output list. 
+│                        │                        │ 
+│ _save()                │ None                   │ Saves the following output files in AVL/Output:
+│                        │                        │    - Total forces
+│                        │                        │    - Body-axis derivatives
+│                        │                        │    - Stability derivatives
+│                        │                        │ 
+│ _geometry()            │ None                   │ Displays the AVL geometry. 
+│                        │                        │ ⚠ WARNING: calling this will timeout the AVL subprocess ⚠
+│                        │                        │ ⚠ without writing to Log.txt or dispalying outputs. Use ⚠
+│                        │                        │ ⚠ CTRL+C in Visual Studio to close the geometry window. ⚠
+│                        │                        │ 
+│ _x()                   │ None                   │ Executes flow calculation in AVL. Use this when you are finished
+│                        │                        │ setting up your flow conditions. Or AVL will not output results.
+│                        │                        │ 
+│ _fetch_control_names() │ None                   │ Creates an ADaX subrun to generate a dummy file in AVL/Output/Debugging
+│                        │                        │ to read CONTROL names. Called when autodebug encounters a possible 
+│                        │                        │ trim vcv problem.
+│                        │                        │ 
+│ _autodebug()           │ None                   │ Calls a debugging subroutine that scans the Log.txt for AVL error messages.
+│                        │                        │ Prints error messages to Visual Studio with reference error codes.
+│                        │                        │ See "Documentation/Autodebug Error Codes.txt" for more details.
+│                        │                        │ 
+│ _create_child          │ None                   │ Creates a new ADaX object that uses the same .avl file and output configuration
+│                        │                        │ Needs a whole new function because __planefile is private.
+│                        │                        │ Used in presets where running 
+├────────────────────────┴─┐                      │
+│ Functions with arguments │                      │
+├────────────────────────┬─┘                      │
+│ output_config()        │ In:                    │ Configures the output printed by ADaX. The input output_codes takes a string
+│                        │ - output_codes         │ or list of strings of output codes. Example output codes: 
+│                        │                        │     ┌──Code───────Read File──────────────Value─┐
+│                        │                        │     │ 't CLtot' - Total forces,          CLtot │
+│                        │                        │     │ 's CYq'   - Stability derivatives, CYq   │
+│                        │                        │     │ 's CLa'   - Stability derivatives, CLa   │
+│                        │                        │     │ 'b CXd01' - Body-axis derivatives, CXd01 │
+│                        │                        │     └──────────────────────────────────────────┘
+│                        │                        │ Output codes can be put into a tuple or list to get multiple outputs at once.
+│                        │                        │ Here are some examples of important values you'll want to pull from AVL.
+│                        │                        │     ┌──Example────────────────output_codes─────────────────────────────────────┐
+│                        │                        │     │  Lift and lift slope    ['t CLtot', 's CLa']                             │
+│                        │                        │     │  Trim condition         ['t Alpha', 't CLtot', 't CDind', 't Elevator']  │
+│                        │                        │     │  Stability derivatives  ['s Cma', 's Cnb', 's' Clb']                     │
+│                        │                        │     └──────────────────────────────────────────────────────────────────────────┘
+│                        │                        │ Outputs will be returned automatically on a successful run.    
+│                        │                        │ 
+│ input()                │ In:                    │ Takes "cmd" as a string input and appends it to the input list, automatically 
+│                        │ - cmd                  │ adding a newline character (equivalent to pressing enter) after the command.
+│                        │                        │ 
+│ vcv()                  │ In:                    │ Takes "vcv" as a string input and appends it to the input list. "vcv" is a string
+│                        │ - vcv                  │ in the same form as variable-constraint pairs passed to the AVL oper menu. 
+│                        │                        │ The acronym vcv means "variable constraint value".
+│                        │                        │     ┌──vcv────────────────────AVL run case─────────────────────────────────────┐
+│                        │                        │     │  "a a 8"                A lpha        ->  alpha       =   8.000          │
+│                        │                        │     │  "a c 0.42"             A lpha        ->  CL          =  0.4200          │
+│                        │                        │     │  "d2 pm 0"              D2  Elevator  ->  Cm pitchmom =   0.000          │
+│                        │                        │     └──────────────────────────────────────────────────────────────────────────┘
+│                        │                        │ 
+│ use_run()              │ In:                    │ Uses a .run file in AVL/Planes. run_filename is the file name as it appears in 
+│                        │ - run_filename         │ AVL/Planes, case_number is the run case number in the .run file.
+│                        │ - case_number          │ 
+│                        │                        │ 
+│ run()                  │ In:                    │ Opens AVL and sends the input list commands to the input stream. Must be Called
+│                        │ - print_output         │ at the end of every script to actually run AVL. 
+│                        │ - Log                  │  - print_output is a boolean that determines if the run results are printed to
+│                        │ - autodebug            │    Visual Studio, default to True. 
+│                        │ Out:                   │  - Log is a boolean that determines if the AVL session is recorded in "Log.txt",
+│                        │ - output_dict          │    default to True.
+│                        │                        │  - autodebug is a boolean that determines if the autodebug subroutine is called
+│                        │                        │    before accessing run results, default to True.
+│                        │                        │  - output_dict is a dict[str:str] version of the run results specified by
+│                        │                        │    output_config(). Keys are the specified parameters, items are the values.
+│                        │                        │    Dictionary is generated by __output().
+│                        │                        │ 
+│ sweep()                │ In:                    │ Sweeps through an array of constraint values in AVL. Creates and runs a new
+│                        │ - vc                   │ instance of AVL for each run, so it's fairly slow.      
+│                        │ - v_array              │  - vc is a str of the variable-constraint pair that is constant through
+│                        │ - executes             │    the sweep.
+│                        │ Out:                   │  - v_array is a numeric iterable that is appended to vc, forming the vcv
+│                        │ - outs                 │    for the swept cases.
+│                        │                        │  - executes is a str|list[str] containing additional run commands (typically
+│                        │                        │    trim vcv) to be entered in the oper menu.
+│                        │                        │  - outs is a dict[dict] where the key is the case vcv and the item is the 
+│                        │                        │    output dictionary from that vcv. 
+│                        │                        │ Not suitable for sweeping through aircraft geometry. You must write a custom
+│                        │                        │ loop in ADaX.py to update the geometry by passing kwargs to Update_Geometry().                    
+├────────────────────────┴─┐                      │
+│ Private methods          │                      │
+├────────────────────────┬─┘                      │
+│ __time_remaining()     │ In:                    │ Displays the time remaining for a sweep. Uses a least-squares fit to predict
+│                        │ - dt                   │ remaining sweep time.
+│                        │ - i                    │  - dt is a np.ndarray[float] of time elapsed over one run case.                         
+│                        │ - n                    │  - i is an int of the run case number.
+│                        │ Out:                   │  - n is an int of the total number of run cases.
+│                        │ - time_remaining       │  - time_remaining is a float of the projected remaining sweep time.
+│                        │                        │ Automatically called during sweep. This was only made cause it's cool 😎.
+│                        │                        │ 
+│ __trim_detector()      │ None                   │ Autodebug subsubroutine for checking input list trim vcv. Called when trim 
+│                        │                        │ convergence fails because the control surface is wrong or resulting angle 
+│                        │                        │ of attack is too large due to floating point error.
+│                        │                        │ 
+│ __print()              │ In:                    │ Function for custom printing, just adds a "[ADaX] " before the string text. 
+│                        │ - text                 │ Saves a little bit of time when writing screen outputs.
+│                        │                        │ 
+│ __execute()            │ In:                    │ A nightmare of a function that is not very intuitive to use but I haven't
+│                        │ - execute_code         │ bothered to fix it. Allows arbitrary function execution inside other functions,
+│                        │                        │ namely used inside of sweep().
+│                        │                        │ 
+│ __output()             │ Out:                   │ Retrieves outputs from output files on successful run. Uses the outputs
+│                        │ - output_dict          │ specified by output_config(), calls __get_filename(). Returns output_dict as
+│                        │                        │ a dict[str:str]. Called by run() on a successful run.
+│                        │                        │ 
+│ __get_filename()       │ In:                    │ Gets the output filename from a shortened version of the filename. kword is
+│                        │ - kword                │ a string input of the file's first letter or a unique identifying string.
+│                        │ Out:                   │ The function first tries to match the output file using a single letter.
+│                        │ - filename             │     ┌──letter────Output file───────────┐
+│                        │                        │     │  'b'       Body-axis derivatives │
+│                        │                        │     │  's'       Stability derivatives │
+│                        │                        │     │  't'       Total forces          │
+│                        │                        │     └──────────────────────────────────┘
+│                        │                        │ If kword is none of the above, the function tries to match kword to a unique
+│                        │                        │ identifying string in the filenames. A unique identifying string is any sequence 
+│                        │                        │ of letters that appears in only one of the output file names.
+│                        │                        │     ┌──string────Output file───────────┐
+│                        │                        │     │  'body'    Body-axis derivatives │
+│                        │                        │     │  'stab'    Stability derivatives │
+│                        │                        │     │  'tot'     Total forces          │
+│                        │                        │     │  'axis'    Body-axis derivatives │
+│                        │                        │     │  'forces'  Total forces          │
+│                        │                        │     │  'deriv'   None; not unique      │
+│                        │                        │     └──────────────────────────────────┘
+│                        │                        │ Yeah you get the idea. Returns the string name of the output file. 
+│                        │                        │ Called by __output().
+
+           

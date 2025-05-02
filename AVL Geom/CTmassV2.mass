@@ -1,0 +1,57 @@
+#
+#  Plane Vanilla
+#  Mass & Inertia breakdown
+#
+#  xyz is location of item's own CG
+#  Ixx.. are item's inertias about item's own CG
+#
+#   x back
+#   y right
+#   z up
+#
+#  x,y,z system here must have origin 
+#  at same location as AVL input file
+#
+Lunit = 0.3048 m
+Munit = 0.45364936276 kg
+Tunit = 1.0 s
+
+g   = 9.81
+rho = 1.225
+
+#
+#  mass   x     y     z       Ixx     Iyy    Izz   [ Ixy  Ixz  Iyz ]
++   0     -6.667  0     0       0       0      0
+  2800    14.2    0     0       0       0      0
+  80      19.1    0     0       0       0      0
+  80      19.1    0     0       0       0      0
+  28      5.4     0     0       0       0      0
+  28      5.4     0     0       0       0      0
+  131     32.7    0     0       0       0      0
+  320     3.8     0     0       0       0      0
+  10      17.2    0     0       0       0      0
+  10      17.2    0	0       0       0      0
+  10      17.2    0	0       0       0      0
+  10      17.2    0	0       0       0      0
+  10      17.2    0	0       0       0      0
+  10      17.2    0	0       0       0      0
+  10      17.2    0	0       0       0      0
+  10      17.2    0	0       0       0      0
+  10      17.2    0	0       0       0      0
+  10      17.2    0	0       0       0      0
+  220     18.4    0	0       0       0      0
+  220     18.4    0	0       0       0      0
+  200     3.8     0	0       0       0      0
+  450     11.9    0	0       0       0      0
+  1050    17.6    0	0       0       0      0
+  1650    12.2    0	0       0       0      0
+  160     11.7    0	0       0       0      0
+  2000    23.1    0	0       0       0      0
+  33      17.2    0	0       0       0      0
+  1       11.9    0	0       0       0      0
+  95      12.0    0	0       0       0      0
+  12      11.9    0	0       0       0      0
+  15      10      0	0       0       0      0
+
+
+

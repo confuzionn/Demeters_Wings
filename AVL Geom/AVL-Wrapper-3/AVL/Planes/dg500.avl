@@ -1,0 +1,115 @@
+#Name         
+DG-500        
+#Mach         
+0             
+#iYsym        #iZsym        #Zsym         
+0             0             0.0           
+#Sref         #cref         #bref         
+0.662         0.19038       3.6           
+#Xref         #Yref         #Zref         
+0             0.0           0             
+#CDp          
+0.0           
+#===============================================================================================
+#===============================================================================================
+SURFACE
+#Name         
+Wing          
+#Nchordwise   #Cspace       #NSpanwise    #Sspace       
+8             1.0           31            1.0           
+YDUPLICATE    
+0.0           
+TRANSLATE     
+0.0  0.0  0.0    
+#-----------------------------------------------------------------------------------------------
+SECTION
+#Xle          #Yle          #Zle          #Chord        #Ainc         #Nspanwise    #Sspace       
+0.0           0.0           0.0           0.229         2             0             0             
+AFILE         
+AVL/Airfoils/S4233-136-84.dat  
+#-----------------------------------------------------------------------------------------------
+SECTION
+#Xle          #Yle          #Zle          #Chord        #Ainc         #Nspanwise    #Sspace       
+0.0           1.1489        0.0502        0.1834        2.5           0             0             
+AFILE         
+AVL/Airfoils/S4233-136-84.dat  
+
+CONTROL
+#Cname        #Cgain        #Xhinge       #HingeVec     #SgnDup       
+Aileron       1.0           0.7993        0.0 0.0 0.0   -1            
+#-----------------------------------------------------------------------------------------------
+SECTION
+#Xle          #Yle          #Zle          #Chord        #Ainc         #Nspanwise    #Sspace       
+0.0           1.1709        0.05116       0.18077       2.5           0             0             
+AFILE         
+AVL/Airfoils/S4233-136-84.dat  
+
+CONTROL
+#Cname        #Cgain        #Xhinge       #HingeVec     #SgnDup       
+Aileron       1.0           0.7937        0.0 0.0 0.0   -1            
+#-----------------------------------------------------------------------------------------------
+SECTION
+#Xle          #Yle          #Zle          #Chord        #Ainc         #Nspanwise    #Sspace       
+0.0           1.7982        0.0785        0.1058        2.5           0             0             
+AFILE         
+AVL/Airfoils/S4233-136-84.dat  
+#===============================================================================================
+#===============================================================================================
+SURFACE
+#Name         
+Hstab         
+#Nchordwise   #Cspace       #NSpanwise    #Sspace       
+8             1.0           12            1.0           
+YDUPLICATE    
+0.0           
+TRANSLATE     
+0.9984  0.0  0.3015    
+#-----------------------------------------------------------------------------------------------
+SECTION
+#Xle          #Yle          #Zle          #Chord        #Ainc         #Nspanwise    #Sspace       
+0.0           0.0           0.0           0.156         0.0           0             0             
+AFILE         
+AVL/Airfoils/SD8020-010-88.dat  
+
+CONTROL
+#Cname        #Cgain        #Xhinge       #HingeVec     #SgnDup       
+Elevator      1.0           0.6872        0.0 0.0 0.0   1             
+#-----------------------------------------------------------------------------------------------
+SECTION
+#Xle          #Yle          #Zle          #Chord        #Ainc         #Nspanwise    #Sspace       
+0.053         0.317         0             0.0836        0.0           0             0             
+AFILE         
+AVL/Airfoils/SD8020-010-88.dat  
+
+CONTROL
+#Cname        #Cgain        #Xhinge       #HingeVec     #SgnDup       
+Elevator      1.0           0.6483        0.0 0.0 0.0   1             
+#===============================================================================================
+#===============================================================================================
+SURFACE
+#Name         
+Vstab         
+#Nchordwise   #Cspace       #NSpanwise    #Sspace       
+8             1.0           12            1.0           
+TRANSLATE     
+0.996  0.0  -0.0209    
+#-----------------------------------------------------------------------------------------------
+SECTION
+#Xle          #Yle          #Zle          #Chord        #Ainc         #Nspanwise    #Sspace       
+0.0           0.0           0.0           0.24          0.0           0             0             
+AFILE         
+AVL/Airfoils/SD8020-010-88.dat  
+
+CONTROL
+#Cname        #Cgain        #Xhinge       #HingeVec     #SgnDup       
+Rudder        1.0           0.65          0.0 0.0 0.0   1.0           
+#-----------------------------------------------------------------------------------------------
+SECTION
+#Xle          #Yle          #Zle          #Chord        #Ainc         #Nspanwise    #Sspace       
+0.08783       0             0.32          0.1129        0.0           0             0             
+AFILE         
+AVL/Airfoils/SD8020-010-88.dat  
+
+CONTROL
+#Cname        #Cgain        #Xhinge       #HingeVec     #SgnDup       
+Rudder        1.0           0.7           0. 0. 1.0     1.0           
