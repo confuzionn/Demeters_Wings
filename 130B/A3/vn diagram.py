@@ -14,8 +14,10 @@ altitude = 8000 #ft
 rho_8k = 0.00187 #slugs/ft^3
 rho_sl = 0.0023769 #slugs/ft^3
 grav = 32.17 #ft/s^2
-n_max = 4.4
-n_min = -1.8
+e = 0.7922
+AR = 8.7
+
+
 
 # ## Design airspeeds ## ---------------------------------------------------------------------------------------------------
 
@@ -264,3 +266,30 @@ def KG(
     mu = (2*W/S)/(rho*c_bar*CLa*g)
     Kg = (0.88*mu)/(5.3 + mu)
     return Kg
+
+#  DEFINING CLA EQUATION
+
+def CLa(
+    AR, 
+    e
+    ):
+    C_la = (2 * np.pi) * (np.pi / 180)
+    C_La = C_la / (1 + 57.3 * C_la / (np.pi * AR * e))
+    return C_La
+
+def V_A(
+    Cl_max, 
+    Cl_min, 
+    rho_SL,  #slug/ft^3
+    W, #lbs
+    S   #ft^2
+    ):
+    n_max = 4.4
+    n_min = -1.8
+
+    V_A = np.sqrt(n_max * (2 * W / S) / (rho_SL * CL_max))
+    V_G = np.sqrt(n_min * (2 * W / S) / (rho_SL * CL_min))
+
+    return V_A, V_G
+
+
