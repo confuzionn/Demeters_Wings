@@ -1,0 +1,48 @@
+#
+#  Plane Vanilla
+#  Mass & Inertia breakdown
+#
+#  xyz is location of item's own CG
+#  Ixx.. are item's inertias about item's own CG
+#
+#   x back
+#   y right
+#   z up
+#
+#  x,y,z system here must have origin 
+#  at same location as AVL input file
+#
+Lunit = 0.3048 m
+Munit = 0.45364936276 kg
+Tunit = 1.0 s
+
+g   = 9.81
+rho = 1.225
+
+#
+#  mass   x     y     z       Ixx     Iyy    Izz   [ Ixy  Ixz  Iyz ]
++   0     0       0     0       0       0      0
+  2800    14.2    0     0       0       0      0 !fuselage
+  80      16.6    0     0       0       0      0 !left wing
+  80      16.6    0     0       0       0      0 !right wing
+  28      5.4     0     0       0       0      0 !left canard
+  28      5.4     0     0       0       0      0 !right canard
+  131     32.7    0     0       0       0      0 !empennage
+  320     3.8     0     0       0       0      0 !gas engine
+  100     14.7    0     0       0       0      0 !electric motors
+  220     18.4    0	0       0       0      0 !left gear
+  220     18.4    0	0       0       0      0 !right gear
+  200     3.8     0	0       0       0      0 !nose gear
+  450     11.9    0	0       0       0      0 !fixed equipment(sprayer)
+  383     15.1    0	0       0       0      0 !fuel
+  95      12.2    0	0       0       0      0 !battery
+  160     11.7    0	0       0       0      0 !crew
+  2000    23.1    0	0       0       0      0 !payload
+  33      17.2    0	0       0       0      0 !controller
+  1       11.9    0	0       0       0      0 !converter
+  95      12.0    0	0       0       0      0 !wiring
+  12      11.9    0	0       0       0      0 !hydraulics
+  15      10      0	0       0       0      0 !instruments(cameras, computers, etc)
+
+
+
