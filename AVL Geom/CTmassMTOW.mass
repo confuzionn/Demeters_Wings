@@ -25,16 +25,16 @@ rho = 1.225
   2800    14.2    0     0       0       0      0 !fuselage
   80      16.6    0     0       0       0      0 !left wing
   80      16.6    0     0       0       0      0 !right wing
-  28      5.4     0     0       0       0      0 !left canard
-  28      5.4     0     0       0       0      0 !right canard
-  131     32.7    0     0       0       0      0 !empennage
+  28      5.6     0     0       0       0      0 !left canard
+  28      5.6     0     0       0       0      0 !right canard
+  131     32.9    0     0       0       0      0 !empennage
   320     3.8     0     0       0       0      0 !gas engine
   100     14.7    0     0       0       0      0 !electric motors
   220     18.4    0	0       0       0      0 !left gear
   220     18.4    0	0       0       0      0 !right gear
   200     3.8     0	0       0       0      0 !nose gear
   450     11.9    0	0       0       0      0 !fixed equipment(sprayer)
-  383     15.1    0	0       0       0      0 !fuel
+  368     15.1    0	0       0       0      0 !fuel
   95      12.2    0	0       0       0      0 !battery
   160     11.7    0	0       0       0      0 !crew
   2000    23.1    0	0       0       0      0 !payload
