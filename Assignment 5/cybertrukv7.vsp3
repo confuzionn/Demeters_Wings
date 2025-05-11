@@ -9,14 +9,14 @@
         <CORX Value="0.000000000000000000e+00" ID="BFMOMNHLEOZ"/>
         <CORY Value="0.000000000000000000e+00" ID="XQHVALUQFWE"/>
         <CORZ Value="0.000000000000000000e+00" ID="JZHSNAZJCXY"/>
-        <PanX Value="-1.708594512939453125e+01" ID="XVERDMHEZRM"/>
-        <PanY Value="-3.128520011901855469e+00" ID="CSEKJBXLTNJ"/>
-        <RotationX Value="2.210677297522356710e+01" ID="YIUGKOPZKEF"/>
-        <RotationY Value="-6.358680721039260675e+01" ID="RGXDFTUNGBV"/>
-        <RotationZ Value="-7.598046549713671993e+01" ID="PSIWPITDBWJ"/>
+        <PanX Value="-6.193720817565917969e+00" ID="XVERDMHEZRM"/>
+        <PanY Value="-8.055784225463867188e+00" ID="CSEKJBXLTNJ"/>
+        <RotationX Value="4.406168010934649004e+01" ID="YIUGKOPZKEF"/>
+        <RotationY Value="-5.061911592013853323e+01" ID="RGXDFTUNGBV"/>
+        <RotationZ Value="-6.571230743858721723e+01" ID="PSIWPITDBWJ"/>
         <ViewportX Value="9.720000000000000000e+02" ID="FTWVSDNGTHG"/>
         <ViewportY Value="9.170000000000000000e+02" ID="LFYFHCFGAQY"/>
-        <Zoom Value="9.781214408576488495e-03" ID="DOUKBEXRMPR"/>
+        <Zoom Value="2.992094680666923523e-02" ID="DOUKBEXRMPR"/>
       </AdjustView>
       <AdvLinkSettings>
         <AdvLinkDefNameContainer Value="1.000000000000000000e+00" ID="ZNPEYGBIKPG"/>
@@ -623,10 +623,10 @@
           <Name>Fuel tank width</Name>
           <Measure>
             <Component Value="3.000000000000000000e+00" ID="NHPMQUFEZEM"/>
-            <DeltaX Value="1.128713154835047305e+00" ID="OCZHEFMZAKU"/>
-            <DeltaY Value="-6.392477702168199549e+00" ID="JXQKZLADSPV"/>
-            <DeltaZ Value="3.350155837937626724e-01" ID="WPRBMRTRESR"/>
-            <Distance Value="6.499999999999999112e+00" ID="WOADBNZAVHJ"/>
+            <DeltaX Value="0.000000000000000000e+00" ID="OCZHEFMZAKU"/>
+            <DeltaY Value="-6.990406742063906442e+00" ID="JXQKZLADSPV"/>
+            <DeltaZ Value="3.663517169435376863e-01" ID="WPRBMRTRESR"/>
+            <Distance Value="6.999999999999999112e+00" ID="WOADBNZAVHJ"/>
             <EndIndx Value="1.000000000000000000e+00" ID="SYCUUQKJOMR"/>
             <EndU Value="6.666666582759949167e-01" ID="UPBPFDQOSOT"/>
             <EndW Value="8.750000000000000000e-01" ID="GONMJPFJWSR"/>
@@ -649,10 +649,10 @@
           <Name>Fuel tank length</Name>
           <Measure>
             <Component Value="3.000000000000000000e+00" ID="FMPSAEGXSLO"/>
-            <DeltaX Value="4.185432726007844551e+00" ID="TYMVJPSPKYA"/>
-            <DeltaY Value="7.369933057217616934e-01" ID="SGBSRBPMXIC"/>
-            <DeltaZ Value="-3.862418249934498893e-02" ID="SBJBHFGPDMI"/>
-            <Distance Value="4.249999772245862673e+00" ID="DXIURCIYEDW"/>
+            <DeltaX Value="4.999999732053955981e+00" ID="TYMVJPSPKYA"/>
+            <DeltaY Value="0.000000000000000000e+00" ID="SGBSRBPMXIC"/>
+            <DeltaZ Value="0.000000000000000000e+00" ID="SBJBHFGPDMI"/>
+            <Distance Value="4.999999732053955981e+00" ID="DXIURCIYEDW"/>
             <EndIndx Value="1.000000000000000000e+00" ID="CVNFAGXGXQM"/>
             <EndU Value="6.666666582759949167e-01" ID="PMOIREQDRFG"/>
             <EndW Value="8.750000000000000000e-01" ID="GMFHXFOWCPN"/>
@@ -702,9 +702,9 @@
           <Measure>
             <Component Value="3.000000000000000000e+00" ID="VUBUNTBKJKR"/>
             <DeltaX Value="0.000000000000000000e+00" ID="SGWODAZKWVE"/>
-            <DeltaY Value="3.787044240643270276e-01" ID="JAHMAGVIKGH"/>
+            <DeltaY Value="3.938924722813214596e-01" ID="JAHMAGVIKGH"/>
             <DeltaZ Value="0.000000000000000000e+00" ID="KVRCPSLDIXF"/>
-            <Distance Value="3.787044240643270276e-01" ID="WIIZEHQWRQN"/>
+            <Distance Value="3.938924722813214596e-01" ID="WIIZEHQWRQN"/>
             <EndIndx Value="0.000000000000000000e+00" ID="UNZUMGANWOI"/>
             <EndU Value="6.666666582759949167e-01" ID="EVMAOJYTKOA"/>
             <EndW Value="6.249999806043098349e-01" ID="LVBDYBCVMCB"/>
@@ -15758,11 +15758,11 @@
                 <TeTwRatio Value="-1.000000000000000000e+00" ID="KMWNGVQXCUX"/>
               </ParasiteDragProps>
               <SS_Rectangle>
-                <Center_U Value="4.950980392156862919e-01" ID="LRTAUKNVDUU"/>
-                <Center_W Value="9.313725490196078649e-01" ID="RDEUMXERRBM"/>
+                <Center_U Value="5.490196078431373028e-01" ID="LRTAUKNVDUU"/>
+                <Center_W Value="9.264705882352941568e-01" ID="RDEUMXERRBM"/>
                 <Test_Type Value="0.000000000000000000e+00" ID="CFCDYYXAKLO"/>
                 <Theta Value="0.000000000000000000e+00" ID="JRLJOEPJUQW"/>
-                <U_Length Value="1.029411764705882304e-01" ID="GMXPSWRXEOS"/>
+                <U_Length Value="2.000000000000000111e-01" ID="GMXPSWRXEOS"/>
                 <W_Length Value="1.499999999999999944e-01" ID="CNQISQSAVPT"/>
               </SS_Rectangle>
               <SubSurface>
@@ -15813,48 +15813,6 @@
                 <IncludedElements Value="-1.000000000000000000e+00" ID="HNQWIJNADAV"/>
                 <KeepDelShellElements Value="0.000000000000000000e+00" ID="TOBDLUSRRBC"/>
                 <MainSurfIndx Value="0.000000000000000000e+00" ID="APFRULLYUAK"/>
-              </SubSurface>
-            </ParmContainer>
-            <SubSurfaceInfo>
-              <Type>1</Type>
-            </SubSurfaceInfo>
-            <FeaPropertyID>XQOOVFIZQL</FeaPropertyID>
-            <CapFeaPropertyID/>
-          </SubSurface>
-          <SubSurface>
-            <ParmContainer>
-              <ID>ORVGBCKDAL</ID>
-              <Name>SS_RECT_2</Name>
-              <FeaSubSurface>
-                <CapFeaPropertyIndex Value="-1.000000000000000000e+00" ID="ZXEYQOFRWOA"/>
-                <DrawFeaPartFlag Value="1.000000000000000000e+00" ID="TFMQRPWDYUK"/>
-                <FeaPropertyIndex Value="-1.000000000000000000e+00" ID="UGINQGDCDUJ"/>
-                <Orientation Value="6.000000000000000000e+00" ID="LZZZKORTHOL"/>
-              </FeaSubSurface>
-              <ParasiteDragProps>
-                <FFBodyEqnType Value="3.000000000000000000e+00" ID="VVKNKKOWVBD"/>
-                <FFUser Value="1.000000000000000000e+00" ID="JZIPBBMZPHV"/>
-                <FFWingEqnType Value="3.000000000000000000e+00" ID="ZVXWGXENLUC"/>
-                <PercLam Value="0.000000000000000000e+00" ID="HXJXFJIAAHC"/>
-                <Q Value="1.000000000000000000e+00" ID="VFCVNKFYEIL"/>
-                <Roughness Value="-1.000000000000000000e+00" ID="ERMEVERZVID"/>
-                <TawTwRatio Value="-1.000000000000000000e+00" ID="GNEWCPACLZS"/>
-                <TeTwRatio Value="-1.000000000000000000e+00" ID="NTFOLOQZFJD"/>
-              </ParasiteDragProps>
-              <SS_Rectangle>
-                <Center_U Value="6.049999999999999822e-01" ID="FFZWALTIWCD"/>
-                <Center_W Value="9.264705882352941568e-01" ID="PTYGXVQGOHK"/>
-                <Test_Type Value="0.000000000000000000e+00" ID="AOYVIELHOBX"/>
-                <Theta Value="0.000000000000000000e+00" ID="TJIEVMLTPPF"/>
-                <U_Length Value="1.176470588235294101e-01" ID="SNAYGTSXJER"/>
-                <W_Length Value="1.499999999999999944e-01" ID="NWPVEUXZUDK"/>
-              </SS_Rectangle>
-              <SubSurface>
-                <CreateBeamElements Value="0.000000000000000000e+00" ID="AEECSOYBSJU"/>
-                <IncludeFlag Value="0.000000000000000000e+00" ID="FVIDCRDRXCN"/>
-                <IncludedElements Value="-1.000000000000000000e+00" ID="JNHXTJTIDYT"/>
-                <KeepDelShellElements Value="0.000000000000000000e+00" ID="APTKLVFYMIL"/>
-                <MainSurfIndx Value="0.000000000000000000e+00" ID="DZJQTVEJIUK"/>
               </SubSurface>
             </ParmContainer>
             <SubSurfaceInfo>
@@ -17444,8 +17402,8 @@ void Scale(double curr_scale )
     </Geom>
     <Geom>
       <CustomGeom>
-        <Length Value="4.250000000000000000e+00" ID="FRONYAIGPOP"/>
-        <Width Value="6.500000000000000000e+00" ID="XJSVQEJZFSL"/>
+        <Length Value="5.000000000000000000e+00" ID="FRONYAIGPOP"/>
+        <Width Value="7.000000000000000000e+00" ID="XJSVQEJZFSL"/>
         <Height Value="2.999999999999999889e-01" ID="JNJSCJVTVEV"/>
         <SquareFlag Value="0.000000000000000000e+00" ID="RUFPEJUPMPX"/>
         <ScriptFileModule>Box</ScriptFileModule>
@@ -17605,18 +17563,18 @@ void Scale(double curr_scale )
           <V_Attach_Location Value="0.000000000000000000e+00" ID="XWEASGHGUOR"/>
         </Attach>
         <BBox>
-          <X_Len Value="5.314146105136931197e+00" ID="RFRTZDTZFQV"/>
-          <X_Min Value="1.414612168345204068e+01" ID="EYMWLQVUGZD"/>
-          <Y_Len Value="1.466904805547657986e+01" ID="SCUELPOTHXT"/>
-          <Y_Min Value="-7.334524027738289931e+00" ID="KAKBQUPQUDR"/>
-          <Z_Len Value="6.732286055463884145e-01" ID="AHVCEQMELVN"/>
-          <Z_Min Value="-8.193611776664817548e-01" ID="DTWIPRWPOYA"/>
+          <X_Len Value="5.000000000000000000e+00" ID="RFRTZDTZFQV"/>
+          <X_Min Value="1.514499999999999957e+01" ID="EYMWLQVUGZD"/>
+          <Y_Len Value="1.440610753015489998e+01" ID="SCUELPOTHXT"/>
+          <Y_Min Value="-7.203053765077449988e+00" ID="KAKBQUPQUDR"/>
+          <Z_Len Value="6.659405541269789452e-01" ID="AHVCEQMELVN"/>
+          <Z_Min Value="-7.964050596721847786e-01" ID="DTWIPRWPOYA"/>
         </BBox>
         <Design>
           <Height Value="2.999999999999999889e-01" ID="JNJSCJVTVEV"/>
-          <Length Value="4.250000000000000000e+00" ID="FRONYAIGPOP"/>
+          <Length Value="5.000000000000000000e+00" ID="FRONYAIGPOP"/>
           <SquareFlag Value="0.000000000000000000e+00" ID="RUFPEJUPMPX"/>
-          <Width Value="6.500000000000000000e+00" ID="XJSVQEJZFSL"/>
+          <Width Value="7.000000000000000000e+00" ID="XJSVQEJZFSL"/>
         </Design>
         <EndCap>
           <CapUMaxLength Value="1.000000000000000000e+00" ID="NYGABFONHKP"/>
@@ -17683,18 +17641,18 @@ void Scale(double curr_scale )
           <Last_Scale Value="1.000000000000000000e+00" ID="PEGPPZCCDTA"/>
           <Origin Value="0.000000000000000000e+00" ID="CIJMKBVLCRW"/>
           <Scale Value="1.000000000000000000e+00" ID="HZKPFRTOYXS"/>
-          <X_Location Value="1.471047826086956434e+01" ID="WPUGCMFNHKE"/>
-          <X_Rel_Location Value="1.471047826086956434e+01" ID="BQQJMZAIWZV"/>
+          <X_Location Value="1.514499999999999957e+01" ID="WPUGCMFNHKE"/>
+          <X_Rel_Location Value="1.514499999999999957e+01" ID="BQQJMZAIWZV"/>
           <X_Rel_Rotation Value="3.000000000000000000e+00" ID="LMHPIZYQVAY"/>
           <X_Rotation Value="3.000000000000000000e+00" ID="ZLHQRXITFAW"/>
-          <Y_Location Value="4.130434782608693567e+00" ID="OXADLYERATC"/>
-          <Y_Rel_Location Value="4.130434782608693567e+00" ID="LMPTYQKOUTR"/>
+          <Y_Location Value="3.700000000000000178e+00" ID="OXADLYERATC"/>
+          <Y_Rel_Location Value="3.700000000000000178e+00" ID="LMPTYQKOUTR"/>
           <Y_Rel_Rotation Value="0.000000000000000000e+00" ID="VIQXRXBTKFA"/>
           <Y_Rotation Value="0.000000000000000000e+00" ID="PNFQEPPNQSR"/>
           <Z_Location Value="-4.634347826086953059e-01" ID="QPURDMNYBQO"/>
           <Z_Rel_Location Value="-4.634347826086953059e-01" ID="DSARZZSQOQP"/>
-          <Z_Rel_Rotation Value="-1.000000000000000000e+01" ID="IABVYYBCBKR"/>
-          <Z_Rotation Value="-1.000000000000000000e+01" ID="IOPPZTTLCZW"/>
+          <Z_Rel_Rotation Value="0.000000000000000000e+00" ID="IABVYYBCBKR"/>
+          <Z_Rotation Value="0.000000000000000000e+00" ID="IOPPZTTLCZW"/>
         </XForm>
       </ParmContainer>
       <GeomBase>
@@ -18719,292 +18677,6 @@ void Scale(double curr_scale )
             <Blue Value="2.550000000000000000e+02" ID="DJRNNPJRDUP"/>
             <Green Value="0.000000000000000000e+00" ID="FAQPWTEGZDP"/>
             <Red Value="0.000000000000000000e+00" ID="YLSKELCXQOD"/>
-          </Color_Parm>
-        </ParmContainer>
-      </Wire_Color>
-      <Textures>
-        <Num_of_Tex>0</Num_of_Tex>
-      </Textures>
-      <Geom>
-        <Set_List>1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, </Set_List>
-        <SubSurfaces/>
-        <FeaStructures/>
-      </Geom>
-    </Geom>
-    <Geom>
-      <CustomGeom>
-        <Length Value="1.500000000000000000e+00" ID="TXOZKXOYNFL"/>
-        <Width Value="1.000000000000000000e+01" ID="OICAWBQQXYW"/>
-        <Height Value="2.999999999999999889e-01" ID="LQNVQTDDSLY"/>
-        <SquareFlag Value="0.000000000000000000e+00" ID="WAVWPLNSOQP"/>
-        <ScriptFileModule>Box</ScriptFileModule>
-        <ScriptFileContents>
-
-//==== Init Is Called Once During Each Custom Geom Construction  ============================//
-//==== Avoid Global Variables Unless You Want Shared With All Custom Geoms of This Type =====//
-void Init()
-{
-	//==== Test Parm Template  =====//
-	string length = AddParm( PARM_DOUBLE_TYPE, "Length", "Design" );
-	SetParmValLimits( length, 5.0, 0.001, 1.0e12 );
-
-	string width = AddParm( PARM_DOUBLE_TYPE, "Width", "Design" );
-	SetParmValLimits( width, 7.0, 0.001, 1.0e12 );
-
-	string height = AddParm( PARM_DOUBLE_TYPE, "Height", "Design" );
-	SetParmValLimits( height, 3.0, 0.001, 1.0e12 );
-
-	string square_flag = AddParm( PARM_BOOL_TYPE, "SquareFlag", "Design" );
-	SetParmVal( square_flag, 0.0 );
-
-	//==== Add Cross Sections  =====//
-	string xsec_surf = AddXSecSurf();
-	AppendCustomXSec( xsec_surf, XS_POINT);
-	AppendCustomXSec( xsec_surf, XS_ROUNDED_RECTANGLE);
-	AppendCustomXSec( xsec_surf, XS_ROUNDED_RECTANGLE);
-	AppendCustomXSec( xsec_surf, XS_POINT);
-
-	//==== Set Some Decent Tess Vals ====//
-	string geom_id = GetCurrCustomGeom();
-	SetParmVal( GetParm( geom_id, "Tess_U",  "Shape" ), 10 );
-	SetParmVal( GetParm( geom_id, "Tess_W",  "Shape" ), 9 );
-
-}
-
-//==== Global Gui IDs - These Are Consistent For All Created Boxes And Used In UpdateGUI====// 
-int DesignTab;
-int LengthSlider;
-int WidthSlider;
-int HeightSlider;
-int SquareButton;
-
-//==== InitGui Is Called Once During Each Custom Geom Construction ====//
-void InitGui()
-{
-	DesignTab = AddGui( GDEV_TAB, "Design"  );
-	AddGui( GDEV_YGAP );
-	AddGui( GDEV_DIVIDER_BOX, "Design" );
-	LengthSlider = AddGui( GDEV_SLIDER_ADJ_RANGE_INPUT, "Length"  );
-	WidthSlider = AddGui( GDEV_SLIDER_ADJ_RANGE_INPUT, "Width"  );
-	HeightSlider = AddGui( GDEV_SLIDER_ADJ_RANGE_INPUT, "Height"  );
-	AddGui( GDEV_YGAP );
-	SquareButton = AddGui( GDEV_TOGGLE_BUTTON, "Square Box" );
-} 
-
-//==== UpdateGui Is Called Every Time The Gui is Updated ====//
-void UpdateGui()
-{
-	string geom_id = GetCurrCustomGeom();
-	UpdateGui( LengthSlider, GetParm( geom_id, "Length", "Design" ) ); 
-	UpdateGui( WidthSlider, GetParm( geom_id,  "Width",  "Design" ) ); 
-	UpdateGui( HeightSlider, GetParm( geom_id, "Height", "Design" ) ); 
-	UpdateGui( SquareButton, GetParm( geom_id, "SquareFlag", "Design" ) ); 
-
-	//==== Check For Square Flag ====//
-	bool square_flag = GetBoolParmVal( GetParm( geom_id, "SquareFlag", "Design" ) );
-	if ( square_flag )
-	{
-		//==== Disconnect Width/Height Sliders From Parms ====//
-		UpdateGui( WidthSlider, GetParm( geom_id,  "",  "Design" ) ); 
-		UpdateGui( HeightSlider, GetParm( geom_id, "", "Design" ) ); 
-	}
-} 
-
-//==== UpdateSurf Is Called Every Time The Geom is Updated ====//
-void UpdateSurf()
-{
-	string geom_id = GetCurrCustomGeom();
-
-
-	//==== Get Curr Vals ====//
-	double length_val = GetParmVal( GetParm( geom_id, "Length", "Design" ) );
-	double width_val  = GetParmVal( GetParm( geom_id, "Width",  "Design" ) );
-	double height_val = GetParmVal( GetParm( geom_id, "Height", "Design" ) );
-
-	//==== Check For Square Flag ====//
-	bool square_flag = GetBoolParmVal( GetParm( geom_id, "SquareFlag", "Design" ) );
-	if ( square_flag )
-	{
-		width_val = height_val = length_val;
-		SetParmVal( GetParm( geom_id, "Width",  "Design" ),  width_val);
-		SetParmVal( GetParm( geom_id, "Height",  "Design" ), height_val);
-	}
-
-	//==== Get The XSec Surf ====//
-	string xsec_surf = GetXSecSurf( geom_id, 0 );
-
-	//==== Define The First/Last XSec Placement ====//
-	string xsec3 = GetXSec( xsec_surf, 3 );
-	SetCustomXSecLoc( xsec3, vec3d( length_val, 0, 0 ) );
-
-	//==== Define The Middle XSecs ====//
-	string xsec1 = GetXSec( xsec_surf, 1 );
-	SetParmVal( GetXSecParm( xsec1, "RoundedRect_Height" ), height_val );
-	SetParmVal( GetXSecParm( xsec1, "RoundedRect_Width" ),  width_val );
-	SetParmVal( GetXSecParm( xsec1, "RoundRectXSec_Radius" ), 0.0 );
-
-	string xsec2 = GetXSec( xsec_surf, 2 );
-	SetParmVal( GetXSecParm( xsec2, "RoundedRect_Height" ), height_val );
-	SetParmVal( GetXSecParm( xsec2, "RoundedRect_Width" ),  width_val );
-	SetParmVal( GetXSecParm( xsec2, "RoundRectXSec_Radius" ), 0.0 );
-	SetCustomXSecLoc( xsec2, vec3d( length_val, 0, 0 ) );
-
-	SkinXSecSurf();
-}
-
-//==== Optional Scale =====//
-void Scale(double curr_scale )
-{
-    string geom_id = GetCurrCustomGeom();
-
-    string len_id = GetParm( geom_id, "Length", "Design" );
-    string width_id = GetParm( geom_id, "Width", "Design" );
-    string height_id = GetParm( geom_id, "Height", "Design" );
-
-    double len  = curr_scale*GetParmVal( len_id );
-    double w  = curr_scale*GetParmVal( width_id );
-    double h  = curr_scale*GetParmVal( height_id );
-
-    SetParmVal( len_id, len );
-    SetParmVal( width_id, w );
-    SetParmVal( height_id, h );
-}
-</ScriptFileContents>
-      </CustomGeom>
-      <ParmContainer>
-        <ID>SKMLKUKKKV</ID>
-        <Name>Box</Name>
-        <Attach>
-          <Eta_Attach_Location Value="0.000000000000000000e+00" ID="PKJFYKYGTEV"/>
-          <L_01 Value="1.000000000000000000e+00" ID="DWJNWXHEBVI"/>
-          <L_Attach_Location Value="0.000000000000000000e+00" ID="KTDYMUAGFZJ"/>
-          <L_Attach_Location0Len Value="0.000000000000000000e+00" ID="DUSUQYVRVLQ"/>
-          <M_Attach_Location Value="5.000000000000000000e-01" ID="AUENTFTQBHN"/>
-          <N_Attach_Location Value="5.000000000000000000e-01" ID="OBEUZOQYMYK"/>
-          <R_01 Value="1.000000000000000000e+00" ID="MQVCQGHPBHY"/>
-          <R_Attach_Location Value="0.000000000000000000e+00" ID="QRKWUQQRLUI"/>
-          <R_Attach_Location0N Value="0.000000000000000000e+00" ID="YAVQUPCXEUD"/>
-          <Rots_Attach_Flag Value="0.000000000000000000e+00" ID="PSSMXKPWQFF"/>
-          <S_Attach_Location Value="5.000000000000000000e-01" ID="KLGYHBRYDOD"/>
-          <T_Attach_Location Value="5.000000000000000000e-01" ID="FYSANGNWTYH"/>
-          <Trans_Attach_Flag Value="0.000000000000000000e+00" ID="CWEUUWYXKDX"/>
-          <U_01 Value="1.000000000000000000e+00" ID="IOMYMMQLFHG"/>
-          <U_Attach_Location Value="0.000000000000000000e+00" ID="NVAOYSYUAEV"/>
-          <U_Attach_Location0N Value="0.000000000000000000e+00" ID="FPXPNKGBAES"/>
-          <V_Attach_Location Value="0.000000000000000000e+00" ID="NUMJJWMBCHD"/>
-        </Attach>
-        <BBox>
-          <X_Len Value="2.384495971621866772e+00" ID="TJXNQQRRQHF"/>
-          <X_Min Value="1.792433790356883350e+01" ID="OXLFACGQSCY"/>
-          <Y_Len Value="3.920145663658733071e+01" ID="RRYOAHGJANC"/>
-          <Y_Min Value="-1.960072831829366535e+01" ID="ZCWQMRHFHUI"/>
-          <Z_Len Value="8.278598289475207483e-01" ID="FLSUBUXVAJK"/>
-          <Z_Min Value="-3.087294718820046135e-01" ID="DXBBAJOGDQT"/>
-        </BBox>
-        <Design>
-          <Height Value="2.999999999999999889e-01" ID="LQNVQTDDSLY"/>
-          <Length Value="1.500000000000000000e+00" ID="TXOZKXOYNFL"/>
-          <SquareFlag Value="0.000000000000000000e+00" ID="WAVWPLNSOQP"/>
-          <Width Value="1.000000000000000000e+01" ID="OICAWBQQXYW"/>
-        </Design>
-        <EndCap>
-          <CapUMaxLength Value="1.000000000000000000e+00" ID="JZYUKSPCVWB"/>
-          <CapUMaxOffset Value="0.000000000000000000e+00" ID="OUDGUAFANZU"/>
-          <CapUMaxOption Value="0.000000000000000000e+00" ID="VXZAWYPOEAV"/>
-          <CapUMaxStrength Value="5.000000000000000000e-01" ID="MXMERIBGBIR"/>
-          <CapUMaxSweepFlag Value="0.000000000000000000e+00" ID="UBASQDELXAQ"/>
-          <CapUMinLength Value="1.000000000000000000e+00" ID="EWAMRJYXMHF"/>
-          <CapUMinOffset Value="0.000000000000000000e+00" ID="HSRYAWWYLNQ"/>
-          <CapUMinOption Value="0.000000000000000000e+00" ID="TYLOBCVTUKT"/>
-          <CapUMinStrength Value="5.000000000000000000e-01" ID="IUDGTTWNFWU"/>
-          <CapUMinSweepFlag Value="0.000000000000000000e+00" ID="BCEHDMYKGTF"/>
-          <CapUMinTess Value="3.000000000000000000e+00" ID="YVWBJSPYUMS"/>
-        </EndCap>
-        <Mass_Props>
-          <CGx Value="0.000000000000000000e+00" ID="HSULEPATDCK"/>
-          <CGy Value="0.000000000000000000e+00" ID="GJQPHEHGIDM"/>
-          <CGz Value="0.000000000000000000e+00" ID="OZPUYVPCJRU"/>
-          <Density Value="1.000000000000000000e+00" ID="OORUWVBNRST"/>
-          <Ixx Value="0.000000000000000000e+00" ID="RSAYKMAAEZP"/>
-          <Ixy Value="0.000000000000000000e+00" ID="YVCMKPGKQIZ"/>
-          <Ixz Value="0.000000000000000000e+00" ID="BTCYLGBRNQQ"/>
-          <Iyy Value="0.000000000000000000e+00" ID="RBJRVFVZZXD"/>
-          <Iyz Value="0.000000000000000000e+00" ID="RPNFVQAHJMG"/>
-          <Izz Value="0.000000000000000000e+00" ID="TFYEAXWQNRB"/>
-          <Mass_Area Value="1.000000000000000000e+00" ID="UFBOXUAZDYJ"/>
-          <Mass_Prior Value="0.000000000000000000e+00" ID="FHQIUUNDDXK"/>
-          <PointMass Value="0.000000000000000000e+00" ID="AYYQKWAZSPY"/>
-          <Shell_Flag Value="0.000000000000000000e+00" ID="VOXFQBKDFZP"/>
-        </Mass_Props>
-        <Negative_Volume_Props>
-          <Negative_Volume_Flag Value="0.000000000000000000e+00" ID="YCGSJNIWTWH"/>
-        </Negative_Volume_Props>
-        <ParasiteDragProps>
-          <ExpandedList Value="0.000000000000000000e+00" ID="JGIQVTCYVLV"/>
-          <FFBodyEqnType Value="3.000000000000000000e+00" ID="NYTQMKRSUWR"/>
-          <FFUser Value="1.000000000000000000e+00" ID="FQVCTSEWRAL"/>
-          <FFWingEqnType Value="3.000000000000000000e+00" ID="CJCCHLOIQIO"/>
-          <IncorporatedGen Value="0.000000000000000000e+00" ID="VKFUWDAVCQY"/>
-          <PercLam Value="0.000000000000000000e+00" ID="RGLVHPLDQUG"/>
-          <Q Value="1.000000000000000000e+00" ID="KMVKBUASSEW"/>
-          <Roughness Value="0.000000000000000000e+00" ID="DCLTGGBUFFN"/>
-          <TawTwRatio Value="1.000000000000000000e+00" ID="GCNKXBOFNCY"/>
-          <TeTwRatio Value="1.000000000000000000e+00" ID="QRWBBZOXTWR"/>
-        </ParasiteDragProps>
-        <Shape>
-          <Tess_U Value="1.000000000000000000e+01" ID="JTQMEUDUFJT"/>
-          <Tess_W Value="9.000000000000000000e+00" ID="MAZRCJADXOU"/>
-          <Wake Value="0.000000000000000000e+00" ID="IUWUGSQLHPL"/>
-        </Shape>
-        <Sym>
-          <Sym_Ancestor Value="1.000000000000000000e+00" ID="ZUHTQBYGOYX"/>
-          <Sym_Ancestor_Origin_Flag Value="1.000000000000000000e+00" ID="CYBECOANDQG"/>
-          <Sym_Axial_Flag Value="0.000000000000000000e+00" ID="UDQWKYQYUSX"/>
-          <Sym_Planar_Flag Value="2.000000000000000000e+00" ID="JHAWEMOSNYD"/>
-          <Sym_Rot_N Value="2.000000000000000000e+00" ID="YYGHKSIPZAJ"/>
-        </Sym>
-        <WakeSettings>
-          <WakeAngle Value="0.000000000000000000e+00" ID="MZIMMORHSJP"/>
-          <WakeScale Value="2.000000000000000000e+00" ID="XPEILXWNHVT"/>
-        </WakeSettings>
-        <XForm>
-          <Abs_Or_Relitive_flag Value="1.000000000000000000e+00" ID="KGSBARPELIW"/>
-          <Last_Scale Value="1.000000000000000000e+00" ID="YWRIFVGDVYN"/>
-          <Origin Value="0.000000000000000000e+00" ID="JGOKPXTPSHA"/>
-          <Scale Value="1.000000000000000000e+00" ID="HNLJRDBDCIG"/>
-          <X_Location Value="1.836956521739130466e+01" ID="OXKJPVYHQZV"/>
-          <X_Rel_Location Value="1.836956521739130466e+01" ID="BXCNREOZMAY"/>
-          <X_Rel_Rotation Value="3.000000000000000000e+00" ID="DYIPMNOYOMG"/>
-          <X_Rotation Value="3.000000000000000000e+00" ID="GYIMANBPCDQ"/>
-          <Y_Location Value="1.461956521739130466e+01" ID="XUXPGKTIAYK"/>
-          <Y_Rel_Location Value="1.461956521739130466e+01" ID="FEATNIHPOEZ"/>
-          <Y_Rel_Rotation Value="0.000000000000000000e+00" ID="LCFWMFUMNDG"/>
-          <Y_Rotation Value="0.000000000000000000e+00" ID="GLRDUHKAIXS"/>
-          <Z_Location Value="1.086956521739121939e-01" ID="FKNDWYLRGSD"/>
-          <Z_Rel_Location Value="1.086956521739121939e-01" ID="OHRKGUQUPDF"/>
-          <Z_Rel_Rotation Value="-5.108695652173913082e+00" ID="GUFJUORFXPC"/>
-          <Z_Rotation Value="-5.108695652173913082e+00" ID="ZJGZOVJTNPL"/>
-        </XForm>
-      </ParmContainer>
-      <GeomBase>
-        <TypeName>Box</TypeName>
-        <TypeID>9</TypeID>
-        <TypeFixed>0</TypeFixed>
-        <ParentID>NONE</ParentID>
-        <Child_List/>
-      </GeomBase>
-      <Material>
-        <Name>Default</Name>
-      </Material>
-      <Wire_Color>
-        <ParmContainer>
-          <ID>BLVAFZYRMI</ID>
-          <Name>Default</Name>
-          <Color_Parm>
-            <Alpha Value="2.550000000000000000e+02" ID="OOPWVNUVDSA"/>
-            <Blue Value="2.550000000000000000e+02" ID="UIMSUFQYQES"/>
-            <Green Value="0.000000000000000000e+00" ID="VWKIMGJQCBN"/>
-            <Red Value="0.000000000000000000e+00" ID="CCGNHVJOSHG"/>
           </Color_Parm>
         </ParmContainer>
       </Wire_Color>

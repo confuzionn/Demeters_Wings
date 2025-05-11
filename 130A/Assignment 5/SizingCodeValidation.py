@@ -11,11 +11,12 @@ colors = sns.color_palette()
 xlim = 100
 N=100
 rho_cruise = 1.8685e-3 # slugs/ft^3, assuming average cruise of 8,000 ft
-v_stall = 1.68781 * 100 # Convert kts to ft/s
-CL_max = np.array([1.3, 1.5, 1.7, 1.9]) # Variable range of CL_max values based on Table 3.1 in Roskam
+rho_SL = 23.77e-4 #slugs/ft^3, density at sea level
+v_stall = 1.68781 * 57 # Convert kts to ft/s
+CL_max = 2.08 # Variable range of CL_max values based on Table 3.1 in Roskam
 
 # Calculate wing loading based on stall speed
-WS_stall = 0.5 * rho_cruise * v_stall**2 * CL_max # lb/ft^2 
+WS_stall = 0.5 * rho_SL * v_stall**2 * CL_max * 8600 / 7000# lb/ft^2 
 
 '''
 # Plot W/S vs W/P
@@ -31,18 +32,21 @@ plt.legend(loc='best')
 '''
 # ----------------------------------------------------------- Takeoff ----------------------------------------------------------- #
 
-S_TO_G = 1000 # ft
+S_TO_G = 975 # ft
 S_TO = 1500 # ft
-rho_SL = 23.77e-4 #slugs/ft3
+
 rho_takeoff = 20.48e-4 #slugs/ft3, assuming takeoff altitude of 5000 ft
 
 # Relating S_TO to TOP_23
 TOP_23 = (-8.134 + np.sqrt(8.314**2 - 4 * 0.0149 * -S_TO)) / (2 * 0.0149)
 print('TOP23: {} '.format(TOP_23))
 
-W_S = np.linspace(1,xlim,N) # Create W/S array
+WS = np.linspace(1,xlim,N) # Create W/S array
 k_s = 1.2 # Takeoff speed factor
 v_TO = k_s * v_stall # Takeoff velocity
+
+WP_TO = (TOP_23 * (rho_SL / rho_SL) * CL_max) / (WS)
+
 '''
 # Plotting W/P vs W/S
 plt.figure()
@@ -58,23 +62,13 @@ plt.legend(loc='best')
 '''
 # ----------------------------------------------------------- Landing ----------------------------------------------------------- #
 
-#Balanced field length
-BFL= TOP_23*37.5
-print(f"Required field length: {BFL} feet")
-
 #Calculating landing distance
-CL_max_values = np.array([1.3, 1.5, 1.7, 1.9])
-W_TO = 19000 #lbs
-W_L = 17000 #lbs
-S_ref = 534.37 #lifting area
 S_a = 600 # 600 ft for general aviation
-for CL_max in CL_max_values:
-    S_L_G = 80 * (W_L / S_ref) / (rho_takeoff/rho_SL * CL_max) + S_a
-    print(f"For CL_max = {CL_max}: Landing ground roll distance = {S_L_G} feet")
+S_L_G = S_TO_G # ft,
 
-#Calculate W/S
-S_land = BFL *  0.6
-W_S =  (rho_takeoff/rho_SL * CL_max_values) / (80*0.65) * (S_land - S_a)
+WS_landing = (S_L_G * (rho_SL / rho_SL) * CL_max) / 80 * (8600 / 7000)
+
+
 '''
 # Plot W/S vs W/P
 plt.figure()
@@ -87,8 +81,6 @@ plt.xlim(0, max(W_S)+5)
 plt.ylim(0, 0.5)
 plt.legend(loc='best')
 '''
-#TW calculation
-TW_landing = np.tile(W_S, 50)
 
 # ----------------------------------------------------------- Climb ----------------------------------------------------------- #
 
@@ -107,9 +99,16 @@ def PW_vs_WS(
 
 WS = np.linspace(1, xlim, N)
 
-rho_5k = 20.48e-4 #slug/ft^3
-CD0 = 0.01849
-k = 0.04198
+W_TO = 8600
+W_L = 7000
+
+rho_5k = 20.48e-4 #slug/ft^3, high altitude takeoff density
+
+CD0 = 0.03
+AR = 8.5
+e = 0.7
+k = 1 / (np.pi * e * AR)
+
 G_LVL1 = 0.083 # 8.3% for landplanes
 ks = 1.2
 # MTOW, flaps down, AEO, 0.94*T_TO
@@ -126,8 +125,7 @@ G_LVL1_2 = 0.015 # at 5000ft
 case2_PW = []
 
 for i in WS:
-    case2_PW.append((PW_vs_WS(G=G_LVL1_2,CD=CD0,CL=1.3,WS=i,rho=rho_5k)*(12/11)*((W_TO-2000)/W_TO)**(3/2))**(-1))
-
+    case2_PW.append((PW_vs_WS(G=G_LVL1_2,CD=CD0,CL=1.3,WS=i,rho=rho_5k)*((W_L)/W_TO)**(3/2))**(-1))
 
 
 G_balk = 0.03
@@ -137,7 +135,7 @@ ks_balk = 1.3
 case3_PW = []
 
 for i in WS:
-    case3_PW.append((PW_vs_WS(G=G_balk,CD=CD0,CL=1.9,WS=i,rho=rho_SL)*((W_TO-2000)/W_TO)**(3/2))**(-1))
+    case3_PW.append((PW_vs_WS(G=G_balk,CD=CD0,CL=1.9,WS=i,rho=rho_SL)*((W_L)/W_TO)**(3/2))**(-1))
 '''
 plt.figure()
 plt.plot(WS,case1_PW,label="Level 1, CL=1.9, AEO")
@@ -171,13 +169,16 @@ def cruise_power_sizing(v_cruise, rho_cruise, eta_prop, CD0, k, xlim, N):
     v_cruise = 1.6878 * v_cruise  # Convert knots to ft/s
     q_cruise = 0.5 * rho_cruise * v_cruise**2  # Dynamic pressure (psf)
     
- 
-    WP_cruise = 1 / ((v_cruise / (550 * eta_prop)) * (((q_cruise * CD0) / WS) + (k / q_cruise) * WS))
-
+    # Compute power loading W/P
+    WP_cruise = 1 / (
+        ((q_cruise * v_cruise * (CD0 + ((k * WS**2) / (q_cruise**2)))) / (550 * eta_prop * WS))
+        * (rho_SL / rho_cruise) ** 0.75
+    )
+    
     return WP_cruise, WS
 
 # Use function
-WP_cruise, WS = cruise_power_sizing(v_cruise=150, 
+WP_cruise, WS = cruise_power_sizing(v_cruise=141, 
                                 rho_cruise=rho_cruise,
                                 eta_prop=0.8, 
                                 CD0=CD0, 
@@ -196,7 +197,7 @@ plt.xlim(0,60)
 plt.legend()
 '''
 # ----------------------------------------------------------- Ceiling ----------------------------------------------------------- #
-
+'''
 # Constants
 W = 16856  # Takeoff Weight (lb)
 S_ref = 654.375  # Reference Wing Area (ft^2)
@@ -230,7 +231,7 @@ V = 1.68781 * 110  # ft/s
 W_P = V * prop_eff / (550 * T_W_min)
 W_P_vals = [W_P] * 100
 
-'''
+
 plt.figure(figsize=(8, 6))
 plt.plot(W_S_vals, W_P_vals, label="W/P (CL = 0.66)", color='r', linestyle='--', alpha=0.7)
 
@@ -246,7 +247,6 @@ plt.grid(True)
 # ----------------------------------------------------------- Maneuver ----------------------------------------------------------- #
 
 # Given parameters
-CD0 = 0.0151  # Zero-lift drag coefficient
 n = 1 / np.cos(np.deg2rad(45))  # Load factor for 45° bank
 eta_p= 0.8  # Propeller efficiency
 
@@ -277,43 +277,65 @@ plt.grid()
 '''
 
 # ----------------------------------------------------------- Total Constraint ----------------------------------------------------------- #
-CL_max_19 = 1.9 # Setting CL_max = 1.9 for stall, takeoff, and landing
 
 WS = np.linspace(1, xlim, N) # Create WS array
-WS_stall = 0.5 * rho_cruise * v_stall**2 * CL_max_19
-WP_TO_19 = (TOP_23 * (rho_takeoff / rho_SL) * CL_max_19) / (WS)
-WS_landing =  (rho_takeoff/rho_SL * CL_max_19) / (80*0.65) * (S_land - S_a)
 
 # Find intersection
-intersection_idx = np.argmin(np.abs(WP_MN - WP_TO_19))  # Find index of minimum difference
+intersection_idx = np.argmin(np.abs(WP_MN - WP_TO))  # Find index of minimum difference
 intersection_ws = WS[intersection_idx]  # W/S value at intersection
 intersection_wp = WP_MN[intersection_idx]  # W/P value at intersection
 print('Design Parameters: {} $lbf/ft^2$, {} $lbf/hp$'.format(intersection_ws, intersection_wp))
 
-plt.figure(figsize=(8,4),facecolor='#e3dfd7ff')
+plt.figure(figsize=(8,4))
 ax = plt.gca()  #
-ax.set_facecolor("#e3dfd7ff")
 plt.axvline(x=WS_stall, label='Stall', color='k',  linestyle='-', linewidth=2)
-plt.plot(WS, WP_TO_19, label='Takeoff field length', linestyle='--', linewidth=2)
-plt.axvline(x=WS_landing, label='Landing field length', color='#284e3fff', linestyle='-', linewidth=2)
+plt.plot(WS, WP_TO, label='Takeoff field length', linestyle='--', linewidth=2)
+plt.axvline(x=WS_landing, label='Landing field length', linestyle='-', linewidth=2)
 plt.plot(WS,case1_PW,label="Level 1 Climb, CL=1.9, AEO", linestyle='-.')
-plt.plot(WS,case2_PW,label="Level 1 Climb, CL=1.3, OEI", linestyle='-.')
 plt.plot(WS,case3_PW,label="Balked Climb, CL=1.9, AEO", linestyle='-.')
 plt.plot(WS,WP_cruise, label='Cruise', linestyle=':', linewidth=2)
 plt.plot(WS, WP_MN, label="Maneuver", linestyle='-', linewidth=2)
-plt.scatter(intersection_ws, intersection_wp, color='red', zorder=5, label='Design Point')
-plt.fill_between(WS, 0, np.minimum(WP_MN, WP_TO_19), where=(WS <= WS_stall), color='#356854ff', alpha=0.5, label="Feasible Region")
-plt.title('W/P - W/S', color='#301900ff')
-plt.xlabel("W/S $(lb/ft^2)$", color='#301900ff')
-plt.ylabel("W/P $(lb/hp)$", color='#301900ff')
+plt.scatter(22.88, 13.47, color='red', zorder=5, label='Design Point')
+plt.fill_between(WS, 0, np.minimum(WP_cruise, WP_TO), where=(WS <= WS_stall), color='#356854ff', alpha=0.5, label="Feasible Region")
+plt.title('W/P - W/S')
+plt.xlabel("W/S $(lb/ft^2)$")
+plt.ylabel("W/P $(lb/hp)$")
 plt.xlim(0,100)
 plt.ylim(0,100)
 plt.grid(True)
 legend = ax.legend(loc='upper right')
-# Put a nicer background color on the legend.
-legend.get_frame().set_facecolor('#e3dfd7ff')
 
+MTOW = 8600
+S = MTOW / WS
+S_stall = MTOW / WS_stall
+P_TO = MTOW / WP_TO
+S_landing = MTOW / WS_landing
+case1_P = MTOW / np.array(case1_PW)
+case3_P = MTOW / np.array(case3_PW)
+P_cruise = MTOW / WP_cruise
+P_MN = MTOW / WP_MN
 
+plt.figure(figsize=(8,4))
+ax = plt.gca()  #
+plt.axvline(x=(S_stall), label='Stall', color='k',  linestyle='-', linewidth=2)
+plt.plot(S, P_TO, label='Takeoff field length', linestyle='--', linewidth=2)
+plt.axvline(x=(S_landing), label='Landing field length', linestyle='-', linewidth=2)
+plt.plot(S,case1_P,label="Level 1 Climb, CL=1.9, AEO", linestyle='-.')
+plt.plot(S,case3_P,label="Balked Climb, CL=1.9, AEO", linestyle='-.')
+plt.plot(S,P_cruise, label='Cruise', linestyle=':', linewidth=2)
+plt.plot(S,P_MN, label="Maneuver", linestyle='-', linewidth=2)
+plt.scatter(306, 680, color='red', zorder=5, label='Design Point')
+plt.fill_between(S, np.maximum(P_cruise, P_TO), 4000, where=(S >= S_stall), color='#356854ff', alpha=0.5, label="Feasible Region")
+plt.title('P - S for AT-402B')
+plt.xlabel("S $(ft^2)$")
+plt.ylabel("P $(hp)$")
+plt.xlim(200,600)
+plt.ylim(0,1000)
+plt.grid(True)
+legend = ax.legend(loc='lower left')
+
+plt.show()
+'''
 # ----------------------------------------------------------- POWER BALANCE EQUATIONS ----------------------------------------------------------- #
 
 from sympy import symbols, Eq, solve
@@ -356,7 +378,7 @@ def get_Powers(shaft_ratio, supplied_ratio, P_p):
 WP_TO_bat = []
 WP_MN_bat = []
 
-for P_p in 1 / WP_TO_19:
+for P_p in 1 / WP_TO:
     sol = get_Powers(1, 1, P_p)
     WP_TO_bat.append(1 / sol[symbols('P_bat')])
 
@@ -448,7 +470,7 @@ legend.get_frame().set_facecolor('#e3dfd7ff')
 WP_TO_bat2 = []
 WP_MN_bat2 = []
 
-for P_p in 1 / WP_TO_19:
+for P_p in 1 / WP_TO:
     sol = get_Powers(0.5, 0.5, P_p)
     WP_TO_bat2.append(1 / sol[symbols('P_bat')])
 
@@ -532,4 +554,5 @@ plt.grid(True)
 legend = ax.legend(loc='upper right')
 # Put a nicer background color on the legend.
 legend.get_frame().set_facecolor('#e3dfd7ff')
-plt.show()
+plt.show() 
+'''
